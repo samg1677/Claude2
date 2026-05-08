@@ -37,7 +37,10 @@
   --radius-lg:   14px;
   --radius-xl:   18px;
 
-  --container:   1180px;
+  --container:   1280px;
+  --section-py:  80px;   /* vertical padding for every section */
+  --gap:         24px;   /* default grid gap */
+  --head-mb:     48px;   /* gap between section head and content */
 }
 
 /* ---------- Base ---------- */
@@ -74,7 +77,7 @@ p { margin: 0; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
-section { padding: 88px 0; }
+section { padding: var(--section-py) 0; }
 
 .section-label {
   display: inline-block;
@@ -103,7 +106,7 @@ section { padding: 88px 0; }
 .section-head {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 48px;
+  margin: 0 auto var(--head-mb);
 }
 .section-head .section-desc { max-width: 640px; margin-left: auto; margin-right: auto; }
 
@@ -145,7 +148,7 @@ section { padding: 88px 0; }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: var(--section-py) 24px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
@@ -325,7 +328,7 @@ section { padding: 88px 0; }
 .how-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: var(--gap);
 }
 .how-card {
   text-align: center;
@@ -361,7 +364,7 @@ section { padding: 88px 0; }
 .why-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 22px;
+  gap: var(--gap);
 }
 .why-card {
   background: var(--off-white);
@@ -400,7 +403,7 @@ section { padding: 88px 0; }
 .program-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 22px;
+  gap: var(--gap);
 }
 .program-card {
   background: var(--white);
@@ -509,7 +512,7 @@ section { padding: 88px 0; }
 .alliant-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--gap);
 }
 .stat-card {
   background: rgba(255,255,255,.05);
@@ -539,7 +542,7 @@ section { padding: 88px 0; }
 .stud-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 12px;
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
@@ -557,7 +560,7 @@ section { padding: 88px 0; }
 .testimonial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 22px;
+  gap: var(--gap);
 }
 .test-card {
   background: var(--white);
@@ -627,7 +630,7 @@ section { padding: 88px 0; }
    ========================================================= */
 .cta-band {
   background: var(--orange);
-  padding: 72px 0;
+  padding: var(--section-py) 0;
   color: var(--white);
 }
 .cta-band-inner {
