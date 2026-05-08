@@ -37,6 +37,15 @@
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+/* Skip rendering off-screen sections until they're near the viewport.
+   Major win for scroll perf on long pages without changing layout. */
+.section,
+.cta,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -128,13 +137,13 @@ ul { padding: 0; margin: 0; list-style: none; }
   background: var(--c-navy);
   color: #fff;
 }
-.btn-primary:hover { background: #271f48; color: #fff; transform: translateY(-1px); }
+.btn-primary:hover { background: #271f48; color: #fff; }
 
 .btn-warm {
   background: var(--c-warm);
   color: #fff;
 }
-.btn-warm:hover { background: #e66600; color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn-warm:hover { background: #e66600; color: #fff; }
 
 .btn-ghost {
   background: transparent;
@@ -147,8 +156,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,.92);
-  backdrop-filter: saturate(140%) blur(8px);
+  background: #ffffff;
   border-bottom: 1px solid var(--c-line);
   z-index: 50;
 }
@@ -229,13 +237,19 @@ ul { padding: 0; margin: 0; list-style: none; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  background:
-    radial-gradient(1200px 400px at 90% -10%, rgba(78,211,204,.18), transparent 60%),
-    radial-gradient(900px 360px at -10% 110%, rgba(51,41,89,.10), transparent 60%),
-    var(--c-bg);
+  background: var(--c-teal-soft);
   padding: 56px 0 64px;
   border-bottom: 1px solid var(--c-line);
+  overflow: hidden;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--c-teal-soft) 0%, #ffffff 100%);
+  z-index: 0;
+}
+.hero > .container { position: relative; z-index: 1; }
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -299,13 +313,9 @@ ul { padding: 0; margin: 0; list-style: none; }
   border: 1px solid var(--c-line);
   border-radius: var(--radius-lg);
   padding: 24px;
-  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+  transition: border-color var(--t);
 }
-.feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: #d8f3f1;
-}
+.feature-card:hover { border-color: var(--c-teal); }
 .icon-circle {
   display: inline-flex;
   align-items: center;
@@ -447,9 +457,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 /* ---------- CTA ---------- */
 .cta {
-  background:
-    linear-gradient(135deg, rgba(78,211,204,.12) 0%, rgba(51,41,89,.06) 100%),
-    var(--c-bg-alt);
+  background: var(--c-teal-soft);
   padding: 56px 0;
   border-top: 1px solid var(--c-line);
   border-bottom: 1px solid var(--c-line);
