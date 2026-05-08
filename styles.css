@@ -13,8 +13,8 @@
   --c-teal: #4ed3cc;
   --c-teal-soft: #eafaf9;     /* tinted backgrounds */
   --c-teal-deep: #2fb9b1;     /* hover */
-  --c-warm: #ff4400;
-  --c-warm-soft: #fff1ec;
+  --c-warm: #ff7400;
+  --c-warm-soft: #fff3e6;
   --c-navy: #332959;
   --c-navy-soft: #f4f3f8;
   --c-heading: #2a2f31;
@@ -134,7 +134,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   background: var(--c-warm);
   color: #fff;
 }
-.btn-warm:hover { background: #e23c00; color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn-warm:hover { background: #e66600; color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-sm); }
 
 .btn-ghost {
   background: transparent;
