@@ -1,60 +1,42 @@
 # EduConnect USA — Mega Menu
 
-A visually polished, fully responsive header with a mega menu for desktop /
-tablet and a slide-out drawer for mobile. Built to match the existing
-EduConnect USA brand (teal `#00607d` / `#4ed3cc`, orange `#ff7400`,
-Roboto + Open Sans).
+Two files. One HTML box. One CSS box.
 
-## Files
+## What to paste where
 
-| File | What it's for |
+| File | Where it goes |
 | --- | --- |
-| `index.html` | Standalone preview page — open in a browser to test the header at every screen size. |
-| `mega-menu.css` | All header styling. |
-| `mega-menu.js` | Hover / click / keyboard / drawer logic. |
-| `divi-mega-menu.html` | **Single drop-in snippet** with everything inlined — for the Divi Theme Builder Code module. |
+| `divi-html-box.html` | Divi Theme Builder → Global Header → **Code module** |
+| `divi-css-box.css`   | Divi → Theme Options → **Custom CSS** (or Page Settings → Custom CSS) |
 
-## How to install on the live site
+The HTML file already contains a `<script>` block for menu behavior — nothing extra to wire up.
 
-1. Open **Divi → Theme Builder** and edit your **Global Header** template.
-2. Remove (or hide) the existing Menu module.
-3. Add a **Code** module that spans the full row width.
-4. Paste the entire contents of `divi-mega-menu.html` into the Code module.
-5. Save and view the site — the new header replaces the old one.
+## Menu structure
 
-If you'd rather host the CSS / JS separately (e.g. via Divi → Custom CSS or
-in a child theme), use `mega-menu.css` + `mega-menu.js` and paste only the
-`<header>...</header>` block from `index.html`.
+Top-level items: **Students · Programs · Services · Universities · Host Employers · Resources · About**
 
-## What's included
+Mega panels:
+- **Programs** — MBA, DBA, PhD, MS Data Analytics, MS Healthcare Analytics, MS Information Systems Technology, plus a featured "Find the Right Program" CTA
+- **Services** — Work & Study, CareerConnect, Financial Solutions, plus Visa Support overview, J1, B1/B2, SEVIS Transfer; featured WhatsApp CTA
+- **Universities** — Partner Universities, University Services, Success Stories; featured "Grow your enrollment" CTA
+- **Host Employers** — Host Employers, Employer Resources, Recruit With Us; featured "Start recruiting" CTA
+- **About** — About EduConnect, Team & Offices, Our Partners, Contact Us; featured "Contact Us" CTA
 
-- Top utility bar with WhatsApp + Contact + tagline (hidden on mobile)
-- Logo + 7 top-level items: Students, Programs, Services, Universities,
-  Host Employers, Resources, About
-- Mega panels with 2- or 3-column layouts, icon bubbles, feature card,
-  and a primary CTA per panel
-- Right-side **Apply Now** + WhatsApp buttons
-- Mobile slide-out drawer with accordion sub-menus, scrim, body-scroll
-  lock, and prominent Apply Now / WhatsApp buttons at the top
+Direct links (no dropdown): **Students** → `/international-students/`, **Resources** → `/student-resources/`
 
-## Editing links
+Right-side CTA: **Chat on WhatsApp** (`wa.me/16263443218`)
 
-Every link in the snippet already points to a real URL on
-`educonnectusa.com`. To rename a page or add a new one, edit the `<a href>`
-inside the mega panel **and** the matching entry inside the mobile drawer
-(`.ec-mobile__nav`) so both stay in sync.
+## Responsive behavior
 
-## Breakpoints
+- **≥1180px** — full desktop layout with utility top bar
+- **1024–1179px** — tighter spacing, tagline hidden, smaller logo type
+- **<1024px** — top bar hidden, hamburger reveals a right-side slide-out drawer with accordion sub-menus, scrim + body-scroll lock
+- **<540px** — WhatsApp button collapses to icon only
 
-- **≥1180px** — full desktop layout
-- **1024–1179px** — tighter spacing, smaller logo type, tagline hidden
-- **<1024px** — burger + slide-out drawer (mobile + small tablet)
-- **<540px** — Apply Now moves inside the drawer to save space
+## Preview locally
 
-## Accessibility
+Open `index.html` in a browser — it loads `divi-html-box.html` and `divi-css-box.css` from disk so you get the exact same result you'll see in Divi.
 
-- Mega triggers are buttons with `aria-expanded` + `aria-controls`
-- Esc closes any open panel and the mobile drawer
-- Click-outside closes mega panels
-- `prefers-reduced-motion` disables transitions
-- All interactive targets are ≥40px on mobile
+## Editing later
+
+To swap a page, search for the URL inside `divi-html-box.html` and update **both** the desktop mega panel and the matching item in the mobile drawer (`.ec-mobile__nav`).

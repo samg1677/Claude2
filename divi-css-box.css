@@ -1,8 +1,14 @@
 /* ============================================================
-   EduConnect USA — Header & Mega Menu
+   EduConnect USA — Mega Menu CSS
+   PASTE THIS INTO: Divi → Theme Options → Custom CSS
+   (or Page Settings → Custom CSS — any "CSS box")
+   No <style> tags needed; this file is just CSS rules.
+
    Brand: #00607d (deep teal) / #4ed3cc (teal) / #ff7400 (orange)
-   Fonts: Roboto (nav), Open Sans (body)
+   Fonts: Roboto (nav), Open Sans (body) — already loaded by Divi
 ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 
 :root {
   --ec-teal:        #4ed3cc;
@@ -28,7 +34,13 @@
 
 .ec-header,
 .ec-header * { box-sizing: border-box; }
-.ec-header   { position: sticky; top: 0; z-index: 9999; font-family: var(--ec-font-nav); }
+.ec-header   { position: sticky; top: 0; z-index: 9999; font-family: var(--ec-font-nav); background: #fff; }
+
+/* Reset stray Divi/WordPress styles that affect lists & links inside the header */
+.ec-header ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+.ec-header a  { box-shadow: none !important; text-decoration: none; }
+.ec-header li:before, .ec-header li:after { display: none !important; content: none !important; }
+.ec-header h3, .ec-header h4 { padding: 0; margin: 0; line-height: 1.2; }
 
 /* ---------- Top utility bar ---------- */
 .ec-topbar {
@@ -50,8 +62,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #fff;
-  text-decoration: none;
+  color: #fff !important;
   opacity: .92;
   transition: opacity .2s var(--ec-ease);
 }
@@ -82,23 +93,21 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
-  color: var(--ec-ink);
+  color: var(--ec-ink) !important;
   flex: 0 0 auto;
 }
 .ec-logo img {
   width: 52px; height: 52px;
   border-radius: 10px;
   object-fit: contain;
+  display: block;
 }
 .ec-logo__text {
   display: flex; flex-direction: column;
   line-height: 1;
 }
 .ec-logo__text strong {
-  font-family: var(--ec-font-nav);
-  font-weight: 700;
-  font-size: 19px;
+  font: 700 19px/1 var(--ec-font-nav);
   letter-spacing: .2px;
   color: var(--ec-ink);
 }
@@ -114,16 +123,12 @@
 /* ---------- Desktop nav ---------- */
 .ec-nav { flex: 1 1 auto; }
 .ec-nav__list {
-  list-style: none;
-  margin: 0; padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
 }
-.ec-nav__item {
-  position: static; /* mega panel is positioned to .ec-bar */
-}
+.ec-nav__item { position: static; }
 .ec-nav__link {
   display: inline-flex;
   align-items: center;
@@ -131,7 +136,6 @@
   padding: 10px 14px;
   font: 600 15px/1 var(--ec-font-nav);
   color: var(--ec-ink);
-  text-decoration: none;
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -182,7 +186,6 @@
   transform: translateY(0);
   transition: opacity .22s var(--ec-ease), transform .22s var(--ec-ease), visibility 0s;
 }
-/* Subtle teal stripe at the very top of every mega panel */
 .ec-mega::before {
   content: "";
   position: absolute;
@@ -200,7 +203,6 @@
 }
 .ec-mega__grid--3 { grid-template-columns: 1fr 1fr 1.05fr; }
 .ec-mega__grid--2 { grid-template-columns: 1.2fr 1fr; max-width: 980px; }
-.ec-mega--narrow { /* nothing extra; max-width handled in grid */ }
 
 .ec-mega__heading {
   font: 700 12px/1 var(--ec-font-nav);
@@ -212,7 +214,6 @@
   border-bottom: 1px solid var(--ec-line);
 }
 
-/* Mega item — icon + title + subtitle */
 .ec-mega__item {
   display: flex;
   gap: 12px;
@@ -220,8 +221,7 @@
   padding: 10px 12px;
   margin: 0 -12px;
   border-radius: var(--ec-radius-sm);
-  text-decoration: none;
-  color: var(--ec-ink);
+  color: var(--ec-ink) !important;
   transition: background .18s var(--ec-ease), transform .18s var(--ec-ease);
 }
 .ec-mega__item:hover {
@@ -242,7 +242,7 @@
 }
 .ec-mega__item:hover b { color: var(--ec-teal-dark); }
 
-/* Icon bubbles — pure CSS, one rule per icon kind */
+/* Icon bubbles (CSS-masked SVGs) */
 .ec-mega__icon {
   flex: 0 0 38px;
   width: 38px; height: 38px;
@@ -254,22 +254,16 @@
 .ec-mega__icon::after {
   content: ""; width: 18px; height: 18px;
   background-color: var(--ec-teal-dark);
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: center; mask-position: center;
 }
 .ec-mega__item:hover .ec-mega__icon {
   background: linear-gradient(135deg, #ffe9d2 0%, #ffd0a3 100%);
 }
 .ec-mega__item:hover .ec-mega__icon::after { background-color: var(--ec-orange); }
 
-/* Inline SVG masks for each icon type */
-.ec-mega__icon[data-icon="mba"]::after,
-.ec-mega__icon[data-icon="dba"]::after,
-.ec-mega__icon[data-icon="phd"]::after  { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z'/></svg>"); }
+.ec-mega__icon[data-icon="mba"]::after   { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z'/></svg>"); }
 .ec-mega__icon[data-icon="data"]::after  { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 13h4v8H3zm7-5h4v13h-4zm7-5h4v18h-4z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 13h4v8H3zm7-5h4v13h-4zm7-5h4v18h-4z'/></svg>"); }
 .ec-mega__icon[data-icon="health"]::after{ -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.3-9.2C1.2 8.2 3 4 7 4c2 0 3.6 1 5 2.7C13.4 5 15 4 17 4c4 0 5.8 4.2 4.3 7.8C19 16.5 12 21 12 21z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.3-9.2C1.2 8.2 3 4 7 4c2 0 3.6 1 5 2.7C13.4 5 15 4 17 4c4 0 5.8 4.2 4.3 7.8C19 16.5 12 21 12 21z'/></svg>"); }
 .ec-mega__icon[data-icon="tech"]::after  { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 4h16v12H4zm0 14h16v2H4zm6-2h4v2h-4z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 4h16v12H4zm0 14h16v2H4zm6-2h4v2h-4z'/></svg>"); }
@@ -285,11 +279,8 @@
 .ec-mega__icon[data-icon="people"]::after { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3 0-9 1.5-9 4.5V20h18v-2.5C18 14.5 12 13 9 13zm9-2a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-.4 0-.9 0-1.4.1A6 6 0 0 1 20 17.5V20h4v-2.5C24 14.7 20 13 18 13z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3 0-9 1.5-9 4.5V20h18v-2.5C18 14.5 12 13 9 13zm9-2a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-.4 0-.9 0-1.4.1A6 6 0 0 1 20 17.5V20h4v-2.5C24 14.7 20 13 18 13z'/></svg>"); }
 .ec-mega__icon[data-icon="briefcase"]::after{ -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 4h6v2h5v14H4V6h5zm0 2h6V6H9z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 4h6v2h5v14H4V6h5zm0 2h6V6H9z'/></svg>"); }
 .ec-mega__icon[data-icon="book"]::after   { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 3h12a3 3 0 0 1 3 3v15H7a3 3 0 0 1-3-3zm2 2v13a1 1 0 0 0 1 1h10V6a1 1 0 0 0-1-1z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 3h12a3 3 0 0 1 3 3v15H7a3 3 0 0 1-3-3zm2 2v13a1 1 0 0 0 1 1h10V6a1 1 0 0 0-1-1z'/></svg>"); }
-.ec-mega__icon[data-icon="resume"]::after { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 2h9l5 5v15H6zm8 1v5h5M8 13h8v2H8zm0 4h6v2H8z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 2h9l5 5v15H6zm8 1v5h5M8 13h8v2H8zm0 4h6v2H8z'/></svg>"); }
-.ec-mega__icon[data-icon="quote"]::after  { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 7H5a2 2 0 0 0-2 2v8h6v-6H6a3 3 0 0 1 3-3zm10 0h-4a2 2 0 0 0-2 2v8h6v-6h-3a3 3 0 0 1 3-3z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 7H5a2 2 0 0 0-2 2v8h6v-6H6a3 3 0 0 1 3-3zm10 0h-4a2 2 0 0 0-2 2v8h6v-6h-3a3 3 0 0 1 3-3z'/></svg>"); }
-.ec-mega__icon[data-icon="video"]::after  { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 5h14v14H3zm16 3 4-3v14l-4-3z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 5h14v14H3zm16 3 4-3v14l-4-3z'/></svg>"); }
 .ec-mega__icon[data-icon="building"]::after{ -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 2h12v20H4zm14 6h4v14h-4zM7 5h2v2H7zm4 0h2v2h-2zM7 9h2v2H7zm4 0h2v2h-2zM7 13h2v2H7zm4 0h2v2h-2zM7 17h6v5H7z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 2h12v20H4zm14 6h4v14h-4zM7 5h2v2H7zm4 0h2v2h-2zM7 9h2v2H7zm4 0h2v2h-2zM7 13h2v2H7zm4 0h2v2h-2zM7 17h6v5H7z'/></svg>"); }
-.ec-mega__icon[data-icon="globe"]::after  { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 2c1.6 0 3 .7 4 1.8a14 14 0 0 1-2 1.2 7.6 7.6 0 0 0-2-1zm-2 1c.7.4 1.4.7 2 1a14 14 0 0 1-3.5 1A6 6 0 0 1 10 5zM4.4 9.5A14 14 0 0 0 9 8a14 14 0 0 0 1 3 14 14 0 0 0-5.4 1.4 8 8 0 0 1-.2-2.9zm2.2 7.4a14 14 0 0 1 3.7-1 14 14 0 0 0 1 3 6 6 0 0 1-4.7-2zM12 20a8 8 0 0 1-.8 0 12 12 0 0 1-1-2.9 12 12 0 0 1 3.6 0 12 12 0 0 1-1 2.9 8 8 0 0 1-.8 0zm5.4-3.1a6 6 0 0 1-4.7 2 14 14 0 0 0 1-3 14 14 0 0 1 3.7 1zm-3.4-3a14 14 0 0 1 5.6 1.5 8 8 0 0 1-.2 2.9A14 14 0 0 0 14 11z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 2c1.6 0 3 .7 4 1.8a14 14 0 0 1-2 1.2 7.6 7.6 0 0 0-2-1zm-2 1c.7.4 1.4.7 2 1a14 14 0 0 1-3.5 1A6 6 0 0 1 10 5zM4.4 9.5A14 14 0 0 0 9 8a14 14 0 0 0 1 3 14 14 0 0 0-5.4 1.4 8 8 0 0 1-.2-2.9zm2.2 7.4a14 14 0 0 1 3.7-1 14 14 0 0 0 1 3 6 6 0 0 1-4.7-2zM12 20a8 8 0 0 1-.8 0 12 12 0 0 1-1-2.9 12 12 0 0 1 3.6 0 12 12 0 0 1-1 2.9 8 8 0 0 1-.8 0zm5.4-3.1a6 6 0 0 1-4.7 2 14 14 0 0 0 1-3 14 14 0 0 1 3.7 1zm-3.4-3a14 14 0 0 1 5.6 1.5 8 8 0 0 1-.2 2.9A14 14 0 0 0 14 11z'/></svg>"); }
+.ec-mega__icon[data-icon="globe"]::after  { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 2a8 8 0 0 1 6 2.7c-1 .5-2.3.9-3.6 1.1C13.8 6.5 13 5.3 12 4.3A8 8 0 0 1 12 4zm-4 1.6c.9 1 1.7 2.2 2.3 3.4-1.5-.2-2.9-.5-4.2-1A8 8 0 0 1 8 5.6zM4.4 9.5c1.7.7 3.6 1.2 5.6 1.4-.2 1-.4 2-.4 3.1-2 .2-4 .7-5.6 1.4a8 8 0 0 1 .4-5.9zm.6 7.6c1.4-.6 3-1 4.7-1.2.3 1.4.8 2.7 1.4 3.9a8 8 0 0 1-6-2.7zm7 3a8 8 0 0 1-1.4-3.5c1.7-.2 3.5-.2 5.2 0a8 8 0 0 1-3.8 3.5zm6.6-3a8 8 0 0 1-6 2.7c.6-1.2 1.1-2.5 1.4-3.9 1.7.2 3.3.6 4.7 1.2zm.4-1.7c-1.6-.7-3.5-1.2-5.6-1.4 0-1.1-.2-2.1-.4-3.1 2-.2 3.9-.7 5.6-1.4a8 8 0 0 1 .4 5.9z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 2a8 8 0 0 1 6 2.7c-1 .5-2.3.9-3.6 1.1C13.8 6.5 13 5.3 12 4.3A8 8 0 0 1 12 4zm-4 1.6c.9 1 1.7 2.2 2.3 3.4-1.5-.2-2.9-.5-4.2-1A8 8 0 0 1 8 5.6zM4.4 9.5c1.7.7 3.6 1.2 5.6 1.4-.2 1-.4 2-.4 3.1-2 .2-4 .7-5.6 1.4a8 8 0 0 1 .4-5.9zm.6 7.6c1.4-.6 3-1 4.7-1.2.3 1.4.8 2.7 1.4 3.9a8 8 0 0 1-6-2.7zm7 3a8 8 0 0 1-1.4-3.5c1.7-.2 3.5-.2 5.2 0a8 8 0 0 1-3.8 3.5zm6.6-3a8 8 0 0 1-6 2.7c.6-1.2 1.1-2.5 1.4-3.9 1.7.2 3.3.6 4.7 1.2zm.4-1.7c-1.6-.7-3.5-1.2-5.6-1.4 0-1.1-.2-2.1-.4-3.1 2-.2 3.9-.7 5.6-1.4a8 8 0 0 1 .4 5.9z'/></svg>"); }
 .ec-mega__icon[data-icon="mail"]::after   { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 0 8 6 8-6'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 0 8 6 8-6'/></svg>"); }
 
 /* Feature card on the right of each mega panel */
@@ -308,15 +299,22 @@
     radial-gradient(circle at -10% 110%, rgba(0, 96, 125, 0.18), transparent 55%);
   pointer-events: none;
 }
+.ec-mega__feature  { position: relative; }
 .ec-mega__feature--alt {
   background: linear-gradient(160deg, #fff4e8 0%, #ffffff 70%);
+  border-radius: var(--ec-radius);
+  padding: 24px;
+  margin: -24px;
+  position: relative;
 }
-.ec-mega__col--feature:has(.ec-mega__feature--alt)::before {
+.ec-mega__feature--alt::before {
+  content: "";
+  position: absolute; inset: 0; border-radius: var(--ec-radius);
   background:
     radial-gradient(circle at 90% -10%, rgba(255, 116, 0, 0.25), transparent 55%),
     radial-gradient(circle at -10% 110%, rgba(0, 96, 125, 0.12), transparent 55%);
+  pointer-events: none;
 }
-.ec-mega__feature  { position: relative; }
 .ec-mega__feature-tag {
   display: inline-block;
   font: 700 10.5px/1 var(--ec-font-nav);
@@ -328,27 +326,21 @@
   border-radius: 999px;
   box-shadow: 0 2px 6px rgba(0, 96, 125, 0.1);
   margin-bottom: 14px;
+  position: relative;
 }
 .ec-mega__feature h4 {
   font: 700 20px/1.25 var(--ec-font-nav);
   color: var(--ec-ink);
   margin: 0 0 8px;
+  position: relative;
 }
 .ec-mega__feature p {
   font: 400 14px/1.55 var(--ec-font-body);
   color: var(--ec-ink-soft);
   margin: 0 0 16px;
+  position: relative;
 }
-.ec-mega__feature-link {
-  display: inline-block;
-  margin-top: 12px;
-  font: 600 13px/1 var(--ec-font-nav);
-  color: var(--ec-teal-dark);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-}
-.ec-mega__feature-link:hover { color: var(--ec-orange); }
+.ec-mega__feature .ec-btn { position: relative; }
 
 /* ---------- Buttons ---------- */
 .ec-btn {
@@ -358,34 +350,33 @@
   gap: 8px;
   padding: 11px 18px;
   border-radius: 8px;
-  font: 700 14px/1 var(--ec-font-nav);
-  text-decoration: none;
+  font: 700 14px/1 var(--ec-font-nav) !important;
   letter-spacing: .3px;
   cursor: pointer;
   border: 0;
   transition: background .2s var(--ec-ease), color .2s var(--ec-ease), transform .15s var(--ec-ease), box-shadow .2s var(--ec-ease);
 }
 .ec-btn--primary {
-  background: var(--ec-orange);
-  color: #fff;
+  background: var(--ec-orange) !important;
+  color: #fff !important;
   box-shadow: 0 4px 12px rgba(255, 116, 0, 0.25);
 }
 .ec-btn--primary:hover {
-  background: var(--ec-orange-hov);
+  background: var(--ec-orange-hov) !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(255, 116, 0, 0.35);
 }
 .ec-btn--ghost {
-  background: transparent;
-  color: var(--ec-teal-dark);
+  background: transparent !important;
+  color: var(--ec-teal-dark) !important;
   border: 1.5px solid var(--ec-line);
 }
 .ec-btn--ghost:hover {
   border-color: var(--ec-teal-dark);
-  background: var(--ec-bg-soft);
+  background: var(--ec-bg-soft) !important;
 }
 .ec-btn--block { width: 100%; }
-.ec-btn--whatsapp svg { width: 16px; height: 16px; fill: currentColor; }
+.ec-btn .ec-wa { width: 16px; height: 16px; fill: currentColor; }
 .ec-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
 
 /* Burger (hidden on desktop) */
@@ -454,8 +445,7 @@
   flex: 0 0 auto;
   background: linear-gradient(180deg, var(--ec-bg-soft) 0%, #fff 100%);
 }
-.ec-mobile__nav { flex: 1 1 auto; overflow-y: auto; padding: 8px 12px 12px; }
-.ec-mobile__nav ul { list-style: none; padding: 0; margin: 0; }
+.ec-mobile__nav { flex: 1 1 auto; overflow-y: auto; padding: 8px 12px 24px; }
 .ec-mobile__nav > ul > li > a,
 .ec-acc__head {
   display: flex;
@@ -467,8 +457,7 @@
   border: 0;
   background: transparent;
   font: 600 16px/1 var(--ec-font-nav);
-  color: var(--ec-ink);
-  text-decoration: none;
+  color: var(--ec-ink) !important;
   cursor: pointer;
   text-align: left;
 }
@@ -476,26 +465,25 @@
 .ec-acc__head:hover { background: var(--ec-bg-soft); }
 .ec-acc__head svg { width: 18px; height: 18px; fill: var(--ec-mute); transition: transform .25s var(--ec-ease); }
 .ec-acc[data-open="true"] .ec-acc__head svg { transform: rotate(180deg); }
-.ec-acc[data-open="true"] .ec-acc__head { background: var(--ec-bg-soft); color: var(--ec-teal-dark); }
+.ec-acc[data-open="true"] .ec-acc__head { background: var(--ec-bg-soft); color: var(--ec-teal-dark) !important; }
 
 .ec-acc__body {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows .3s var(--ec-ease);
+  overflow: hidden;
 }
-.ec-acc__body > * { min-height: 0; }
+.ec-acc__body > div { min-height: 0; overflow: hidden; }
 .ec-acc[data-open="true"] .ec-acc__body { grid-template-rows: 1fr; }
-.ec-acc__body { overflow: hidden; }
 .ec-acc__body a {
   display: block;
   padding: 11px 14px 11px 30px;
-  color: var(--ec-ink-soft);
-  text-decoration: none;
+  color: var(--ec-ink-soft) !important;
   font: 500 14.5px/1.3 var(--ec-font-body);
   border-left: 2px solid transparent;
   margin-left: 14px;
 }
-.ec-acc__body a:hover { color: var(--ec-teal-dark); border-left-color: var(--ec-orange); }
+.ec-acc__body a:hover { color: var(--ec-teal-dark) !important; border-left-color: var(--ec-orange); }
 .ec-acc__lead {
   color: var(--ec-teal-dark) !important;
   font-weight: 700 !important;
@@ -509,18 +497,8 @@
   text-transform: uppercase;
   color: var(--ec-mute);
 }
-.ec-mobile__foot {
-  padding: 14px 20px;
-  border-top: 1px solid var(--ec-line);
-  font-size: 12px;
-  color: var(--ec-mute);
-  display: flex; gap: 8px;
-  flex: 0 0 auto;
-}
-.ec-mobile__foot a { color: var(--ec-mute); text-decoration: none; }
-.ec-mobile__foot a:hover { color: var(--ec-teal-dark); }
 
-/* Scrim behind the drawer */
+/* Scrim */
 .ec-scrim {
   position: fixed;
   inset: 0;
@@ -537,7 +515,6 @@
 body.ec-lock { overflow: hidden; }
 
 /* ---------- Breakpoints ---------- */
-/* Tablet: tighten spacing, hide tagline, smaller logo type */
 @media (max-width: 1180px) {
   .ec-bar__inner { gap: 16px; padding: 0 18px; }
   .ec-nav__link { padding: 10px 10px; font-size: 14px; }
@@ -548,27 +525,22 @@ body.ec-lock { overflow: hidden; }
   .ec-mega__grid { padding: 0 18px; }
 }
 
-/* Switch to mobile drawer below 1024px (good usable size for tablet) */
 @media (max-width: 1023px) {
   :root { --ec-bar-h: 72px; }
   .ec-topbar { display: none; }
   .ec-nav { display: none; }
   .ec-burger { display: block; }
-  .ec-btn--whatsapp span { display: none; }
-  .ec-btn--whatsapp { padding: 11px; }
-  .ec-btn--apply { padding: 10px 14px; font-size: 13.5px; }
+  .ec-btn--apply span { display: none; }
+  .ec-btn--apply { padding: 11px; }
 }
 
 @media (max-width: 540px) {
   .ec-bar__inner { padding: 0 14px; gap: 8px; }
-  .ec-btn--apply { display: none; } /* Apply Now lives inside the drawer */
-  .ec-btn--whatsapp { padding: 10px; }
   .ec-logo img { width: 42px; height: 42px; }
   .ec-logo__text strong { font-size: 16px; }
   .ec-logo__text em { display: none; }
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .ec-mega, .ec-mobile, .ec-scrim, .ec-acc__body, .ec-nav__link::after, .ec-caret, .ec-burger span {
     transition: none !important;
