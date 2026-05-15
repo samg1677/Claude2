@@ -13,16 +13,14 @@ The HTML file already contains a `<script>` block for menu behavior — nothing 
 
 ## Menu structure
 
-Top-level items: **Students · Programs · Services · Universities · Host Employers · Resources · About**
+Top-level items: **Programs · Services · Resources · About Us · Partners**
 
 Mega panels:
-- **Programs** — MBA, DBA, PhD, MS Data Analytics, MS Healthcare Analytics, MS Information Systems Technology, plus a featured "Find the Right Program" CTA
-- **Services** — Work & Study, CareerConnect, Financial Solutions, plus Visa Support overview, J1, B1/B2, SEVIS Transfer; featured WhatsApp CTA
-- **Universities** — Partner Universities, University Services, Success Stories; featured "Grow your enrollment" CTA
-- **Host Employers** — Host Employers, Employer Resources, Recruit With Us; featured "Start recruiting" CTA
-- **About** — About EduConnect, Team & Offices, Our Partners, Contact Us; featured "Contact Us" CTA
-
-Direct links (no dropdown): **Students** → `/international-students/`, **Resources** → `/student-resources/`
+- **Programs** — Graduate Degrees (MBA, DBA, PhD) + Master of Science (Data Analytics, Healthcare Analytics, Information Systems Technology) + featured "Find the Right Program" CTA
+- **Services** — Career & Study (All Student Services, Work & Study, CareerConnect, Financial Solutions) + Visa Support (Overview, J1, B1/B2, SEVIS Transfer) + WhatsApp CTA
+- **Resources** — For Students (International Students, Resource Library, Program Finder) + "Speak with an advisor" CTA
+- **About Us** — Company (About EduConnect, Team & Offices, Education Partners, Contact Us) + "Begin your U.S. journey" CTA
+- **Partners** — For Universities (Partner Universities, University Services, Success Stories) + For Host Employers (Host Employers, Employer Resources, Recruit With Us) + "Become a partner" CTA
 
 Right-side CTA: **Chat on WhatsApp** (`wa.me/16263443218`)
 

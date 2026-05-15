@@ -2,7 +2,8 @@
      EduConnect USA — Mega Menu HTML
      PASTE THIS INTO: Divi Code Module (single HTML box)
      The matching CSS goes in: Divi → Theme Options → Custom CSS
-     (or any "CSS box" — Page Settings → Custom CSS works too)
+
+     Top-level: Programs · Services · Resources · About Us · Partners
 ============================================================ -->
 
 <header class="ec-header" id="ecHeader" data-state="closed">
@@ -37,10 +38,6 @@
 
       <nav class="ec-nav" aria-label="Primary">
         <ul class="ec-nav__list">
-
-          <li class="ec-nav__item">
-            <a class="ec-nav__link" href="https://educonnectusa.com/international-students/">Students</a>
-          </li>
 
           <!-- PROGRAMS -->
           <li class="ec-nav__item ec-nav__item--has-mega">
@@ -148,13 +145,85 @@
             </div>
           </li>
 
-          <!-- UNIVERSITIES -->
+          <!-- RESOURCES -->
           <li class="ec-nav__item ec-nav__item--has-mega">
-            <button class="ec-nav__link ec-nav__trigger" aria-expanded="false" aria-controls="mega-universities">
-              Universities <svg class="ec-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            <button class="ec-nav__link ec-nav__trigger" aria-expanded="false" aria-controls="mega-resources">
+              Resources <svg class="ec-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
             </button>
-            <div class="ec-mega ec-mega--narrow" id="mega-universities" role="region" aria-label="Universities">
+            <div class="ec-mega ec-mega--narrow" id="mega-resources" role="region" aria-label="Resources">
               <div class="ec-mega__grid ec-mega__grid--2">
+                <div class="ec-mega__col">
+                  <h3 class="ec-mega__heading">For Students</h3>
+                  <a class="ec-mega__item" href="https://educonnectusa.com/international-students/">
+                    <span class="ec-mega__icon" data-icon="globe"></span>
+                    <span><b>International Students</b><i>Start your U.S. journey</i></span>
+                  </a>
+                  <a class="ec-mega__item" href="https://educonnectusa.com/student-resources/">
+                    <span class="ec-mega__icon" data-icon="book"></span>
+                    <span><b>Resource Library</b><i>Guides &amp; downloads</i></span>
+                  </a>
+                  <a class="ec-mega__item" href="https://educonnectusa.com/find-the-right-program/">
+                    <span class="ec-mega__icon" data-icon="services"></span>
+                    <span><b>Program Finder</b><i>Match with the right degree</i></span>
+                  </a>
+                </div>
+                <div class="ec-mega__col ec-mega__col--feature">
+                  <div class="ec-mega__feature">
+                    <span class="ec-mega__feature-tag">Need help?</span>
+                    <h4>Speak with an advisor</h4>
+                    <p>Get personalized guidance on programs, applications, visas, and U.S. life.</p>
+                    <a class="ec-btn ec-btn--primary" href="https://educonnectusa.com/contact-international-student-support/">Contact Us &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- ABOUT US -->
+          <li class="ec-nav__item ec-nav__item--has-mega">
+            <button class="ec-nav__link ec-nav__trigger" aria-expanded="false" aria-controls="mega-about">
+              About Us <svg class="ec-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="ec-mega ec-mega--narrow" id="mega-about" role="region" aria-label="About Us">
+              <div class="ec-mega__grid ec-mega__grid--2">
+                <div class="ec-mega__col">
+                  <h3 class="ec-mega__heading">Company</h3>
+                  <a class="ec-mega__item" href="https://educonnectusa.com/about-educonnect/">
+                    <span class="ec-mega__icon" data-icon="building"></span>
+                    <span><b>About EduConnect</b><i>Our story &amp; mission</i></span>
+                  </a>
+                  <a class="ec-mega__item" href="https://educonnectusa.com/educonnect-team/">
+                    <span class="ec-mega__icon" data-icon="people"></span>
+                    <span><b>Team &amp; Offices</b><i>Meet the team</i></span>
+                  </a>
+                  <a class="ec-mega__item" href="https://educonnectusa.com/international-education-partners/">
+                    <span class="ec-mega__icon" data-icon="globe"></span>
+                    <span><b>Education Partners</b><i>Our global network</i></span>
+                  </a>
+                  <a class="ec-mega__item" href="https://educonnectusa.com/contact-international-student-support/">
+                    <span class="ec-mega__icon" data-icon="mail"></span>
+                    <span><b>Contact Us</b><i>Get in touch</i></span>
+                  </a>
+                </div>
+                <div class="ec-mega__col ec-mega__col--feature">
+                  <div class="ec-mega__feature">
+                    <span class="ec-mega__feature-tag">Ready to start?</span>
+                    <h4>Begin your U.S. journey</h4>
+                    <p>Talk to an advisor and we'll be in touch within 48 hours.</p>
+                    <a class="ec-btn ec-btn--primary" href="https://educonnectusa.com/contact-international-student-support/">Contact Us &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PARTNERS (Universities + Host Employers) -->
+          <li class="ec-nav__item ec-nav__item--has-mega">
+            <button class="ec-nav__link ec-nav__trigger" aria-expanded="false" aria-controls="mega-partners">
+              Partners <svg class="ec-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="ec-mega" id="mega-partners" role="region" aria-label="Partners">
+              <div class="ec-mega__grid ec-mega__grid--3">
                 <div class="ec-mega__col">
                   <h3 class="ec-mega__heading">For Universities</h3>
                   <a class="ec-mega__item" href="https://educonnectusa.com/universities/">
@@ -170,27 +239,8 @@
                     <span><b>Success Stories</b><i>Outcomes that matter</i></span>
                   </a>
                 </div>
-                <div class="ec-mega__col ec-mega__col--feature">
-                  <div class="ec-mega__feature">
-                    <span class="ec-mega__feature-tag">Partner with us</span>
-                    <h4>Grow your international enrollment</h4>
-                    <p>Reach qualified, motivated students from our global recruiting network.</p>
-                    <a class="ec-btn ec-btn--primary" href="https://educonnectusa.com/university-services/">Learn how it works</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <!-- HOST EMPLOYERS -->
-          <li class="ec-nav__item ec-nav__item--has-mega">
-            <button class="ec-nav__link ec-nav__trigger" aria-expanded="false" aria-controls="mega-employers">
-              Host Employers <svg class="ec-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
-            </button>
-            <div class="ec-mega ec-mega--narrow" id="mega-employers" role="region" aria-label="Host Employers">
-              <div class="ec-mega__grid ec-mega__grid--2">
                 <div class="ec-mega__col">
-                  <h3 class="ec-mega__heading">For Employers</h3>
+                  <h3 class="ec-mega__heading">For Host Employers</h3>
                   <a class="ec-mega__item" href="https://educonnectusa.com/host-employers/">
                     <span class="ec-mega__icon" data-icon="briefcase"></span>
                     <span><b>Host Employers</b><i>Why host with us</i></span>
@@ -206,52 +256,10 @@
                 </div>
                 <div class="ec-mega__col ec-mega__col--feature">
                   <div class="ec-mega__feature ec-mega__feature--alt">
-                    <span class="ec-mega__feature-tag">Hire global talent</span>
-                    <h4>Build a team that scales</h4>
-                    <p>Connect with vetted, motivated international students looking for U.S. placements.</p>
-                    <a class="ec-btn ec-btn--primary" href="https://educonnectusa.com/recruit-with-us/">Start recruiting</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="ec-nav__item">
-            <a class="ec-nav__link" href="https://educonnectusa.com/student-resources/">Resources</a>
-          </li>
-
-          <!-- ABOUT -->
-          <li class="ec-nav__item ec-nav__item--has-mega">
-            <button class="ec-nav__link ec-nav__trigger" aria-expanded="false" aria-controls="mega-about">
-              About <svg class="ec-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
-            </button>
-            <div class="ec-mega ec-mega--narrow" id="mega-about" role="region" aria-label="About">
-              <div class="ec-mega__grid ec-mega__grid--2">
-                <div class="ec-mega__col">
-                  <h3 class="ec-mega__heading">Company</h3>
-                  <a class="ec-mega__item" href="https://educonnectusa.com/about-educonnect/">
-                    <span class="ec-mega__icon" data-icon="building"></span>
-                    <span><b>About EduConnect</b><i>Our story &amp; mission</i></span>
-                  </a>
-                  <a class="ec-mega__item" href="https://educonnectusa.com/educonnect-team/">
-                    <span class="ec-mega__icon" data-icon="people"></span>
-                    <span><b>Team &amp; Offices</b><i>Meet the team</i></span>
-                  </a>
-                  <a class="ec-mega__item" href="https://educonnectusa.com/international-education-partners/">
-                    <span class="ec-mega__icon" data-icon="globe"></span>
-                    <span><b>Our Partners</b><i>Global network</i></span>
-                  </a>
-                  <a class="ec-mega__item" href="https://educonnectusa.com/contact-international-student-support/">
-                    <span class="ec-mega__icon" data-icon="mail"></span>
-                    <span><b>Contact Us</b><i>Get in touch</i></span>
-                  </a>
-                </div>
-                <div class="ec-mega__col ec-mega__col--feature">
-                  <div class="ec-mega__feature">
-                    <span class="ec-mega__feature-tag">Ready to start?</span>
-                    <h4>Begin your U.S. journey</h4>
-                    <p>Talk to an advisor and we'll be in touch within 48 hours.</p>
-                    <a class="ec-btn ec-btn--primary" href="https://educonnectusa.com/contact-international-student-support/">Contact Us &rarr;</a>
+                    <span class="ec-mega__feature-tag">Become a partner</span>
+                    <h4>Grow with EduConnect</h4>
+                    <p>Whether you're a university or an employer, we help you connect with motivated international talent.</p>
+                    <a class="ec-btn ec-btn--primary" href="https://educonnectusa.com/contact-international-student-support/">Get in touch &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -292,18 +300,18 @@
 
     <nav class="ec-mobile__nav" aria-label="Mobile">
       <ul>
-        <li><a href="https://educonnectusa.com/international-students/">Students</a></li>
-
         <li class="ec-acc">
           <button class="ec-acc__head" aria-expanded="false">Programs <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
           <div class="ec-acc__body"><div>
             <a href="https://educonnectusa.com/find-the-right-program/" class="ec-acc__lead">Find the Right Program &rarr;</a>
+            <span class="ec-acc__sub">Graduate Degrees</span>
             <a href="https://educonnectusa.com/mba/">MBA</a>
-            <a href="https://educonnectusa.com/ms-healthcare-analytics/">MS Healthcare Analytics</a>
-            <a href="https://educonnectusa.com/ms-data-analytics/">MS Data Analytics</a>
-            <a href="https://educonnectusa.com/ms-information-systems-technology/">MS Information Systems Technology</a>
             <a href="https://educonnectusa.com/dba/">DBA</a>
             <a href="https://educonnectusa.com/phd/">PhD in Organizational Leadership</a>
+            <span class="ec-acc__sub">Master of Science</span>
+            <a href="https://educonnectusa.com/ms-data-analytics/">MS Data Analytics</a>
+            <a href="https://educonnectusa.com/ms-healthcare-analytics/">MS Healthcare Analytics</a>
+            <a href="https://educonnectusa.com/ms-information-systems-technology/">MS Information Systems Technology</a>
           </div></div>
         </li>
 
@@ -323,32 +331,35 @@
         </li>
 
         <li class="ec-acc">
-          <button class="ec-acc__head" aria-expanded="false">Universities <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
+          <button class="ec-acc__head" aria-expanded="false">Resources <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
           <div class="ec-acc__body"><div>
-            <a href="https://educonnectusa.com/universities/">Partner Universities</a>
-            <a href="https://educonnectusa.com/university-services/">University Services</a>
-            <a href="https://educonnectusa.com/success-stories/">Success Stories</a>
+            <a href="https://educonnectusa.com/international-students/">International Students</a>
+            <a href="https://educonnectusa.com/student-resources/">Resource Library</a>
+            <a href="https://educonnectusa.com/find-the-right-program/">Program Finder</a>
           </div></div>
         </li>
 
         <li class="ec-acc">
-          <button class="ec-acc__head" aria-expanded="false">Host Employers <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
-          <div class="ec-acc__body"><div>
-            <a href="https://educonnectusa.com/host-employers/">Host Employers</a>
-            <a href="https://educonnectusa.com/employer-resources/">Employer Resources</a>
-            <a href="https://educonnectusa.com/recruit-with-us/">Recruit With Us</a>
-          </div></div>
-        </li>
-
-        <li><a href="https://educonnectusa.com/student-resources/">Resources</a></li>
-
-        <li class="ec-acc">
-          <button class="ec-acc__head" aria-expanded="false">About <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
+          <button class="ec-acc__head" aria-expanded="false">About Us <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
           <div class="ec-acc__body"><div>
             <a href="https://educonnectusa.com/about-educonnect/">About EduConnect</a>
             <a href="https://educonnectusa.com/educonnect-team/">Team &amp; Offices</a>
-            <a href="https://educonnectusa.com/international-education-partners/">Our Partners</a>
+            <a href="https://educonnectusa.com/international-education-partners/">Education Partners</a>
             <a href="https://educonnectusa.com/contact-international-student-support/">Contact Us</a>
+          </div></div>
+        </li>
+
+        <li class="ec-acc">
+          <button class="ec-acc__head" aria-expanded="false">Partners <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
+          <div class="ec-acc__body"><div>
+            <span class="ec-acc__sub">For Universities</span>
+            <a href="https://educonnectusa.com/universities/">Partner Universities</a>
+            <a href="https://educonnectusa.com/university-services/">University Services</a>
+            <a href="https://educonnectusa.com/success-stories/">Success Stories</a>
+            <span class="ec-acc__sub">For Host Employers</span>
+            <a href="https://educonnectusa.com/host-employers/">Host Employers</a>
+            <a href="https://educonnectusa.com/employer-resources/">Employer Resources</a>
+            <a href="https://educonnectusa.com/recruit-with-us/">Recruit With Us</a>
           </div></div>
         </li>
       </ul>
