@@ -5,20 +5,18 @@
    No <style> tags needed; this file is just CSS rules.
 
    Brand: #00607d (deep teal) / #4ed3cc (teal) / #ff7400 (orange)
-   Fonts: Roboto (nav), Open Sans (body) — already loaded by Divi
+   Fonts: Arial throughout (headings #2a2f31, body text #686868)
 ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 
 :root {
   --ec-teal:        #4ed3cc;
-  --ec-teal-dark:   #00607d;
+  --ec-teal-dark:   #4ed3cc;
   --ec-teal-darker: #004a60;
   --ec-orange:      #ff7400;
   --ec-orange-hov:  #e96700;
-  --ec-ink:         #2a2f31;
-  --ec-ink-soft:    #4a5258;
-  --ec-mute:        #6b757a;
+  --ec-ink:         #2a2f31;   /* headings */
+  --ec-ink-soft:    #686868;   /* body text */
+  --ec-mute:        #686868;   /* body text (muted/subtitle) */
   --ec-line:        #e4eaee;
   --ec-bg:          #ffffff;
   --ec-bg-soft:     #f6fafb;
@@ -28,13 +26,18 @@
   --ec-bar-h:       82px;
   --ec-top-h:       38px;
   --ec-ease:        cubic-bezier(.2, .8, .2, 1);
-  --ec-font-nav:    'Roboto', Helvetica, Arial, sans-serif;
-  --ec-font-body:   'Open Sans', Arial, sans-serif;
+  --ec-font-nav:    Arial, Helvetica, sans-serif;
+  --ec-font-body:   Arial, Helvetica, sans-serif;
 }
 
 .ec-header,
 .ec-header * { box-sizing: border-box; }
-.ec-header   { position: relative; font-family: var(--ec-font-nav); background: #fff; }
+.ec-header   {
+  position: relative;
+  z-index: 9999;
+  font-family: var(--ec-font-nav);
+  background: #fff;
+}
 
 /* Reset stray Divi/WordPress styles that affect lists & links inside the header */
 .ec-header ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
@@ -44,7 +47,7 @@
 
 /* ---------- Top utility bar ---------- */
 .ec-topbar {
-  background: linear-gradient(90deg, var(--ec-teal-dark) 0%, #007a92 100%);
+  background: linear-gradient(90deg, var(--ec-teal-dark) 0%, #4ed3cc 100%);
   color: #fff;
   font-size: 13px;
   letter-spacing: 0.2px;
@@ -147,7 +150,7 @@
   transition: color .2s var(--ec-ease), background .2s var(--ec-ease);
 }
 .ec-nav__link:hover,
-.ec-nav__item--open > .ec-nav__link { color: var(--ec-teal-dark); }
+.ec-nav__item--open > .ec-nav__link { color: var(--ec-orange); }
 .ec-nav__link::after {
   content: "";
   position: absolute;
@@ -244,7 +247,7 @@
   color: var(--ec-mute);
 }
 .ec-mega__item:hover b {
-  color: var(--ec-teal-dark);
+  color: var(--ec-orange);
   text-decoration-color: var(--ec-orange);
 }
 
