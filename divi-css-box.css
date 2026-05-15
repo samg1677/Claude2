@@ -525,20 +525,76 @@ body.ec-lock { overflow: hidden; }
   .ec-mega__grid { padding: 0 18px; }
 }
 
+/* ---------- Tablet & Mobile (≤1023px) ---------------------- */
+/* Layout: logo on the left, WhatsApp + burger as matching round
+   icon buttons on the right. Clean, balanced, minimal. */
 @media (max-width: 1023px) {
-  :root { --ec-bar-h: 72px; }
+  :root { --ec-bar-h: 74px; }
+
   .ec-topbar { display: none; }
-  .ec-nav { display: none; }
-  .ec-burger { display: block; }
+  .ec-nav    { display: none; }
+  .ec-burger { display: grid; }
+
+  .ec-bar     { border-bottom: 1px solid var(--ec-line); }
+  .ec-bar__inner {
+    padding: 0 20px;
+    gap: 12px;
+    justify-content: space-between;
+  }
+  .ec-actions { gap: 8px; }
+
+  /* Logo: image + brand name, more breathing room */
+  .ec-logo { gap: 10px; }
+  .ec-logo img { width: 44px; height: 44px; border-radius: 9px; }
+  .ec-logo__text strong { font-size: 17px; }
+  .ec-logo__text em     { font-size: 10px; letter-spacing: 2px; margin-top: 3px; }
+
+  /* WhatsApp -> circular icon button in WhatsApp brand green */
+  .ec-btn--apply {
+    width: 44px; height: 44px;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background: #25D366 !important;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.30) !important;
+  }
+  .ec-btn--apply:hover {
+    background: #1ebe5a !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.40) !important;
+  }
   .ec-btn--apply span { display: none; }
-  .ec-btn--apply { padding: 11px; }
+  .ec-btn--apply .ec-wa { width: 22px; height: 22px; }
+
+  /* Burger -> circular icon button, visually matched to WhatsApp */
+  .ec-burger {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--ec-bg-soft);
+    place-items: center;
+    transition: background .2s var(--ec-ease);
+  }
+  .ec-burger:hover { background: #eaf2f5; }
+  .ec-burger span {
+    left: 12px; right: 12px;
+    background: var(--ec-teal-dark);
+  }
+  .ec-burger span:nth-child(1) { top: 15px; }
+  .ec-burger span:nth-child(2) { top: 21px; }
+  .ec-burger span:nth-child(3) { top: 27px; }
+  .ec-burger[aria-expanded="true"] span:nth-child(1) { top: 21px; }
+  .ec-burger[aria-expanded="true"] span:nth-child(3) { top: 21px; }
 }
 
+/* ---------- Small phones ---------- */
 @media (max-width: 540px) {
-  .ec-bar__inner { padding: 0 14px; gap: 8px; }
-  .ec-logo img { width: 42px; height: 42px; }
+  :root { --ec-bar-h: 68px; }
+  .ec-bar__inner { padding: 0 16px; gap: 10px; }
+  .ec-logo img { width: 40px; height: 40px; }
   .ec-logo__text strong { font-size: 16px; }
   .ec-logo__text em { display: none; }
+  .ec-btn--apply, .ec-burger { width: 42px; height: 42px; }
+  .ec-btn--apply .ec-wa { width: 20px; height: 20px; }
+  .ec-burger span { left: 11px; right: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -13,7 +13,7 @@ The HTML file already contains a `<script>` block for menu behavior — nothing 
 
 ## Menu structure
 
-Top-level items: **Programs · Services · Resources · About Us · Partners**
+Top-level items: **Programs · Services · Resources · Partners · About Us**
 
 Mega panels:
 - **Programs** — Graduate Degrees (MBA, DBA, PhD) + Master of Science (Data Analytics, Healthcare Analytics, Information Systems Technology) + featured "Find the Right Program" CTA
