@@ -34,7 +34,7 @@
 
 .ec-header,
 .ec-header * { box-sizing: border-box; }
-.ec-header   { position: sticky; top: 0; z-index: 9999; font-family: var(--ec-font-nav); background: #fff; }
+.ec-header   { position: relative; font-family: var(--ec-font-nav); background: #fff; }
 
 /* Reset stray Divi/WordPress styles that affect lists & links inside the header */
 .ec-header ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
@@ -71,8 +71,11 @@
 .ec-topbar__divider { width: 1px; height: 16px; background: rgba(255,255,255,.25); }
 .ec-topbar__tagline  { opacity: .85; margin-left: auto; font-style: italic; }
 
-/* ---------- Main bar ---------- */
+/* ---------- Main bar (sticky) ---------- */
 .ec-bar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
   background: #fff;
   border-bottom: 1px solid var(--ec-line);
   transition: box-shadow .25s var(--ec-ease);
