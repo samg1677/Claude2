@@ -103,48 +103,17 @@ section {
 .section-head .section-desc { max-width: 1280px; margin-left: auto; margin-right: auto; }
 
 /* =========================================================
-   HERO — full-bleed photo behind text + form
-   Photo fills the entire hero. A diagonal gradient keeps the
-   text crisp on the left and the flag clearly visible on the
-   upper-right. The form is sized and positioned so it sits
-   below the flag (desktop) rather than covering it.
+   HERO — clean two-column: copy on the left, photo on the right
+   The photo is a real <img>, not a cropped background, so the
+   flag is always visible at its natural framing. The form has
+   moved out of the hero into its own .lead-form section right
+   below — no content overlaps the photo.
    ========================================================= */
 .hero {
   position: relative;
   overflow: hidden;
   color: var(--white);
-  min-height: 92vh;
-  display: flex;
-  align-items: stretch;
-  background:
-    url("https://educonnectusa.com/wp-content/uploads/2026/05/EC-Website.jpg")
-    center / cover no-repeat;
-  background-color: var(--purple-2);
-}
-
-/* Mobile-first overlay: vertical fade — top stays readable for the
-   badge/headline, middle is clear so the photo (with the flag) is
-   visible, bottom darkens again behind the form. */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(21,16,46,.78) 0%,
-    rgba(21,16,46,.40) 35%,
-    rgba(21,16,46,.40) 60%,
-    rgba(21,16,46,.85) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Make sure the headline and checks stay readable over the photo */
-.hero h1,
-.hero-sub,
-.hero-checks li {
-  text-shadow: 0 2px 14px rgba(0,0,0,.55);
+  background: linear-gradient(165deg, var(--purple) 0%, var(--purple-2) 100%);
 }
 
 .hero-inner {
@@ -153,12 +122,29 @@ section {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: var(--section-py) 24px;
+  padding: 56px 24px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
 }
+
+.hero-media {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--purple-3);
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  aspect-ratio: 4 / 3;
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -232,6 +218,38 @@ section {
   letter-spacing: .02em;
 }
 .hero-cta:hover { background: var(--orange-2); color: var(--white); }
+
+/* =========================================================
+   LEAD FORM (sits right under the hero)
+   ========================================================= */
+.lead-form {
+  background: var(--off-white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.lead-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.lead-copy .section-title { margin-bottom: 12px; }
+.lead-copy p { color: var(--body); margin-bottom: 18px; max-width: 50ch; }
+.lead-points { display: grid; gap: 10px; margin-top: 4px; }
+.lead-points li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--heading);
+  font-weight: 600;
+  font-size: .95rem;
+}
+.lead-points li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--teal-deep);
+  font-weight: 700;
+}
 
 /* =========================================================
    FORM CARD
@@ -727,20 +745,15 @@ section {
    TABLET
    ========================================================= */
 @media (min-width: 720px) {
-  /* Tablet: still stacked single-column, so we keep a vertical fade —
-     darker behind the headline at top, clearest in the middle band
-     where the flag shows, then darkening behind the form at the
-     bottom. Photo shifted up so the flag lands in the clear band. */
-  .hero { background-position: center 35%; }
-  .hero::before {
-    background: linear-gradient(
-      180deg,
-      rgba(21,16,46,.80) 0%,
-      rgba(21,16,46,.25) 38%,
-      rgba(21,16,46,.25) 55%,
-      rgba(21,16,46,.88) 100%
-    );
+  /* Tablet: hero goes side-by-side, text left + photo right */
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
+  .hero-media { aspect-ratio: 4 / 5; }
+
+  /* Lead form goes side-by-side too */
+  .lead-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
 
   .how-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
@@ -759,33 +772,17 @@ section {
    hero feeling cinematic without burying the form below.
    ========================================================= */
 @media (min-width: 1000px) {
-  /* Desktop: stack text + form on the LEFT half. The right half is
-     left entirely clear so the photo (with the flag) is fully visible
-     with no overlap from any content. */
-  .hero { background-position: 78% center; }
-  .hero::before {
-    background: linear-gradient(
-      100deg,
-      rgba(21,16,46,.92) 0%,
-      rgba(21,16,46,.80) 30%,
-      rgba(30,21,64,.30) 55%,
-      rgba(30,21,64,0)   75%
-    );
-  }
-
+  /* Desktop: balanced two-column hero. Photo gets equal billing
+     with the copy and stays at a comfortable portrait crop. */
   .hero-inner {
-    grid-template-columns: minmax(0, 540px) 1fr;
-    gap: 56px;
-    padding: 56px 24px;
-    align-items: start;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 72px;
+    padding: 72px 24px;
   }
-  .hero-copy,
-  .hero .form-card {
-    grid-column: 1;          /* both live in the left column */
-  }
-  .hero-copy { margin-bottom: 8px; }
   .hero h1 { font-size: clamp(2.4rem, 3.8vw, 3.2rem); }
-  .hero-checks { margin-bottom: 24px; }
+  .hero-media { aspect-ratio: 5 / 6; }
+
+  .lead-inner { grid-template-columns: 1.05fr .95fr; gap: 72px; }
 
   .how-grid { grid-template-columns: repeat(4, 1fr); }
   .why-grid { grid-template-columns: repeat(3, 1fr); }
