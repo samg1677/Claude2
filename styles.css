@@ -29,9 +29,9 @@
   --radius-xl:   18px;
 
   --container:   1280px;
-  --section-py:  40px;
+  --section-py:  72px;
   --gap:         24px;
-  --head-mb:     0px;
+  --head-mb:     40px;
 }
 
 /* ---------- Base ---------- */
@@ -68,7 +68,10 @@ p { margin: 0; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
-section { padding: var(--section-py) 0; }
+section {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
 
 .section-label {
   display: inline-block;
@@ -100,44 +103,50 @@ section { padding: var(--section-py) 0; }
 .section-head .section-desc { max-width: 1280px; margin-left: auto; margin-right: auto; }
 
 /* =========================================================
-   HERO — mobile-first
-   Image renders as a real <img> banner above the text/form
-   on mobile and tablet, so the photo (and US flag) is fully
-   visible. On desktop the hero switches to a full-bleed
-   background photo with the form floating on top of it.
+   HERO
+   Photo renders as a real <img> banner at the top across
+   every breakpoint — so the photo (US flag included) is
+   always fully visible and never covered by the form.
+   Text + form sit on solid navy below the photo.
    ========================================================= */
 .hero {
   position: relative;
   overflow: hidden;
   color: var(--white);
-  background: linear-gradient(180deg, var(--purple-2) 0%, var(--purple-3) 100%);
+  background: var(--purple-2);
   padding: 0;
 }
 
-/* Visible photo banner (mobile + tablet) */
 .hero-photo {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: var(--purple-3);
+  background: var(--purple-2);
 }
 .hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  /* Flag is on the right of the image — anchor crop to the right
+     so it's never sliced off, regardless of viewport width. */
+  object-position: 75% center;
   display: block;
 }
+/* Long, gradual fade into the navy below — no visible seam */
 .hero-photo::after {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 55%;
   background: linear-gradient(
     180deg,
-    rgba(21,16,46,0) 0%,
-    rgba(21,16,46,0) 55%,
-    rgba(21,16,46,.85) 100%
+    rgba(30, 21, 64, 0) 0%,
+    rgba(30, 21, 64, .35) 45%,
+    rgba(30, 21, 64, .85) 85%,
+    var(--purple-2) 100%
   );
   pointer-events: none;
 }
@@ -148,10 +157,10 @@ section { padding: var(--section-py) 0; }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 36px 24px var(--section-py);
+  padding: var(--section-py) 24px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 40px;
   align-items: center;
 }
 .hero-badge {
@@ -722,8 +731,8 @@ section { padding: var(--section-py) 0; }
    TABLET
    ========================================================= */
 @media (min-width: 720px) {
-  .hero-photo { aspect-ratio: 21 / 9; }
-  .hero-photo img { object-position: center 40%; }
+  .hero-photo { aspect-ratio: 21 / 10; }
+  .hero-photo img { object-position: 75% center; }
 
   .how-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
@@ -737,34 +746,16 @@ section { padding: var(--section-py) 0; }
 }
 
 /* =========================================================
-   DESKTOP — switch hero to full-bleed background photo
+   DESKTOP — photo stays as a visible banner above text+form
+   so the flag is never covered. Wider aspect ratio keeps the
+   hero feeling cinematic without burying the form below.
    ========================================================= */
 @media (min-width: 1000px) {
-  .hero {
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    background:
-      linear-gradient(
-        95deg,
-        rgba(21,16,46,.88) 0%,
-        rgba(30,21,64,.70) 40%,
-        rgba(30,21,64,.20) 75%,
-        rgba(30,21,64,.05) 100%
-      ),
-      url("https://educonnectusa.com/wp-content/uploads/2026/05/EC-Website.jpg")
-      center / cover no-repeat;
-    background-position: 70% center;
+  .hero-photo {
+    aspect-ratio: 24 / 8;
+    max-height: 60vh;
   }
-
-  /* Hide the inline photo banner — desktop uses the background image */
-  .hero-photo { display: none; }
-
-  .hero h1,
-  .hero-sub,
-  .hero-checks li {
-    text-shadow: 0 2px 12px rgba(0,0,0,.45);
-  }
+  .hero-photo img { object-position: 70% center; }
 
   .hero-inner {
     grid-template-columns: 1fr 420px;
