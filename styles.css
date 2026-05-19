@@ -103,52 +103,48 @@ section {
 .section-head .section-desc { max-width: 1280px; margin-left: auto; margin-right: auto; }
 
 /* =========================================================
-   HERO
-   Photo renders as a real <img> banner at the top across
-   every breakpoint — so the photo (US flag included) is
-   always fully visible and never covered by the form.
-   Text + form sit on solid navy below the photo.
+   HERO — full-bleed photo behind text + form
+   Photo fills the entire hero. A diagonal gradient keeps the
+   text crisp on the left and the flag clearly visible on the
+   upper-right. The form is sized and positioned so it sits
+   below the flag (desktop) rather than covering it.
    ========================================================= */
 .hero {
   position: relative;
   overflow: hidden;
   color: var(--white);
-  background: var(--purple-2);
-  padding: 0;
+  min-height: 92vh;
+  display: flex;
+  align-items: stretch;
+  background:
+    url("https://educonnectusa.com/wp-content/uploads/2026/05/EC-Website.jpg")
+    center / cover no-repeat;
+  background-color: var(--purple-2);
 }
 
-.hero-photo {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--purple-2);
-}
-.hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Flag is on the right of the image — anchor crop to the right
-     so it's never sliced off, regardless of viewport width. */
-  object-position: 75% center;
-  display: block;
-}
-/* Long, gradual fade into the navy below — no visible seam */
-.hero-photo::after {
+/* Mobile-first overlay: vertical fade — top stays readable for the
+   badge/headline, middle is clear so the photo (with the flag) is
+   visible, bottom darkens again behind the form. */
+.hero::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 55%;
+  inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(30, 21, 64, 0) 0%,
-    rgba(30, 21, 64, .35) 45%,
-    rgba(30, 21, 64, .85) 85%,
-    var(--purple-2) 100%
+    rgba(21,16,46,.78) 0%,
+    rgba(21,16,46,.40) 35%,
+    rgba(21,16,46,.40) 60%,
+    rgba(21,16,46,.85) 100%
   );
+  z-index: 1;
   pointer-events: none;
+}
+
+/* Make sure the headline and checks stay readable over the photo */
+.hero h1,
+.hero-sub,
+.hero-checks li {
+  text-shadow: 0 2px 14px rgba(0,0,0,.55);
 }
 
 .hero-inner {
@@ -731,8 +727,18 @@ section {
    TABLET
    ========================================================= */
 @media (min-width: 720px) {
-  .hero-photo { aspect-ratio: 21 / 10; }
-  .hero-photo img { object-position: 75% center; }
+  /* Tablet: diagonal fade — dark on the left for text, clear on
+     the right so the flag is visible behind/around the form. */
+  .hero { background-position: 72% center; }
+  .hero::before {
+    background: linear-gradient(
+      100deg,
+      rgba(21,16,46,.90) 0%,
+      rgba(30,21,64,.70) 38%,
+      rgba(30,21,64,.20) 70%,
+      rgba(30,21,64,.05) 100%
+    );
+  }
 
   .how-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
@@ -751,17 +757,30 @@ section {
    hero feeling cinematic without burying the form below.
    ========================================================= */
 @media (min-width: 1000px) {
-  .hero-photo {
-    aspect-ratio: 24 / 8;
-    max-height: 60vh;
+  /* Desktop: keep the flag visible in the upper-right by shifting
+     the background and using a gradient that's dark on the lower-left
+     (behind the copy) and clear on the upper-right (behind/around the
+     flag). The form is narrower and bottom-anchored so the flag is
+     visible above it. */
+  .hero { background-position: 78% 30%; }
+  .hero::before {
+    background: linear-gradient(
+      110deg,
+      rgba(21,16,46,.92) 0%,
+      rgba(30,21,64,.55) 42%,
+      rgba(30,21,64,.10) 70%,
+      rgba(30,21,64,0)   100%
+    );
   }
-  .hero-photo img { object-position: 70% center; }
 
   .hero-inner {
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 380px;
     gap: 56px;
     padding: var(--section-py) 24px;
+    align-items: center;
   }
+  .hero-copy { align-self: center; }
+  .hero .form-card { align-self: end; }
 
   .how-grid { grid-template-columns: repeat(4, 1fr); }
   .why-grid { grid-template-columns: repeat(3, 1fr); }
