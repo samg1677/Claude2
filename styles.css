@@ -103,17 +103,46 @@ section {
 .section-head .section-desc { max-width: 1280px; margin-left: auto; margin-right: auto; }
 
 /* =========================================================
-   HERO — clean two-column: copy on the left, photo on the right
-   The photo is a real <img>, not a cropped background, so the
-   flag is always visible at its natural framing. The form has
-   moved out of the hero into its own .lead-form section right
-   below — no content overlaps the photo.
+   HERO — full-bleed photo banner
+   Photo fills the entire hero. Copy sits on the LEFT with a
+   diagonal gradient for readability; the RIGHT side is left
+   intentionally clear so the flag is fully visible.
    ========================================================= */
 .hero {
   position: relative;
   overflow: hidden;
   color: var(--white);
-  background: linear-gradient(165deg, var(--purple) 0%, var(--purple-2) 100%);
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  background:
+    url("https://educonnectusa.com/wp-content/uploads/2026/05/EC-Website.jpg")
+    center / cover no-repeat;
+  background-color: var(--purple-2);
+}
+
+/* Mobile-first overlay: vertical fade. Top darker for headline,
+   middle/bottom clearer so the photo and flag show through. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(21,16,46,.78) 0%,
+    rgba(21,16,46,.55) 45%,
+    rgba(21,16,46,.30) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Text gets its own shadow so it stays readable without a heavy overlay */
+.hero h1,
+.hero-sub,
+.hero-checks li,
+.hero-badge {
+  text-shadow: 0 2px 14px rgba(0,0,0,.55);
 }
 
 .hero-inner {
@@ -122,27 +151,11 @@ section {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 56px 24px;
+  padding: 64px 24px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 36px;
+  gap: 24px;
   align-items: center;
-}
-
-.hero-media {
-  width: 100%;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  background: var(--purple-3);
-  box-shadow: 0 24px 60px rgba(0,0,0,.35);
-  aspect-ratio: 4 / 3;
-}
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
 }
 
 .hero-badge {
@@ -745,14 +758,29 @@ section {
    TABLET
    ========================================================= */
 @media (min-width: 720px) {
-  /* Tablet: hero goes side-by-side, text left + photo right */
+  /* Tablet: shift the photo right and switch to a diagonal fade —
+     dark on the left where the copy sits, clear on the right so
+     the flag is fully visible. */
+  .hero {
+    min-height: 70vh;
+    background-position: 78% center;
+  }
+  .hero::before {
+    background: linear-gradient(
+      100deg,
+      rgba(21,16,46,.92) 0%,
+      rgba(21,16,46,.65) 35%,
+      rgba(21,16,46,.15) 65%,
+      rgba(21,16,46,0)   100%
+    );
+  }
   .hero-inner {
-    grid-template-columns: 1fr 1fr;
+    /* Copy stays in the left half only — right half is pure photo */
+    grid-template-columns: minmax(0, 1fr) 1fr;
     gap: 40px;
   }
-  .hero-media { aspect-ratio: 4 / 5; }
+  .hero-copy { grid-column: 1; }
 
-  /* Lead form goes side-by-side too */
   .lead-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
 
   .how-grid { grid-template-columns: repeat(2, 1fr); }
@@ -772,15 +800,29 @@ section {
    hero feeling cinematic without burying the form below.
    ========================================================= */
 @media (min-width: 1000px) {
-  /* Desktop: balanced two-column hero. Photo gets equal billing
-     with the copy and stays at a comfortable portrait crop. */
-  .hero-inner {
-    grid-template-columns: 1.05fr 1fr;
-    gap: 72px;
-    padding: 72px 24px;
+  /* Desktop: tall full-bleed photo banner. Copy stays constrained
+     to the left half, the right half is pure photo with the flag
+     visible. Stronger diagonal fade so the right edge is fully clear. */
+  .hero {
+    min-height: 88vh;
+    background-position: 75% center;
   }
-  .hero h1 { font-size: clamp(2.4rem, 3.8vw, 3.2rem); }
-  .hero-media { aspect-ratio: 5 / 6; }
+  .hero::before {
+    background: linear-gradient(
+      100deg,
+      rgba(21,16,46,.92) 0%,
+      rgba(21,16,46,.70) 30%,
+      rgba(21,16,46,.10) 60%,
+      rgba(21,16,46,0)   85%
+    );
+  }
+  .hero-inner {
+    grid-template-columns: minmax(0, 560px) 1fr;
+    gap: 56px;
+    padding: 80px 24px;
+  }
+  .hero-copy { grid-column: 1; }
+  .hero h1 { font-size: clamp(2.6rem, 4vw, 3.4rem); }
 
   .lead-inner { grid-template-columns: 1.05fr .95fr; gap: 72px; }
 
