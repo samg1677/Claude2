@@ -85,8 +85,8 @@
 /* ---------- HERO ---------- */
 .emba-hero {
   background:
-    linear-gradient(135deg, rgba(42,47,49,.90) 0%, rgba(51,41,89,.86) 100%),
-    url("https://educonnectusa.com/wp-content/uploads/2026/03/7.jpg");
+    linear-gradient(135deg, rgba(42,47,49,.86) 0%, rgba(51,41,89,.82) 100%),
+    url("https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg");
   background-color: #332959;
   background-size: cover;
   background-position: center;
@@ -183,6 +183,13 @@
   border-radius: 16px;
   padding: 36px 32px;
   color: #ffffff;
+}
+.emba-overview-graphic {
+  display: block;
+  width: 130px;
+  max-width: 45%;
+  height: auto;
+  margin-bottom: 18px;
 }
 .emba-overview-card h3 {
   font-size: 20px;
@@ -324,6 +331,15 @@
 }
 .emba-alliant-text h2 { font-size: 32px; margin-bottom: 18px; }
 .emba-alliant-text p { font-size: 16px; color: #686868; margin-bottom: 14px; }
+.emba-alliant-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  margin: 6px 0 20px;
+  box-shadow: 0 10px 28px rgba(51,41,89,.14);
+}
 .emba-accred-card {
   background: #f7f7fb;
   border-radius: 16px;
@@ -360,12 +376,22 @@
 .emba-campus-card {
   background: #332959;
   border-radius: 16px;
-  padding: 44px 36px;
-  text-align: center;
+  overflow: hidden;
   color: #ffffff;
-  transition: transform .15s ease;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 6px 24px rgba(51,41,89,.1);
 }
-.emba-campus-card:hover { transform: translateY(-4px); }
+.emba-campus-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(51,41,89,.2);
+}
+.emba-campus-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+.emba-campus-body { padding: 30px 32px 36px; text-align: center; }
 .emba-campus-card h3 {
   font-size: 26px;
   color: #4ed3cc;
