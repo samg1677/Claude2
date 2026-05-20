@@ -1,0 +1,401 @@
+/* ================================================================
+   EXECUTIVE MBA  |  EduConnect USA
+   CSS BLOCK  -  paste inside <style> tags in a Divi Code module,
+   or into Divi > Theme Options / Page Settings > Custom CSS.
+   Brand colors:  #332959 (deep purple) | #4ed3cc (teal) | #ff7400 (orange)
+   ================================================================ */
+
+.emba-page,
+.emba-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.emba-page {
+  color: #332959;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emba-page h1,
+.emba-page h2,
+.emba-page h3 { line-height: 1.25; }
+
+/* ---------- Shared elements ---------- */
+.emba-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4ed3cc;
+  margin-bottom: 14px;
+}
+.emba-eyebrow-dark { color: #ff7400; }
+
+.emba-section-title {
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+  color: #332959;
+}
+.emba-section-intro {
+  text-align: center;
+  font-size: 17px;
+  max-width: 720px;
+  margin: 14px auto 40px;
+  color: #5c5775;
+}
+
+.emba-btn {
+  display: inline-block;
+  padding: 15px 34px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: .5px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  cursor: pointer;
+}
+.emba-btn:hover { transform: translateY(-2px); }
+
+.emba-btn-primary {
+  background: #ff7400;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(255,116,0,.35);
+}
+.emba-btn-primary:hover { background: #ff8a26; box-shadow: 0 10px 26px rgba(255,116,0,.45); }
+
+.emba-btn-ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,.55);
+}
+.emba-btn-ghost:hover { border-color: #4ed3cc; color: #4ed3cc; }
+
+.emba-btn-light {
+  background: #ffffff;
+  color: #332959;
+}
+.emba-btn-light:hover { background: #4ed3cc; color: #ffffff; }
+
+/* ---------- HERO ---------- */
+.emba-hero {
+  background:
+    linear-gradient(135deg, rgba(51,41,89,.96) 0%, rgba(51,41,89,.88) 100%),
+    radial-gradient(circle at 80% 20%, #4ed3cc 0%, transparent 45%);
+  background-color: #332959;
+  padding: 90px 24px;
+  text-align: center;
+}
+.emba-hero-inner { max-width: 860px; margin: 0 auto; }
+.emba-hero h1 {
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+.emba-hero-sub {
+  color: #e9e7f2;
+  font-size: 20px;
+  max-width: 680px;
+  margin: 0 auto 32px;
+}
+.emba-hero-sub strong { color: #4ed3cc; }
+.emba-hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.emba-hero-note {
+  margin-top: 26px;
+  color: #b9b5cf;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* ---------- BENEFITS ---------- */
+.emba-benefits { padding: 80px 24px; background: #f7f7fb; }
+.emba-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.emba-benefit {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px 26px;
+  border-bottom: 4px solid #4ed3cc;
+  box-shadow: 0 6px 24px rgba(51,41,89,.07);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.emba-benefit:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(51,41,89,.13);
+}
+.emba-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4ed3cc;
+  margin-bottom: 14px;
+}
+.emba-check::before {
+  content: "";
+  width: 13px;
+  height: 8px;
+  border-left: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transform: rotate(-45deg);
+  margin-top: -3px;
+}
+.emba-benefit h3 { font-size: 19px; color: #332959; margin-bottom: 8px; }
+.emba-benefit p { font-size: 15px; color: #5c5775; }
+
+/* ---------- OVERVIEW ---------- */
+.emba-overview { padding: 80px 24px; background: #ffffff; }
+.emba-overview-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 50px;
+  max-width: 1080px;
+  margin: 0 auto;
+  align-items: center;
+}
+.emba-overview-text h2 { font-size: 32px; margin-bottom: 18px; }
+.emba-overview-text p { font-size: 16px; color: #5c5775; margin-bottom: 14px; }
+.emba-overview-cta { margin-top: 22px; }
+
+.emba-overview-card {
+  background: #332959;
+  border-radius: 16px;
+  padding: 36px 32px;
+  color: #ffffff;
+}
+.emba-overview-card h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #4ed3cc;
+}
+.emba-fact-list { list-style: none; }
+.emba-fact-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+  font-size: 15px;
+}
+.emba-fact-list li span { color: #b9b5cf; }
+.emba-fact-list li strong { text-align: right; }
+.emba-startdates { margin-top: 22px; }
+.emba-startdates-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ff7400;
+  margin-bottom: 10px;
+}
+.emba-startdate-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.emba-startdate-tags span {
+  background: rgba(78,211,204,.16);
+  color: #4ed3cc;
+  border: 1px solid rgba(78,211,204,.4);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---------- VISA ---------- */
+.emba-visa {
+  padding: 76px 24px;
+  background: linear-gradient(135deg, #4ed3cc 0%, #3bb8b1 100%);
+  text-align: center;
+}
+.emba-visa-inner { max-width: 760px; margin: 0 auto; }
+.emba-visa .emba-eyebrow { color: #332959; }
+.emba-visa h2 { font-size: 30px; color: #ffffff; margin-bottom: 16px; }
+.emba-visa p { font-size: 16px; color: #15403d; margin-bottom: 14px; }
+.emba-visa p strong { color: #332959; }
+.emba-visa-j1 a { color: #332959; font-weight: 700; text-decoration: underline; }
+.emba-visa .emba-btn-light { margin-top: 14px; }
+
+/* ---------- CONCENTRATIONS ---------- */
+.emba-concentrations { padding: 80px 24px; background: #f7f7fb; }
+.emba-conc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.emba-conc-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px 30px;
+  border-left: 5px solid #ff7400;
+  box-shadow: 0 6px 24px rgba(51,41,89,.07);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.emba-conc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(51,41,89,.13);
+}
+.emba-conc-card h3 { font-size: 20px; color: #332959; margin-bottom: 10px; }
+.emba-conc-card p { font-size: 15px; color: #5c5775; }
+
+/* ---------- WHY EDUCONNECT ---------- */
+.emba-why { padding: 80px 24px; background: #332959; }
+.emba-why-inner { max-width: 1080px; margin: 0 auto; text-align: center; }
+.emba-why h2 { font-size: 32px; color: #ffffff; margin-bottom: 14px; }
+.emba-why-intro {
+  font-size: 16px;
+  color: #c9c5dd;
+  max-width: 700px;
+  margin: 0 auto 44px;
+}
+.emba-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+.emba-why-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 30px 28px;
+  position: relative;
+}
+.emba-why-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ff7400;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.emba-why-card h3 { font-size: 19px; color: #4ed3cc; margin-bottom: 8px; }
+.emba-why-card p { font-size: 15px; color: #c9c5dd; }
+
+/* ---------- ALLIANT ---------- */
+.emba-alliant { padding: 80px 24px; background: #ffffff; }
+.emba-alliant-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1080px;
+  margin: 0 auto;
+  align-items: center;
+}
+.emba-alliant-text h2 { font-size: 32px; margin-bottom: 18px; }
+.emba-alliant-text p { font-size: 16px; color: #5c5775; margin-bottom: 14px; }
+.emba-accred-card {
+  background: #f7f7fb;
+  border-radius: 16px;
+  padding: 36px 32px;
+  border-top: 5px solid #4ed3cc;
+}
+.emba-accred-card h3 { font-size: 20px; color: #332959; margin-bottom: 14px; }
+.emba-accred-card p { font-size: 15px; color: #5c5775; margin-bottom: 12px; }
+.emba-accred-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.emba-accred-badges span {
+  background: #332959;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  padding: 7px 14px;
+  border-radius: 50px;
+}
+
+/* ---------- CAMPUSES ---------- */
+.emba-campuses { padding: 80px 24px; background: #f7f7fb; }
+.emba-campus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.emba-campus-card {
+  background: #332959;
+  border-radius: 16px;
+  padding: 44px 36px;
+  text-align: center;
+  color: #ffffff;
+  transition: transform .15s ease;
+}
+.emba-campus-card:hover { transform: translateY(-4px); }
+.emba-campus-card h3 {
+  font-size: 26px;
+  color: #4ed3cc;
+  margin-bottom: 10px;
+}
+.emba-campus-card p { font-size: 15px; color: #c9c5dd; }
+
+/* ---------- FINAL CTA ---------- */
+.emba-finalcta {
+  padding: 90px 24px;
+  background:
+    linear-gradient(135deg, rgba(255,116,0,.95) 0%, rgba(255,116,0,.82) 100%),
+    radial-gradient(circle at 15% 80%, #332959 0%, transparent 55%);
+  background-color: #ff7400;
+  text-align: center;
+}
+.emba-finalcta-inner { max-width: 760px; margin: 0 auto; }
+.emba-finalcta .emba-eyebrow { color: #332959; }
+.emba-finalcta h2 { font-size: 36px; color: #ffffff; margin-bottom: 16px; }
+.emba-finalcta p { font-size: 17px; color: #fff3e8; margin-bottom: 30px; }
+.emba-finalcta .emba-btn-primary {
+  background: #332959;
+  box-shadow: 0 8px 20px rgba(51,41,89,.35);
+}
+.emba-finalcta .emba-btn-primary:hover { background: #423670; }
+.emba-finalcta .emba-hero-note { color: #fff3e8; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 980px) {
+  .emba-benefit-grid { grid-template-columns: repeat(2, 1fr); }
+  .emba-overview-grid,
+  .emba-alliant-grid { grid-template-columns: 1fr; gap: 36px; }
+  .emba-why-grid,
+  .emba-conc-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .emba-hero { padding: 64px 20px; }
+  .emba-hero h1 { font-size: 38px; }
+  .emba-hero-sub { font-size: 17px; }
+  .emba-section-title,
+  .emba-finalcta h2 { font-size: 27px; }
+  .emba-overview-text h2,
+  .emba-visa h2,
+  .emba-why h2,
+  .emba-alliant-text h2 { font-size: 25px; }
+  .emba-benefit-grid,
+  .emba-campus-grid { grid-template-columns: 1fr; }
+  .emba-btn { width: 100%; text-align: center; }
+  .emba-hero-cta { flex-direction: column; }
+}
