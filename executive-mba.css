@@ -14,14 +14,14 @@
 }
 
 .emba-page {
-  color: #332959;
+  color: #686868;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 .emba-page h1,
 .emba-page h2,
-.emba-page h3 { line-height: 1.25; }
+.emba-page h3 { line-height: 1.25; color: #2a2f31; }
 
 /* ---------- Shared elements ---------- */
 .emba-eyebrow {
@@ -39,14 +39,14 @@
   font-size: 34px;
   font-weight: 800;
   text-align: center;
-  color: #332959;
+  color: #2a2f31;
 }
 .emba-section-intro {
   text-align: center;
   font-size: 17px;
   max-width: 720px;
   margin: 14px auto 40px;
-  color: #5c5775;
+  color: #686868;
 }
 
 .emba-btn {
@@ -85,9 +85,11 @@
 /* ---------- HERO ---------- */
 .emba-hero {
   background:
-    linear-gradient(135deg, rgba(51,41,89,.96) 0%, rgba(51,41,89,.88) 100%),
-    radial-gradient(circle at 80% 20%, #4ed3cc 0%, transparent 45%);
+    linear-gradient(135deg, rgba(42,47,49,.90) 0%, rgba(51,41,89,.86) 100%),
+    url("https://educonnectusa.com/wp-content/uploads/2026/03/7.jpg");
   background-color: #332959;
+  background-size: cover;
+  background-position: center;
   padding: 90px 24px;
   text-align: center;
 }
@@ -159,8 +161,8 @@
   transform: rotate(-45deg);
   margin-top: -3px;
 }
-.emba-benefit h3 { font-size: 19px; color: #332959; margin-bottom: 8px; }
-.emba-benefit p { font-size: 15px; color: #5c5775; }
+.emba-benefit h3 { font-size: 19px; color: #2a2f31; margin-bottom: 8px; }
+.emba-benefit p { font-size: 15px; color: #686868; }
 
 /* ---------- OVERVIEW ---------- */
 .emba-overview { padding: 80px 24px; background: #ffffff; }
@@ -173,7 +175,7 @@
   align-items: center;
 }
 .emba-overview-text h2 { font-size: 32px; margin-bottom: 18px; }
-.emba-overview-text p { font-size: 16px; color: #5c5775; margin-bottom: 14px; }
+.emba-overview-text p { font-size: 16px; color: #686868; margin-bottom: 14px; }
 .emba-overview-cta { margin-top: 22px; }
 
 .emba-overview-card {
@@ -222,9 +224,24 @@
 .emba-visa {
   padding: 76px 24px;
   background: linear-gradient(135deg, #4ed3cc 0%, #3bb8b1 100%);
-  text-align: center;
 }
-.emba-visa-inner { max-width: 760px; margin: 0 auto; }
+.emba-visa-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 46px;
+  align-items: center;
+}
+.emba-visa-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 14px 34px rgba(21,64,61,.3);
+}
 .emba-visa .emba-eyebrow { color: #332959; }
 .emba-visa h2 { font-size: 30px; color: #ffffff; margin-bottom: 16px; }
 .emba-visa p { font-size: 16px; color: #15403d; margin-bottom: 14px; }
@@ -253,8 +270,8 @@
   transform: translateY(-4px);
   box-shadow: 0 14px 34px rgba(51,41,89,.13);
 }
-.emba-conc-card h3 { font-size: 20px; color: #332959; margin-bottom: 10px; }
-.emba-conc-card p { font-size: 15px; color: #5c5775; }
+.emba-conc-card h3 { font-size: 20px; color: #2a2f31; margin-bottom: 10px; }
+.emba-conc-card p { font-size: 15px; color: #686868; }
 
 /* ---------- WHY EDUCONNECT ---------- */
 .emba-why { padding: 80px 24px; background: #332959; }
@@ -306,15 +323,15 @@
   align-items: center;
 }
 .emba-alliant-text h2 { font-size: 32px; margin-bottom: 18px; }
-.emba-alliant-text p { font-size: 16px; color: #5c5775; margin-bottom: 14px; }
+.emba-alliant-text p { font-size: 16px; color: #686868; margin-bottom: 14px; }
 .emba-accred-card {
   background: #f7f7fb;
   border-radius: 16px;
   padding: 36px 32px;
   border-top: 5px solid #4ed3cc;
 }
-.emba-accred-card h3 { font-size: 20px; color: #332959; margin-bottom: 14px; }
-.emba-accred-card p { font-size: 15px; color: #5c5775; margin-bottom: 12px; }
+.emba-accred-card h3 { font-size: 20px; color: #2a2f31; margin-bottom: 14px; }
+.emba-accred-card p { font-size: 15px; color: #686868; margin-bottom: 12px; }
 .emba-accred-badges {
   display: flex;
   flex-wrap: wrap;
@@ -380,9 +397,11 @@
 @media (max-width: 980px) {
   .emba-benefit-grid { grid-template-columns: repeat(2, 1fr); }
   .emba-overview-grid,
-  .emba-alliant-grid { grid-template-columns: 1fr; gap: 36px; }
+  .emba-alliant-grid,
+  .emba-visa-inner { grid-template-columns: 1fr; gap: 36px; }
   .emba-why-grid,
   .emba-conc-grid { grid-template-columns: 1fr; }
+  .emba-visa-media img { min-height: 240px; }
 }
 @media (max-width: 600px) {
   .emba-hero { padding: 64px 20px; }
