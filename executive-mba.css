@@ -2,11 +2,16 @@
    EXECUTIVE MBA  |  EduConnect USA
    CSS BLOCK  -  paste inside <style> tags in a Divi Code module,
    or into Divi > Theme Options / Page Settings > Custom CSS.
-   Brand colors:  #332959 (deep purple) | #4ed3cc (teal) | #ff7400 (orange)
+
+   Brand:  #332959 deep purple | #4ed3cc teal | #ff7400 orange
+   Text:   #2a2f31 headings   | #686868 body
+   Layout: max content width 1280px, symmetric responsive spacing.
    ================================================================ */
 
 .emba-page,
-.emba-page * {
+.emba-page *,
+.emba-page *::before,
+.emba-page *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,15 +20,59 @@
 
 .emba-page {
   color: #686868;
-  line-height: 1.6;
+  line-height: 1.65;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .emba-page h1,
 .emba-page h2,
 .emba-page h3 { line-height: 1.25; color: #2a2f31; }
+.emba-page img { max-width: 100%; }
+.emba-page strong { color: inherit; font-weight: 700; }
 
-/* ---------- Shared elements ---------- */
+/* ---------- LAYOUT PRIMITIVES ---------- */
+/* Every section: equal, fluid vertical padding for symmetric rhythm */
+.emba-section { padding: clamp(58px, 7vw, 100px) 0; }
+
+/* Every section's content is capped at 1280px and side-padded equally */
+.emba-wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+/* Centered section header (eyebrow + title + intro) */
+.emba-section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(38px, 4.5vw, 58px);
+}
+.emba-section-head .emba-eyebrow { margin-bottom: 12px; }
+.emba-section-title { font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; }
+.emba-section-intro { margin-top: 14px; font-size: 17px; color: #686868; }
+.emba-title-light { color: #ffffff; }
+.emba-intro-light { color: #c9c5dd; }
+
+/* Card grids */
+.emba-grid { display: grid; gap: clamp(20px, 2.2vw, 28px); }
+.emba-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.emba-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+/* Two-column split (text + visual) */
+.emba-split {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(32px, 4vw, 60px);
+  align-items: center;
+}
+.emba-split-media { grid-template-columns: 1fr 1fr; }
+.emba-split-text > * + * { margin-top: 16px; }
+.emba-split-text .emba-eyebrow + h2 { margin-top: 6px; }
+
+/* ---------- TYPE ---------- */
 .emba-eyebrow {
   display: inline-block;
   font-size: 13px;
@@ -31,58 +80,53 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #4ed3cc;
-  margin-bottom: 14px;
 }
 .emba-eyebrow-dark { color: #ff7400; }
 
-.emba-section-title {
-  font-size: 34px;
-  font-weight: 800;
-  text-align: center;
-  color: #2a2f31;
+/* ---------- BUTTONS ---------- */
+.emba-btn-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
-.emba-section-intro {
-  text-align: center;
-  font-size: 17px;
-  max-width: 720px;
-  margin: 14px auto 40px;
-  color: #686868;
-}
+.emba-section-head + .emba-grid { margin-top: 0; }
+.emba-hero-inner .emba-btn-row,
+.emba-finalcta-inner .emba-btn-row { justify-content: center; }
 
 .emba-btn {
   display: inline-block;
-  padding: 15px 34px;
+  padding: 16px 34px;
   border-radius: 50px;
   font-size: 15px;
   font-weight: 700;
+  letter-spacing: .4px;
   text-decoration: none;
-  letter-spacing: .5px;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-  cursor: pointer;
+  text-align: center;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
 }
 .emba-btn:hover { transform: translateY(-2px); }
 
 .emba-btn-primary {
   background: #ff7400;
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(255,116,0,.35);
+  box-shadow: 0 8px 20px rgba(255,116,0,.32);
 }
-.emba-btn-primary:hover { background: #ff8a26; box-shadow: 0 10px 26px rgba(255,116,0,.45); }
+.emba-btn-primary:hover { background: #ff8a26; box-shadow: 0 10px 26px rgba(255,116,0,.42); }
 
 .emba-btn-ghost {
   background: transparent;
   color: #ffffff;
-  border: 2px solid rgba(255,255,255,.55);
+  border: 2px solid rgba(255,255,255,.6);
 }
 .emba-btn-ghost:hover { border-color: #4ed3cc; color: #4ed3cc; }
 
-.emba-btn-light {
-  background: #ffffff;
-  color: #332959;
-}
-.emba-btn-light:hover { background: #4ed3cc; color: #ffffff; }
+.emba-btn-light { background: #ffffff; color: #332959; }
+.emba-btn-light:hover { background: #2a2f31; color: #ffffff; }
 
-/* ---------- HERO ---------- */
+/* ================================================================
+   HERO
+   ================================================================ */
 .emba-hero {
   background:
     linear-gradient(135deg, rgba(42,47,49,.86) 0%, rgba(51,41,89,.82) 100%),
@@ -90,50 +134,40 @@
   background-color: #332959;
   background-size: cover;
   background-position: center;
-  padding: 90px 24px;
+}
+.emba-hero-inner {
+  max-width: 740px;
+  margin: 0 auto;
   text-align: center;
 }
-.emba-hero-inner { max-width: 860px; margin: 0 auto; }
 .emba-hero h1 {
   color: #ffffff;
-  font-size: 56px;
+  font-size: clamp(38px, 5.4vw, 60px);
   font-weight: 800;
-  margin-bottom: 18px;
+  margin-top: 16px;
 }
 .emba-hero-sub {
   color: #e9e7f2;
-  font-size: 20px;
-  max-width: 680px;
-  margin: 0 auto 32px;
+  font-size: clamp(16px, 1.6vw, 20px);
+  margin-top: 20px;
 }
 .emba-hero-sub strong { color: #4ed3cc; }
-.emba-hero-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 .emba-hero-note {
-  margin-top: 26px;
+  margin-top: 24px;
   color: #b9b5cf;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: .4px;
 }
 
-/* ---------- BENEFITS ---------- */
-.emba-benefits { padding: 80px 24px; background: #f7f7fb; }
-.emba-benefit-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1080px;
-  margin: 0 auto;
-}
+/* ================================================================
+   BENEFITS
+   ================================================================ */
+.emba-benefits { background: #f6f7f9; }
 .emba-benefit {
   background: #ffffff;
   border-radius: 14px;
-  padding: 30px 26px;
+  padding: clamp(26px, 2.6vw, 34px);
   border-bottom: 4px solid #4ed3cc;
   box-shadow: 0 6px 24px rgba(51,41,89,.07);
   transition: transform .15s ease, box-shadow .15s ease;
@@ -150,7 +184,7 @@
   height: 40px;
   border-radius: 50%;
   background: #4ed3cc;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .emba-check::before {
   content: "";
@@ -161,52 +195,46 @@
   transform: rotate(-45deg);
   margin-top: -3px;
 }
-.emba-benefit h3 { font-size: 19px; color: #2a2f31; margin-bottom: 8px; }
-.emba-benefit p { font-size: 15px; color: #686868; }
+.emba-benefit h3 { font-size: 19px; margin-bottom: 8px; }
+.emba-benefit p { font-size: 15px; }
 
-/* ---------- OVERVIEW ---------- */
-.emba-overview { padding: 80px 24px; background: #ffffff; }
-.emba-overview-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 50px;
-  max-width: 1080px;
-  margin: 0 auto;
-  align-items: center;
-}
-.emba-overview-text h2 { font-size: 32px; margin-bottom: 18px; }
-.emba-overview-text p { font-size: 16px; color: #686868; margin-bottom: 14px; }
-.emba-overview-cta { margin-top: 22px; }
+/* ================================================================
+   OVERVIEW
+   ================================================================ */
+.emba-overview { background: #ffffff; }
+.emba-overview .emba-split-text h2 { font-size: clamp(24px, 2.8vw, 32px); }
+.emba-overview .emba-split-text p { font-size: 16px; }
 
-.emba-overview-card {
-  background: #332959;
+/* ---------- CARDS (shared) ---------- */
+.emba-card {
   border-radius: 16px;
-  padding: 36px 32px;
-  color: #ffffff;
+  padding: clamp(28px, 2.8vw, 38px);
 }
+.emba-card-dark { background: #332959; color: #ffffff; }
+.emba-card-dark h3 { color: #ffffff; }
+
 .emba-overview-graphic {
   display: block;
-  width: 130px;
-  max-width: 45%;
+  width: 120px;
   height: auto;
   margin-bottom: 18px;
 }
-.emba-overview-card h3 {
+.emba-card-dark h3 {
   font-size: 20px;
-  margin-bottom: 18px;
   color: #4ed3cc;
+  margin-bottom: 16px;
 }
 .emba-fact-list { list-style: none; }
 .emba-fact-list li {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: 18px;
   padding: 12px 0;
   border-bottom: 1px solid rgba(255,255,255,.13);
   font-size: 15px;
 }
 .emba-fact-list li span { color: #b9b5cf; }
-.emba-fact-list li strong { text-align: right; }
+.emba-fact-list li strong { color: #ffffff; text-align: right; }
 .emba-startdates { margin-top: 22px; }
 .emba-startdates-label {
   font-size: 13px;
@@ -214,7 +242,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #ff7400;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .emba-startdate-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .emba-startdate-tags span {
@@ -227,48 +255,38 @@
   font-weight: 700;
 }
 
-/* ---------- VISA ---------- */
-.emba-visa {
-  padding: 76px 24px;
-  background: linear-gradient(135deg, #4ed3cc 0%, #3bb8b1 100%);
-}
-.emba-visa-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 46px;
-  align-items: center;
-}
-.emba-visa-media img {
+/* ================================================================
+   VISA HOLDERS
+   ================================================================ */
+.emba-visa { background: linear-gradient(135deg, #4ed3cc 0%, #3bb8b1 100%); }
+.emba-visa .emba-eyebrow { color: #15403d; }
+.emba-visa h2 { color: #ffffff; font-size: clamp(24px, 2.8vw, 32px); }
+.emba-visa p { color: #15403d; font-size: 16px; }
+.emba-visa-j1 a { color: #ffffff; font-weight: 700; text-decoration: underline; }
+
+/* ---------- MEDIA ---------- */
+.emba-media img {
   width: 100%;
   height: 100%;
   min-height: 320px;
   object-fit: cover;
   border-radius: 16px;
   display: block;
-  box-shadow: 0 14px 34px rgba(21,64,61,.3);
+  box-shadow: 0 16px 36px rgba(21,64,61,.28);
 }
-.emba-visa .emba-eyebrow { color: #332959; }
-.emba-visa h2 { font-size: 30px; color: #ffffff; margin-bottom: 16px; }
-.emba-visa p { font-size: 16px; color: #15403d; margin-bottom: 14px; }
-.emba-visa p strong { color: #332959; }
-.emba-visa-j1 a { color: #332959; font-weight: 700; text-decoration: underline; }
-.emba-visa .emba-btn-light { margin-top: 14px; }
+.emba-media-inline { margin: 12px 0; }
+.emba-media-inline img {
+  height: 260px;
+  min-height: 0;
+  box-shadow: 0 12px 30px rgba(51,41,89,.16);
+}
 
-/* ---------- CONCENTRATIONS ---------- */
-.emba-concentrations { padding: 80px 24px; background: #f7f7fb; }
-.emba-conc-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+/* ================================================================
+   CONCENTRATIONS
+   ================================================================ */
+.emba-concentrations { background: #f6f7f9; }
 .emba-conc-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 32px 30px;
   border-left: 5px solid #ff7400;
   box-shadow: 0 6px 24px rgba(51,41,89,.07);
   transition: transform .15s ease, box-shadow .15s ease;
@@ -277,31 +295,18 @@
   transform: translateY(-4px);
   box-shadow: 0 14px 34px rgba(51,41,89,.13);
 }
-.emba-conc-card h3 { font-size: 20px; color: #2a2f31; margin-bottom: 10px; }
-.emba-conc-card p { font-size: 15px; color: #686868; }
+.emba-conc-card h3 { font-size: 20px; margin-bottom: 10px; }
+.emba-conc-card p { font-size: 15px; }
 
-/* ---------- WHY EDUCONNECT ---------- */
-.emba-why { padding: 80px 24px; background: #332959; }
-.emba-why-inner { max-width: 1080px; margin: 0 auto; text-align: center; }
-.emba-why h2 { font-size: 32px; color: #ffffff; margin-bottom: 14px; }
-.emba-why-intro {
-  font-size: 16px;
-  color: #c9c5dd;
-  max-width: 700px;
-  margin: 0 auto 44px;
-}
-.emba-why-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  text-align: left;
-}
+/* ================================================================
+   WHY EDUCONNECT
+   ================================================================ */
+.emba-why { background: #332959; }
 .emba-why-card {
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 14px;
-  padding: 30px 28px;
-  position: relative;
+  padding: clamp(26px, 2.6vw, 34px);
 }
 .emba-why-num {
   display: inline-flex;
@@ -319,67 +324,44 @@
 .emba-why-card h3 { font-size: 19px; color: #4ed3cc; margin-bottom: 8px; }
 .emba-why-card p { font-size: 15px; color: #c9c5dd; }
 
-/* ---------- ALLIANT ---------- */
-.emba-alliant { padding: 80px 24px; background: #ffffff; }
-.emba-alliant-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  max-width: 1080px;
-  margin: 0 auto;
-  align-items: center;
-}
-.emba-alliant-text h2 { font-size: 32px; margin-bottom: 18px; }
-.emba-alliant-text p { font-size: 16px; color: #686868; margin-bottom: 14px; }
-.emba-alliant-img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 14px;
-  display: block;
-  margin: 6px 0 20px;
-  box-shadow: 0 10px 28px rgba(51,41,89,.14);
-}
+/* ================================================================
+   ABOUT ALLIANT
+   ================================================================ */
+.emba-alliant { background: #ffffff; }
+.emba-alliant .emba-split-text h2 { font-size: clamp(24px, 2.8vw, 32px); }
+.emba-alliant .emba-split-text p { font-size: 16px; }
 .emba-accred-card {
-  background: #f7f7fb;
-  border-radius: 16px;
-  padding: 36px 32px;
+  background: #f6f7f9;
   border-top: 5px solid #4ed3cc;
 }
-.emba-accred-card h3 { font-size: 20px; color: #2a2f31; margin-bottom: 14px; }
-.emba-accred-card p { font-size: 15px; color: #686868; margin-bottom: 12px; }
-.emba-accred-badges {
+.emba-accred-card h3 { font-size: 20px; margin-bottom: 14px; }
+.emba-accred-card p { font-size: 15px; margin-bottom: 12px; }
+.emba-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 18px;
 }
-.emba-accred-badges span {
+.emba-badges span {
   background: #332959;
   color: #ffffff;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: .4px;
   padding: 7px 14px;
   border-radius: 50px;
 }
 
-/* ---------- CAMPUSES ---------- */
-.emba-campuses { padding: 80px 24px; background: #f7f7fb; }
-.emba-campus-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 860px;
-  margin: 0 auto;
-}
+/* ================================================================
+   CAMPUSES
+   ================================================================ */
+.emba-campuses { background: #f6f7f9; }
 .emba-campus-card {
   background: #332959;
   border-radius: 16px;
   overflow: hidden;
-  color: #ffffff;
-  transition: transform .15s ease, box-shadow .15s ease;
   box-shadow: 0 6px 24px rgba(51,41,89,.1);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 .emba-campus-card:hover {
   transform: translateY(-4px);
@@ -387,60 +369,57 @@
 }
 .emba-campus-img {
   width: 100%;
-  height: 230px;
+  height: 240px;
   object-fit: cover;
   display: block;
 }
-.emba-campus-body { padding: 30px 32px 36px; text-align: center; }
-.emba-campus-card h3 {
-  font-size: 26px;
-  color: #4ed3cc;
-  margin-bottom: 10px;
-}
-.emba-campus-card p { font-size: 15px; color: #c9c5dd; }
+.emba-campus-body { padding: clamp(26px, 2.6vw, 34px); text-align: center; }
+.emba-campus-body h3 { font-size: 26px; color: #4ed3cc; margin-bottom: 10px; }
+.emba-campus-body p { font-size: 15px; color: #c9c5dd; }
 
-/* ---------- FINAL CTA ---------- */
+/* ================================================================
+   FINAL CTA
+   ================================================================ */
 .emba-finalcta {
-  padding: 90px 24px;
   background:
-    linear-gradient(135deg, rgba(255,116,0,.95) 0%, rgba(255,116,0,.82) 100%),
-    radial-gradient(circle at 15% 80%, #332959 0%, transparent 55%);
+    linear-gradient(135deg, rgba(255,116,0,.96) 0%, rgba(255,116,0,.84) 100%),
+    radial-gradient(circle at 15% 85%, #332959 0%, transparent 58%);
   background-color: #ff7400;
+}
+.emba-finalcta-inner {
+  max-width: 680px;
+  margin: 0 auto;
   text-align: center;
 }
-.emba-finalcta-inner { max-width: 760px; margin: 0 auto; }
 .emba-finalcta .emba-eyebrow { color: #332959; }
-.emba-finalcta h2 { font-size: 36px; color: #ffffff; margin-bottom: 16px; }
-.emba-finalcta p { font-size: 17px; color: #fff3e8; margin-bottom: 30px; }
-.emba-finalcta .emba-btn-primary {
-  background: #332959;
-  box-shadow: 0 8px 20px rgba(51,41,89,.35);
+.emba-finalcta h2 {
+  color: #ffffff;
+  font-size: clamp(27px, 3.4vw, 38px);
+  margin-top: 14px;
 }
+.emba-finalcta p { color: #fff3e8; font-size: 17px; margin-top: 16px; }
+.emba-finalcta .emba-btn-primary { background: #332959; box-shadow: 0 8px 20px rgba(51,41,89,.32); }
 .emba-finalcta .emba-btn-primary:hover { background: #423670; }
 .emba-finalcta .emba-hero-note { color: #fff3e8; }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 980px) {
-  .emba-benefit-grid { grid-template-columns: repeat(2, 1fr); }
-  .emba-overview-grid,
-  .emba-alliant-grid,
-  .emba-visa-inner { grid-template-columns: 1fr; gap: 36px; }
-  .emba-why-grid,
-  .emba-conc-grid { grid-template-columns: 1fr; }
-  .emba-visa-media img { min-height: 240px; }
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 1024px) {
+  .emba-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .emba-split,
+  .emba-split-media { grid-template-columns: 1fr; gap: clamp(28px, 5vw, 40px); }
+  .emba-split-media .emba-media { order: -1; }
+  .emba-media img { min-height: 280px; }
 }
-@media (max-width: 600px) {
-  .emba-hero { padding: 64px 20px; }
-  .emba-hero h1 { font-size: 38px; }
-  .emba-hero-sub { font-size: 17px; }
-  .emba-section-title,
-  .emba-finalcta h2 { font-size: 27px; }
-  .emba-overview-text h2,
-  .emba-visa h2,
-  .emba-why h2,
-  .emba-alliant-text h2 { font-size: 25px; }
-  .emba-benefit-grid,
-  .emba-campus-grid { grid-template-columns: 1fr; }
-  .emba-btn { width: 100%; text-align: center; }
-  .emba-hero-cta { flex-direction: column; }
+
+@media (max-width: 680px) {
+  .emba-grid-2,
+  .emba-grid-3 { grid-template-columns: 1fr; }
+  .emba-btn-row { flex-direction: column; }
+  .emba-btn { width: 100%; }
+  .emba-media img { min-height: 220px; }
+  .emba-media-inline img { height: 200px; }
+  .emba-campus-img { height: 200px; }
+  .emba-fact-list li { font-size: 14px; }
 }
