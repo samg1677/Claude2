@@ -3,141 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Day 1 CPT — Landing Hero</title>
+  <title>Win a scholarship and live the experience of a lifetime | EduConnect</title>
+  <meta name="description" content="Imagine living in Australia? Fill in the form and enter the draw for a scholarship to study abroad with EduConnect." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --brand: #00BE96;
-      --brand-hover: #00A67F;
-      --accent: #F15D49;
-      --accent-hover: #BF240F;
-      --ink: #3b3b3b;
-      --muted: rgba(255, 255, 255, 0.92);
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+      --brand: #1B4DE0;
+      --brand-700: #143BAE;
+      --brand-50: #EEF2FF;
+      --accent: #FF5766;
+      --accent-700: #D93C49;
+      --yellow: #FDB600;
+      --ink: #2F343D;
+      --muted: #6B7280;
+      --bg-soft: #F6F7FB;
+      --bg-dark: #0F1626;
+      --white: #FFFFFF;
+      --radius: 14px;
+      --shadow-sm: 0 4px 14px rgba(15, 22, 38, 0.08);
+      --shadow-md: 0 12px 32px rgba(15, 22, 38, 0.12);
+      --shadow-lg: 0 24px 60px rgba(15, 22, 38, 0.18);
+      --container: 1180px;
     }
 
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: var(--ink);
-      background: #fff;
+      background: var(--white);
       -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
     }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; line-height: 1.2; margin: 0; }
+    p { margin: 0; }
+    button { font-family: inherit; cursor: pointer; }
 
-    /* Top navigation */
-    .nav {
-      position: absolute;
-      inset: 0 0 auto 0;
-      z-index: 5;
-      padding: 22px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav__logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      font-size: 18px;
-    }
-    .nav__logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      background: var(--brand);
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-weight: 900;
-      font-size: 15px;
-    }
-    .nav__links { display: flex; gap: 24px; }
-    .nav__links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      opacity: 0.92;
-    }
-    .nav__links a:hover { opacity: 1; }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      isolation: isolate;
-    }
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=2000&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background:
-        linear-gradient(120deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 0.05) 100%),
-        linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 60%);
-    }
-
-    .hero__container {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 140px 32px 120px;
-    }
-    .hero__card {
-      max-width: 720px;
-      padding: 24px 0;
-      color: #fff;
-      border-left: 4px solid var(--brand);
-      padding-left: 28px;
-    }
-    .hero__eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brand);
-      background: rgba(255, 255, 255, 0.08);
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin-bottom: 18px;
-    }
-    .hero__title {
-      font-size: clamp(36px, 5.2vw, 64px);
-      line-height: 1.05;
-      font-weight: 900;
-      margin: 0 0 18px;
-      letter-spacing: -0.5px;
-    }
-    .hero__subtitle {
-      font-size: clamp(16px, 1.4vw, 20px);
-      font-weight: 500;
-      color: var(--muted);
-      margin: 0 0 32px;
-      max-width: 560px;
-    }
-    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       padding: 14px 26px;
       border-radius: 999px;
@@ -146,164 +59,800 @@
       text-decoration: none;
       border: 2px solid transparent;
       transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-      cursor: pointer;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     .btn--accent { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .btn--accent:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-    .btn--ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.7); }
-    .btn--ghost:hover { background: #fff; color: var(--ink); }
+    .btn--accent:hover { background: var(--accent-700); border-color: var(--accent-700); }
+    .btn--light { background: #fff; color: var(--brand); border-color: #fff; }
+    .btn--light:hover { background: var(--brand-50); }
+    .btn--cta { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .btn--cta:hover { background: var(--brand-700); border-color: var(--brand-700); }
+    .btn--sm { padding: 10px 18px; font-size: 13px; }
     .btn:active { transform: scale(0.98); }
 
-    /* Floating info badge (like the EU info bar) */
-    .hero__info {
-      position: absolute;
-      left: 32px;
-      right: 32px;
-      bottom: -36px;
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: flex-start;
-      pointer-events: none;
+    /* Header */
+    .site-header {
+      position: relative;
+      background: linear-gradient(120deg, var(--bg-dark) 0%, #1a2750 60%, var(--brand) 100%);
+      color: #fff;
     }
-    .info-card {
-      pointer-events: auto;
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+    .logo {
       display: inline-flex;
-      flex-wrap: wrap;
-      gap: 0;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      font-size: 22px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo__mark {
+      width: 36px; height: 36px;
       background: #fff;
-      border: 2px solid var(--brand);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
+      color: var(--brand);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background: linear-gradient(120deg, var(--bg-dark) 0%, #1a2750 60%, var(--brand) 100%);
+      color: #fff;
+      padding: 40px 0 160px;
       overflow: hidden;
     }
-    .info-card__item {
+    .hero__deco-top {
+      position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+      opacity: 0.5;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding-top: 40px;
+    }
+    .hero__title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 500;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .hero__title strong { color: var(--accent); font-weight: 800; }
+    .hero__subtitle {
+      font-size: 18px;
+      opacity: 0.92;
+      max-width: 460px;
+      margin-bottom: 28px;
+    }
+    .hero__img-wrap {
+      position: relative;
+      padding: 14px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: var(--shadow-lg);
+      transform: rotate(-1.5deg);
+      max-width: 440px;
+      margin-left: auto;
+    }
+    .hero__img-wrap img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .hero__pin {
+      position: absolute;
+      top: -28px; right: 32px;
+      width: 24px; height: 60px;
+      color: var(--accent);
+    }
+    .hero__arrow {
+      position: absolute;
+      bottom: -40px; left: -80px;
+      width: 220px;
+      color: var(--accent);
+    }
+
+    /* Social proof */
+    .social-proof {
+      position: relative;
+      margin-top: -110px;
+      z-index: 2;
+    }
+    .social-proof__card {
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      background: #fff;
+      color: var(--ink);
+      padding: 18px 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+    }
+    .social-proof__avatars {
+      display: inline-flex;
+    }
+    .social-proof__avatars img {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-left: -10px;
+      object-fit: cover;
+    }
+    .social-proof__avatars img:first-child { margin-left: 0; }
+    .social-proof__count {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 1;
+    }
+    .social-proof__label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .stars { display: inline-flex; gap: 2px; margin-top: 4px; color: var(--yellow); }
+    .stars svg { width: 16px; height: 16px; }
+    .rating-row { display: flex; align-items: center; gap: 8px; }
+    .rating-row strong { font-weight: 700; }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .section-title {
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    /* Includes (cards) */
+    .includes { background: var(--bg-soft); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .card__head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .card__icon {
+      width: 28px; height: 28px;
+      color: var(--brand);
+      flex: 0 0 auto;
+    }
+    .card__title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .card__text { color: var(--muted); font-size: 15px; }
+    .card__text strong { color: var(--ink); }
+
+    /* Form + text two-column */
+    .form-text { background: #fff; }
+    .form-text__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .form-text__title {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .form-text__body { font-size: 17px; line-height: 1.7; color: var(--muted); }
+    .form-text__body strong { color: var(--ink); }
+    .form-text__body p + p { margin-top: 14px; }
+
+    .form-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      border-top: 4px solid var(--brand);
+    }
+    .form-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .form-field {
+      display: block;
+      margin-bottom: 16px;
+    }
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e1e5ee;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 15px;
+      background: #fff;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-field input:focus,
+    .form-field select:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(27, 77, 224, 0.15);
+    }
+    .form-field--check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .form-card button[type="submit"] {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    /* Why us (video + text + list) */
+    .why-us { background: var(--bg-dark); color: #fff; position: relative; overflow: hidden; }
+    .why-us__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .video-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      box-shadow: var(--shadow-lg);
+    }
+    .video-card img {
+      width: 100%; height: 100%; object-fit: cover; opacity: 0.85;
+    }
+    .video-card__play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(15, 22, 38, 0.25);
+      border: 0;
+      color: #fff;
+      transition: background 0.2s ease;
+    }
+    .video-card__play:hover { background: rgba(15, 22, 38, 0.45); }
+    .video-card__play svg { width: 72px; height: 72px; }
+
+    .why-us__title { font-size: clamp(26px, 3vw, 34px); font-weight: 700; margin-bottom: 18px; }
+    .why-us__body { font-size: 17px; opacity: 0.85; line-height: 1.7; }
+    .why-us__list-head { margin-top: 56px; margin-bottom: 16px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 700; }
+    .why-us__list { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 12px; max-width: 760px; }
+    .why-us__list li { padding-left: 36px; position: relative; font-size: 15px; opacity: 0.92; }
+    .why-us__list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 2px;
+      width: 22px; height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 4px var(--bg-dark);
+    }
+    .why-us__list li::after {
+      content: '';
+      position: absolute;
+      left: 7px; top: 8px;
+      width: 8px; height: 4px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg);
+    }
+
+    /* Gallery carousel */
+    .gallery { background: var(--bg-soft); }
+    .gallery__intro {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .gallery__intro h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; margin-bottom: 14px; }
+    .gallery__intro p { color: var(--muted); font-size: 16px; }
+    .gallery__track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 8px 24px 24px;
+      scrollbar-width: thin;
+    }
+    .gallery__track::-webkit-scrollbar { height: 8px; }
+    .gallery__track::-webkit-scrollbar-thumb { background: #d4d8e2; border-radius: 4px; }
+    .gallery__slide {
+      flex: 0 0 min(680px, 85%);
+      scroll-snap-align: center;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery__slide img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+    .gallery__nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .gallery__nav button {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 0;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      color: var(--brand);
+      display: grid;
+      place-items: center;
+    }
+    .gallery__nav button:hover { background: var(--brand); color: #fff; }
+
+    /* FAQ */
+    .faq__wrap { max-width: 820px; margin: 0 auto; }
+    .faq-item {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 56px 22px 26px;
+      font-weight: 600;
+      font-size: 17px;
+      position: relative;
+      color: var(--ink);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '';
+      position: absolute;
+      top: 50%; right: 26px;
+      width: 14px; height: 2px;
+      background: var(--brand);
+      transform: translateY(-50%);
+    }
+    .faq-item summary::before {
+      content: '';
+      position: absolute;
+      top: 50%; right: 32px;
+      width: 2px; height: 14px;
+      background: var(--brand);
+      transform: translateY(-50%);
+      transition: transform 0.2s ease;
+    }
+    .faq-item[open] summary::before { transform: translateY(-50%) rotate(90deg); opacity: 0; }
+    .faq-item__body { padding: 0 26px 22px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+    /* Testimonials */
+    .testimonials { background: var(--bg-soft); }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .testimonials__intro h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; margin-top: 16px; }
+    .testimonials__icon { width: 64px; height: 64px; color: var(--yellow); }
+    .testimonials__track {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial__quote {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .testimonial__author {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 18px 28px;
+      margin-top: 24px;
     }
-    .info-card__item + .info-card__item {
-      border-left: 1px solid #e9e9e9;
+    .testimonial__author img {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
     }
-    .info-card__icon {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      color: var(--brand);
-    }
-    .info-card__label {
-      font-size: 12px;
-      color: #6f6f6f;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin: 0 0 2px;
-    }
-    .info-card__value {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--ink);
-      margin: 0;
-    }
+    .testimonial__author strong { display: block; font-weight: 700; }
+    .testimonial__author span { color: var(--muted); font-size: 13px; }
 
-    /* Below-hero spacer so the floating badge has room */
-    .below-hero {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 96px 32px 80px;
+    /* Sticky mobile CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #fff;
+      padding: 14px 24px;
+      box-shadow: 0 -6px 20px rgba(15, 22, 38, 0.1);
+      z-index: 50;
+      display: none;
     }
-    .below-hero h2 {
-      font-size: 28px;
-      margin: 0 0 12px;
-    }
-    .below-hero p {
-      color: #6f6f6f;
-      max-width: 640px;
-      margin: 0;
-    }
+    .sticky-cta .btn { width: 100%; }
 
-    @media (max-width: 768px) {
-      .nav { padding: 16px 20px; }
-      .nav__links { display: none; }
-      .hero__container { padding: 110px 20px 140px; }
-      .hero__card { padding-left: 20px; border-left-width: 3px; }
-      .hero__info { left: 20px; right: 20px; bottom: -28px; }
-      .info-card { width: 100%; flex-direction: column; }
-      .info-card__item + .info-card__item {
-        border-left: 0;
-        border-top: 1px solid #e9e9e9;
-      }
-      .below-hero { padding: 80px 20px 60px; }
+    /* Footer */
+    footer {
+      background: var(--bg-dark);
+      color: #cfd5e3;
+      padding: 32px 0;
+      font-size: 14px;
+    }
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer__links { display: flex; gap: 22px; list-style: none; padding: 0; margin: 0; }
+    .footer__links a { text-decoration: none; opacity: 0.8; }
+    .footer__links a:hover { opacity: 1; color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      section { padding: 64px 0; }
+      .hero { padding: 24px 0 120px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero__img-wrap { margin: 0 auto; transform: none; }
+      .hero__arrow, .hero__pin, .hero__deco-top { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      .form-text__grid, .why-us__grid, .testimonials__grid { grid-template-columns: 1fr; gap: 32px; }
+      .social-proof { margin-top: -90px; }
+      .social-proof__card { width: 100%; flex-wrap: wrap; }
+      .sticky-cta { display: block; }
+      body { padding-bottom: 80px; }
+      .why-us__list { max-width: none; }
+    }
+    @media (max-width: 480px) {
+      .testimonials__track { grid-template-columns: 1fr; }
+      .gallery__slide { flex-basis: 90%; }
     }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <a href="#" class="nav__logo">
-      <span class="nav__logo-mark">C</span>
-      <span>Day 1 CPT</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#">Programs</a>
-      <a href="#">Campuses</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top">
+        <span class="logo__mark">E</span>
+        <span>EduConnect</span>
+      </a>
+      <a class="btn btn--light btn--sm" href="#apply">I want to apply</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__overlay" aria-hidden="true"></div>
-
-    <div class="hero__container">
-      <div class="hero__card">
-        <span class="hero__eyebrow">Day 1 · Custom Page Template</span>
-        <h1 class="hero__title">Innovative programs for work-ready skills</h1>
-        <p class="hero__subtitle">Foundation, Bachelor's, Master's &amp; MBA programs designed for entrepreneurial thinkers — on campus and online.</p>
-        <div class="hero__actions">
-          <a class="btn btn--accent" href="#info">I want to know more!</a>
-          <a class="btn btn--ghost" href="#info">Download brochure</a>
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <svg class="hero__deco-top" width="180" height="24" viewBox="0 0 180 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="1.2"/>
+      <rect x="160" y="6" width="12" height="12" transform="rotate(45 166 12)" stroke="#fff" stroke-width="1.2"/>
+    </svg>
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <h1 class="hero__title">
+            Win a <strong>SCHOLARSHIP</strong> worth <strong>$3,000 USD</strong> to study in <strong>Australia!</strong>
+          </h1>
+          <p class="hero__subtitle">Complete the form, get free guidance from an advisor and enter the prize draw. ⬇️</p>
+          <a class="btn btn--accent" href="#apply">I want to apply!</a>
         </div>
-      </div>
-    </div>
-
-    <div class="hero__info" id="info">
-      <div class="info-card" role="group" aria-label="Program quick facts">
-        <div class="info-card__item">
-          <span class="info-card__icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          </span>
-          <div>
-            <p class="info-card__label">Length</p>
-            <p class="info-card__value">1 year (full time)</p>
-          </div>
-        </div>
-        <div class="info-card__item">
-          <span class="info-card__icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </span>
-          <div>
-            <p class="info-card__label">Language</p>
-            <p class="info-card__value">English</p>
-          </div>
-        </div>
-        <div class="info-card__item">
-          <span class="info-card__icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </span>
-          <div>
-            <p class="info-card__label">Start dates</p>
-            <p class="info-card__value">Oct, Jan &amp; Mar</p>
+        <div>
+          <div class="hero__img-wrap">
+            <img src="https://images.unsplash.com/photo-1523428096881-5bd79d043006?auto=format&fit=crop&w=900&q=80" alt="Students on Gold Coast" />
+            <svg class="hero__pin" viewBox="0 0 24 60" fill="none">
+              <path d="M12 0c5 0 10 4 10 10 0 6-7 18-10 22-3-4-10-16-10-22 0-6 5-10 10-10z" fill="currentColor"/>
+              <circle cx="12" cy="10" r="4" fill="#fff"/>
+            </svg>
+            <svg class="hero__arrow" viewBox="0 0 220 80" fill="none">
+              <path d="M5 70 C 60 30, 130 30, 200 50" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M200 50 l-12 -8 m12 8 l-6 14" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="below-hero">
-    <h2>About this template</h2>
-    <p>This is the Day 1 scaffold for the CPT landing page. The hero borrows the layout pattern from the EU Business School landing pages: a full-bleed photograph, gradient overlay, left-anchored title block with a brand accent rule, and a floating info card that bridges the hero into the body content.</p>
+  <!-- Social proof -->
+  <div class="social-proof">
+    <div class="container">
+      <div class="social-proof__card">
+        <div class="social-proof__avatars">
+          <img src="https://i.pravatar.cc/64?img=12" alt="" />
+          <img src="https://i.pravatar.cc/64?img=32" alt="" />
+          <img src="https://i.pravatar.cc/64?img=45" alt="" />
+          <img src="https://i.pravatar.cc/64?img=68" alt="" />
+        </div>
+        <div>
+          <span class="social-proof__count">+35,000</span>
+          <p class="social-proof__label">have lived an experience with EduConnect</p>
+          <div class="rating-row">
+            <strong>4.7</strong>
+            <span class="stars" aria-label="4.7 out of 5">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's included -->
+  <section class="includes">
+    <div class="container">
+      <h2 class="section-title">What does this scholarship include?</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card__head">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <h3 class="card__title">Choose where to live</h3>
+          </div>
+          <p class="card__text">You pick: <strong>Sydney, Melbourne, Brisbane, Byron Bay, Gold Coast, Adelaide</strong> or <strong>Perth</strong>. We have offices in every destination!</p>
+        </article>
+        <article class="card">
+          <div class="card__head">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <h3 class="card__title">Choose what to study</h3>
+          </div>
+          <p class="card__text">Languages? A vocational course? Go for whatever you dreamed of — we partner with the best schools across the country.</p>
+        </article>
+        <article class="card">
+          <div class="card__head">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <h3 class="card__title">EduConnect experience</h3>
+          </div>
+          <p class="card__text">Local offices, on-the-ground team and top events. We support you throughout your adventure so you'll make friends fast.</p>
+        </article>
+      </div>
+    </div>
   </section>
+
+  <!-- Form + text -->
+  <section class="form-text" id="apply">
+    <div class="container">
+      <div class="form-text__grid">
+        <div>
+          <h2 class="form-text__title">Your new life starts here!</h2>
+          <div class="form-text__body">
+            <p>If you're ready, once you've registered for the draw, take the chance to <strong>book your experience</strong>. If you do it <strong>before September 15</strong> and you win, you'll have doubled it: your <strong>scholarship</strong> will be worth <strong>$6,000 USD</strong>!</p>
+            <p>Luck is something you make — and you're already doing your part. 🍀</p>
+          </div>
+        </div>
+        <form class="form-card" onsubmit="event.preventDefault(); alert('Demo form — wire this up to your backend.');">
+          <h3>Enter the draw</h3>
+          <label class="form-field">
+            <input type="text" name="name" placeholder="Full name" required />
+          </label>
+          <label class="form-field">
+            <input type="email" name="email" placeholder="Email address" required />
+          </label>
+          <label class="form-field">
+            <input type="tel" name="phone" placeholder="Phone number" required />
+          </label>
+          <label class="form-field">
+            <select name="destination" required>
+              <option value="">Preferred destination</option>
+              <option>Sydney</option>
+              <option>Melbourne</option>
+              <option>Brisbane</option>
+              <option>Byron Bay</option>
+              <option>Gold Coast</option>
+              <option>Adelaide</option>
+              <option>Perth</option>
+            </select>
+          </label>
+          <label class="form-field form-field--check">
+            <input type="checkbox" required />
+            <span>I accept the terms &amp; privacy policy.</span>
+          </label>
+          <button type="submit" class="btn btn--cta">Submit my application</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="why-us">
+    <div class="container">
+      <div class="why-us__grid">
+        <div class="video-card">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80" alt="Students sharing a moment" />
+          <button class="video-card__play" type="button" aria-label="Play video">
+            <svg viewBox="0 0 72 72" fill="none">
+              <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,0.18)" stroke="#fff" stroke-width="2"/>
+              <path d="M30 24l18 12-18 12V24z" fill="#fff"/>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <h2 class="why-us__title">What is EduConnect?</h2>
+          <p class="why-us__body"><strong style="color:#fff">EduConnect</strong> is the leading platform for <strong style="color:#fff">educational experiences abroad</strong>. That's no coincidence — it's the result of more than a decade of consistent, passionate work where the student is at the centre of everything we do. THAT MEANS YOU.</p>
+        </div>
+      </div>
+
+      <p class="why-us__list-head">Why are we the best option?</p>
+      <ul class="why-us__list">
+        <li><strong style="color:#fff">Free professional guidance.</strong> We've walked this path — now we help you make it real.</li>
+        <li><strong style="color:#fff">Partnerships with the best schools.</strong> You can train in a huge variety of courses.</li>
+        <li><strong style="color:#fff">Paperwork handled.</strong> Visa experts and booking specialists make it all simple: visa, translations, enrolment, health insurance.</li>
+        <li><strong style="color:#fff">Offices and team on the ground.</strong> Quality support from the moment you land. 24/7!</li>
+        <li><strong style="color:#fff">Community and top events</strong> to meet international friends and live unique adventures. Learn in workshops, enjoy top events.</li>
+      </ul>
+      <a class="btn btn--accent" href="#apply">Sign me up!</a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <div class="container">
+      <div class="gallery__intro">
+        <h2>Still not convinced about studying and working in Australia?</h2>
+        <p>In a few months this could be your gallery: surfing at Bondi Beach, flying over the Great Barrier Reef, visiting the Sydney Opera House, exploring glaciers in nearby New Zealand, or travelling through New Caledonia.</p>
+      </div>
+    </div>
+    <div class="gallery__track" id="galleryTrack">
+      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1523428096881-5bd79d043006?auto=format&fit=crop&w=1200&q=80" alt="Beach" /></div>
+      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=80" alt="Sydney Opera House" /></div>
+      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1494791368093-85217fbbf8de?auto=format&fit=crop&w=1200&q=80" alt="Australian coast" /></div>
+      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=1200&q=80" alt="Surfing" /></div>
+      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=1200&q=80" alt="Reef" /></div>
+    </div>
+    <div class="gallery__nav">
+      <button type="button" aria-label="Previous slide" data-dir="-1">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" aria-label="Next slide" data-dir="1">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq__wrap">
+        <details class="faq-item" open>
+          <summary>What does the scholarship include?</summary>
+          <div class="faq-item__body">The scholarship is an exclusive opportunity to take part in international education programs. Once the winner picks their destination, the EduConnect team will provide details about course duration, city and school options for redeeming the scholarship. Note: the scholarship does not cover Work &amp; Holiday Visa fees in Australia. Once the prize is offered, the winner has 5 business days to accept it; otherwise it's considered declined.</div>
+        </details>
+        <details class="faq-item">
+          <summary>When will I know if I'm the winner?</summary>
+          <div class="faq-item__body">If you're the winner, we'll contact you no later than the third week of September. We'll also announce it publicly on our social channels. Make sure your email and phone are correct so we can reach you!</div>
+        </details>
+        <details class="faq-item">
+          <summary>What's the prize, depending on whether I'm a client or not?</summary>
+          <div class="faq-item__body">If you're not yet an EduConnect client and haven't booked a course before the deadline, you'll receive one of the available $3,000 USD scholarships, deducted from your tuition. If you're already a client with pending payments, the prize is a tuition reduction of up to $6,000 USD.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How can I multiply the value of the scholarship?</summary>
+          <div class="faq-item__body">Book your EduConnect experience before September 15 to be eligible for a tuition reduction of up to $6,000 USD.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I increase my chances of winning?</summary>
+          <div class="faq-item__body">
+            Yes! Show us how much you want it and why you're the right person for this adventure.<br/>
+            1️⃣ Post a 30-second video on Instagram telling us your dream destination and why you're passionate about it.<br/>
+            2️⃣ Tag EduConnect.<br/>
+            3️⃣ Send the video to <a href="mailto:hello@educonnect.example">hello@educonnect.example</a>.<br/>
+            Be yourself, let your creativity flow and have fun with it.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What are the terms and conditions of the contest?</summary>
+          <div class="faq-item__body">You can read them on our <a href="#">terms &amp; conditions</a> page.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__grid">
+        <div class="testimonials__intro">
+          <svg class="testimonials__icon" viewBox="0 0 96 100" fill="currentColor"><path d="M85 1H10C5 1 1 5 1 10v59c0 5 4 9 9 9h49c1.5 0 3 1 3.5 2.5 2.5 6.5 7.5 12 13 16 1 0.5 2 1 3 1.5 2 1 5 1 6.5-2 2.5-4.5 1-10.5 0-15.5-0.5-1 0.5-2 1.5-2 5 0 9-4 9-9V10c0-5-4-9-9-9z" opacity="0.85"/></svg>
+          <h2>Growers tell their experience</h2>
+        </div>
+        <div class="testimonials__track">
+          <article class="testimonial">
+            <p class="testimonial__quote">"Highly recommended. They really care about you and the service they provide. Sheila is amazing, totally dedicated to her work and makes you feel right at home. She makes sure everyone is comfortable and it's easy to make friends thanks to the activities they organise."</p>
+            <div class="testimonial__author">
+              <img src="https://i.pravatar.cc/96?img=23" alt="" />
+              <div><strong>Andrea Lanza</strong><span>Grower</span></div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <p class="testimonial__quote">"100% recommend the EduConnect adventure. The support starts from the first minute you arrive. Come, discover, live the experience — you'll never forget it. The activities are great and you'll never feel alone."</p>
+            <div class="testimonial__author">
+              <img src="https://i.pravatar.cc/96?img=53" alt="" />
+              <div><strong>Diego Vera</strong><span>Grower</span></div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <p class="testimonial__quote">"In destination I've had so much support from Jimena, the experience leader. I'm having a great time at the events she's organising and meeting tons of people, so I feel really supported. They're like my family here."</p>
+            <div class="testimonial__author">
+              <img src="https://i.pravatar.cc/96?img=47" alt="" />
+              <div><strong>Sara Sanchez</strong><span>Grower</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky-cta">
+    <a class="btn btn--accent" href="#apply">I want to apply!</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer__inner">
+      <p>©2026 EduConnect • All rights reserved</p>
+      <ul class="footer__links">
+        <li><a href="#">Legal notice</a></li>
+        <li><a href="#">Cookie policy</a></li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Gallery prev/next
+    const track = document.getElementById('galleryTrack');
+    document.querySelectorAll('.gallery__nav button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const dir = parseInt(btn.dataset.dir, 10);
+        const slide = track.querySelector('.gallery__slide');
+        const step = (slide?.getBoundingClientRect().width || 400) + 16;
+        track.scrollBy({ left: dir * step, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
