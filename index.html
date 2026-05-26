@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 1 CPT — Work Authorization from Day One</title>
+<meta name="description" content="Day 1 CPT lets eligible F-1 students work in the U.S. starting their first day of class. Learn how it works, who qualifies, and which universities offer it." />
+<style>
+  :root {
+    --bg: #0b1a2b;
+    --bg-soft: #112538;
+    --accent: #ffb347;
+    --accent-dark: #f59e0b;
+    --text: #f5f7fa;
+    --muted: #b8c4d4;
+    --card: #ffffff;
+    --card-text: #1a2433;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Navigation */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(11, 26, 43, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent-dark); }
+
+  /* Hero */
+  .hero {
+    padding: 6rem 1.5rem 5rem;
+    text-align: center;
+    background: radial-gradient(ellipse at top, #1a3654 0%, var(--bg) 70%);
+  }
+  .hero-content { max-width: 850px; margin: 0 auto; }
+  .badge {
+    display: inline-block;
+    background: rgba(255, 179, 71, 0.15);
+    color: var(--accent);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 179, 71, 0.3);
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  h1 .accent { color: var(--accent); }
+  .hero-sub {
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.15s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Sections */
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 3.5rem; }
+  .section-head h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .section-head p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* What is CPT */
+  .what-cpt { background: var(--bg-soft); }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .info-card {
+    background: var(--card);
+    color: var(--card-text);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .info-card .icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 179, 71, 0.15);
+    color: var(--accent-dark);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .info-card p { color: #555; font-size: 0.95rem; }
+
+  /* Eligibility */
+  .eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .check-item {
+    background: var(--bg-soft);
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--accent);
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+  }
+  .check-item .check {
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .check-item p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Process steps */
+  .process { background: var(--bg-soft); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding: 2rem 1.5rem 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    top: -18px;
+    left: 1.5rem;
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+  .step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .step p { color: var(--muted); font-size: 0.93rem; }
+
+  /* FAQ */
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  details {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0.75rem;
+    transition: background 0.2s;
+  }
+  details[open] { background: rgba(255,255,255,0.04); }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p {
+    margin-top: 0.85rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: linear-gradient(135deg, #1a3654 0%, #0b1a2b 100%);
+    text-align: center;
+  }
+  .cta-section .container { max-width: 700px; }
+  .cta-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  /* Form */
+  .lead-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .lead-form input,
+  .lead-form select {
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.05);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-family: inherit;
+  }
+  .lead-form input::placeholder { color: var(--muted); }
+  .lead-form input:focus,
+  .lead-form select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .lead-form .full { grid-column: 1 / -1; }
+  .lead-form button {
+    grid-column: 1 / -1;
+    padding: 0.95rem;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .lead-form button:hover { background: var(--accent-dark); }
+  .form-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer .disclaimer {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    section { padding: 3.5rem 1.25rem; }
+    .hero { padding: 4rem 1.25rem 3.5rem; }
+    .lead-form { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Day1<span>CPT</span></a>
+    <ul class="nav-links">
+      <li><a href="#what">What is it</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#get-started" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <span class="badge">For F-1 International Students</span>
+    <h1>Work in the U.S. from <span class="accent">Day One</span> of your program</h1>
+    <p class="hero-sub">
+      Day 1 CPT lets eligible F-1 students begin authorized employment with their U.S. employer
+      the moment classes start — no waiting a full academic year.
+    </p>
+    <div class="cta-group">
+      <a href="#get-started" class="btn btn-primary">Check Eligibility</a>
+      <a href="#what" class="btn btn-secondary">Learn More</a>
+    </div>
+  </div>
+</header>
+
+<section id="what" class="what-cpt">
+  <div class="container">
+    <div class="section-head">
+      <h2>What is Day 1 CPT?</h2>
+      <p>Curricular Practical Training that begins on the first day of your academic program, rather than after two completed semesters.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon">1</div>
+        <h3>Immediate Authorization</h3>
+        <p>Approved students can work full-time for a U.S. employer from the start of their first semester — no one-year waiting period.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">2</div>
+        <h3>Integrated With Studies</h3>
+        <p>Your employment must be an integral part of an established curriculum directly related to your major area of study.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">3</div>
+        <h3>Maintain F-1 Status</h3>
+        <p>You remain on an F-1 visa and continue making normal academic progress while gaining U.S. work experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="eligibility">
+  <div class="container">
+    <div class="section-head">
+      <h2>Who is Eligible?</h2>
+      <p>Day 1 CPT is typically offered by select graduate programs. You generally need to meet all of the following.</p>
+    </div>
+    <div class="eligibility-grid">
+      <div class="check-item"><span class="check">✓</span><p>Hold a valid F-1 visa and SEVIS record</p></div>
+      <div class="check-item"><span class="check">✓</span><p>Be enrolled in a graduate program (Master's or Doctoral) that offers Day 1 CPT</p></div>
+      <div class="check-item"><span class="check">✓</span><p>Have a job offer or signed offer letter from a U.S. employer</p></div>
+      <div class="check-item"><span class="check">✓</span><p>The role must be directly related to your field of study</p></div>
+      <div class="check-item"><span class="check">✓</span><p>Maintain full-time enrollment and good academic standing</p></div>
+      <div class="check-item"><span class="check">✓</span><p>Receive DSO authorization on your I-20 before starting work</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="container">
+    <div class="section-head">
+      <h2>How It Works</h2>
+      <p>From application to first paycheck — here's the typical path.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Apply & Get Admitted</h3>
+        <p>Apply to a graduate program that offers Day 1 CPT and receive your acceptance and I-20.</p>
+      </div>
+      <div class="step">
+        <h3>Secure Employment</h3>
+        <p>Obtain a job offer in a role tied to your program's curriculum and core competencies.</p>
+      </div>
+      <div class="step">
+        <h3>Enroll in CPT Course</h3>
+        <p>Register for the required experiential / cooperative education course each term.</p>
+      </div>
+      <div class="step">
+        <h3>Get DSO Authorization</h3>
+        <p>Your Designated School Official issues a new I-20 with CPT authorization on the back.</p>
+      </div>
+      <div class="step">
+        <h3>Start Working</h3>
+        <p>Begin employment on or after the CPT start date listed on your I-20.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about Day 1 CPT programs and authorization.</p>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Is Day 1 CPT legal?</summary>
+        <p>Yes. CPT is authorized under 8 CFR 214.2(f)(10)(i). However, programs offering it from day one are scrutinized by USCIS, and authorization must be tied to a legitimate, established curriculum. Always work with an accredited institution.</p>
+      </details>
+      <details>
+        <summary>Will Day 1 CPT affect my OPT eligibility?</summary>
+        <p>Using full-time CPT for 12 months or more eliminates your OPT eligibility. Part-time CPT (20 hours or less per week) does not affect OPT. Always confirm with your DSO before accepting an offer.</p>
+      </details>
+      <details>
+        <summary>Which schools offer Day 1 CPT?</summary>
+        <p>A number of universities — primarily in business, computer science, and analytics graduate programs — offer Day 1 CPT. Choose an institution that is SEVP-certified and regionally accredited.</p>
+      </details>
+      <details>
+        <summary>Can I change employers on Day 1 CPT?</summary>
+        <p>Yes, but each new role requires fresh CPT authorization from your DSO. You cannot begin work for a new employer until a new I-20 with the updated authorization is issued.</p>
+      </details>
+      <details>
+        <summary>Do I still need to attend classes?</summary>
+        <p>Absolutely. Day 1 CPT requires you to be enrolled full-time and maintain satisfactory academic progress. Most programs combine weekend or evening classes with full-time weekday work.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="get-started" class="cta-section">
+  <div class="container">
+    <h2>Find out if you qualify</h2>
+    <p>Tell us a bit about yourself and we'll send a personalized eligibility overview.</p>
+    <form class="lead-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thanks — we\'ll be in touch'; this.querySelector('button').disabled=true;">
+      <input type="text" placeholder="First name" required />
+      <input type="text" placeholder="Last name" required />
+      <input class="full" type="email" placeholder="Email address" required />
+      <select class="full" required>
+        <option value="">Current status…</option>
+        <option>Currently on F-1 in the U.S.</option>
+        <option>F-1 student abroad</option>
+        <option>Considering applying for F-1</option>
+        <option>On a different visa</option>
+        <option>U.S. citizen / permanent resident</option>
+      </select>
+      <button type="submit">Get My Eligibility Overview</button>
+    </form>
+    <p class="form-note">We respect your privacy. No spam — just helpful guidance.</p>
+  </div>
+</section>
+
+<footer>
+  <p class="disclaimer">
+    Disclaimer: This page is for informational purposes only and is not legal or immigration advice.
+    Day 1 CPT regulations are interpreted on a case-by-case basis. Always consult a licensed
+    immigration attorney and your school's DSO before making decisions about your visa status.
+  </p>
+  <p>&copy; 2026 Day1CPT. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
