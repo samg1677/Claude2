@@ -5,497 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Win a scholarship and live the experience of a lifetime | EduConnect</title>
   <meta name="description" content="Imagine living in Australia? Fill in the form and enter the draw for a scholarship to study abroad with EduConnect." />
-  <style>
-    :root {
-      --brand: #4ed3cc;
-      --brand-700: #2fa9a2;
-      --brand-50: #e9faf8;
-      --accent: #ff7400;
-      --accent-700: #cc5c00;
-      --yellow: #FDB600;
-      --ink: #332959;
-      --muted: #6B7280;
-      --bg-soft: #F6F7FB;
-      --bg-dark: #332959;
-      --white: #FFFFFF;
-      --radius: 14px;
-      --shadow-sm: 0 4px 14px rgba(15, 22, 38, 0.08);
-      --shadow-md: 0 12px 32px rgba(15, 22, 38, 0.12);
-      --shadow-lg: 0 24px 60px rgba(15, 22, 38, 0.18);
-      --container: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-    h1, h2, h3, h4, h5 { font-family: Arial, Helvetica, sans-serif; line-height: 1.2; margin: 0; }
-    p { margin: 0; }
-    button { font-family: inherit; cursor: pointer; }
-
-    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-      border: 2px solid transparent;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .btn--accent { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .btn--accent:hover { background: var(--accent-700); border-color: var(--accent-700); }
-    .btn--light { background: #fff; color: var(--brand); border-color: #fff; }
-    .btn--light:hover { background: var(--brand-50); }
-    .btn--cta { background: var(--brand); color: #fff; border-color: var(--brand); }
-    .btn--cta:hover { background: var(--brand-700); border-color: var(--brand-700); }
-    .btn--sm { padding: 10px 18px; font-size: 13px; }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      background: var(--bg-dark);
-      color: #fff;
-      padding: 40px 0 160px;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -120px;
-      width: 320px; height: 320px;
-      background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero__deco-top {
-      position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
-      opacity: 0.4;
-      color: #fff;
-    }
-    .hero__grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 56px;
-      align-items: center;
-      padding-top: 40px;
-      position: relative;
-    }
-    .hero__title {
-      font-size: clamp(30px, 4.2vw, 48px);
-      font-weight: 500;
-      margin-bottom: 20px;
-      line-height: 1.15;
-      color: #fff;
-    }
-    .hero__title strong { color: var(--accent); font-weight: 800; }
-    .hero__subtitle {
-      font-size: 18px;
-      opacity: 0.92;
-      max-width: 460px;
-      margin-bottom: 32px;
-      color: #fff;
-    }
-    .hero__media {
-      position: relative;
-      max-width: 460px;
-      margin-left: auto;
-    }
-    .hero__img-wrap {
-      position: relative;
-      padding: 14px;
-      background: #fff;
-      border-radius: 6px;
-      box-shadow: var(--shadow-lg);
-      transform: rotate(-1.5deg);
-    }
-    .hero__img-wrap img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-    .hero__pin {
-      position: absolute;
-      top: -32px; right: 36px;
-      width: 28px; height: 64px;
-      color: var(--accent);
-      z-index: 2;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
-    }
-    .hero__arrow {
-      position: absolute;
-      top: 40px;
-      left: -110px;
-      width: 200px;
-      height: 140px;
-      color: var(--accent);
-      pointer-events: none;
-      z-index: 3;
-    }
-
-    /* Social proof */
-    .social-proof {
-      position: relative;
-      margin-top: -110px;
-      z-index: 2;
-    }
-    .social-proof__card {
-      display: inline-flex;
-      align-items: center;
-      gap: 22px;
-      background: #fff;
-      color: var(--ink);
-      padding: 18px 28px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-    }
-    .social-proof__avatars {
-      display: inline-flex;
-    }
-    .social-proof__avatars img {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      margin-left: -10px;
-      object-fit: cover;
-    }
-    .social-proof__avatars img:first-child { margin-left: 0; }
-    .social-proof__count {
-      font-weight: 800;
-      font-size: 24px;
-      line-height: 1;
-    }
-    .social-proof__label {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-    .stars { display: inline-flex; gap: 2px; margin-top: 4px; color: var(--yellow); }
-    .stars svg { width: 16px; height: 16px; }
-    .rating-row { display: flex; align-items: center; gap: 8px; }
-    .rating-row strong { font-weight: 700; }
-
-    /* Sections — symmetric vertical rhythm */
-    section { padding: 80px 0; }
-    .section-title {
-      font-size: clamp(26px, 3vw, 34px);
-      font-weight: 700;
-      text-align: center;
-      margin: 0 0 48px;
-      color: var(--ink);
-    }
-
-    /* Includes (cards) */
-    .includes { background: var(--bg-soft); }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-    }
-    .card__head {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .card__icon {
-      width: 20px; height: 20px;
-      color: var(--brand);
-      flex: 0 0 auto;
-    }
-    .card__title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      margin: 0;
-      line-height: 1.3;
-    }
-    .card__text { color: var(--muted); font-size: 15px; }
-    .card__text strong { color: var(--ink); }
-
-    /* Form + text two-column */
-    .form-text { background: #fff; }
-    .form-text__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
-    }
-    .form-text__title {
-      font-size: clamp(26px, 3vw, 36px);
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--ink);
-    }
-    .form-text__body { font-size: 17px; line-height: 1.7; color: var(--muted); }
-    .form-text__body strong { color: var(--ink); }
-    .form-text__body p + p { margin-top: 14px; }
-
-    .form-card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 36px;
-      box-shadow: var(--shadow-md);
-      border-top: 4px solid var(--brand);
-    }
-    .form-card h3 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-    .form-field {
-      display: block;
-      margin-bottom: 16px;
-    }
-    .form-field input,
-    .form-field select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid #e1e5ee;
-      border-radius: 8px;
-      font: inherit;
-      font-size: 15px;
-      background: #fff;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-    .form-field input:focus,
-    .form-field select:focus {
-      outline: none;
-      border-color: var(--brand);
-      box-shadow: 0 0 0 3px rgba(78, 211, 204, 0.25);
-    }
-    .form-field--check {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .form-card button[type="submit"] {
-      width: 100%;
-      margin-top: 6px;
-    }
-
-    /* Why us (video + text + list) */
-    .why-us { background: var(--bg-dark); color: #fff; position: relative; overflow: hidden; }
-    .why-us__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .video-card {
-      position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      box-shadow: var(--shadow-lg);
-    }
-    .video-card img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
-
-    .why-us__title { font-size: clamp(26px, 3vw, 34px); font-weight: 700; margin-bottom: 18px; }
-    .why-us__body { font-size: 17px; opacity: 0.85; line-height: 1.7; }
-    .why-us__list-head { margin-top: 56px; margin-bottom: 16px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 700; }
-    .why-us__list { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 12px; max-width: 760px; }
-    .why-us__list li { padding-left: 36px; position: relative; font-size: 15px; opacity: 0.92; }
-    .why-us__list li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 2px;
-      width: 22px; height: 22px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: inset 0 0 0 4px var(--bg-dark);
-    }
-    .why-us__list li::after {
-      content: '';
-      position: absolute;
-      left: 7px; top: 8px;
-      width: 8px; height: 4px;
-      border-left: 2px solid #fff;
-      border-bottom: 2px solid #fff;
-      transform: rotate(-45deg);
-    }
-
-    /* Gallery carousel */
-    .gallery { background: var(--bg-soft); }
-    .gallery__intro {
-      max-width: 760px;
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-    .gallery__intro h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; margin-bottom: 14px; }
-    .gallery__intro p { color: var(--muted); font-size: 16px; }
-    .gallery__track {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 8px 24px 24px;
-      scrollbar-width: thin;
-    }
-    .gallery__track::-webkit-scrollbar { height: 8px; }
-    .gallery__track::-webkit-scrollbar-thumb { background: #d4d8e2; border-radius: 4px; }
-    .gallery__slide {
-      flex: 0 0 min(680px, 85%);
-      scroll-snap-align: center;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-    }
-    .gallery__slide img {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-    }
-    .gallery__nav {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 28px;
-    }
-    .gallery__nav button {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      border: 0;
-      background: #fff;
-      box-shadow: var(--shadow-sm);
-      color: var(--brand);
-      display: grid;
-      place-items: center;
-    }
-    .gallery__nav button:hover { background: var(--brand); color: #fff; }
-
-    /* FAQ */
-    .faq__wrap { max-width: 820px; margin: 0 auto; }
-    .faq-item {
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 14px;
-      overflow: hidden;
-    }
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 22px 56px 22px 26px;
-      font-weight: 600;
-      font-size: 17px;
-      position: relative;
-      color: var(--ink);
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '';
-      position: absolute;
-      top: 50%; right: 26px;
-      width: 14px; height: 2px;
-      background: var(--brand);
-      transform: translateY(-50%);
-    }
-    .faq-item summary::before {
-      content: '';
-      position: absolute;
-      top: 50%; right: 32px;
-      width: 2px; height: 14px;
-      background: var(--brand);
-      transform: translateY(-50%);
-      transition: transform 0.2s ease;
-    }
-    .faq-item[open] summary::before { transform: translateY(-50%) rotate(90deg); opacity: 0; }
-    .faq-item__body { padding: 0 26px 22px; color: var(--muted); font-size: 15px; line-height: 1.7; }
-
-    /* Testimonials */
-    .testimonials { background: var(--bg-soft); }
-    .testimonials__grid {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-    .testimonials__intro h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; margin-top: 16px; }
-    .testimonials__icon { width: 64px; height: 64px; color: var(--yellow); }
-    .testimonials__track {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-    .testimonial {
-      background: #fff;
-      padding: 32px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-    }
-    .testimonial__quote {
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.6;
-      flex: 1;
-    }
-    .testimonial__author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .testimonial__author img {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    .testimonial__author strong { display: block; font-weight: 700; }
-    .testimonial__author span { color: var(--muted); font-size: 13px; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      section { padding: 64px 0; }
-      .hero { padding: 24px 0 120px; }
-      .hero__grid { grid-template-columns: 1fr; gap: 40px; }
-      .hero__media { margin: 0 auto; max-width: 360px; }
-      .hero__img-wrap { transform: none; }
-      .hero__arrow, .hero__pin, .hero__deco-top, .hero::before { display: none; }
-      .cards { grid-template-columns: 1fr; }
-      .form-text__grid, .why-us__grid, .testimonials__grid { grid-template-columns: 1fr; gap: 32px; }
-      .social-proof { margin-top: -90px; }
-      .social-proof__card { width: 100%; flex-wrap: wrap; }
-      .why-us__list { max-width: none; }
-    }
-    @media (max-width: 480px) {
-      .testimonials__track { grid-template-columns: 1fr; }
-      .gallery__slide { flex-basis: 90%; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
   <!-- Hero -->
   <section class="hero" id="top">
-    <svg class="hero__deco-top" width="180" height="24" viewBox="0 0 180 24" fill="none">
+    <svg class="hero__deco-top" width="180" height="24" viewBox="0 0 180 24" fill="none" aria-hidden="true">
       <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.2"/>
       <rect x="160" y="6" width="12" height="12" transform="rotate(45 166 12)" stroke="currentColor" stroke-width="1.2"/>
     </svg>
@@ -509,17 +25,19 @@
           <a class="btn btn--accent" href="#apply">I want to apply!</a>
         </div>
         <div class="hero__media">
-          <svg class="hero__arrow" viewBox="0 0 200 140" fill="none" aria-hidden="true">
-            <path d="M 10 30 C 30 90, 90 130, 175 110"
+          <svg class="hero__arrow" viewBox="0 0 210 150" fill="none" aria-hidden="true">
+            <path d="M 12 32 C 32 96, 96 138, 182 116"
                   stroke="currentColor" stroke-width="4" fill="none"
                   stroke-linecap="round"/>
-            <path d="M 175 110 l -22 -2 m 22 2 l -10 18"
+            <path d="M 182 116 l -22 -2 m 22 2 l -10 18"
                   stroke="currentColor" stroke-width="4" fill="none"
                   stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="hero__img-wrap">
-            <img src="https://images.unsplash.com/photo-1523428096881-5bd79d043006?auto=format&fit=crop&w=900&q=80" alt="Students on Gold Coast" />
-            <svg class="hero__pin" viewBox="0 0 28 64" fill="none">
+            <img src="https://images.unsplash.com/photo-1523428096881-5bd79d043006?auto=format&fit=crop&w=900&q=80"
+                 alt="Students on Gold Coast"
+                 onerror="this.src='https://picsum.photos/seed/educonnect-hero/700/700';this.onerror=null;" />
+            <svg class="hero__pin" viewBox="0 0 28 64" fill="none" aria-hidden="true">
               <path d="M14 0c6 0 11 5 11 11 0 7-8 21-11 25-3-4-11-18-11-25 0-6 5-11 11-11z" fill="currentColor"/>
               <circle cx="14" cy="11" r="4.5" fill="#fff"/>
             </svg>
@@ -529,8 +47,8 @@
     </div>
   </section>
 
-  <!-- Social proof -->
-  <div class="social-proof">
+  <!-- What's included (social-proof card overlaps the hero from here) -->
+  <section class="includes">
     <div class="container">
       <div class="social-proof__card">
         <div class="social-proof__avatars">
@@ -554,31 +72,26 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- What's included -->
-  <section class="includes">
-    <div class="container">
       <h2 class="section-title">What does this scholarship include?</h2>
       <div class="cards">
         <article class="card">
           <div class="card__head">
-            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
             <h3 class="card__title">Choose where to live</h3>
           </div>
           <p class="card__text">You pick: <strong>Sydney, Melbourne, Brisbane, Byron Bay, Gold Coast, Adelaide</strong> or <strong>Perth</strong>. We have offices in every destination!</p>
         </article>
         <article class="card">
           <div class="card__head">
-            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
             <h3 class="card__title">Choose what to study</h3>
           </div>
           <p class="card__text">Languages? A vocational course? Go for whatever you dreamed of — we partner with the best schools across the country.</p>
         </article>
         <article class="card">
           <div class="card__head">
-            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
             <h3 class="card__title">EduConnect experience</h3>
           </div>
           <p class="card__text">Local offices, on-the-ground team and top events. We support you throughout your adventure so you'll make friends fast.</p>
@@ -635,8 +148,10 @@
   <section class="why-us">
     <div class="container">
       <div class="why-us__grid">
-        <div class="video-card">
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80" alt="Students sharing a moment" />
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+               alt="EduConnect students together"
+               onerror="this.src='https://picsum.photos/seed/educonnect-team/1100/720';this.onerror=null;" />
         </div>
         <div>
           <h2 class="why-us__title">What is EduConnect?</h2>
@@ -650,34 +165,37 @@
         <li><strong style="color:#fff">Partnerships with the best schools.</strong> You can train in a huge variety of courses.</li>
         <li><strong style="color:#fff">Paperwork handled.</strong> Visa experts and booking specialists make it all simple: visa, translations, enrolment, health insurance.</li>
         <li><strong style="color:#fff">Offices and team on the ground.</strong> Quality support from the moment you land. 24/7!</li>
-        <li><strong style="color:#fff">Community and top events</strong> to meet international friends and live unique adventures. Learn in workshops, enjoy top events.</li>
+        <li><strong style="color:#fff">Community and top events</strong> to meet international friends and live unique adventures.</li>
       </ul>
       <a class="btn btn--accent" href="#apply">Sign me up!</a>
     </div>
   </section>
 
   <!-- Gallery -->
-  <section class="gallery">
+  <section class="gallery" data-slider-root>
     <div class="container">
       <div class="gallery__intro">
         <h2>Still not convinced about studying and working in Australia?</h2>
-        <p>In a few months this could be your gallery: surfing at Bondi Beach, flying over the Great Barrier Reef, visiting the Sydney Opera House, exploring glaciers in nearby New Zealand, or travelling through New Caledonia.</p>
+        <p>In a few months this could be your gallery: surfing at Bondi Beach, flying over the Great Barrier Reef, visiting the Sydney Opera House, exploring glaciers in New Zealand, or travelling through New Caledonia.</p>
       </div>
     </div>
-    <div class="gallery__track" id="galleryTrack">
-      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1523428096881-5bd79d043006?auto=format&fit=crop&w=1200&q=80" alt="Beach" /></div>
-      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=80" alt="Sydney Opera House" /></div>
-      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1494791368093-85217fbbf8de?auto=format&fit=crop&w=1200&q=80" alt="Australian coast" /></div>
-      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=1200&q=80" alt="Surfing" /></div>
-      <div class="gallery__slide"><img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=1200&q=80" alt="Reef" /></div>
+    <div class="slider" data-slider>
+      <div class="gallery__slide"><img src="https://picsum.photos/seed/eduC-beach/1100/700" alt="Beach in Australia" /></div>
+      <div class="gallery__slide"><img src="https://picsum.photos/seed/eduC-opera/1100/700" alt="Sydney Opera House" /></div>
+      <div class="gallery__slide"><img src="https://picsum.photos/seed/eduC-coast/1100/700" alt="Australian coast" /></div>
+      <div class="gallery__slide"><img src="https://picsum.photos/seed/eduC-surf/1100/700" alt="Surfing" /></div>
+      <div class="gallery__slide"><img src="https://picsum.photos/seed/eduC-reef/1100/700" alt="Great Barrier Reef" /></div>
     </div>
-    <div class="gallery__nav">
-      <button type="button" aria-label="Previous slide" data-dir="-1">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button type="button" aria-label="Next slide" data-dir="1">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
+    <div class="container">
+      <div class="slider-nav">
+        <button type="button" data-slider-prev aria-label="Previous photo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="slider-dots" data-slider-dots></div>
+        <button type="button" data-slider-next aria-label="Next photo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -708,8 +226,7 @@
             Yes! Show us how much you want it and why you're the right person for this adventure.<br/>
             1️⃣ Post a 30-second video on Instagram telling us your dream destination and why you're passionate about it.<br/>
             2️⃣ Tag EduConnect.<br/>
-            3️⃣ Send the video to <a href="mailto:hello@educonnect.example">hello@educonnect.example</a>.<br/>
-            Be yourself, let your creativity flow and have fun with it.
+            3️⃣ Send the video to <a href="mailto:hello@educonnect.example">hello@educonnect.example</a>.
           </div>
         </details>
         <details class="faq-item">
@@ -720,52 +237,138 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
+  <!-- Testimonials slider -->
+  <section class="testimonials" data-slider-root>
     <div class="container">
-      <div class="testimonials__grid">
-        <div class="testimonials__intro">
-          <svg class="testimonials__icon" viewBox="0 0 96 100" fill="currentColor"><path d="M85 1H10C5 1 1 5 1 10v59c0 5 4 9 9 9h49c1.5 0 3 1 3.5 2.5 2.5 6.5 7.5 12 13 16 1 0.5 2 1 3 1.5 2 1 5 1 6.5-2 2.5-4.5 1-10.5 0-15.5-0.5-1 0.5-2 1.5-2 5 0 9-4 9-9V10c0-5-4-9-9-9z" opacity="0.85"/></svg>
-          <h2>Growers tell their experience</h2>
+      <div class="testimonials__head">
+        <div class="testimonials__heading">
+          <h2>What students say</h2>
+          <span class="google-badge">
+            <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            <strong>4.7</strong>
+            <span class="stars" aria-label="4.7 out of 5">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <span>Google reviews</span>
+          </span>
         </div>
-        <div class="testimonials__track">
-          <article class="testimonial">
-            <p class="testimonial__quote">"Highly recommended. They really care about you and the service they provide. Sheila is amazing, totally dedicated to her work and makes you feel right at home. She makes sure everyone is comfortable and it's easy to make friends thanks to the activities they organise."</p>
-            <div class="testimonial__author">
-              <img src="https://i.pravatar.cc/96?img=23" alt="" />
-              <div><strong>Andrea Lanza</strong><span>Grower</span></div>
-            </div>
-          </article>
-          <article class="testimonial">
-            <p class="testimonial__quote">"100% recommend the EduConnect adventure. The support starts from the first minute you arrive. Come, discover, live the experience — you'll never forget it. The activities are great and you'll never feel alone."</p>
-            <div class="testimonial__author">
-              <img src="https://i.pravatar.cc/96?img=53" alt="" />
-              <div><strong>Diego Vera</strong><span>Grower</span></div>
-            </div>
-          </article>
-          <article class="testimonial">
-            <p class="testimonial__quote">"In destination I've had so much support from Jimena, the experience leader. I'm having a great time at the events she's organising and meeting tons of people, so I feel really supported. They're like my family here."</p>
-            <div class="testimonial__author">
-              <img src="https://i.pravatar.cc/96?img=47" alt="" />
-              <div><strong>Sara Sanchez</strong><span>Grower</span></div>
-            </div>
-          </article>
-        </div>
+      </div>
+
+      <div class="slider" data-slider>
+        <article class="testimonial">
+          <div class="testimonial__top">
+            <span class="stars">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="testimonial__quote">"Highly recommended. They really care about you and the service they provide. Sheila is amazing, totally dedicated to her work and makes you feel right at home."</p>
+          <div class="testimonial__author">
+            <img src="https://i.pravatar.cc/96?img=23" alt="" />
+            <div><strong>Andrea Lanza</strong><span>2 weeks ago</span></div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <div class="testimonial__top">
+            <span class="stars">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="testimonial__quote">"100% recommend the EduConnect adventure. The support starts from the first minute you arrive. The activities are great and you'll never feel alone."</p>
+          <div class="testimonial__author">
+            <img src="https://i.pravatar.cc/96?img=53" alt="" />
+            <div><strong>Diego Vera</strong><span>1 month ago</span></div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <div class="testimonial__top">
+            <span class="stars">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="testimonial__quote">"In destination I've had so much support from Jimena, the experience leader. Meeting tons of people and feeling really supported — they're like my family here."</p>
+          <div class="testimonial__author">
+            <img src="https://i.pravatar.cc/96?img=47" alt="" />
+            <div><strong>Sara Sanchez</strong><span>3 months ago</span></div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <div class="testimonial__top">
+            <span class="stars">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="testimonial__quote">"Best decision I ever made. The process was smooth, the team is super helpful, and I'm living the dream in Sydney now. Five stars all around."</p>
+          <div class="testimonial__author">
+            <img src="https://i.pravatar.cc/96?img=15" alt="" />
+            <div><strong>Marco Petrov</strong><span>4 months ago</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="slider-nav">
+        <button type="button" data-slider-prev aria-label="Previous review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="slider-dots" data-slider-dots></div>
+        <button type="button" data-slider-next aria-label="Next review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
-  <script>
-    // Gallery prev/next
-    const track = document.getElementById('galleryTrack');
-    document.querySelectorAll('.gallery__nav button').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const dir = parseInt(btn.dataset.dir, 10);
-        const slide = track.querySelector('.gallery__slide');
-        const step = (slide?.getBoundingClientRect().width || 400) + 16;
-        track.scrollBy({ left: dir * step });
-      });
-    });
-  </script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
