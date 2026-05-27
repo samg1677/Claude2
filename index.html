@@ -48,8 +48,11 @@
     .educonnect-lp .eyebrow--accent { background: rgba(255, 116, 0, 0.15); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
 
     /* ====== Hero ====== */
-    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 72px 0 160px; overflow: hidden; }
-    .educonnect-lp .hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; }
+    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 72px 0 220px; }
+    .educonnect-lp .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; transform: translate(40%, -40%); }
+    .educonnect-lp .hero__social { position: absolute; left: 0; right: 0; bottom: 0; transform: translateY(40%); z-index: 6; pointer-events: none; }
+    .educonnect-lp .hero__social .container { display: flex; justify-content: flex-start; }
+    .educonnect-lp .hero__social .social-proof__card { pointer-events: auto; margin: 0; }
     .educonnect-lp .hero__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; position: relative; }
     .educonnect-lp .hero__title { font-size: clamp(32px, 4.2vw, 52px); font-weight: 700; margin-bottom: 20px; line-height: 1.12; color: #fff; }
     .educonnect-lp .hero__title strong { color: var(--brand); font-weight: 800; }
@@ -68,14 +71,16 @@
     .educonnect-lp .section-title { font-size: clamp(28px, 3.2vw, 38px); font-weight: 700; margin: 0; color: var(--ink); line-height: 1.2; }
     .educonnect-lp .section-sub { color: var(--muted); font-size: 16px; margin-top: 16px; line-height: 1.7; }
 
-    /* ====== Lead section: social-proof + 3 cards + form (gray bg) ====== */
-    .educonnect-lp .lead { background: var(--bg-soft); padding-top: 80px; padding-bottom: 96px; }
+    /* ====== Lead section: heading + 3 cards + form (gray bg) ====== */
+    .educonnect-lp .lead { background: var(--bg-soft); padding-top: 120px; padding-bottom: 96px; }
+    .educonnect-lp .lead__head { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+    .educonnect-lp .lead__head .eyebrow { margin-bottom: 14px; }
+    .educonnect-lp .lead__head h2 { font-size: clamp(28px, 3.2vw, 38px); font-weight: 700; color: var(--ink); margin: 0; line-height: 1.2; }
     .educonnect-lp .social-proof__card {
       display: inline-flex; align-items: center; gap: 24px;
       background: #fff; color: var(--ink);
       padding: 20px 32px; border-radius: var(--radius);
       box-shadow: var(--shadow-md);
-      margin: -230px 0 56px; /* hovers over the hero, bottom edge bridges into lead */
       position: relative; z-index: 5;
     }
     .educonnect-lp .social-proof__avatars { display: inline-flex; flex-shrink: 0; }
@@ -247,7 +252,8 @@
       .educonnect-lp .gallery__slide { flex-basis: min(620px, 88%); }
       .educonnect-lp .hero__arrow { width: 160px; height: 130px; top: -40px; left: -20px; }
       .educonnect-lp .alliant-logo { max-width: 210px; }
-      .educonnect-lp .social-proof__card { margin-top: -200px; }
+      .educonnect-lp .hero { padding-bottom: 200px; }
+      .educonnect-lp .lead { padding-top: 110px; }
     }
 
     @media (max-width: 768px) {
@@ -262,8 +268,10 @@
       .educonnect-lp .hero__img-wrap { transform: none; padding: 14px; }
       .educonnect-lp .hero__arrow, .educonnect-lp .hero__clip { display: none; }
       .educonnect-lp .hero::before { display: none; }
-      .educonnect-lp .lead { padding-top: 64px; padding-bottom: 64px; }
-      .educonnect-lp .social-proof__card { width: 100%; margin: -130px 0 40px; padding: 18px 22px; gap: 16px; flex-wrap: wrap; }
+      .educonnect-lp .hero { padding-bottom: 200px; }
+      .educonnect-lp .lead { padding-top: 110px; padding-bottom: 64px; }
+      .educonnect-lp .hero__social { transform: translateY(35%); }
+      .educonnect-lp .hero__social .social-proof__card { width: 100%; padding: 18px 22px; gap: 16px; flex-wrap: wrap; }
       .educonnect-lp .social-proof__count { font-size: 20px; }
       .educonnect-lp .cards { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
       .educonnect-lp .lead-form { grid-template-columns: 1fr; gap: 28px; }
@@ -295,7 +303,8 @@
       .educonnect-lp .form-card, .educonnect-lp .step, .educonnect-lp .program, .educonnect-lp .card { padding: 22px 20px; }
       .educonnect-lp .section-title { font-size: 22px; margin-bottom: 12px; }
       .educonnect-lp .slider-nav button { width: 42px; height: 42px; }
-      .educonnect-lp .social-proof__card { gap: 12px; padding: 14px 18px; margin-top: -110px; }
+      .educonnect-lp .hero__social .social-proof__card { gap: 12px; padding: 14px 18px; }
+      .educonnect-lp .hero__social { transform: translateY(30%); }
       .educonnect-lp .social-proof__avatars img { width: 34px; height: 34px; }
       .educonnect-lp .alliant-logo { max-width: 160px; }
       .educonnect-lp .badges { gap: 6px; }
@@ -333,33 +342,42 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ====== Lead: social proof + 3 cards + form (gray bg, straddles hero) ====== -->
-  <section class="lead" id="apply">
-    <div class="container">
-      <div class="social-proof__card">
-        <div class="social-proof__avatars">
-          <img src="https://i.pravatar.cc/64?img=12" alt="" />
-          <img src="https://i.pravatar.cc/64?img=32" alt="" />
-          <img src="https://i.pravatar.cc/64?img=45" alt="" />
-          <img src="https://i.pravatar.cc/64?img=68" alt="" />
-        </div>
-        <div>
-          <span class="social-proof__count">Trusted by 1,000+ students</span>
-          <p class="social-proof__label">currently working &amp; studying in the U.S.</p>
-          <div class="rating-row">
-            <strong>4.9</strong>
-            <span class="stars" aria-label="4.9 out of 5">
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
-            </span>
-            <span style="color: var(--muted); font-size: 13px;">Google reviews</span>
+    <!-- Floating social-proof card pinned to the bottom of the hero, half-extending into the lead -->
+    <div class="hero__social">
+      <div class="container">
+        <div class="social-proof__card">
+          <div class="social-proof__avatars">
+            <img src="https://i.pravatar.cc/64?img=12" alt="" />
+            <img src="https://i.pravatar.cc/64?img=32" alt="" />
+            <img src="https://i.pravatar.cc/64?img=45" alt="" />
+            <img src="https://i.pravatar.cc/64?img=68" alt="" />
+          </div>
+          <div>
+            <span class="social-proof__count">Trusted by 1,000+ students</span>
+            <p class="social-proof__label">currently working &amp; studying in the U.S.</p>
+            <div class="rating-row">
+              <strong>4.9</strong>
+              <span class="stars" aria-label="4.9 out of 5">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              </span>
+              <span style="color: var(--muted); font-size: 13px;">Google reviews</span>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Lead: heading + 3 cards + form (gray bg) ====== -->
+  <section class="lead" id="apply">
+    <div class="container">
+      <div class="lead__head">
+        <span class="eyebrow eyebrow--light">What's Included</span>
+        <h2>Three things that set you up from Day 1</h2>
       </div>
 
       <div class="cards">
