@@ -59,7 +59,7 @@
     .educonnect-lp .hero__img-wrap { position: relative; padding: 18px; background: #fff; border-radius: 6px; box-shadow: var(--shadow-lg); transform: rotate(-1.5deg); }
     .educonnect-lp .hero__img-wrap img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
     .educonnect-lp .hero__clip { position: absolute; top: -22px; left: 50%; transform: translateX(-50%) rotate(8deg); width: 22px; height: 64px; color: var(--accent); z-index: 4; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
-    .educonnect-lp .hero__arrow { position: absolute; bottom: 4%; right: 32%; width: 320px; height: 220px; color: var(--accent); pointer-events: none; z-index: 3; }
+    .educonnect-lp .hero__arrow { position: absolute; top: -56px; left: -40px; width: 200px; height: 160px; color: var(--accent); pointer-events: none; z-index: 3; }
 
     /* ====== Sections ====== */
     .educonnect-lp section { padding: 80px 0; }
@@ -75,7 +75,7 @@
       background: #fff; color: var(--ink);
       padding: 20px 32px; border-radius: var(--radius);
       box-shadow: var(--shadow-md);
-      margin: -180px 0 56px; /* straddles hero/lead boundary */
+      margin: -230px 0 56px; /* hovers over the hero, bottom edge bridges into lead */
       position: relative; z-index: 5;
     }
     .educonnect-lp .social-proof__avatars { display: inline-flex; flex-shrink: 0; }
@@ -245,9 +245,9 @@
       .educonnect-lp .step { padding: 28px 24px; }
       .educonnect-lp .program { padding: 28px 24px; }
       .educonnect-lp .gallery__slide { flex-basis: min(620px, 88%); }
-      .educonnect-lp .hero__arrow { width: 240px; height: 170px; right: 40%; bottom: 8%; }
+      .educonnect-lp .hero__arrow { width: 160px; height: 130px; top: -40px; left: -20px; }
       .educonnect-lp .alliant-logo { max-width: 210px; }
-      .educonnect-lp .social-proof__card { margin-top: -150px; }
+      .educonnect-lp .social-proof__card { margin-top: -200px; }
     }
 
     @media (max-width: 768px) {
@@ -263,7 +263,7 @@
       .educonnect-lp .hero__arrow, .educonnect-lp .hero__clip { display: none; }
       .educonnect-lp .hero::before { display: none; }
       .educonnect-lp .lead { padding-top: 64px; padding-bottom: 64px; }
-      .educonnect-lp .social-proof__card { width: 100%; margin: -100px 0 40px; padding: 18px 22px; gap: 16px; flex-wrap: wrap; }
+      .educonnect-lp .social-proof__card { width: 100%; margin: -130px 0 40px; padding: 18px 22px; gap: 16px; flex-wrap: wrap; }
       .educonnect-lp .social-proof__count { font-size: 20px; }
       .educonnect-lp .cards { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
       .educonnect-lp .lead-form { grid-template-columns: 1fr; gap: 28px; }
@@ -295,7 +295,7 @@
       .educonnect-lp .form-card, .educonnect-lp .step, .educonnect-lp .program, .educonnect-lp .card { padding: 22px 20px; }
       .educonnect-lp .section-title { font-size: 22px; margin-bottom: 12px; }
       .educonnect-lp .slider-nav button { width: 42px; height: 42px; }
-      .educonnect-lp .social-proof__card { gap: 12px; padding: 14px 18px; margin-top: -90px; }
+      .educonnect-lp .social-proof__card { gap: 12px; padding: 14px 18px; margin-top: -110px; }
       .educonnect-lp .social-proof__avatars img { width: 34px; height: 34px; }
       .educonnect-lp .alliant-logo { max-width: 160px; }
       .educonnect-lp .badges { gap: 6px; }
@@ -320,6 +320,10 @@
           <p class="hero__cta-note">Free consultation · No commitment required</p>
         </div>
         <div class="hero__media">
+          <svg class="hero__arrow" viewBox="0 0 200 160" fill="none" aria-hidden="true">
+            <path d="M 14 16 C 22 76, 76 140, 168 124" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M 168 124 l -22 -4 m 22 4 l -8 20" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <div class="hero__img-wrap">
             <img src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="EduConnect graduation day" />
             <svg class="hero__clip" viewBox="0 0 22 64" fill="none" aria-hidden="true">
@@ -327,15 +331,6 @@
             </svg>
           </div>
         </div>
-        <svg class="hero__arrow" viewBox="0 0 320 220" fill="none" aria-hidden="true">
-          <!-- decorative circle near photo end -->
-          <circle cx="290" cy="28" r="18" stroke="currentColor" stroke-width="3" fill="none"/>
-          <path d="M283 22l14 8-14 8z" fill="currentColor"/>
-          <!-- main curve from photo end to button area -->
-          <path d="M 274 36 C 250 110, 180 130, 90 188" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- arrowhead at button end -->
-          <path d="M 90 188 l 22 -4 m -22 4 l 6 -22" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
       </div>
     </div>
   </section>
