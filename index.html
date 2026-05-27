@@ -22,7 +22,7 @@
       --shadow-sm: 0 4px 14px rgba(15, 22, 38, 0.08);
       --shadow-md: 0 12px 32px rgba(15, 22, 38, 0.12);
       --shadow-lg: 0 24px 60px rgba(15, 22, 38, 0.18);
-      --container: 1180px;
+      --container: 1280px;
     }
 
     /* ====== Base (scoped) ====== */
@@ -54,7 +54,7 @@
     .educonnect-lp .hero__title strong { color: var(--brand); font-weight: 800; }
     .educonnect-lp .hero__subtitle { font-size: 17px; opacity: 0.92; max-width: 520px; margin-bottom: 28px; color: #fff; }
     .educonnect-lp .hero__cta-note { margin-top: 14px; font-size: 13px; opacity: 0.75; color: #fff; }
-    .educonnect-lp .hero__media { position: relative; max-width: 540px; margin-left: auto; }
+    .educonnect-lp .hero__media { position: relative; max-width: 580px; margin-left: auto; }
     .educonnect-lp .hero__img-wrap { position: relative; padding: 16px; background: #fff; border-radius: 6px; box-shadow: var(--shadow-lg); transform: rotate(-1.5deg); }
     .educonnect-lp .hero__img-wrap img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
     .educonnect-lp .hero__pin { position: absolute; top: -32px; right: 36px; width: 28px; height: 64px; color: var(--accent); z-index: 2; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25)); }
@@ -98,6 +98,7 @@
     .educonnect-lp .why-us__title { font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin-bottom: 14px; }
     .educonnect-lp .why-us__body { font-size: 16px; opacity: 0.88; line-height: 1.7; margin-bottom: 22px; }
     .educonnect-lp .why-us__sub { font-size: 14px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--brand); font-weight: 700; margin: 8px 0 12px; }
+    .educonnect-lp .alliant-logo { display: block; max-width: 220px; height: auto; margin: 4px 0 18px; opacity: 0.95; }
     .educonnect-lp .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
     .educonnect-lp .badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); color: #fff; font-size: 12px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.18); }
     .educonnect-lp .badge svg { width: 12px; height: 12px; color: var(--brand); }
@@ -207,51 +208,81 @@
     .educonnect-lp .testimonial__author strong { display: block; font-weight: 700; font-size: 14px; }
     .educonnect-lp .testimonial__author span { color: var(--muted); font-size: 12px; }
 
-    /* ====== Responsive — tablet ====== */
-    @media (max-width: 1024px) {
-      .educonnect-lp .hero { padding: 50px 0 120px; }
-      .educonnect-lp .hero__grid { gap: 36px; }
-      .educonnect-lp .hero__media { max-width: 440px; }
-      .educonnect-lp .form-text__grid { gap: 36px; }
-      .educonnect-lp .why-us__grid { gap: 36px; grid-template-columns: 1fr 1fr; }
-      .educonnect-lp .cards { gap: 18px; }
-      .educonnect-lp .steps { gap: 18px; }
-      .educonnect-lp .gallery__slide { flex-basis: min(560px, 88%); }
-      .educonnect-lp .hero__arrow { width: 160px; height: 130px; top: -44px; left: -20px; }
+    /* ====== Responsive — laptop / small desktop ====== */
+    @media (max-width: 1200px) {
+      .educonnect-lp .container { padding: 0 32px; }
+      .educonnect-lp .hero__grid { gap: 48px; }
+      .educonnect-lp .hero__media { max-width: 500px; }
     }
 
-    /* ====== Responsive — small tablet / large phone ====== */
+    /* ====== Responsive — tablet (landscape) ====== */
+    @media (max-width: 1024px) {
+      .educonnect-lp section { padding: 64px 0; }
+      .educonnect-lp .container { padding: 0 28px; }
+      .educonnect-lp .hero { padding: 50px 0 120px; }
+      .educonnect-lp .hero__grid { gap: 32px; }
+      .educonnect-lp .hero__title { font-size: clamp(28px, 4.4vw, 38px); }
+      .educonnect-lp .hero__media { max-width: 420px; }
+      .educonnect-lp .form-text__grid { gap: 32px; }
+      .educonnect-lp .why-us__grid { gap: 32px; grid-template-columns: 1fr 1fr; }
+      .educonnect-lp .cards { gap: 16px; }
+      .educonnect-lp .card { padding: 22px; }
+      .educonnect-lp .steps { gap: 16px; }
+      .educonnect-lp .step { padding: 26px 22px; }
+      .educonnect-lp .program { padding: 26px 22px; }
+      .educonnect-lp .gallery__slide { flex-basis: min(540px, 88%); }
+      .educonnect-lp .hero__arrow { width: 150px; height: 120px; top: -40px; left: -16px; }
+      .educonnect-lp .alliant-logo { max-width: 200px; }
+    }
+
+    /* ====== Responsive — tablet (portrait) / large phone ====== */
     @media (max-width: 768px) {
-      .educonnect-lp section { padding: 56px 0; }
+      .educonnect-lp section { padding: 52px 0; }
       .educonnect-lp .container { padding: 0 20px; }
       .educonnect-lp .hero { padding: 32px 0 110px; }
-      .educonnect-lp .hero__grid { grid-template-columns: 1fr; gap: 28px; }
-      .educonnect-lp .hero__title { font-size: clamp(26px, 7vw, 34px); }
-      .educonnect-lp .hero__subtitle { font-size: 16px; }
-      .educonnect-lp .hero__media { margin: 0 auto; max-width: 360px; }
+      .educonnect-lp .hero__grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .educonnect-lp .hero__title { font-size: clamp(26px, 6.5vw, 34px); }
+      .educonnect-lp .hero__subtitle { font-size: 16px; margin-left: auto; margin-right: auto; }
+      .educonnect-lp .hero__cta-note { text-align: center; }
+      .educonnect-lp .hero__media { margin: 0 auto; max-width: 380px; }
       .educonnect-lp .hero__img-wrap { transform: none; }
       .educonnect-lp .hero__arrow, .educonnect-lp .hero__pin { display: none; }
       .educonnect-lp .hero::before { display: none; }
       .educonnect-lp .social-proof__card { width: 100%; margin: -80px 0 36px; padding: 16px 20px; gap: 16px; flex-wrap: wrap; }
       .educonnect-lp .social-proof__count { font-size: 20px; }
-      .educonnect-lp .cards, .educonnect-lp .steps, .educonnect-lp .programs__grid { grid-template-columns: 1fr; }
+      .educonnect-lp .cards, .educonnect-lp .steps, .educonnect-lp .programs__grid { grid-template-columns: 1fr; gap: 16px; }
       .educonnect-lp .form-text__grid, .educonnect-lp .why-us__grid { grid-template-columns: 1fr; gap: 28px; }
-      .educonnect-lp .form-card { padding: 22px; }
+      .educonnect-lp .why-us__grid > div:last-child { text-align: left; }
+      .educonnect-lp .photo-card { aspect-ratio: 16 / 10; max-height: 360px; }
+      .educonnect-lp .alliant-logo { max-width: 180px; }
+      .educonnect-lp .form-card { padding: 24px; }
       .educonnect-lp .testimonials__head { flex-direction: column; align-items: flex-start; gap: 14px; }
       .educonnect-lp .gallery .slider { padding-left: 20px; padding-right: 20px; }
+      .educonnect-lp .section-head { margin-bottom: 36px; }
+      .educonnect-lp .how__intro { font-size: 15px; }
+      .educonnect-lp .program__tag { left: 18px; }
     }
 
     /* ====== Responsive — phone ====== */
     @media (max-width: 480px) {
+      .educonnect-lp section { padding: 44px 0; }
       .educonnect-lp .container { padding: 0 16px; }
+      .educonnect-lp .hero { padding: 24px 0 100px; }
+      .educonnect-lp .hero__title { font-size: 24px; }
+      .educonnect-lp .hero__subtitle { font-size: 15px; }
       .educonnect-lp .gallery .slider { padding-left: 16px; padding-right: 16px; }
       .educonnect-lp .gallery__slide { flex-basis: 92%; }
       .educonnect-lp .testimonial { flex-basis: 92%; padding: 20px; }
-      .educonnect-lp .btn { padding: 12px 22px; font-size: 14px; }
-      .educonnect-lp .form-card, .educonnect-lp .step, .educonnect-lp .program { padding: 22px 20px; }
-      .educonnect-lp .hero__title { font-size: 26px; }
-      .educonnect-lp .section-title { font-size: 22px; }
+      .educonnect-lp .btn { padding: 12px 20px; font-size: 14px; }
+      .educonnect-lp .form-card, .educonnect-lp .step, .educonnect-lp .program, .educonnect-lp .card { padding: 22px 20px; }
+      .educonnect-lp .section-title { font-size: 22px; margin-bottom: 28px; }
       .educonnect-lp .slider-nav button { width: 42px; height: 42px; }
+      .educonnect-lp .social-proof__card { gap: 12px; padding: 14px 18px; }
+      .educonnect-lp .social-proof__avatars img { width: 32px; height: 32px; }
+      .educonnect-lp .alliant-logo { max-width: 160px; }
+      .educonnect-lp .badges { gap: 6px; }
+      .educonnect-lp .badge { font-size: 11px; padding: 6px 10px; }
+      .educonnect-lp .eyebrow { font-size: 11px; padding: 6px 12px; letter-spacing: 1px; }
     }
   </style>
 </head>
@@ -354,7 +385,7 @@
           <span class="eyebrow">Why Students Choose Us</span>
           <h2 class="why-us__title">EduConnect USA and Alliant University</h2>
           <p class="why-us__body">Together, we offer a structured, reliable pathway to start working in the U.S. from day one while earning an accredited graduate degree.</p>
-          <p class="why-us__sub">Alliant International University</p>
+          <img class="alliant-logo" src="https://educonnectusa.com/wp-content/uploads/2026/05/AlliantUniversity-Logo-White.png" alt="Alliant International University" />
           <div class="badges">
             <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> WASC Accredited</span>
             <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> ACBSP Accredited</span>
