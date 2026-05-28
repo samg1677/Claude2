@@ -47,6 +47,31 @@
     .educonnect-lp .eyebrow--light { background: rgba(78, 211, 204, 0.12); color: var(--brand-700); border-color: rgba(78, 211, 204, 0.4); }
     .educonnect-lp .eyebrow--accent { background: rgba(255, 116, 0, 0.15); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
 
+    /* ====== Site header (logo left, WhatsApp right) ====== */
+    .educonnect-lp .site-header { position: sticky; top: 0; z-index: 100; background: var(--bg-dark); box-shadow: 0 2px 12px rgba(15, 22, 38, 0.18); }
+    .educonnect-lp .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
+    .educonnect-lp .site-header__logo { display: inline-flex; align-items: center; flex: 0 0 auto; }
+    .educonnect-lp .site-header__logo img { height: 42px; width: auto; display: block; }
+    .educonnect-lp .site-header__wa { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; background: #25D366; color: #fff; padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.30); transition: background .2s ease, transform .15s ease, box-shadow .2s ease; }
+    .educonnect-lp .site-header__wa:hover { background: #1ebe5a; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.40); }
+    .educonnect-lp .site-header__wa svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+    /* Tablet & mobile: WhatsApp collapses to a round icon-only button */
+    @media (max-width: 1024px) {
+      .educonnect-lp .site-header__inner { height: 66px; }
+      .educonnect-lp .site-header__logo img { height: 36px; }
+      .educonnect-lp .site-header__wa { width: 46px; height: 46px; padding: 0; gap: 0; border-radius: 50%; justify-content: center; }
+      .educonnect-lp .site-header__wa-text { display: none; }
+      .educonnect-lp .site-header__wa svg { width: 22px; height: 22px; }
+    }
+    @media (max-width: 480px) {
+      .educonnect-lp .site-header__inner { height: 60px; }
+      .educonnect-lp .site-header__logo img { height: 32px; }
+      .educonnect-lp .site-header__wa { width: 44px; height: 44px; }
+      .educonnect-lp .site-header__wa svg { width: 20px; height: 20px; }
+    }
+    /* Offset anchored sections so the sticky header doesn't cover them */
+    .educonnect-lp section[id] { scroll-margin-top: 90px; }
+
     /* ====== Hero ====== */
     .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 72px 0 180px; }
     .educonnect-lp .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; transform: translate(40%, -40%); }
@@ -102,13 +127,9 @@
     .educonnect-lp .card__text { color: var(--muted); font-size: 16px; line-height: 1.6; }
     .educonnect-lp .card__text strong { color: var(--ink); }
 
-    /* Form block inside lead section */
-    .educonnect-lp .lead-form { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .educonnect-lp .lead-form__title { font-size: clamp(28px, 3vw, 36px); font-weight: 700; margin-bottom: 20px; color: var(--ink); line-height: 1.2; }
-    .educonnect-lp .lead-form__body { font-size: 17px; line-height: 1.7; color: var(--muted); }
-    .educonnect-lp .lead-form__body strong { color: var(--ink); }
-    .educonnect-lp .lead-form__body p + p { margin-top: 14px; }
-    .educonnect-lp .form-card { background: #fff; border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-md); border-top: 4px solid var(--brand); }
+    /* Form block inside lead section (full width under the cards) */
+    .educonnect-lp .lead-form { display: block; }
+    .educonnect-lp .form-card { width: 100%; background: #fff; border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-md); border-top: 4px solid var(--brand); }
     .educonnect-lp .form-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
     .educonnect-lp .form-card__hint { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
     .educonnect-lp .form-card__footnote { font-size: 12px; color: var(--muted); text-align: center; margin-top: 14px; }
@@ -267,7 +288,6 @@
       .educonnect-lp .hero__social .social-proof__card { width: 100%; padding: 18px 22px; gap: 16px; flex-wrap: wrap; }
       .educonnect-lp .social-proof__count { font-size: 20px; }
       .educonnect-lp .cards { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
-      .educonnect-lp .lead-form { grid-template-columns: 1fr; gap: 28px; }
       .educonnect-lp .alliant__grid { grid-template-columns: 1fr; gap: 32px; }
       .educonnect-lp .alliant__photo { aspect-ratio: 16 / 10; max-height: 360px; }
       .educonnect-lp .steps { grid-template-columns: 1fr; gap: 16px; }
@@ -307,6 +327,19 @@
 <body>
 
 <div class="educonnect-lp">
+
+  <!-- ====== Site header: white logo left, WhatsApp right ====== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__logo" href="#top" aria-label="EduConnect USA home">
+        <img src="https://educonnectusa.com/wp-content/uploads/2024/11/3-1.png" alt="EduConnect USA" />
+      </a>
+      <a class="site-header__wa" href="https://wa.me/16263443218" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 13.6c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-1-.4-1.7-.7-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.1.2-.3.4-.4.5-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.7.8 2 1 .3.1.5.2.6.3.1.1.1.7-.2 1.4z"/></svg>
+        <span class="site-header__wa-text">Chat on WhatsApp</span>
+      </a>
+    </div>
+  </header>
 
   <!-- ====== Hero ====== -->
   <section class="hero" id="top">
@@ -407,14 +440,6 @@
       </div>
 
       <div class="lead-form">
-        <div>
-          <span class="eyebrow eyebrow--light">Let's Get Started</span>
-          <h2 class="lead-form__title">Get matched with a paid position before classes start</h2>
-          <div class="lead-form__body">
-            <p>Tell us a little about your background and our admissions team will reach out for a <strong>free 1:1 consultation</strong>, no commitment required.</p>
-            <p>We'll walk you through your program options, the Day 1 CPT process, and how CareerConnect matches you to a paid position before your first day of class.</p>
-          </div>
-        </div>
         <div class="form-card">
           <h3>Request a free consultation</h3>
           <p class="form-card__hint">A real EduConnect advisor will follow up within one business day.</p>
