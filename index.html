@@ -48,7 +48,7 @@
     .educonnect-lp .eyebrow--accent { background: rgba(255, 116, 0, 0.15); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
 
     /* ====== Hero ====== */
-    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 72px 0 220px; }
+    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 72px 0 180px; }
     .educonnect-lp .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; transform: translate(40%, -40%); }
     .educonnect-lp .hero__social { position: absolute; left: 0; right: 0; bottom: 0; transform: translateY(40%); z-index: 6; pointer-events: none; }
     .educonnect-lp .hero__social .container { display: flex; justify-content: flex-start; }
@@ -62,7 +62,7 @@
     .educonnect-lp .hero__img-wrap { position: relative; padding: 18px; background: #fff; border-radius: 6px; box-shadow: var(--shadow-lg); transform: rotate(-1.5deg); }
     .educonnect-lp .hero__img-wrap img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
     .educonnect-lp .hero__clip { position: absolute; top: -22px; left: 50%; transform: translateX(-50%) rotate(8deg); width: 22px; height: 64px; color: var(--accent); z-index: 4; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
-    .educonnect-lp .hero__arrow { position: absolute; top: -56px; left: -40px; width: 200px; height: 160px; color: var(--accent); pointer-events: none; z-index: 3; }
+    .educonnect-lp .hero__arrow { position: absolute; bottom: 50px; left: -200px; width: 200px; height: 160px; color: var(--accent); pointer-events: none; z-index: 3; transform: scaleX(-1);}
 
     /* ====== Sections ====== */
     .educonnect-lp section { padding: 80px 0; }
@@ -136,21 +136,13 @@
     .educonnect-lp .alliant__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; position: relative; }
     .educonnect-lp .alliant__photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: #1d1740; box-shadow: var(--shadow-lg); }
     .educonnect-lp .alliant__photo img { width: 100%; height: 100%; object-fit: cover; }
-    .educonnect-lp .alliant__title { font-size: clamp(28px, 3.2vw, 40px); font-weight: 700; margin-bottom: 18px; line-height: 1.15; }
+    .educonnect-lp .alliant__title { font-size: clamp(28px, 3.2vw, 40px); font-weight: 700; margin-bottom: 18px; line-height: 1.15; color: #fff; }
     .educonnect-lp .alliant__body { font-size: 17px; opacity: 0.88; line-height: 1.7; margin-bottom: 28px; max-width: 60ch; }
     .educonnect-lp .alliant__body strong { color: #fff; }
-    .educonnect-lp .alliant-logo { display: block; max-width: 240px; height: auto; margin: 4px 0 24px; }
     .educonnect-lp .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 0; }
     .educonnect-lp .badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); color: #fff; font-size: 12px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.18); }
     .educonnect-lp .badge svg { width: 12px; height: 12px; color: var(--brand); }
-
-    .educonnect-lp .alliant__divider { text-align: center; margin: 72px auto 28px; }
-    .educonnect-lp .alliant__divider .eyebrow { background: rgba(255, 116, 0, 0.18); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
-    .educonnect-lp .alliant__bullets { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 56px; max-width: 1100px; margin-inline: auto; }
-    .educonnect-lp .alliant__bullets li { padding-left: 36px; position: relative; font-size: 16px; opacity: 0.94; line-height: 1.65; }
-    .educonnect-lp .alliant__bullets li strong { color: #fff; }
-    .educonnect-lp .alliant__bullets li::before { content: ''; position: absolute; left: 0; top: 4px; width: 22px; height: 22px; background: var(--accent); border-radius: 50%; box-shadow: inset 0 0 0 4px var(--bg-dark); }
-    .educonnect-lp .alliant__bullets li::after { content: ''; position: absolute; left: 7px; top: 10px; width: 8px; height: 4px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg); }
+    .educonnect-lp .alliant-logo { display: block; max-width: 150px; height: auto; margin: 24px 0 0; }
 
     /* ====== How it works ====== */
     .educonnect-lp .how { background: var(--bg-soft); }
@@ -162,7 +154,7 @@
     .educonnect-lp .step__text { color: var(--muted); font-size: 16px; line-height: 1.65; }
 
     /* ====== Programs ====== */
-    .educonnect-lp .programs { background: #fff; }
+    .educonnect-lp .programs { background: var(--bg-soft); }
     .educonnect-lp .programs__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
     .educonnect-lp .program { background: #fff; border-radius: var(--radius); padding: 36px 32px; box-shadow: var(--shadow-sm); border-top: 4px solid var(--brand); position: relative; }
     .educonnect-lp .program--featured { border-top-color: var(--accent); }
@@ -186,12 +178,13 @@
     .educonnect-lp .slider-dots button[aria-current="true"] { background: var(--brand); transform: scale(1.3); }
 
     /* ====== Gallery ====== */
-    .educonnect-lp .gallery { background: var(--bg-soft); }
+    .educonnect-lp .gallery { background: #fff; }
     .educonnect-lp .gallery .slider { padding-left: 32px; padding-right: 32px; }
     .educonnect-lp .gallery__slide { flex: 0 0 min(760px, 88%); scroll-snap-align: center; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
     .educonnect-lp .gallery__slide img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 
     /* ====== FAQ ====== */
+    .educonnect-lp .faq { background: var(--bg-soft); }
     .educonnect-lp .faq__wrap { max-width: 920px; margin: 0 auto; }
     .educonnect-lp .faq-item { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); margin-bottom: 14px; overflow: hidden; }
     .educonnect-lp .faq-item summary { list-style: none; cursor: pointer; padding: 24px 64px 24px 28px; font-weight: 600; font-size: 17px; position: relative; color: var(--ink); }
@@ -202,16 +195,16 @@
     .educonnect-lp .faq-item__body { padding: 0 28px 24px; color: var(--muted); font-size: 16px; line-height: 1.7; }
 
     /* ====== Testimonials ====== */
-    .educonnect-lp .testimonials { background: var(--bg-soft); }
+    .educonnect-lp .testimonials { background: #fff; }
     .educonnect-lp .testimonials__head { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
     .educonnect-lp .testimonials__heading { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .educonnect-lp .testimonials__heading h2 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--ink); margin: 0; }
-    .educonnect-lp .google-badge { display: inline-flex; align-items: center; gap: 10px; background: #fff; padding: 10px 18px; border-radius: 999px; box-shadow: var(--shadow-sm); font-size: 14px; color: var(--ink); }
+    .educonnect-lp .google-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--bg-soft); padding: 10px 18px; border-radius: 999px; box-shadow: var(--shadow-sm); font-size: 14px; color: var(--ink); }
     .educonnect-lp .google-badge svg.google-g { width: 22px; height: 22px; flex-shrink: 0; }
     .educonnect-lp .google-badge strong { font-weight: 700; }
     .educonnect-lp .google-badge .stars { color: var(--yellow); margin-top: 0; }
     .educonnect-lp .google-badge .stars svg { width: 14px; height: 14px; }
-    .educonnect-lp .testimonial { background: #fff; padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; flex: 0 0 min(400px, 88%); scroll-snap-align: start; }
+    .educonnect-lp .testimonial { background: var(--bg-soft); padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; flex: 0 0 min(400px, 88%); scroll-snap-align: start; }
     .educonnect-lp .testimonial__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
     .educonnect-lp .testimonial__top .stars { color: var(--yellow); display: inline-flex; gap: 2px; margin-top: 0; }
     .educonnect-lp .testimonial__top .stars svg { width: 14px; height: 14px; }
@@ -250,8 +243,8 @@
       .educonnect-lp .step { padding: 28px 24px; }
       .educonnect-lp .program { padding: 28px 24px; }
       .educonnect-lp .gallery__slide { flex-basis: min(620px, 88%); }
-      .educonnect-lp .hero__arrow { width: 160px; height: 130px; top: -40px; left: -20px; }
-      .educonnect-lp .alliant-logo { max-width: 210px; }
+      .educonnect-lp .hero__arrow { width: 150px; height: 120px; top: auto; bottom: 30px; left: -130px; }
+      .educonnect-lp .alliant-logo { max-width: 150px; }
       .educonnect-lp .hero { padding-bottom: 200px; }
       .educonnect-lp .lead { padding-top: 110px; }
     }
@@ -277,11 +270,9 @@
       .educonnect-lp .lead-form { grid-template-columns: 1fr; gap: 28px; }
       .educonnect-lp .alliant__grid { grid-template-columns: 1fr; gap: 32px; }
       .educonnect-lp .alliant__photo { aspect-ratio: 16 / 10; max-height: 360px; }
-      .educonnect-lp .alliant__divider { margin: 48px auto 24px; }
-      .educonnect-lp .alliant__bullets { grid-template-columns: 1fr; gap: 16px; }
       .educonnect-lp .steps { grid-template-columns: 1fr; gap: 16px; }
       .educonnect-lp .programs__grid { grid-template-columns: 1fr; gap: 16px; }
-      .educonnect-lp .alliant-logo { max-width: 180px; }
+      .educonnect-lp .alliant-logo { max-width: 150px; }
       .educonnect-lp .form-card { padding: 24px; }
       .educonnect-lp .testimonials__head { flex-direction: column; align-items: flex-start; gap: 14px; }
       .educonnect-lp .gallery .slider { padding-left: 20px; padding-right: 20px; }
@@ -306,7 +297,7 @@
       .educonnect-lp .hero__social .social-proof__card { gap: 12px; padding: 14px 18px; }
       .educonnect-lp .hero__social { transform: translateY(30%); }
       .educonnect-lp .social-proof__avatars img { width: 34px; height: 34px; }
-      .educonnect-lp .alliant-logo { max-width: 160px; }
+      .educonnect-lp .alliant-logo { max-width: 150px; }
       .educonnect-lp .badges { gap: 6px; }
       .educonnect-lp .badge { font-size: 11px; padding: 6px 12px; }
       .educonnect-lp .eyebrow { font-size: 11px; padding: 6px 12px; letter-spacing: 1px; }
@@ -376,7 +367,6 @@
   <section class="lead" id="apply">
     <div class="container">
       <div class="lead__head">
-        <span class="eyebrow eyebrow--light">What's Included</span>
         <h2>Three things that set you up from Day 1</h2>
       </div>
 
@@ -386,7 +376,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           </div>
           <p class="card__eyebrow">Day 1 CPT</p>
-          <h3 class="card__title">Work From the 1st Day of the Program</h3>
+          <h3 class="card__title">Work From the 1st Day</h3>
           <p class="card__text">USCIS-authorized work tied to your degree — start earning in your field immediately after enrolling.</p>
         </article>
         <article class="card">
@@ -435,29 +425,16 @@
         </div>
         <div>
           <span class="eyebrow eyebrow--accent">Why Students Choose Us</span>
-          <h2 class="alliant__title">EduConnect USA &amp; Alliant University</h2>
+          <h2 class="alliant__title">EduConnect USA and Alliant University</h2>
           <p class="alliant__body">Together, we offer a structured, reliable pathway to start working in the U.S. from day one while earning an accredited graduate degree.</p>
-          <img class="alliant-logo" src="https://educonnectusa.com/wp-content/uploads/2026/05/AlliantUniversity-Logo-White.png" alt="Alliant International University" />
           <div class="badges">
             <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> WASC Accredited</span>
             <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> ACBSP Accredited</span>
             <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> STEM Designated</span>
-            <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Official University Partner</span>
           </div>
+          <img class="alliant-logo" src="https://educonnectusa.com/wp-content/uploads/2026/05/AlliantUniversity-Logo-White.png" alt="Alliant International University" />
         </div>
       </div>
-
-      <div class="alliant__divider">
-        <span class="eyebrow eyebrow--accent">Why we're the right partner</span>
-      </div>
-      <ul class="alliant__bullets">
-        <li><strong>Regionally accredited by WASC and ACBSP</strong> — two of the most recognized accreditation bodies for U.S. graduate business programs.</li>
-        <li><strong>EduConnect USA is Alliant's official international enrollment partner</strong> — we manage your journey from application through graduation.</li>
-        <li><strong>One team, start to finish</strong> — admissions, visa, CPT authorization, work placement, and academic support are all handled in-house.</li>
-        <li><strong>Hybrid format on real campuses</strong> in San Diego and Los Angeles, California — only 2 in-person sessions per term.</li>
-        <li><strong>$5,500–$6,000 grants &amp; interest-free payment plans</strong> on every program, so cost is never the blocker.</li>
-        <li><strong>STEM-designated degrees</strong> that unlock a 24-month OPT extension after graduation.</li>
-      </ul>
     </div>
   </section>
 
@@ -466,7 +443,7 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow eyebrow--light">How it Works</span>
-        <h2 class="section-title">What is Day 1 CPT and How Does it Really Work?</h2>
+        <h2 class="section-title">What is Day 1 CPT and How Does it Work?</h2>
         <p class="how__intro">Curricular Practical Training (CPT) is a work authorization that lets F-1 students gain paid, off-campus employment directly related to their field of study. Alliant University authorizes students to begin CPT right from the first day of the program — also called <strong>Day 1 CPT</strong>. During the program you can work part-time or full-time, and in the year after graduation you can continue working full-time on OPT (and STEM OPT for eligible degrees).</p>
       </div>
       <div class="steps">
@@ -489,127 +466,7 @@
     </div>
   </section>
 
-  <!-- ====== Programs ====== -->
-  <section class="programs">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">CPT and STEM OPT Programs</span>
-        <h2 class="section-title">Day 1 CPT Program Options</h2>
-        <p class="section-sub">Every program below includes Day 1 CPT work authorization and OPT eligibility after graduation. 12–16 months to complete · hybrid format (2 in-person sessions per term) · campuses in San Diego and Los Angeles, CA · interest-free payment plans available.</p>
-      </div>
-      <div class="programs__grid">
-        <article class="program program--featured">
-          <span class="program__tag">Most Popular</span>
-          <h3>Master of Business Administration (MBA)</h3>
-          <p class="program__desc">Build leadership, strategy, and decision-making skills to advance your career across industries.</p>
-          <div class="program__meta">
-            <span>$6,000 grant + payment plans</span>
-            <span class="stem">STEM OPT Eligible</span>
-          </div>
-        </article>
-        <article class="program">
-          <h3>Master of Science in Data Analytics</h3>
-          <p class="program__desc">Master data modeling, machine learning, business intelligence, and predictive analytics.</p>
-          <div class="program__meta">
-            <span>$5,500 grant + payment plans</span>
-            <span class="stem">STEM OPT Eligible</span>
-          </div>
-        </article>
-        <article class="program">
-          <h3>Master of Science in Healthcare Analytics</h3>
-          <p class="program__desc">Apply data science to healthcare operations, outcomes research, and clinical decision support.</p>
-          <div class="program__meta">
-            <span>$5,500 grant + payment plans</span>
-            <span class="stem">STEM OPT Eligible</span>
-          </div>
-        </article>
-        <article class="program">
-          <h3>Master of Science in Information Systems Technology</h3>
-          <p class="program__desc">Focus on cybersecurity, systems architecture, and AI-driven enterprise technology.</p>
-          <div class="program__meta">
-            <span>$5,500 grant + payment plans</span>
-            <span class="stem">STEM OPT Eligible</span>
-          </div>
-        </article>
-      </div>
-      <p class="programs__note">All programs delivered at Alliant International University — regionally accredited by WASC and ACBSP.</p>
-    </div>
-  </section>
-
-  <!-- ====== Gallery ====== -->
-  <section class="gallery" data-slider-root>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow eyebrow--light">Our Students &amp; Success</span>
-        <h2 class="section-title">A glimpse of student life on campus</h2>
-      </div>
-    </div>
-    <div class="slider" data-slider>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/59.jpg" alt="Alliant campus" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/68.jpg" alt="EduConnect students in Santa Monica" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2024/10/2-1.png" alt="San Diego" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/60.jpg" alt="Los Angeles" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/05/8-1.jpg" alt="American flag at the beach" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/94.jpg" alt="EduConnect community" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/62.jpg" alt="EduConnect student life" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2025/12/14.png" alt="EduConnect program" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2025/04/9-1.png" alt="EduConnect experience" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2025/04/7-1.png" alt="EduConnect study abroad" /></div>
-    </div>
-    <div class="container">
-      <div class="slider-nav">
-        <button type="button" data-slider-prev aria-label="Previous photo">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <div class="slider-dots" data-slider-dots></div>
-        <button type="button" data-slider-next aria-label="Next photo">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== FAQ ====== -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Common Day 1 CPT Questions</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-      </div>
-      <div class="faq__wrap">
-        <details class="faq-item" open>
-          <summary>What is Day 1 CPT?</summary>
-          <div class="faq-item__body">Day 1 CPT (Curricular Practical Training) is a work authorization available to F-1 students enrolled in graduate programs where practical training is an integral part of the curriculum from the start. Unlike most programs that require a one-year waiting period, Day 1 CPT programs authorize paid, off-campus employment from the first day of enrollment.</div>
-        </details>
-        <details class="faq-item">
-          <summary>What is the difference between CPT and OPT?</summary>
-          <div class="faq-item__body">CPT (Curricular Practical Training) is work authorization during your academic program — it's tied to your enrollment and must relate to your field of study. OPT (Optional Practical Training) is work authorization after you complete your degree. You can receive up to 12 months of OPT, and STEM-designated programs qualify for an additional 24-month extension.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Can I work full-time on Day 1 CPT?</summary>
-          <div class="faq-item__body">Yes. Students enrolled in these programs are authorized for full-time CPT (more than 20 hours per week) from day one. You can work full-time while taking your courses on the hybrid schedule.</div>
-        </details>
-        <details class="faq-item">
-          <summary>What if I already have an employer?</summary>
-          <div class="faq-item__body">If you already have an employer or a current position, that's perfectly fine. We help you transition your employment to be compliant with your CPT authorization, so you can continue working with the same employer from the first day of your program.</div>
-        </details>
-        <details class="faq-item">
-          <summary>What if I don't have a job yet?</summary>
-          <div class="faq-item__body">Our CareerConnect team works with employer partners across the United States to match students with paid positions before their program starts. We help you find a role that aligns with your degree program and career goals, so you know exactly where you'll be working before your first day of class.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Does using full-time CPT affect my OPT eligibility?</summary>
-          <div class="faq-item__body">If you accumulate 12 or more months of full-time CPT, you become ineligible for OPT. Our academic advisors help you plan your CPT usage carefully to protect your OPT and STEM OPT eligibility after graduation.</div>
-        </details>
-        <details class="faq-item">
-          <summary>How do I find a job that qualifies for CPT?</summary>
-          <div class="faq-item__body">Your CPT position must be directly related to your major field of study. CareerConnect helps you identify qualifying positions, and your designated school official (DSO) confirms CPT eligibility for each role before authorization is issued.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== Testimonials ====== -->
+  <!-- ====== Testimonials (Google reviews) ====== -->
   <section class="testimonials" data-slider-root>
     <div class="container">
       <div class="testimonials__head">
@@ -710,6 +567,125 @@
         <button type="button" data-slider-next aria-label="Next review">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Programs ====== -->
+  <section class="programs">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">CPT and STEM OPT Programs</span>
+        <h2 class="section-title">Day 1 CPT Program Options</h2>
+      </div>
+      <div class="programs__grid">
+        <article class="program program--featured">
+          <span class="program__tag">Most Popular</span>
+          <h3>Master of Business Administration (MBA)</h3>
+          <p class="program__desc">Build leadership, strategy, and decision-making skills to advance your career across industries.</p>
+          <div class="program__meta">
+            <span>$6,000 grant + payment plans</span>
+            <span class="stem">STEM OPT Eligible</span>
+          </div>
+        </article>
+        <article class="program">
+          <h3>Master of Science in Data Analytics</h3>
+          <p class="program__desc">Master data modeling, machine learning, business intelligence, and predictive analytics.</p>
+          <div class="program__meta">
+            <span>$5,500 grant + payment plans</span>
+            <span class="stem">STEM OPT Eligible</span>
+          </div>
+        </article>
+        <article class="program">
+          <h3>Master of Science in Healthcare Analytics</h3>
+          <p class="program__desc">Apply data science to healthcare operations, outcomes research, and clinical decision support.</p>
+          <div class="program__meta">
+            <span>$5,500 grant + payment plans</span>
+            <span class="stem">STEM OPT Eligible</span>
+          </div>
+        </article>
+        <article class="program">
+          <h3>Master of Science in Information Systems Technology</h3>
+          <p class="program__desc">Focus on cybersecurity, systems architecture, and AI-driven enterprise technology.</p>
+          <div class="program__meta">
+            <span>$5,500 grant + payment plans</span>
+            <span class="stem">STEM OPT Eligible</span>
+          </div>
+        </article>
+      </div>
+      <p class="programs__note">All programs delivered at Alliant International University — regionally accredited by WASC and ACBSP.</p>
+    </div>
+  </section>
+
+  <!-- ====== Gallery ====== -->
+  <section class="gallery" data-slider-root>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--light">Our Students &amp; Success</span>
+        <h2 class="section-title">A glimpse of student life on campus</h2>
+      </div>
+    </div>
+    <div class="slider" data-slider>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/59.jpg" alt="Alliant campus" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/68.jpg" alt="EduConnect students in Santa Monica" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2024/10/2-1.png" alt="San Diego" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/60.jpg" alt="Los Angeles" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/05/8-1.jpg" alt="American flag at the beach" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/94.jpg" alt="EduConnect community" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/62.jpg" alt="EduConnect student life" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2025/12/14.png" alt="EduConnect program" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2025/04/9-1.png" alt="EduConnect experience" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2025/04/7-1.png" alt="EduConnect study abroad" /></div>
+    </div>
+    <div class="container">
+      <div class="slider-nav">
+        <button type="button" data-slider-prev aria-label="Previous photo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="slider-dots" data-slider-dots></div>
+        <button type="button" data-slider-next aria-label="Next photo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ (last) ====== -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Common Day 1 CPT Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq__wrap">
+        <details class="faq-item" open>
+          <summary>What is Day 1 CPT?</summary>
+          <div class="faq-item__body">Day 1 CPT (Curricular Practical Training) is a work authorization available to F-1 students enrolled in graduate programs where practical training is an integral part of the curriculum from the start. Unlike most programs that require a one-year waiting period, Day 1 CPT programs authorize paid, off-campus employment from the first day of enrollment.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the difference between CPT and OPT?</summary>
+          <div class="faq-item__body">CPT (Curricular Practical Training) is work authorization during your academic program — it's tied to your enrollment and must relate to your field of study. OPT (Optional Practical Training) is work authorization after you complete your degree. You can receive up to 12 months of OPT, and STEM-designated programs qualify for an additional 24-month extension.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I work full-time on Day 1 CPT?</summary>
+          <div class="faq-item__body">Yes. Students enrolled in these programs are authorized for full-time CPT (more than 20 hours per week) from day one. You can work full-time while taking your courses on the hybrid schedule.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What if I already have an employer?</summary>
+          <div class="faq-item__body">If you already have an employer or a current position, that's perfectly fine. We help you transition your employment to be compliant with your CPT authorization, so you can continue working with the same employer from the first day of your program.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What if I don't have a job yet?</summary>
+          <div class="faq-item__body">Our CareerConnect team works with employer partners across the United States to match students with paid positions before their program starts. We help you find a role that aligns with your degree program and career goals, so you know exactly where you'll be working before your first day of class.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does using full-time CPT affect my OPT eligibility?</summary>
+          <div class="faq-item__body">If you accumulate 12 or more months of full-time CPT, you become ineligible for OPT. Our academic advisors help you plan your CPT usage carefully to protect your OPT and STEM OPT eligibility after graduation.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I find a job that qualifies for CPT?</summary>
+          <div class="faq-item__body">Your CPT position must be directly related to your major field of study. CareerConnect helps you identify qualifying positions, and your designated school official (DSO) confirms CPT eligibility for each role before authorization is issued.</div>
+        </details>
       </div>
     </div>
   </section>
