@@ -47,30 +47,12 @@
     .educonnect-lp .eyebrow--light { background: rgba(78, 211, 204, 0.12); color: var(--brand-700); border-color: rgba(78, 211, 204, 0.4); }
     .educonnect-lp .eyebrow--accent { background: rgba(255, 116, 0, 0.15); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
 
-    /* ====== Site header (logo left, WhatsApp right) ====== */
-    .educonnect-lp .site-header { position: relative; z-index: 100; background: var(--bg-dark); }
-    .educonnect-lp .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
-    .educonnect-lp .site-header__logo { display: inline-flex; align-items: center; flex: 0 0 auto; }
-    .educonnect-lp .site-header__logo img { height: 42px; width: auto; display: block; }
-    .educonnect-lp .site-header__wa { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; background: #25D366; color: #fff; padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; text-decoration: none; transition: background .2s ease, transform .15s ease; }
-    .educonnect-lp .site-header__wa:hover { background: #1ebe5a; transform: translateY(-1px); }
-    .educonnect-lp .site-header__wa svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
-    /* Tablet & mobile: WhatsApp collapses to a round icon-only button */
-    @media (max-width: 1024px) {
-      .educonnect-lp .site-header__inner { height: 66px; }
-      .educonnect-lp .site-header__logo img { height: 36px; }
-      .educonnect-lp .site-header__wa { width: 46px; height: 46px; padding: 0; gap: 0; border-radius: 50%; justify-content: center; }
-      .educonnect-lp .site-header__wa-text { display: none; }
-      .educonnect-lp .site-header__wa svg { width: 22px; height: 22px; }
-    }
-    @media (max-width: 480px) {
-      .educonnect-lp .site-header__inner { height: 60px; }
-      .educonnect-lp .site-header__logo img { height: 32px; }
-      .educonnect-lp .site-header__wa { width: 44px; height: 44px; }
-      .educonnect-lp .site-header__wa svg { width: 20px; height: 20px; }
-    }
+    /* ====== Brand logo (top-left, not a header bar) ====== */
+    .educonnect-lp .hero__brand { position: relative; z-index: 7; display: block; margin-bottom: 44px; }
+    .educonnect-lp .hero__brand img { width: clamp(160px, 15vw, 215px); height: auto; }
+
     /* ====== Hero ====== */
-    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 72px 0 180px; }
+    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 40px 0 180px; }
     .educonnect-lp .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; transform: translate(40%, -40%); }
     .educonnect-lp .hero__social { position: absolute; left: 0; right: 0; bottom: 0; transform: translateY(40%); z-index: 6; pointer-events: none; }
     .educonnect-lp .hero__social .container { display: flex; justify-content: flex-start; }
@@ -249,7 +231,9 @@
     @media (max-width: 1024px) {
       .educonnect-lp section { padding: 64px 0; }
       .educonnect-lp .container { padding: 0 24px; }
-      .educonnect-lp .hero { padding: 56px 0 130px; }
+      .educonnect-lp .hero { padding: 32px 0 130px; }
+      .educonnect-lp .hero__brand { margin-bottom: 28px; }
+      .educonnect-lp .hero__brand img { width: clamp(160px, 19vw, 200px); }
       .educonnect-lp .hero__grid { gap: 36px; }
       .educonnect-lp .hero__title { font-size: clamp(28px, 4.4vw, 38px); }
       .educonnect-lp .hero__media { max-width: 460px; }
@@ -270,7 +254,9 @@
     @media (max-width: 768px) {
       .educonnect-lp section { padding: 52px 0; }
       .educonnect-lp .container { padding: 0 20px; }
-      .educonnect-lp .hero { padding: 36px 0 130px; }
+      .educonnect-lp .hero { padding: 24px 0 130px; }
+      .educonnect-lp .hero__brand { margin-bottom: 20px; }
+      .educonnect-lp .hero__brand img { width: clamp(170px, 42vw, 200px); margin-left: auto; margin-right: auto; }
       .educonnect-lp .hero__grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
       .educonnect-lp .hero__title { font-size: clamp(26px, 6.5vw, 34px); }
       .educonnect-lp .hero__subtitle { font-size: 16px; margin-left: auto; margin-right: auto; }
@@ -301,7 +287,9 @@
     @media (max-width: 480px) {
       .educonnect-lp section { padding: 44px 0; }
       .educonnect-lp .container { padding: 0 16px; }
-      .educonnect-lp .hero { padding: 28px 0 110px; }
+      .educonnect-lp .hero { padding: 20px 0 110px; }
+      .educonnect-lp .hero__brand { margin-bottom: 18px; }
+      .educonnect-lp .hero__brand img { width: clamp(165px, 46vw, 185px); }
       .educonnect-lp .hero__title { font-size: 24px; }
       .educonnect-lp .hero__subtitle { font-size: 15px; }
       .educonnect-lp .gallery .slider { padding-left: 16px; padding-right: 16px; }
@@ -325,22 +313,13 @@
 
 <div class="educonnect-lp">
 
-  <!-- ====== Site header: white logo left, WhatsApp right ====== -->
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a class="site-header__logo" href="#top" aria-label="EduConnect USA home">
-        <img src="https://educonnectusa.com/wp-content/uploads/2024/11/3-1.png" alt="EduConnect USA" />
-      </a>
-      <a class="site-header__wa" href="https://wa.me/16263443218" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 13.6c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-1-.4-1.7-.7-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.1.2-.3.4-.4.5-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.7.8 2 1 .3.1.5.2.6.3.1.1.1.7-.2 1.4z"/></svg>
-        <span class="site-header__wa-text">Chat on WhatsApp</span>
-      </a>
-    </div>
-  </header>
-
   <!-- ====== Hero ====== -->
   <section class="hero" id="top">
     <div class="container">
+      <!-- Brand logo: top-left, not a header bar -->
+      <a class="hero__brand" href="#top" aria-label="EduConnect USA home">
+        <img src="https://educonnectusa.com/wp-content/uploads/2024/11/3-1.png" alt="EduConnect USA" />
+      </a>
       <div class="hero__grid">
         <div>
           <span class="eyebrow">Day 1 CPT · Paid Work Eligibility</span>
@@ -364,7 +343,7 @@
             </g>
           </svg>
           <div class="hero__img-wrap">
-            <img src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="EduConnect graduation day" />
+            <img src="https://educonnectusa.com/wp-content/uploads/2026/05/8-1.jpg" alt="Santa Monica beach with U.S. and California flags" />
             <svg class="hero__clip" viewBox="0 0 22 64" fill="none" aria-hidden="true">
               <path fill="currentColor" d="M10.7 64a10.3 10.3 0 0 1-7.85-3.02C.16 58.18-.3 53.96.15 50.91L1.83 25.86a2.17 2.17 0 1 1 4.33.3L4.49 51.94l.01.2c-.32 1.94-.1 4.82 1.54 6.51 1.2 1.27 3.12 1.81 5.7 1.6 1.09-.57 3.42-3.15 3.13-9.41v-.24l2.71-40.6A5.84 5.84 0 0 0 15.56 5.4a5.31 5.31 0 0 0-4.9-.85l-.8.3a2.17 2.17 0 1 1-1.47-4.08l.9-.32.2-.04a9.65 9.65 0 0 1 8.85 1.68 10.08 10.08 0 0 1 3.54 8.31L19.18 50.85c.36 8.86-3.7 12.76-6.13 13.66a2.17 2.17 0 0 1-.51.11A17.2 17.2 0 0 1 10.7 64Z"/>
             </svg>
@@ -662,7 +641,7 @@
       <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/68.jpg" alt="EduConnect students in Santa Monica" /></div>
       <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2024/10/2-1.png" alt="San Diego" /></div>
       <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/60.jpg" alt="Los Angeles" /></div>
-      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/05/8-1.jpg" alt="American flag at the beach" /></div>
+      <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="EduConnect graduation day" /></div>
       <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/94.jpg" alt="EduConnect community" /></div>
       <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/62.jpg" alt="EduConnect student life" /></div>
       <div class="gallery__slide"><img src="https://educonnectusa.com/wp-content/uploads/2025/12/14.png" alt="EduConnect program" /></div>
