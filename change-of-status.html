@@ -9,21 +9,18 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --purple: #332959;
-            --purple-dark: #261f44;
-            --purple-light: #f0eef7;
-            --teal: #4ed3cc;
-            --teal-dark: #35b8b1;
-            --teal-light: #e8fafa;
-            --orange: #ff7400;
-            --orange-dark: #e06500;
-            --green: #2ecc71;
-            --green-dark: #27ae60;
-            --body-bg: #f5f4f9;
-            --text: #2d2d2d;
-            --text-muted: #6b6b80;
-            --border: #e0dcea;
-            --white: #ffffff;
+            --purple:       #332959;
+            --purple-dark:  #261f44;
+            --purple-faint: #f4f2f9;
+            --teal:         #4ed3cc;
+            --teal-faint:   #edfaf9;
+            --orange:       #ff7400;
+            --orange-dark:  #d96300;
+            --body-bg:      #f7f6fb;
+            --text:         #2d2d2d;
+            --muted:        #6b6882;
+            --border:       #e2ddef;
+            --white:        #ffffff;
         }
 
         body {
@@ -33,246 +30,174 @@
             line-height: 1.7;
         }
 
-        /* ── NAV ── */
-        .nav {
-            background: var(--purple);
-            padding: 16px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-inner {
+        /* ── SHARED LAYOUT ── */
+        .wrap {
             max-width: 1280px;
             margin: 0 auto;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            padding-left: 40px;
+            padding-right: 40px;
         }
-        .nav-logo {
-            font-size: 22px;
-            font-weight: 800;
-            color: #fff;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-        .nav-logo span { color: var(--teal); }
-        .nav-cta {
-            background: var(--orange);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 22px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        .nav-cta:hover { background: var(--orange-dark); }
 
         /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 60%, #1a1030 100%);
+            background: var(--purple);
             color: #fff;
-            padding: 80px 20px;
+            padding: 80px 40px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -120px; right: -120px;
-            width: 450px; height: 450px;
-            background: rgba(78,211,204,0.1);
-            border-radius: 50%;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -150px; left: -100px;
-            width: 380px; height: 380px;
-            background: rgba(255,255,255,0.04);
-            border-radius: 50%;
-        }
-        .hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
+        .hero-inner { max-width: 1280px; margin: 0 auto; }
+
         .hero-badge {
             display: inline-block;
-            background: rgba(255,116,0,0.9);
+            background: var(--orange);
             color: #fff;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            padding: 6px 18px;
+            padding: 5px 16px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
         .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
+            font-size: 46px;
+            font-weight: 700;
             line-height: 1.15;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
         .hero .tagline {
-            font-size: 19px;
-            opacity: 0.92;
-            max-width: 640px;
-            margin: 0 auto 36px;
+            font-size: 18px;
+            opacity: 0.88;
+            max-width: 620px;
+            margin: 0 auto 40px;
         }
 
         /* Promo price card */
         .promo-card {
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 20px;
-            padding: 36px 48px;
             display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 16px;
+            padding: 32px 52px;
             margin-bottom: 28px;
             position: relative;
         }
-        .promo-badge {
+        .promo-ribbon {
             position: absolute;
-            top: -14px;
+            top: -13px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--teal);
-            color: var(--purple) !important;
-            color: #fff;
-            font-size: 12px;
+            color: var(--purple);
+            font-size: 11px;
             font-weight: 700;
-            padding: 6px 18px;
-            border-radius: 15px;
+            padding: 5px 16px;
+            border-radius: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             white-space: nowrap;
         }
-        .promo-original {
-            font-size: 18px;
-            opacity: 0.7;
+        .promo-was {
+            font-size: 17px;
+            opacity: 0.6;
             text-decoration: line-through;
             margin-bottom: 4px;
         }
         .promo-price {
-            font-size: 64px;
-            font-weight: 800;
+            font-size: 68px;
+            font-weight: 700;
             line-height: 1;
-            color: #fff;
         }
         .promo-save {
             display: inline-block;
-            background: rgba(46,204,113,0.25);
-            border: 1px solid rgba(46,204,113,0.6);
-            color: #a8f0c6;
-            font-size: 14px;
+            border: 1px solid rgba(78,211,204,0.55);
+            color: var(--teal);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+        .promo-split {
+            font-size: 13px;
+            opacity: 0.75;
+            margin-top: 10px;
+        }
+        .promo-rfe {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(78,211,204,0.4);
+            color: var(--teal);
+            font-size: 13px;
             font-weight: 600;
             padding: 5px 14px;
             border-radius: 20px;
             margin-top: 10px;
         }
-        .promo-note {
-            font-size: 14px;
-            opacity: 0.85;
-            margin-top: 10px;
-        }
-        .promo-includes-rfe {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(78,211,204,0.15);
-            border: 1px solid rgba(78,211,204,0.45);
-            border-radius: 20px;
-            padding: 6px 16px;
+
+        .gov-bar {
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 12px 24px;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--teal);
-            margin-top: 12px;
+            max-width: 660px;
+            margin: 0 auto 28px;
+            opacity: 0.9;
         }
 
-        .gov-fee-bar {
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 14px 28px;
-            margin: 24px auto 28px;
-            max-width: 680px;
-            font-size: 14px;
-        }
-
-        .hero-cta-row {
+        .hero-btns {
             display: flex;
-            gap: 16px;
+            gap: 14px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
+        .already-row {
+            font-size: 13px;
+            opacity: 0.75;
+        }
+        .already-row button {
+            background: none;
+            border: none;
+            color: var(--teal);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        /* ── BUTTONS ── */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 15px 32px;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 13px 30px;
+            border-radius: 8px;
+            font-size: 15px;
             font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
             text-decoration: none;
             border: none;
             cursor: pointer;
-            transition: all 0.25s;
+            transition: all 0.2s;
         }
-        .btn-orange {
-            background: var(--orange);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(255,116,0,0.35);
-        }
-        .btn-orange:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,116,0,0.45); }
-        .btn-teal {
-            background: var(--teal);
-            color: var(--purple);
-            box-shadow: 0 4px 15px rgba(78,211,204,0.35);
-            font-weight: 700;
-        }
-        .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); }
-        .btn-ghost {
-            background: rgba(255,255,255,0.12);
-            color: #fff;
-            border: 2px solid rgba(255,255,255,0.35);
-        }
-        .btn-ghost:hover { background: rgba(255,255,255,0.22); }
-        .btn-green {
-            background: var(--green);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(46,204,113,0.35);
-        }
-        .btn-green:hover { background: var(--green-dark); transform: translateY(-2px); }
-
-        .retainer-row {
-            margin-top: 16px;
-            font-size: 14px;
-            opacity: 0.85;
-        }
-        .retainer-row a, .retainer-row button {
-            color: var(--teal);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: underline;
-            padding: 0;
-        }
+        .btn-orange { background: var(--orange); color: #fff; }
+        .btn-orange:hover { background: var(--orange-dark); }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); }
+        .btn-purple { background: var(--purple); color: #fff; }
+        .btn-purple:hover { background: var(--purple-dark); }
+        .btn-teal { background: var(--teal); color: var(--purple); font-weight: 700; }
+        .btn-teal:hover { background: #3ec1ba; }
 
         /* ── TRUST BAR ── */
         .trust-bar {
             background: var(--white);
             border-bottom: 1px solid var(--border);
-            padding: 22px 40px;
+            padding: 18px 40px;
         }
         .trust-inner {
             max-width: 1280px;
@@ -285,17 +210,12 @@
         .trust-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: var(--text-muted);
-            font-weight: 500;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
         }
-        .trust-item .icon {
-            width: 22px;
-            height: 22px;
-            fill: var(--purple);
-            flex-shrink: 0;
-        }
+        .trust-item svg { width: 18px; height: 18px; fill: var(--purple); flex-shrink: 0; }
 
         /* ── CONTENT ── */
         .content {
@@ -303,502 +223,432 @@
             margin: 0 auto;
             padding: 64px 40px;
         }
-        .section { margin-bottom: 64px; }
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        .section { margin-bottom: 60px; }
+        .section-header { text-align: center; margin-bottom: 36px; }
         .section-header h2 {
-            font-size: 30px;
-            font-weight: 800;
+            font-size: 28px;
+            font-weight: 700;
             color: var(--purple);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
-        .section-header p {
-            font-size: 16px;
-            color: var(--text-muted);
-            max-width: 560px;
-            margin: 0 auto;
-        }
-        .section-accent { color: var(--orange); }
+        .section-header p { font-size: 15px; color: var(--muted); max-width: 540px; margin: 0 auto; }
+        .accent { color: var(--orange); }
 
         /* Get Started */
-        .get-started-box {
+        .gs-box {
             background: var(--white);
-            border-radius: 20px;
-            padding: 44px 40px;
-            box-shadow: 0 4px 24px rgba(51,41,89,0.08);
+            border-radius: 16px;
+            padding: 44px 48px;
+            border: 1px solid var(--border);
             text-align: center;
         }
+        .gs-box h2 { font-size: 24px; font-weight: 700; color: var(--purple); margin-bottom: 28px; }
         .steps-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 36px;
+            margin-bottom: 32px;
         }
-        .step-item { text-align: center; }
+        .step { text-align: center; }
         .step-num {
-            width: 44px;
-            height: 44px;
+            width: 42px; height: 42px;
             border-radius: 50%;
+            background: var(--purple);
+            color: #fff;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 18px;
-            color: #fff;
+            font-weight: 700;
+            font-size: 17px;
             margin-bottom: 8px;
         }
-        .step-label { font-weight: 600; font-size: 14px; color: var(--text); }
-        .step-arrow { color: #cbd5e1; font-size: 22px; }
+        .step-label { font-size: 13px; font-weight: 600; color: var(--text); }
+        .step-arrow { color: #ccc; font-size: 20px; }
 
         /* Eligibility */
-        .elig-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        @media (max-width: 640px) { .elig-grid { grid-template-columns: 1fr; } }
+        .elig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .elig-card {
             background: var(--white);
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 28px;
-            border: 2px solid var(--border);
+            border: 1px solid var(--border);
         }
-        .elig-card.yes { border-left: 5px solid var(--purple); }
-        .elig-card.no { border-left: 5px solid #e63946; background: #fefafa; }
+        .elig-card.yes { border-left: 4px solid var(--purple); }
+        .elig-card.no  { border-left: 4px solid #d94040; }
         .elig-card h3 {
-            font-size: 17px;
+            font-size: 16px;
+            font-weight: 700;
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         .elig-card.yes h3 { color: var(--purple); }
-        .elig-card.no h3 { color: #e63946; }
+        .elig-card.no  h3 { color: #d94040; }
         .elig-card ul { list-style: none; }
         .elig-card ul li {
-            padding: 7px 0 7px 24px;
+            padding: 6px 0 6px 22px;
             position: relative;
             font-size: 14px;
             color: #444;
+            border-bottom: 1px solid #f0edf8;
         }
+        .elig-card ul li:last-child { border-bottom: none; }
         .elig-card.yes ul li::before { content: '✓'; position: absolute; left: 0; color: var(--purple); font-weight: 700; }
-        .elig-card.no ul li::before { content: '✗'; position: absolute; left: 0; color: #e63946; font-weight: 700; }
+        .elig-card.no  ul li::before { content: '✗'; position: absolute; left: 0; color: #d94040; font-weight: 700; }
 
-        /* Included grid */
+        /* What's Included — strict 3 columns */
         .included-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
         .inc-card {
             background: var(--white);
-            border-radius: 16px;
-            padding: 28px 24px;
-            border: 2px solid var(--border);
-            text-align: center;
-            transition: all 0.25s;
+            border-radius: 12px;
+            padding: 26px 22px;
+            border: 1px solid var(--border);
+            text-align: left;
+            transition: box-shadow 0.2s, border-color 0.2s;
         }
         .inc-card:hover {
             border-color: var(--teal);
-            box-shadow: 0 12px 35px rgba(78,211,204,0.15);
-            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(51,41,89,0.08);
         }
         .inc-icon {
-            width: 58px; height: 58px;
-            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-            border-radius: 50%;
+            width: 44px; height: 44px;
+            background: var(--purple-faint);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 26px;
+            font-size: 22px;
+            margin-bottom: 14px;
         }
-        .inc-card h3 { font-size: 17px; color: var(--purple); margin-bottom: 8px; }
-        .inc-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .inc-card h3 { font-size: 15px; font-weight: 700; color: var(--purple); margin-bottom: 8px; }
+        .inc-card p  { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-        /* RFE highlight */
+        /* RFE callout */
         .rfe-box {
-            background: linear-gradient(135deg, #fff8f0, #fff);
-            border: 2px solid var(--orange);
-            border-radius: 16px;
-            padding: 28px 32px;
-            margin-top: 28px;
+            background: #fffbf7;
+            border: 1px solid #ffd0a0;
+            border-left: 4px solid var(--orange);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-top: 20px;
             display: flex;
             align-items: flex-start;
-            gap: 20px;
+            gap: 18px;
         }
-        .rfe-icon { font-size: 36px; flex-shrink: 0; }
-        .rfe-box h4 { color: var(--orange); font-size: 18px; margin-bottom: 8px; }
-        .rfe-box p { font-size: 14px; color: #555; line-height: 1.65; }
+        .rfe-icon { font-size: 30px; flex-shrink: 0; line-height: 1; }
+        .rfe-box h4 { font-size: 16px; color: var(--orange-dark); margin-bottom: 6px; }
+        .rfe-box p  { font-size: 13px; color: #555; line-height: 1.65; }
 
         /* Gov fees */
         .gov-box {
-            background: linear-gradient(135deg, var(--purple-light), #fff);
-            border: 2px solid var(--purple);
-            border-radius: 20px;
-            padding: 36px 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--purple);
+            border-radius: 12px;
+            padding: 32px 40px;
             text-align: center;
         }
-        .gov-box h3 { color: var(--purple); font-size: 22px; margin-bottom: 16px; }
+        .gov-box h3 { font-size: 20px; font-weight: 700; color: var(--purple); margin-bottom: 24px; }
         .gov-fees-row {
             display: flex;
             justify-content: center;
-            gap: 24px;
+            gap: 32px;
             flex-wrap: wrap;
-            font-size: 15px;
-            color: var(--text);
         }
         .gov-fee-item { text-align: center; }
-        .gov-fee-item strong { display: block; font-size: 24px; color: var(--purple); }
-        .gov-fee-item span { font-size: 13px; color: var(--text-muted); }
-        .gov-note { font-size: 13px; color: var(--text-muted); margin-top: 16px; }
+        .gov-fee-item strong { display: block; font-size: 26px; font-weight: 700; color: var(--purple); }
+        .gov-fee-item span { font-size: 12px; color: var(--muted); }
+        .gov-divider { width: 1px; background: var(--border); align-self: stretch; }
+        .gov-note { font-size: 12px; color: var(--muted); margin-top: 20px; }
 
         /* Timeline */
-        .timeline { max-width: 680px; margin: 0 auto; position: relative; }
+        .timeline { max-width: 740px; margin: 0 auto; position: relative; }
         .timeline::before {
             content: '';
             position: absolute;
-            left: 28px; top: 0; bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--purple), var(--teal));
-            border-radius: 3px;
+            left: 20px; top: 0; bottom: 0;
+            width: 2px;
+            background: var(--border);
         }
-        .tl-step { position: relative; padding-left: 76px; padding-bottom: 36px; }
+        .tl-step { position: relative; padding-left: 60px; padding-bottom: 32px; }
         .tl-step:last-child { padding-bottom: 0; }
         .tl-num {
             position: absolute;
-            left: 8px;
-            width: 42px; height: 42px;
-            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+            left: 0;
+            width: 40px; height: 40px;
+            background: var(--purple);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-weight: 800;
-            font-size: 17px;
-            box-shadow: 0 4px 12px rgba(51,41,89,0.3);
+            font-weight: 700;
+            font-size: 16px;
         }
         .tl-content {
             background: var(--white);
-            border-radius: 12px;
-            padding: 22px;
-            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 22px;
+            border: 1px solid var(--border);
         }
-        .tl-content h3 { font-size: 17px; color: var(--purple); margin-bottom: 6px; }
-        .tl-content p { font-size: 14px; color: var(--text-muted); }
+        .tl-content h3 { font-size: 16px; font-weight: 700; color: var(--purple); margin-bottom: 5px; }
+        .tl-content p  { font-size: 13px; color: var(--muted); }
         .tl-tag {
             display: inline-block;
-            background: var(--teal-light);
+            background: var(--teal-faint);
             color: var(--purple);
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 10px;
             margin-top: 10px;
         }
 
         /* FAQ */
-        .faq-list { max-width: 860px; margin: 0 auto; }
+        .faq-list { max-width: 900px; margin: 0 auto; }
         .faq-item {
             background: var(--white);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 2px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border);
             overflow: hidden;
         }
         .faq-q {
-            padding: 20px 24px;
-            font-size: 15px;
-            font-weight: 600;
+            padding: 18px 22px;
+            font-size: 14px;
+            font-weight: 700;
             color: var(--purple);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.2s;
             user-select: none;
+            transition: background 0.15s;
         }
-        .faq-q:hover { background: #f8fafc; }
+        .faq-q:hover { background: var(--purple-faint); }
         .faq-q::after {
             content: '+';
-            font-size: 22px;
+            font-size: 20px;
             color: var(--orange);
-            transition: transform 0.3s;
+            transition: transform 0.25s;
             flex-shrink: 0;
-            margin-left: 12px;
+            margin-left: 14px;
         }
+        .faq-item.open .faq-q { background: var(--purple-faint); }
         .faq-item.open .faq-q::after { transform: rotate(45deg); }
-        .faq-a {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease;
-        }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
         .faq-item.open .faq-a { max-height: 600px; }
         .faq-a-inner {
-            padding: 0 24px 20px;
+            padding: 0 22px 18px;
             font-size: 14px;
-            color: var(--text-muted);
+            color: var(--muted);
             line-height: 1.75;
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+            background: var(--purple);
             color: #fff;
-            padding: 90px 20px;
+            padding: 80px 40px;
             text-align: center;
         }
-        .cta-section h2 { font-size: 38px; font-weight: 800; margin-bottom: 16px; }
-        .cta-section p { font-size: 18px; opacity: 0.9; max-width: 560px; margin: 0 auto 32px; }
-        .cta-price-row {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 32px;
+        .cta-inner { max-width: 1280px; margin: 0 auto; }
+        .cta-section h2 { font-size: 34px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section .sub { font-size: 17px; opacity: 0.85; max-width: 520px; margin: 0 auto 32px; }
+        .cta-price {
+            margin-bottom: 28px;
         }
-        .cta-price-item { text-align: center; }
-        .cta-price-item .was { font-size: 16px; opacity: 0.6; text-decoration: line-through; }
-        .cta-price-item .now { font-size: 52px; font-weight: 800; }
-        .cta-price-item .label { font-size: 14px; opacity: 0.85; }
-        .cta-divider { border-top: 1px solid rgba(255,255,255,0.2); margin: 36px auto; max-width: 500px; }
-        .cta-already { font-size: 15px; opacity: 0.85; margin-bottom: 16px; }
+        .cta-price .was { font-size: 16px; opacity: 0.55; text-decoration: line-through; margin-bottom: 4px; }
+        .cta-price .now { font-size: 56px; font-weight: 700; line-height: 1; }
+        .cta-price .lbl { font-size: 14px; opacity: 0.8; margin-top: 6px; }
+        .cta-divider { border-top: 1px solid rgba(255,255,255,0.15); margin: 32px auto; max-width: 400px; }
+        .cta-already { font-size: 14px; opacity: 0.75; margin-bottom: 14px; }
 
         /* Modal */
         .modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 10000;
+            background: rgba(0,0,0,0.55);
+            z-index: 9999;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            backdrop-filter: blur(4px);
         }
         .modal-overlay.active { display: flex; }
         .modal {
             background: #fff;
-            border-radius: 20px;
+            border-radius: 16px;
             width: 100%;
-            max-width: 480px;
+            max-width: 460px;
             max-height: 92vh;
             overflow-y: auto;
             position: relative;
-            animation: modalIn 0.3s ease;
+            animation: mIn 0.25s ease;
         }
-        @keyframes modalIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+        @keyframes mIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
         .modal-head {
-            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+            background: var(--purple);
             color: #fff;
-            padding: 26px 24px;
+            padding: 24px 22px;
             text-align: center;
-            border-radius: 20px 20px 0 0;
+            border-radius: 16px 16px 0 0;
         }
-        .modal-head h3 { font-size: 20px; margin-bottom: 4px; }
-        .modal-head .sub { font-size: 13px; opacity: 0.88; }
-        .modal-head .mprice { font-size: 36px; font-weight: 800; margin-top: 10px; }
+        .modal-head h3  { font-size: 18px; margin-bottom: 4px; }
+        .modal-head .sub { font-size: 12px; opacity: 0.8; }
+        .modal-head .mprice { font-size: 36px; font-weight: 700; margin-top: 8px; }
         .modal-close {
             position: absolute;
-            top: 14px; right: 14px;
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: #fff;
-            width: 34px; height: 34px;
+            top: 12px; right: 12px;
+            background: rgba(255,255,255,0.18);
+            border: none; color: #fff;
+            width: 32px; height: 32px;
             border-radius: 50%;
-            font-size: 18px;
+            font-size: 17px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
         }
-        .modal-close:hover { background: rgba(255,255,255,0.3); }
-        .modal-body { padding: 28px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 7px; }
+        .modal-body { padding: 24px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--purple); margin-bottom: 6px; }
         .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-group textarea {
             width: 100%;
-            padding: 13px 15px;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            font-size: 15px;
-            font-family: inherit;
-            transition: border-color 0.2s;
+            padding: 11px 13px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
         }
         .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--purple);
-            box-shadow: 0 0 0 3px rgba(51,41,89,0.1);
+            box-shadow: 0 0 0 3px rgba(51,41,89,0.08);
         }
-        .form-group textarea { resize: vertical; min-height: 90px; }
+        .form-group textarea { resize: vertical; min-height: 80px; }
         .modal-note {
-            background: var(--purple-light);
-            border: 1px solid var(--purple);
-            border-radius: 8px;
-            padding: 12px 16px;
-            margin-bottom: 18px;
+            background: var(--purple-faint);
+            border-left: 3px solid var(--purple);
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
             font-size: 13px;
             color: var(--purple);
         }
         #card-element {
-            padding: 14px 15px;
-            border: 2px solid var(--border);
-            border-radius: 10px;
+            padding: 12px 13px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
         }
-        #card-element.StripeElement--focus { border-color: var(--purple); }
-        #card-errors { color: #e63946; font-size: 13px; margin-top: 8px; }
+        #card-errors { color: #d94040; font-size: 12px; margin-top: 6px; }
         .pay-btn {
             width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, var(--green), var(--green-dark));
+            padding: 14px;
+            background: var(--orange);
             color: #fff;
             border: none;
-            border-radius: 10px;
-            font-size: 17px;
+            border-radius: 8px;
+            font-size: 16px;
             font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
             cursor: pointer;
-            transition: all 0.25s;
+            transition: background 0.2s;
             margin-top: 8px;
         }
-        .pay-btn:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(46,204,113,0.35); }
-        .pay-btn:disabled { background: #ccc; transform: none; box-shadow: none; cursor: not-allowed; }
+        .pay-btn:hover { background: var(--orange-dark); }
+        .pay-btn:disabled { background: #ccc; cursor: not-allowed; }
         .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-top: 16px;
+            display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 14px;
         }
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-        .success-msg {
-            text-align: center;
-            padding: 32px 24px;
-        }
+        .trust-badge { font-size: 11px; color: var(--muted); }
+        .success-msg { text-align: center; padding: 28px 20px; }
         .success-circle {
-            width: 76px; height: 76px;
-            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 38px;
-            color: #fff;
-        }
-        .success-msg h3 { color: var(--purple); font-size: 22px; margin-bottom: 10px; }
-        .success-msg p { color: var(--text-muted); font-size: 15px; }
-
-        /* Floating contacts */
-        .floating-contacts {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
-        .float-btn {
-            width: 52px; height: 52px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-decoration: none;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-        .float-btn:hover { transform: scale(1.12); }
-        .float-wa { background: #25D366; }
-
-        /* Footer */
-        footer {
+            width: 70px; height: 70px;
             background: var(--purple);
-            color: rgba(255,255,255,0.7);
-            text-align: center;
-            padding: 36px 20px;
-            font-size: 14px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 34px; color: #fff;
         }
-        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
-        footer a:hover { color: #fff; }
+        .success-msg h3 { color: var(--purple); font-size: 20px; margin-bottom: 8px; }
+        .success-msg p  { color: var(--muted); font-size: 14px; }
+
+        /* Floating WA */
+        .float-wa {
+            position: fixed;
+            bottom: 24px; right: 24px;
+            width: 50px; height: 50px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            transition: transform 0.2s;
+            z-index: 900;
+        }
+        .float-wa:hover { transform: scale(1.1); }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 30px; }
-            .hero .tagline { font-size: 16px; }
-            .promo-price { font-size: 48px; }
-            .promo-card { padding: 28px 24px; }
-            .hero-cta-row .btn { width: 100%; }
-            .steps-row { gap: 12px; }
-            .step-arrow { display: none; }
-            .get-started-box { padding: 28px 20px; }
-            .rfe-box { flex-direction: column; }
-            .gov-fees-row { gap: 16px; }
-            .cta-section h2 { font-size: 26px; }
-            .cta-price-item .now { font-size: 40px; }
-            .content { padding: 40px 16px; }
+        @media (max-width: 900px) {
+            .included-grid { grid-template-columns: 1fr 1fr; }
         }
-        @media (min-width: 601px) and (max-width: 1280px) {
-            .content { padding: 64px 32px; }
-            .hero-inner { padding: 0 32px; }
+        @media (max-width: 600px) {
+            .wrap, .content, .cta-section, .hero { padding-left: 20px; padding-right: 20px; }
+            .trust-bar { padding-left: 20px; padding-right: 20px; }
+            .hero h1 { font-size: 30px; }
+            .hero .tagline { font-size: 15px; }
+            .promo-price { font-size: 52px; }
+            .promo-card { padding: 28px 24px; }
+            .elig-grid { grid-template-columns: 1fr; }
+            .included-grid { grid-template-columns: 1fr; }
+            .hero-btns .btn { width: 100%; }
+            .steps-row .step-arrow { display: none; }
+            .gs-box { padding: 28px 20px; }
+            .rfe-box { flex-direction: column; }
+            .gov-fees-row { gap: 20px; }
+            .cta-section h2 { font-size: 26px; }
+            .cta-price .now { font-size: 44px; }
         }
     </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="#" class="nav-logo">Edu<span>Connect</span></a>
-        <a href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" class="nav-cta">Book Free Consultation</a>
-    </div>
-</nav>
 
 <!-- HERO -->
 <section class="hero">
     <div class="hero-inner">
         <span class="hero-badge">For Visitors &amp; Other Visa Holders</span>
         <h1>Change of Status to F-1</h1>
-        <p class="tagline">Switch from B1/B2, J-1, or other visa status to F-1 student status without leaving the U.S. — full support from consultation to approval, RFEs included.</p>
+        <p class="tagline">Switch from B1/B2, J-1, or other visa status to F-1 student status without leaving the U.S. Full support from consultation to approval — RFEs included.</p>
 
         <div class="promo-card">
-            <div class="promo-badge">🔥 Limited-Time Promotion</div>
-            <div class="promo-original">Normally $1,100</div>
+            <div class="promo-ribbon">🔥 Limited-Time Promotion</div>
+            <div class="promo-was">Normally $1,100</div>
             <div class="promo-price">$800</div>
             <div class="promo-save">You save $300</div>
-            <div class="promo-includes-rfe">✅ RFE Responses Included — No Hidden Charges</div>
-            <div class="promo-note">$200 retainer to start &nbsp;·&nbsp; $600 balance when ready to file</div>
+            <div class="promo-rfe">✅ RFE Responses Included — No Extra Charge</div>
+            <div class="promo-split">$200 retainer to start &nbsp;·&nbsp; $600 balance when ready to file</div>
         </div>
 
-        <div class="gov-fee-bar">
-            <strong>Government Fees (paid separately):</strong> &nbsp;SEVIS I-901: $350 &nbsp;|&nbsp; USCIS Online: $420 &nbsp;|&nbsp; USCIS Paper: $470 &nbsp;|&nbsp; Premium Processing: +$2,075
+        <div class="gov-bar">
+            <strong>Government Fees (paid separately):</strong>&nbsp; SEVIS: $350 &nbsp;|&nbsp; USCIS Online: $420 &nbsp;|&nbsp; USCIS Paper: $470 &nbsp;|&nbsp; Premium Processing: +$2,075
         </div>
 
-        <div class="hero-cta-row">
+        <div class="hero-btns">
             <a href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" class="btn btn-orange">📅 Book Free Consultation</a>
-            <button class="btn btn-ghost" onclick="openModal('retainer')">Pay Retainer — Get Started</button>
+            <button class="btn btn-outline" onclick="openModal('retainer')">Pay Retainer — Get Started</button>
         </div>
-        <div class="retainer-row">
-            Already in process? &nbsp;
+        <div class="already-row">
+            Already in process?&nbsp;
             <button onclick="openModal('retainer')">Pay $200 Retainer</button>
             &nbsp;·&nbsp;
             <button onclick="openModal('balance')">Pay $600 Balance</button>
@@ -810,24 +660,24 @@
 <div class="trust-bar">
     <div class="trust-inner">
         <div class="trust-item">
-            <svg class="icon" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-            <span>99.5% Approval Rate</span>
+            <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+            99.5% Approval Rate
         </div>
         <div class="trust-item">
-            <svg class="icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <span>5★ on Google Reviews</span>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            5★ on Google Reviews
         </div>
         <div class="trust-item">
-            <svg class="icon" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-            <span>RFE Responses Included</span>
+            <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+            RFE Responses Included
         </div>
         <div class="trust-item">
-            <svg class="icon" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-            <span>No Hidden Fees</span>
+            <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+            No Hidden Fees
         </div>
         <div class="trust-item">
-            <svg class="icon" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-            <span>Expert Immigration Team</span>
+            <svg viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+            Expert Immigration Team
         </div>
     </div>
 </div>
@@ -837,52 +687,52 @@
 
     <!-- How to Get Started -->
     <section class="section" id="get-started">
-        <div class="get-started-box">
-            <h2 style="color: var(--purple); font-size: 26px; margin-bottom: 28px;">📋 How to Get Started</h2>
+        <div class="gs-box">
+            <h2>📋 How to Get Started</h2>
             <div class="steps-row">
-                <div class="step-item">
-                    <div class="step-num" style="background: var(--purple);">1</div>
+                <div class="step">
+                    <div class="step-num">1</div>
                     <div class="step-label">Free Consultation</div>
                 </div>
                 <div class="step-arrow">→</div>
-                <div class="step-item">
-                    <div class="step-num" style="background: var(--orange);">2</div>
+                <div class="step">
+                    <div class="step-num">2</div>
                     <div class="step-label">Pay $200 Retainer</div>
                 </div>
                 <div class="step-arrow">→</div>
-                <div class="step-item">
-                    <div class="step-num" style="background: var(--green);">3</div>
+                <div class="step">
+                    <div class="step-num">3</div>
                     <div class="step-label">Pay $600 &amp; File</div>
                 </div>
             </div>
-            <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px;">
-                <a href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" class="btn btn-teal" style="font-size: 15px; padding: 14px 36px; color: var(--purple);">📅 Book Free Consultation</a>
-                <button onclick="openModal('retainer')" class="btn btn-orange" style="font-size: 15px; padding: 14px 36px;">Pay Retainer — Start Case</button>
+            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px;">
+                <a href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" class="btn btn-orange">📅 Book Free Consultation</a>
+                <button onclick="openModal('retainer')" class="btn btn-purple">Pay Retainer — Start Case</button>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted);">Book your free consultation — no upfront cost, no obligation.</p>
+            <p style="font-size:13px; color:var(--muted);">No upfront cost, no obligation for the consultation.</p>
         </div>
     </section>
 
     <!-- Eligibility -->
     <section class="section">
         <div class="section-header">
-            <h2>Is This Service <span class="section-accent">Right for You?</span></h2>
-            <p>Make sure Change of Status is the correct option for your situation before applying.</p>
+            <h2>Is This Service <span class="accent">Right for You?</span></h2>
+            <p>Confirm Change of Status is the correct path for your situation before applying.</p>
         </div>
         <div class="elig-grid">
             <div class="elig-card yes">
-                <h3>✓ This Service is For You If:</h3>
+                <h3>✓ This Service Is For You If:</h3>
                 <ul>
                     <li>You are in the U.S. on a B1/B2 visitor visa</li>
                     <li>You are on J-1 (without 2-year home requirement, or with a waiver)</li>
                     <li>You hold another non-immigrant visa and want to study</li>
-                    <li>Your current status is valid (not expired)</li>
+                    <li>Your current status is still valid (not expired)</li>
                     <li>You want to become F-1 without leaving the U.S.</li>
                     <li>You have been (or will be) admitted to a SEVP-certified school</li>
                 </ul>
             </div>
             <div class="elig-card no">
-                <h3>✗ This Service is NOT For You If:</h3>
+                <h3>✗ This Service Is NOT For You If:</h3>
                 <ul>
                     <li>You are already on F-1 status (you may need a Transfer)</li>
                     <li>Your current visa or status has expired</li>
@@ -897,14 +747,14 @@
     <!-- What's Included -->
     <section class="section">
         <div class="section-header">
-            <h2>What's <span class="section-accent">Included</span></h2>
-            <p>Everything you need for a successful Change of Status — one flat fee, no surprises.</p>
+            <h2>What's <span class="accent">Included</span></h2>
+            <p>One flat fee, no surprises — everything you need from start to approval.</p>
         </div>
         <div class="included-grid">
             <div class="inc-card">
                 <div class="inc-icon">📋</div>
                 <h3>Eligibility Assessment</h3>
-                <p>We review your current visa status, travel history, and timeline to confirm you're eligible and build a personalized plan.</p>
+                <p>We review your current visa status, travel history, and timeline to confirm eligibility and build a personalized plan.</p>
             </div>
             <div class="inc-card">
                 <div class="inc-icon">🎓</div>
@@ -919,26 +769,25 @@
             <div class="inc-card">
                 <div class="inc-icon">📁</div>
                 <h3>Document Guidance</h3>
-                <p>Custom checklist and hands-on support to gather financial evidence, passport copies, and all required supporting documents.</p>
+                <p>Custom checklist and hands-on help to gather financial evidence, passport copies, and all required supporting documents.</p>
             </div>
             <div class="inc-card">
                 <div class="inc-icon">📬</div>
                 <h3>USCIS Filing Support</h3>
-                <p>We guide you through submitting your application online or by paper, and track your case status with you.</p>
+                <p>We guide you through submitting your application online or by paper and track your case status throughout.</p>
             </div>
             <div class="inc-card">
                 <div class="inc-icon">💬</div>
                 <h3>Ongoing Support</h3>
-                <p>WhatsApp, email, and phone support throughout the entire process — from start to approval.</p>
+                <p>WhatsApp, email, and phone support throughout the entire process — from consultation all the way to approval.</p>
             </div>
         </div>
 
-        <!-- RFE box -->
         <div class="rfe-box">
             <div class="rfe-icon">🛡️</div>
             <div>
                 <h4>RFE Responses Included — No Extra Charge</h4>
-                <p>Unlike most immigration consultants, EduConnect includes <strong>Requests for Evidence (RFE) responses</strong> in our flat fee. If USCIS issues an RFE on your case, we prepare and guide you through the full response at no additional cost. This is our commitment to seeing your case through to approval.</p>
+                <p>Unlike most consultants, EduConnect includes <strong>Request for Evidence (RFE) responses</strong> in our flat fee. If USCIS issues an RFE on your case, we prepare and guide you through the full response at no additional cost. This is our commitment to seeing your case through to approval.</p>
             </div>
         </div>
     </section>
@@ -946,33 +795,36 @@
     <!-- Government Fees -->
     <section class="section">
         <div class="gov-box">
-            <h3>📋 Government Fees (Paid Directly to USCIS — Not to EduConnect)</h3>
-            <div class="gov-fees-row" style="margin-top: 20px;">
+            <h3>Government Fees — Paid Directly to USCIS, Not to EduConnect</h3>
+            <div class="gov-fees-row">
                 <div class="gov-fee-item">
                     <strong>$350</strong>
                     <span>SEVIS I-901 Fee</span>
                 </div>
+                <div class="gov-divider"></div>
                 <div class="gov-fee-item">
                     <strong>$420</strong>
                     <span>USCIS Online Filing</span>
                 </div>
+                <div class="gov-divider"></div>
                 <div class="gov-fee-item">
                     <strong>$470</strong>
                     <span>USCIS Paper Filing</span>
                 </div>
+                <div class="gov-divider"></div>
                 <div class="gov-fee-item">
                     <strong>+$2,075</strong>
                     <span>Premium Processing (optional)</span>
                 </div>
             </div>
-            <p class="gov-note">Paper filing is required if you have co-applicants (spouse/children). Premium processing reduces USCIS decision time to ~30 business days.</p>
+            <p class="gov-note">Paper filing is required when you have co-applicants (spouse/children). Premium processing reduces USCIS decision time to ~30 business days.</p>
         </div>
     </section>
 
     <!-- Timeline -->
     <section class="section">
         <div class="section-header">
-            <h2>How It <span class="section-accent">Works</span></h2>
+            <h2>How It <span class="accent">Works</span></h2>
             <p>Your Change of Status journey, step by step.</p>
         </div>
         <div class="timeline">
@@ -996,7 +848,7 @@
                 <div class="tl-num">3</div>
                 <div class="tl-content">
                     <h3>Document Collection</h3>
-                    <p>We provide a tailored checklist and assist you in gathering all required documents: financials, passport, photos, current visa, and supporting evidence.</p>
+                    <p>We provide a tailored checklist and help you gather all required documents: financials, passport, photos, current visa, and supporting evidence.</p>
                     <span class="tl-tag">Days 10–15</span>
                 </div>
             </div>
@@ -1012,8 +864,8 @@
                 <div class="tl-num">5</div>
                 <div class="tl-content">
                     <h3>USCIS Processing &amp; Approval</h3>
-                    <p>We track your case and respond to any USCIS requests (including RFEs). Once approved, you're officially an F-1 student!</p>
-                    <span class="tl-tag">Regular: 4–6 months &nbsp;·&nbsp; Premium Processing: ~30 business days 🎉</span>
+                    <p>We track your case and respond to any USCIS requests — including RFEs at no extra cost. Once approved, you're officially an F-1 student!</p>
+                    <span class="tl-tag">Regular: 4–6 months &nbsp;·&nbsp; Premium Processing: ~30 business days</span>
                 </div>
             </div>
         </div>
@@ -1022,7 +874,7 @@
     <!-- FAQ -->
     <section class="section">
         <div class="section-header">
-            <h2>Frequently Asked <span class="section-accent">Questions</span></h2>
+            <h2>Frequently Asked <span class="accent">Questions</span></h2>
             <p>Common questions about EduConnect's Change of Status service.</p>
         </div>
         <div class="faq-list">
@@ -1036,57 +888,57 @@
                 </div></div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Are RFE responses really included?</div>
+                <div class="faq-q">Are RFE responses really included at no extra charge?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    Yes — 100%. If USCIS issues a Request for Evidence (RFE) on your case, EduConnect prepares and guides you through the full written response at <strong>no additional charge</strong>. This is built into your flat fee. Most consultants charge separately for RFEs, which can add hundreds of dollars. We don't.
+                    Yes — 100%. If USCIS issues a Request for Evidence (RFE) on your case, EduConnect prepares and guides you through the full written response at <strong>no additional charge</strong>. This is built into your flat fee. Most consultants bill separately for RFEs. We don't.
                 </div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">How long does Change of Status take?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    Standard USCIS processing takes approximately 4–6 months. If you need a faster decision, optional USCIS Premium Processing ($2,075 additional government fee) reduces the decision timeline to approximately 30 business days. We'll guide you on whether premium processing makes sense for your situation.
+                    Standard USCIS processing takes approximately 4–6 months. Optional USCIS Premium Processing ($2,075 additional government fee) reduces the decision timeline to approximately 30 business days. We'll advise whether premium processing makes sense for your situation.
                 </div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Can I change status from a B1/B2 tourist visa?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    Yes. B1/B2 visitors are eligible to apply for Change of Status to F-1. However, USCIS may scrutinize applications filed shortly after entry, as they look for evidence that you intended to study when you entered. During your consultation, we'll assess your timeline and advise you on the strongest approach.
+                    Yes. B1/B2 visitors are eligible to apply for Change of Status to F-1. However, USCIS may scrutinize applications filed shortly after entry. During your consultation, we'll assess your timeline and advise on the strongest approach.
                 </div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Can I study while my application is pending?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    It depends on your current visa type. <strong>B1/B2 holders generally cannot enroll in school until their Change of Status is approved.</strong> Holders of certain other visa types (F-2, H-4, etc.) may be able to begin studying once their application is pending and their program start date arrives. We'll advise you specifically during your consultation.
+                    It depends on your current visa type. <strong>B1/B2 holders generally cannot enroll in school until their Change of Status is approved.</strong> Holders of other visa types (F-2, H-4, etc.) may be able to begin studying once their application is pending and their program start date arrives. We'll advise you specifically.
                 </div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Can I travel outside the U.S. while my application is pending?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    No. Leaving the U.S. while your Change of Status application is pending will be treated as abandonment of the application. If you need to travel, you would instead need to apply for an F-1 visa at a U.S. consulate or embassy abroad and re-enter on that visa.
+                    No. Leaving the U.S. while your Change of Status application is pending is treated as abandonment. If you need to travel, you would need to apply for an F-1 visa at a U.S. consulate abroad and re-enter on that visa instead.
                 </div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">What if my B1/B2 status expires during processing?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    If your I-539 was filed <em>before</em> your authorized stay expired, you are in a "period of authorized stay" while USCIS adjudicates your case — meaning you can remain in the U.S. legally. Filing before your status expires is critical, and we'll make sure your case is submitted on time.
+                    If your I-539 was filed <em>before</em> your authorized stay expired, you are in a "period of authorized stay" while USCIS processes your case — meaning you can remain in the U.S. legally. Filing before your status expires is critical; we'll make sure your case is submitted on time.
                 </div></div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Online vs. paper filing — which is required?</div>
+                <div class="faq-q">Online vs. paper filing — which do I use?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    If you're filing alone (no dependents), you may file online for $420. If you have co-applicants — a spouse or children who also need to change status — paper filing is required and costs $470. We'll confirm the right filing method for your family situation.
+                    If filing alone (no dependents), you may file online for $420. If you have co-applicants — a spouse or children — paper filing is required at $470. We'll confirm the right method for your situation.
                 </div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">What is EduConnect's success rate?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    EduConnect maintains a <strong>99.5% approval rate</strong> on Change of Status cases. Our thorough document review process, proactive RFE handling, and experienced team mean your case is set up for success from day one. You can read our client reviews on Google.
+                    EduConnect maintains a <strong>99.5% approval rate</strong> on Change of Status cases. Our thorough document review, proactive RFE handling, and experienced team set your case up for success from day one. Read our client reviews on Google.
                 </div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">What school will I be admitted to?</div>
                 <div class="faq-a"><div class="faq-a-inner">
-                    We work with a network of SEVP-certified schools to find the best fit for your academic goals and schedule. During your consultation we'll discuss programs, costs, location preferences, and English proficiency requirements so you're enrolled in a school that genuinely fits your needs.
+                    We work with a network of SEVP-certified schools to find the best fit for your goals and schedule. During your consultation we'll discuss programs, costs, location preferences, and English proficiency requirements.
                 </div></div>
             </div>
         </div>
@@ -1095,42 +947,35 @@
 
 <!-- CTA SECTION -->
 <section class="cta-section">
-    <h2>Ready to Change Your Status to F-1?</h2>
-    <p>Book a free consultation today — our team will walk you through the entire process.</p>
+    <div class="cta-inner">
+        <h2>Ready to Change Your Status to F-1?</h2>
+        <p class="sub">Book a free consultation — our team will walk you through the entire process.</p>
 
-    <div class="cta-price-row">
-        <div class="cta-price-item">
+        <div class="cta-price">
             <div class="was">Normally $1,100</div>
             <div class="now">$800</div>
-            <div class="label">Limited-Time Promotion &nbsp;·&nbsp; Save $300</div>
+            <div class="lbl">Limited-Time Promotion &nbsp;·&nbsp; Save $300 &nbsp;·&nbsp; RFEs Included</div>
         </div>
-    </div>
 
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px;">
-        <a href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" class="btn btn-orange" style="font-size: 18px; padding: 18px 44px;">📅 Book Free Consultation</a>
-        <button onclick="openModal('retainer')" class="btn btn-ghost" style="font-size: 18px; padding: 18px 44px;">Pay Retainer &amp; Start</button>
-    </div>
-    <p style="font-size: 13px; opacity: 0.75;">Gov. fees paid separately: SEVIS $350 + USCIS $420–$470 (+ optional $2,075 for premium processing)</p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:12px;">
+            <a href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" class="btn btn-orange" style="font-size:17px; padding:16px 42px;">📅 Book Free Consultation</a>
+            <button onclick="openModal('retainer')" class="btn btn-outline" style="font-size:17px; padding:16px 42px;">Pay Retainer &amp; Start</button>
+        </div>
+        <p style="font-size:12px; opacity:0.65;">Gov. fees paid separately: SEVIS $350 + USCIS $420–$470 (+ optional $2,075 premium processing)</p>
 
-    <div class="cta-divider"></div>
-    <p class="cta-already">Already had your consultation?</p>
-    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-        <button onclick="openModal('retainer')" class="btn btn-teal" style="font-size: 15px;">Pay $200 Retainer</button>
-        <button onclick="openModal('balance')" class="btn" style="font-size: 15px; background: var(--orange); color: #fff;">Pay $600 Balance</button>
+        <div class="cta-divider"></div>
+        <p class="cta-already">Already had your consultation?</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            <button onclick="openModal('retainer')" class="btn btn-teal">Pay $200 Retainer</button>
+            <button onclick="openModal('balance')" class="btn btn-orange">Pay $600 Balance</button>
+        </div>
     </div>
 </section>
 
-<footer>
-    <p>© 2026 EduConnect &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a></p>
-    <p style="margin-top: 8px;">Questions? <a href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank">Book a free consultation</a></p>
-</footer>
-
-<!-- FLOATING CONTACT -->
-<div class="floating-contacts">
-    <a href="https://wa.me/1" class="float-btn float-wa" target="_blank" aria-label="WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
-    </a>
-</div>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/1" class="float-wa" target="_blank" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+</a>
 
 <!-- PAYMENT MODAL -->
 <div class="modal-overlay" id="modalOverlay">
@@ -1176,7 +1021,7 @@
                     <div class="trust-badge">🛡️ 99.5% Approval Rate</div>
                 </div>
             </div>
-            <div id="successMsg" class="success-msg" style="display: none;">
+            <div id="successMsg" class="success-msg" style="display:none;">
                 <div class="success-circle">✓</div>
                 <h3>Payment Received!</h3>
                 <p>Thank you for choosing EduConnect! You'll receive a confirmation email shortly. Our team will contact you within 24 hours to kick off your Change of Status case.</p>
@@ -1187,17 +1032,12 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-    // ── Replace with your Stripe publishable key ──
     var stripe = Stripe('pk_live_YOUR_STRIPE_KEY_HERE');
     var elements = stripe.elements();
     var cardEl = elements.create('card', {
         style: {
-            base: {
-                fontSize: '15px',
-                color: '#332959',
-                '::placeholder': { color: '#94a3b8' }
-            },
-            invalid: { color: '#e63946' }
+            base: { fontSize: '14px', color: '#332959', '::placeholder': { color: '#aaa' } },
+            invalid: { color: '#d94040' }
         }
     });
     cardEl.mount('#card-element');
@@ -1214,16 +1054,14 @@
         if (type === 'retainer') {
             currentAmount = 200;
             document.getElementById('modalTitle').textContent = 'Pay Retainer — Start Your Case';
-            document.getElementById('modalSub').textContent = 'Change of Status to F-1 · EduConnect';
             document.getElementById('modalNote').innerHTML = '<strong>Retainer — $200:</strong> Pay now to open your case. We begin immediately. Pay your $600 balance when your case is ready to file.';
-            head.style.background = 'linear-gradient(135deg, #332959, #261f44)';
+            head.style.background = '#332959';
             document.getElementById('btnText').textContent = 'Pay $200 Retainer';
         } else {
             currentAmount = 600;
             document.getElementById('modalTitle').textContent = 'Pay Remaining Balance';
-            document.getElementById('modalSub').textContent = 'Change of Status to F-1 · EduConnect';
-            document.getElementById('modalNote').innerHTML = '<strong>Balance — $600:</strong> Final payment. After this we file your I-539 with USCIS.';
-            head.style.background = 'linear-gradient(135deg, #ff7400, #e06500)';
+            document.getElementById('modalNote').innerHTML = '<strong>Balance — $600:</strong> Final payment. After this we prepare and file your I-539 with USCIS.';
+            head.style.background = '#ff7400';
             document.getElementById('btnText').textContent = 'Pay $600 Balance';
         }
         document.getElementById('modalPrice').textContent = '$' + currentAmount;
@@ -1245,7 +1083,6 @@
         if (e.key === 'Escape') closeModal();
     });
 
-    // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(function(q) {
         q.addEventListener('click', function() {
             var item = this.parentElement;
@@ -1255,19 +1092,11 @@
         });
     });
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-        a.addEventListener('click', function(e) {
-            var target = document.querySelector(this.getAttribute('href'));
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-        });
-    });
-
     async function handlePayment() {
-        var name = document.getElementById('custName').value.trim();
+        var name  = document.getElementById('custName').value.trim();
         var email = document.getElementById('custEmail').value.trim();
         var phone = document.getElementById('custPhone').value.trim();
-        var note = document.getElementById('custNote').value.trim();
+        var note  = document.getElementById('custNote').value.trim();
         if (!name || !email || !phone) { alert('Please fill in all required fields.'); return; }
 
         var btn = document.getElementById('payBtn');
@@ -1275,28 +1104,16 @@
         document.getElementById('btnText').textContent = 'Processing…';
 
         try {
-            // Replace the URL below with your payment backend endpoint
             var res = await fetch('/api/create-payment-intent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    amount: currentAmount,
-                    type: currentType,
-                    service: 'change-of-status',
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    note: note
-                })
+                body: JSON.stringify({ amount: currentAmount, type: currentType, service: 'change-of-status', name, email, phone, note })
             });
             var data = await res.json();
             if (data.error) throw new Error(data.error);
 
             var result = await stripe.confirmCardPayment(data.clientSecret, {
-                payment_method: {
-                    card: cardEl,
-                    billing_details: { name: name, email: email, phone: phone }
-                }
+                payment_method: { card: cardEl, billing_details: { name, email, phone } }
             });
             if (result.error) throw new Error(result.error.message);
             if (result.paymentIntent.status === 'succeeded') {
