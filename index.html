@@ -48,12 +48,12 @@
     .educonnect-lp .eyebrow--accent { background: rgba(255, 116, 0, 0.15); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
 
     /* ====== Site header (logo left, WhatsApp right) ====== */
-    .educonnect-lp .site-header { position: sticky; top: 0; z-index: 100; background: var(--bg-dark); box-shadow: 0 2px 12px rgba(15, 22, 38, 0.18); }
+    .educonnect-lp .site-header { position: relative; z-index: 100; background: var(--bg-dark); }
     .educonnect-lp .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
     .educonnect-lp .site-header__logo { display: inline-flex; align-items: center; flex: 0 0 auto; }
     .educonnect-lp .site-header__logo img { height: 42px; width: auto; display: block; }
-    .educonnect-lp .site-header__wa { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; background: #25D366; color: #fff; padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.30); transition: background .2s ease, transform .15s ease, box-shadow .2s ease; }
-    .educonnect-lp .site-header__wa:hover { background: #1ebe5a; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.40); }
+    .educonnect-lp .site-header__wa { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; background: #25D366; color: #fff; padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; text-decoration: none; transition: background .2s ease, transform .15s ease; }
+    .educonnect-lp .site-header__wa:hover { background: #1ebe5a; transform: translateY(-1px); }
     .educonnect-lp .site-header__wa svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
     /* Tablet & mobile: WhatsApp collapses to a round icon-only button */
     @media (max-width: 1024px) {
@@ -69,9 +69,6 @@
       .educonnect-lp .site-header__wa { width: 44px; height: 44px; }
       .educonnect-lp .site-header__wa svg { width: 20px; height: 20px; }
     }
-    /* Offset anchored sections so the sticky header doesn't cover them */
-    .educonnect-lp section[id] { scroll-margin-top: 90px; }
-
     /* ====== Hero ====== */
     .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 72px 0 180px; }
     .educonnect-lp .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; transform: translate(40%, -40%); }
