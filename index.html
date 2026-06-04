@@ -57,11 +57,11 @@
     .educonnect-lp .eyebrow--accent { background: rgba(255, 116, 0, 0.15); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
 
     /* ====== Brand logo ====== */
-    .educonnect-lp .hero__brand { position: relative; z-index: 7; display: block; margin-bottom: 24px; }
+    .educonnect-lp .hero__brand { position: relative; z-index: 7; display: block; margin-bottom: 18px; }
     .educonnect-lp .hero__brand img { width: clamp(70px, 7vw, 100px); height: auto; }
 
     /* ====== Hero ====== */
-    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 28px 0 120px; }
+    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 14px 0 120px; }
     .educonnect-lp .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; transform: translate(40%, -40%); }
     .educonnect-lp .hero__social { position: absolute; left: 0; right: 0; bottom: 0; transform: translateY(40%); z-index: 6; pointer-events: none; }
     .educonnect-lp .hero__social .container { display: flex; justify-content: flex-start; }
@@ -76,20 +76,8 @@
     .educonnect-lp .hero__img-wrap img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
     .educonnect-lp .hero__clip { position: absolute; top: -22px; left: 50%; transform: translateX(-50%) rotate(8deg); width: 22px; height: 64px; color: var(--accent); z-index: 4; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
 
-    /* Hero arrow — desktop only. Squiggle from the photo down to the CTA button. */
-    .educonnect-lp .hero__arrow {
-      position: absolute;
-      bottom: 0;
-      left: -320px;
-      width: 380px;
-      height: auto;
-      pointer-events: none;
-      z-index: 3;
-      opacity: 0.95;
-    }
-    .educonnect-lp .hero__arrow path { stroke: var(--accent); }
-    .educonnect-lp .hero__arrow circle { stroke: var(--accent); }
-    .educonnect-lp .hero__arrow circle.dot { fill: var(--accent); stroke: none; }
+    /* Hero arrow — desktop only */
+    .educonnect-lp .hero__arrow { position: absolute; bottom: 0; left: -300px; width: 380px; height: auto; pointer-events: none; z-index: 3; }
 
     /* ====== Sections ====== */
     .educonnect-lp section { padding: var(--space-section) 0; }
@@ -251,13 +239,17 @@
     @media (max-width: 1024px) {
       :root, .educonnect-lp { --space-section: 64px; --space-block: 48px; --space-cta: 44px; --space-card: 28px; }
       .educonnect-lp .container { padding: 0 24px; }
-      .educonnect-lp .hero { padding: 28px 0 130px; }
-      .educonnect-lp .hero__brand { margin-bottom: 20px; }
-      .educonnect-lp .hero__brand img { width: clamp(65px, 9vw, 90px); }
-      .educonnect-lp .hero__grid { gap: 36px; }
+      .educonnect-lp .hero { padding: 14px 0 130px; }
+      .educonnect-lp .hero__brand { margin-bottom: 18px; }
+      .educonnect-lp .hero__brand img { width: clamp(65px, 9vw, 90px); margin-left: auto; margin-right: auto; }
+      /* Tablet: stack hero so image wraps below heading and text */
+      .educonnect-lp .hero__grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
       .educonnect-lp .hero__title { font-size: clamp(30px, 4.6vw, 42px); }
-      .educonnect-lp .hero__subtitle { font-size: 18px; }
-      .educonnect-lp .hero__media { max-width: 460px; }
+      .educonnect-lp .hero__subtitle { font-size: 18px; margin-left: auto; margin-right: auto; }
+      .educonnect-lp .hero__cta-note { text-align: center; }
+      .educonnect-lp .hero__media { margin: 0 auto; max-width: 100%; width: 100%; }
+      .educonnect-lp .hero__img-wrap { transform: none; padding: 14px; }
+      .educonnect-lp .hero__clip { display: none; }
       .educonnect-lp .lead-form { gap: 40px; }
       .educonnect-lp .alliant__grid { gap: 40px; }
       .educonnect-lp .alliant__body { font-size: 17px; }
@@ -387,15 +379,18 @@
           <p class="hero__cta-note">Free consultation · No commitment required</p>
         </div>
         <div class="hero__media">
-          <!-- Hero arrow: squiggle from photo (upper-right target) curving down to the CTA button (lower-left arrowhead) -->
-          <svg class="hero__arrow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
-            <!-- Dashed squiggle path from upper-right (photo) to lower-left (button) -->
-            <path d="M 328 38 C 290 60, 260 50, 220 80 S 150 130, 110 160 S 70 195, 55 205" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2 9" fill="none"/>
-            <!-- Arrowhead pointing down-left toward the button -->
-            <path d="M 70 198 L 52 208 L 64 222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <!-- Target ring sitting on the photo -->
-            <circle cx="332" cy="34" r="9" fill="none" stroke-width="2.2"/>
-            <circle class="dot" cx="332" cy="34" r="3.2"/>
+          <svg class="hero__arrow" viewBox="0 0 373.41 223.93" fill="none" aria-hidden="true">
+            <defs><clipPath id="ec-arrow-clip"><path d="M348.24.22,349,.13a22,22,0,0,1,24.28,19.58h0a22.25,22.25,0,0,1-19.67,24.41l-.76.08a22,22,0,0,1-24.29-19.57h0A22.26,22.26,0,0,1,348.24.22Z" fill="none"/></clipPath></defs>
+            <path d="M235,25.67v0ZM1.18,185.71A1.5,1.5,0,0,0,0,187.49l2.87,13.2a1.5,1.5,0,0,0,2.93-.64L3.28,188.32,15,185.78a1.5,1.5,0,1,0-.63-2.93ZM350.52,25.89c3,20.25,2.07,49.63-10.09,72.13-6.06,11.22-14.9,20.7-27.45,26.54s-29,8.1-50.24,4.63l-.48,3c21.72,3.54,38.76,1.28,52-4.87s22.52-16.15,28.83-27.83c12.59-23.29,13.44-53.41,10.41-74Zm-87.78,103.3c-26.68-4.34-43.46-13-53.24-23.33a41.6,41.6,0,0,1-11.41-34.09c1.27-11.68,6.78-22.89,13.91-31.17s15.74-13.43,23-13.43v-3c-8.52,0-17.85,5.85-25.27,14.47s-13.28,20.44-14.62,32.81a44.58,44.58,0,0,0,12.21,36.47c10.39,11,27.87,19.83,54.94,24.23ZM235,27.17c11.14,0,23.3,5.62,33.93,15.29a88,88,0,0,1,24.39,38.9c9.55,31.25,2.55,71-41.73,104.62l1.82,2.39C298.63,154,306.13,113,296.18,80.49A90.75,90.75,0,0,0,271,40.24c-11-10-23.84-16.07-35.95-16.07ZM251.59,186c-44.27,33.63-103,35.94-152.68,28.59a385.54,385.54,0,0,1-64.4-15.45c-17.18-5.74-28.87-11.06-32.2-13.21L.69,188.44c3.67,2.36,15.67,7.78,32.87,13.52a389.17,389.17,0,0,0,64.91,15.58c49.95,7.39,109.71,5.19,154.94-29.17Z" fill="#ff7400"/>
+            <path d="M190.33,222.11a1.46,1.46,0,0,1-.78-.22l-13.5-8.33a1.5,1.5,0,1,1,1.58-2.55l13.49,8.33a1.5,1.5,0,0,1-.79,2.77Z" fill="#ff7400"/>
+            <path d="M179,223.93a1.42,1.42,0,0,1-.81-.24,1.49,1.49,0,0,1-.44-2.07l8.41-13a1.5,1.5,0,0,1,2.51,1.63l-8.41,13A1.49,1.49,0,0,1,179,223.93Z" fill="#ff7400"/>
+            <path d="M238.17,32a1.52,1.52,0,0,1-.79-.22l-13.49-8.32a1.5,1.5,0,0,1,1.57-2.56L239,29.22a1.5,1.5,0,0,1-.79,2.77Z" fill="#ff7400"/>
+            <path d="M226.86,33.81a1.47,1.47,0,0,1-.82-.24,1.5,1.5,0,0,1-.44-2.07l8.41-13a1.5,1.5,0,1,1,2.52,1.64l-8.41,13A1.51,1.51,0,0,1,226.86,33.81Z" fill="#ff7400"/>
+            <g clip-path="url(#ec-arrow-clip)">
+              <path d="M348.24.22,349,.13a22,22,0,0,1,24.28,19.58h0a22.25,22.25,0,0,1-19.67,24.41l-.76.08a22,22,0,0,1-24.29-19.57h0A22.26,22.26,0,0,1,348.24.22Z" fill="#fff"/>
+              <path d="M349.48,8.37a14.32,14.32,0,0,0-7.56,3.18,14.06,14.06,0,0,0-4.52,6.77A13.69,13.69,0,0,0,342,33a14.18,14.18,0,0,0,7.58,3,14.45,14.45,0,0,0,8-1.68,14.21,14.21,0,0,0,5.77-5.78,13.69,13.69,0,0,0-3.58-17.24A14.14,14.14,0,0,0,349.48,8.37ZM353,41.61a20,20,0,0,1-11.32-2.07,19.46,19.46,0,0,1-8.2-7.92,19.25,19.25,0,0,1-2.3-11.11A19.63,19.63,0,0,1,335.51,10a20.19,20.19,0,0,1,21.1-6.58,19.66,19.66,0,0,1,9.62,6.18A19.34,19.34,0,0,1,370.69,20a19.54,19.54,0,0,1-4.36,14.38A20.22,20.22,0,0,1,353,41.61Z" fill="#ff7400" fill-rule="evenodd"/>
+              <path d="M348.87,13.69l-3,8.8a1.33,1.33,0,0,0-.06.56,1.25,1.25,0,0,0,.19.53l4.73,7.4a1.3,1.3,0,0,0,.43.41,1.34,1.34,0,0,0,.58.17,1.24,1.24,0,0,0,.6-.11,1.22,1.22,0,0,0,.48-.36,1.11,1.11,0,0,0,.22-.38l3-8.25a1.41,1.41,0,0,0,.07-.54,1.38,1.38,0,0,0-.17-.52l-4.65-7.95a1.23,1.23,0,0,0-.53-.48,1.26,1.26,0,0,0-.71-.13,1.27,1.27,0,0,0-.68.27,1.31,1.31,0,0,0-.42.59Zm2.59,13.7,1.88-5.21h0l-2.94-5-1.92,5.55Z" fill="#ff7400" fill-rule="evenodd"/>
+            </g>
           </svg>
           <div class="hero__img-wrap">
             <img src="https://educonnectusa.com/wp-content/uploads/2026/06/3.jpg" alt="EduConnect USA students studying and working in the United States" />
