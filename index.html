@@ -24,10 +24,10 @@
       --shadow-lg: 0 24px 60px rgba(15, 22, 38, 0.18);
       --container: 1440px;
       /* ---- Vertical rhythm tokens ---- */
-      --space-section: 80px;     /* default top/bottom for sections */
-      --space-block: 56px;       /* gap between section-head and its body */
-      --space-cta: 36px;         /* gap from a section's content to its in-section CTA */
-      --space-card: 32px;        /* internal padding for cards / steps / programs / form */
+      --space-section: 80px;
+      --space-block: 56px;
+      --space-cta: 36px;
+      --space-card: 32px;
     }
 
     /* ====== Base (scoped) ====== */
@@ -47,7 +47,7 @@
     .educonnect-lp .btn--brand { background: var(--brand); color: #fff; border-color: var(--brand); }
     .educonnect-lp .btn--brand:hover { background: var(--brand-700); border-color: var(--brand-700); }
 
-    /* In-section CTA block (centered, used at end of how/programs/faq) */
+    /* In-section CTA block */
     .educonnect-lp .section-cta { text-align: center; margin-top: var(--space-cta); }
     .educonnect-lp .section-cta__note { color: var(--muted); font-size: 13px; margin-top: 12px; }
 
@@ -56,12 +56,12 @@
     .educonnect-lp .eyebrow--light { background: rgba(78, 211, 204, 0.12); color: var(--brand-700); border-color: rgba(78, 211, 204, 0.4); }
     .educonnect-lp .eyebrow--accent { background: rgba(255, 116, 0, 0.15); color: var(--accent); border-color: rgba(255, 116, 0, 0.4); }
 
-    /* ====== Brand logo (top-left, not a header bar) ====== */
-    .educonnect-lp .hero__brand { position: relative; z-index: 7; display: block; margin-bottom: 20px; }
-    .educonnect-lp .hero__brand img { width: clamp(160px, 28vw, 215px); height: auto; }
+    /* ====== Brand logo ====== */
+    .educonnect-lp .hero__brand { position: relative; z-index: 7; display: block; margin-bottom: 24px; }
+    .educonnect-lp .hero__brand img { width: clamp(150px, 13vw, 200px); height: auto; }
 
     /* ====== Hero ====== */
-    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 10px 0 120px; }
+    .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 28px 0 120px; }
     .educonnect-lp .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 211, 204, 0.18) 0%, transparent 70%); pointer-events: none; transform: translate(40%, -40%); }
     .educonnect-lp .hero__social { position: absolute; left: 0; right: 0; bottom: 0; transform: translateY(40%); z-index: 6; pointer-events: none; }
     .educonnect-lp .hero__social .container { display: flex; justify-content: flex-start; }
@@ -69,14 +69,27 @@
     .educonnect-lp .hero__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; position: relative; }
     .educonnect-lp .hero__title { font-size: clamp(32px, 4.2vw, 52px); font-weight: 700; margin-bottom: 20px; line-height: 1.12; color: #fff; }
     .educonnect-lp .hero__title strong { color: var(--brand); font-weight: 800; }
-    .educonnect-lp .hero__subtitle { font-size: 18px; opacity: 0.92; max-width: 560px; margin-bottom: 16px; color: #fff; }
-    .educonnect-lp .hero__supporting { font-size: 15px; opacity: 0.78; max-width: 560px; margin-bottom: 32px; color: #fff; }
+    .educonnect-lp .hero__subtitle { font-size: 18px; opacity: 0.92; max-width: 560px; margin-bottom: 32px; color: #fff; }
     .educonnect-lp .hero__cta-note { margin-top: 14px; font-size: 13px; opacity: 0.75; color: #fff; }
     .educonnect-lp .hero__media { position: relative; max-width: 620px; margin-left: auto; }
     .educonnect-lp .hero__img-wrap { position: relative; padding: 18px; background: #fff; border-radius: 6px; box-shadow: var(--shadow-lg); transform: rotate(-1.5deg); }
     .educonnect-lp .hero__img-wrap img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
     .educonnect-lp .hero__clip { position: absolute; top: -22px; left: 50%; transform: translateX(-50%) rotate(8deg); width: 22px; height: 64px; color: var(--accent); z-index: 4; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
-    .educonnect-lp .hero__arrow { position: absolute; bottom: 0; left: -300px; width: 380px; height: auto; pointer-events: none; z-index: 3; }
+
+    /* Hero arrow — desktop only, refined design */
+    .educonnect-lp .hero__arrow {
+      position: absolute;
+      bottom: -10px;
+      left: -240px;
+      width: 320px;
+      height: auto;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0.95;
+      transform: rotate(-2deg);
+    }
+    .educonnect-lp .hero__arrow path { stroke: var(--accent); }
+    .educonnect-lp .hero__arrow circle { fill: var(--accent); }
 
     /* ====== Sections ====== */
     .educonnect-lp section { padding: var(--space-section) 0; }
@@ -85,7 +98,7 @@
     .educonnect-lp .section-title { font-size: clamp(28px, 3.2vw, 38px); font-weight: 700; margin: 0; color: var(--ink); line-height: 1.2; }
     .educonnect-lp .section-sub { color: var(--muted); font-size: 16px; margin-top: 16px; line-height: 1.7; }
 
-    /* ====== Lead section: heading + 3 cards + form (gray bg) ====== */
+    /* ====== Lead section ====== */
     .educonnect-lp .lead { background: var(--bg-soft); padding-top: 120px; padding-bottom: var(--space-section); }
     .educonnect-lp .lead__head { text-align: center; max-width: 820px; margin: 0 auto 32px; }
     .educonnect-lp .lead__head .eyebrow { margin-bottom: 14px; }
@@ -95,13 +108,7 @@
     .educonnect-lp .visa-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 880px; margin: 0 auto var(--space-block); }
     .educonnect-lp .visa-chip { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: #fff; color: var(--ink); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
     .educonnect-lp .visa-chip svg { width: 16px; height: 16px; color: var(--brand-700); flex-shrink: 0; }
-    .educonnect-lp .social-proof__card {
-      display: inline-flex; align-items: center; gap: 24px;
-      background: #fff; color: var(--ink);
-      padding: 20px 32px; border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-      position: relative; z-index: 5;
-    }
+    .educonnect-lp .social-proof__card { display: inline-flex; align-items: center; gap: 24px; background: #fff; color: var(--ink); padding: 20px 32px; border-radius: var(--radius); box-shadow: var(--shadow-md); position: relative; z-index: 5; }
     .educonnect-lp .social-proof__avatars { display: inline-flex; flex-shrink: 0; }
     .educonnect-lp .social-proof__avatars img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; margin-left: -10px; object-fit: cover; }
     .educonnect-lp .social-proof__avatars img:first-child { margin-left: 0; }
@@ -121,7 +128,7 @@
     .educonnect-lp .card__text { color: var(--muted); font-size: 16px; line-height: 1.6; }
     .educonnect-lp .card__text strong { color: var(--ink); }
 
-    /* Form block inside lead section (full width under the cards) */
+    /* Form */
     .educonnect-lp .lead-form { display: block; }
     .educonnect-lp .form-card { width: 100%; background: #fff; border-radius: var(--radius); padding: var(--space-card); box-shadow: var(--shadow-md); border-top: 4px solid var(--brand); }
     .educonnect-lp .form-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
@@ -141,14 +148,9 @@
     .educonnect-lp .form-card .legal-consent-container { font-size: 13px; color: var(--muted); margin-top: 6px; }
     .educonnect-lp .form-card .hs-form-booleancheckbox label { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; }
 
-    /* ====== Alliant section (purple) ====== */
+    /* ====== Alliant section ====== */
     .educonnect-lp .alliant { background: var(--bg-dark); color: #fff; position: relative; overflow: hidden; }
-    .educonnect-lp .alliant::before {
-      content: ''; position: absolute; top: -80px; left: -80px;
-      width: 280px; height: 280px;
-      background: radial-gradient(circle, rgba(78, 211, 204, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    .educonnect-lp .alliant::before { content: ''; position: absolute; top: -80px; left: -80px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(78, 211, 204, 0.12) 0%, transparent 70%); pointer-events: none; }
     .educonnect-lp .alliant__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; position: relative; }
     .educonnect-lp .alliant__photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: #1d1740; box-shadow: var(--shadow-lg); }
     .educonnect-lp .alliant__photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -243,18 +245,18 @@
       .educonnect-lp .container { padding: 0 28px; }
       .educonnect-lp .hero__grid { gap: 48px; }
       .educonnect-lp .hero__media { max-width: 540px; }
+      .educonnect-lp .hero__arrow { display: none; } /* arrow: desktop-only (>1280px) */
     }
 
     @media (max-width: 1024px) {
       :root, .educonnect-lp { --space-section: 64px; --space-block: 48px; --space-cta: 44px; --space-card: 28px; }
       .educonnect-lp .container { padding: 0 24px; }
-      .educonnect-lp .hero { padding: 32px 0 130px; }
-      .educonnect-lp .hero__brand { margin-bottom: 28px; }
-      .educonnect-lp .hero__brand img { width: clamp(160px, 19vw, 200px); }
+      .educonnect-lp .hero { padding: 28px 0 130px; }
+      .educonnect-lp .hero__brand { margin-bottom: 22px; }
+      .educonnect-lp .hero__brand img { width: clamp(140px, 16vw, 180px); }
       .educonnect-lp .hero__grid { gap: 36px; }
       .educonnect-lp .hero__title { font-size: clamp(30px, 4.6vw, 42px); }
       .educonnect-lp .hero__subtitle { font-size: 18px; }
-      .educonnect-lp .hero__supporting { font-size: 16px; }
       .educonnect-lp .hero__media { max-width: 460px; }
       .educonnect-lp .lead-form { gap: 40px; }
       .educonnect-lp .alliant__grid { gap: 40px; }
@@ -263,26 +265,25 @@
       .educonnect-lp .steps { gap: 20px; }
       .educonnect-lp .gallery__slide { flex-basis: min(560px, 90%); }
       .educonnect-lp .testimonial { flex-basis: min(380px, 90%); }
-      .educonnect-lp .hero__arrow { display: none; }
       .educonnect-lp .alliant-logo { max-width: 150px; }
       .educonnect-lp .hero { padding-bottom: 150px; }
       .educonnect-lp .lead { padding-top: 100px; }
     }
 
+    /* Tablet portrait / small tablet — keep proper margins so content feels wrapped */
     @media (max-width: 768px) {
       :root, .educonnect-lp { --space-section: 56px; --space-block: 36px; --space-cta: 36px; --space-card: 24px; }
-      .educonnect-lp .container { padding: 0 8px; }
-      .educonnect-lp .hero { padding: 24px 0 130px; }
-      .educonnect-lp .hero__brand { margin-bottom: 20px; }
-      .educonnect-lp .hero__brand img { width: clamp(170px, 42vw, 200px); margin-left: auto; margin-right: auto; }
+      .educonnect-lp .container { padding: 0 24px; }
+      .educonnect-lp .hero { padding: 16px 0 130px; }
+      .educonnect-lp .hero__brand { margin-bottom: 18px; }
+      .educonnect-lp .hero__brand img { width: clamp(140px, 26vw, 170px); margin-left: auto; margin-right: auto; }
       .educonnect-lp .hero__grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
       .educonnect-lp .hero__title { font-size: clamp(28px, 7vw, 38px); margin-bottom: 16px; }
-      .educonnect-lp .hero__subtitle { font-size: 17px; margin-left: auto; margin-right: auto; margin-bottom: 14px; }
-      .educonnect-lp .hero__supporting { font-size: 15px; margin-left: auto; margin-right: auto; margin-bottom: 26px; }
+      .educonnect-lp .hero__subtitle { font-size: 17px; margin-left: auto; margin-right: auto; margin-bottom: 26px; }
       .educonnect-lp .hero__cta-note { text-align: center; }
       .educonnect-lp .hero__media { margin: 0 auto; max-width: 480px; }
       .educonnect-lp .hero__img-wrap { transform: none; padding: 12px; }
-      .educonnect-lp .hero__arrow, .educonnect-lp .hero__clip { display: none; }
+      .educonnect-lp .hero__clip { display: none; }
       .educonnect-lp .hero::before { display: none; }
       .educonnect-lp .hero { padding-bottom: 140px; }
       .educonnect-lp .lead { padding-top: 96px; }
@@ -306,7 +307,7 @@
       .educonnect-lp .alliant-logo { max-width: 150px; }
       .educonnect-lp .testimonials__head { flex-direction: column; align-items: flex-start; gap: 14px; }
       .educonnect-lp .testimonials__heading h2 { font-size: 22px; }
-      .educonnect-lp .gallery .slider { padding-left: 8px; padding-right: 8px; }
+      .educonnect-lp .gallery .slider { padding-left: 24px; padding-right: 24px; }
       .educonnect-lp .how__intro { font-size: 16px; }
       .educonnect-lp .program__tag { left: 20px; }
       .educonnect-lp .visa-chip { font-size: 14px; padding: 9px 16px; }
@@ -326,16 +327,16 @@
       .educonnect-lp .faq-item__body { padding: 0 22px 22px; font-size: 16px; }
     }
 
+    /* Phone — extend closer to edges */
     @media (max-width: 480px) {
       :root, .educonnect-lp { --space-section: 48px; --space-block: 32px; --space-cta: 32px; --space-card: 22px; }
-      .educonnect-lp .container { padding: 0 4px; }
-      .educonnect-lp .hero { padding: 20px 0 120px; }
-      .educonnect-lp .hero__brand { margin-bottom: 18px; }
-      .educonnect-lp .hero__brand img { width: clamp(165px, 46vw, 185px); }
+      .educonnect-lp .container { padding: 0 14px; }
+      .educonnect-lp .hero { padding: 10px 0 120px; }
+      .educonnect-lp .hero__brand { margin-bottom: 14px; }
+      .educonnect-lp .hero__brand img { width: clamp(130px, 36vw, 160px); }
       .educonnect-lp .hero__title { font-size: clamp(26px, 7.6vw, 32px); margin-bottom: 14px; }
-      .educonnect-lp .hero__subtitle { font-size: 16px; margin-bottom: 12px; }
-      .educonnect-lp .hero__supporting { font-size: 14.5px; margin-bottom: 22px; }
-      .educonnect-lp .gallery .slider { padding-left: 4px; padding-right: 4px; }
+      .educonnect-lp .hero__subtitle { font-size: 16px; margin-bottom: 22px; }
+      .educonnect-lp .gallery .slider { padding-left: 14px; padding-right: 14px; }
       .educonnect-lp .btn { padding: 13px 22px; font-size: 14px; }
       .educonnect-lp .section-title { font-size: clamp(22px, 6.4vw, 28px); }
       .educonnect-lp .lead__head h2 { font-size: clamp(22px, 6.4vw, 28px); }
@@ -373,32 +374,23 @@
   <!-- ====== Hero ====== -->
   <section class="hero" id="top">
     <div class="container">
-      <!-- Brand logo: top-left, not a header bar -->
       <a class="hero__brand" href="#top" aria-label="EduConnect USA home">
-        <img src="https://educonnectusa.com/wp-content/uploads/2024/11/3-1.png" alt="EduConnect USA" />
+        <img src="https://educonnectusa.com/wp-content/uploads/2026/04/EduConnect_logos_Finals-Shared_White-Logo-scaled.png" alt="EduConnect USA" />
       </a>
       <div class="hero__grid">
         <div>
           <span class="eyebrow">Day 1 CPT · Work &amp; Study in the U.S.</span>
           <h1 class="hero__title">Work While Studying With <strong>Day 1 CPT</strong> Graduate Programs</h1>
-          <p class="hero__subtitle">If your J-1, Au Pair, tourist, or other visa is ending soon, or you just want to keep building your life here, you may have more options.</p>
-          <p class="hero__supporting">We help you enroll in an accredited program with <strong>Day 1 CPT work authorization</strong>, so you can keep working and studying in the U.S. from the first day.</p>
+          <p class="hero__subtitle">If your U.S. visa is expiring soon, you may have options to continue living, working, and studying in the United States.</p>
           <a class="btn btn--accent hs-cta-trigger-button hs-cta-trigger-button-213790450726" href="#apply">Let's Get Started</a>
           <p class="hero__cta-note">Free consultation · No commitment required</p>
         </div>
         <div class="hero__media">
-          <svg class="hero__arrow" viewBox="0 0 373.41 223.93" fill="none" aria-hidden="true">
-            <defs><clipPath id="ec-arrow-clip"><path d="M348.24.22,349,.13a22,22,0,0,1,24.28,19.58h0a22.25,22.25,0,0,1-19.67,24.41l-.76.08a22,22,0,0,1-24.29-19.57h0A22.26,22.26,0,0,1,348.24.22Z" fill="none"/></clipPath></defs>
-            <path d="M235,25.67v0ZM1.18,185.71A1.5,1.5,0,0,0,0,187.49l2.87,13.2a1.5,1.5,0,0,0,2.93-.64L3.28,188.32,15,185.78a1.5,1.5,0,1,0-.63-2.93ZM350.52,25.89c3,20.25,2.07,49.63-10.09,72.13-6.06,11.22-14.9,20.7-27.45,26.54s-29,8.1-50.24,4.63l-.48,3c21.72,3.54,38.76,1.28,52-4.87s22.52-16.15,28.83-27.83c12.59-23.29,13.44-53.41,10.41-74Zm-87.78,103.3c-26.68-4.34-43.46-13-53.24-23.33a41.6,41.6,0,0,1-11.41-34.09c1.27-11.68,6.78-22.89,13.91-31.17s15.74-13.43,23-13.43v-3c-8.52,0-17.85,5.85-25.27,14.47s-13.28,20.44-14.62,32.81a44.58,44.58,0,0,0,12.21,36.47c10.39,11,27.87,19.83,54.94,24.23ZM235,27.17c11.14,0,23.3,5.62,33.93,15.29a88,88,0,0,1,24.39,38.9c9.55,31.25,2.55,71-41.73,104.62l1.82,2.39C298.63,154,306.13,113,296.18,80.49A90.75,90.75,0,0,0,271,40.24c-11-10-23.84-16.07-35.95-16.07ZM251.59,186c-44.27,33.63-103,35.94-152.68,28.59a385.54,385.54,0,0,1-64.4-15.45c-17.18-5.74-28.87-11.06-32.2-13.21L.69,188.44c3.67,2.36,15.67,7.78,32.87,13.52a389.17,389.17,0,0,0,64.91,15.58c49.95,7.39,109.71,5.19,154.94-29.17Z" fill="#ff7400"/>
-            <path d="M190.33,222.11a1.46,1.46,0,0,1-.78-.22l-13.5-8.33a1.5,1.5,0,1,1,1.58-2.55l13.49,8.33a1.5,1.5,0,0,1-.79,2.77Z" fill="#ff7400"/>
-            <path d="M179,223.93a1.42,1.42,0,0,1-.81-.24,1.49,1.49,0,0,1-.44-2.07l8.41-13a1.5,1.5,0,0,1,2.51,1.63l-8.41,13A1.49,1.49,0,0,1,179,223.93Z" fill="#ff7400"/>
-            <path d="M238.17,32a1.52,1.52,0,0,1-.79-.22l-13.49-8.32a1.5,1.5,0,0,1,1.57-2.56L239,29.22a1.5,1.5,0,0,1-.79,2.77Z" fill="#ff7400"/>
-            <path d="M226.86,33.81a1.47,1.47,0,0,1-.82-.24,1.5,1.5,0,0,1-.44-2.07l8.41-13a1.5,1.5,0,1,1,2.52,1.64l-8.41,13A1.51,1.51,0,0,1,226.86,33.81Z" fill="#ff7400"/>
-            <g clip-path="url(#ec-arrow-clip)">
-              <path d="M348.24.22,349,.13a22,22,0,0,1,24.28,19.58h0a22.25,22.25,0,0,1-19.67,24.41l-.76.08a22,22,0,0,1-24.29-19.57h0A22.26,22.26,0,0,1,348.24.22Z" fill="#fff"/>
-              <path d="M349.48,8.37a14.32,14.32,0,0,0-7.56,3.18,14.06,14.06,0,0,0-4.52,6.77A13.69,13.69,0,0,0,342,33a14.18,14.18,0,0,0,7.58,3,14.45,14.45,0,0,0,8-1.68,14.21,14.21,0,0,0,5.77-5.78,13.69,13.69,0,0,0-3.58-17.24A14.14,14.14,0,0,0,349.48,8.37ZM353,41.61a20,20,0,0,1-11.32-2.07,19.46,19.46,0,0,1-8.2-7.92,19.25,19.25,0,0,1-2.3-11.11A19.63,19.63,0,0,1,335.51,10a20.19,20.19,0,0,1,21.1-6.58,19.66,19.66,0,0,1,9.62,6.18A19.34,19.34,0,0,1,370.69,20a19.54,19.54,0,0,1-4.36,14.38A20.22,20.22,0,0,1,353,41.61Z" fill="#ff7400" fill-rule="evenodd"/>
-              <path d="M348.87,13.69l-3,8.8a1.33,1.33,0,0,0-.06.56,1.25,1.25,0,0,0,.19.53l4.73,7.4a1.3,1.3,0,0,0,.43.41,1.34,1.34,0,0,0,.58.17,1.24,1.24,0,0,0,.6-.11,1.22,1.22,0,0,0,.48-.36,1.11,1.11,0,0,0,.22-.38l3-8.25a1.41,1.41,0,0,0,.07-.54,1.38,1.38,0,0,0-.17-.52l-4.65-7.95a1.23,1.23,0,0,0-.53-.48,1.26,1.26,0,0,0-.71-.13,1.27,1.27,0,0,0-.68.27,1.31,1.31,0,0,0-.42.59Zm2.59,13.7,1.88-5.21h0l-2.94-5-1.92,5.55Z" fill="#ff7400" fill-rule="evenodd"/>
-            </g>
+          <!-- Refined hero arrow: clean dashed curve with arrowhead and accent dot -->
+          <svg class="hero__arrow" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+            <path d="M 18 184 C 70 174, 110 90, 230 56" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2 9" fill="none"/>
+            <path d="M 218 44 L 234 56 L 222 72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="184" r="5"/>
           </svg>
           <div class="hero__img-wrap">
             <img src="https://educonnectusa.com/wp-content/uploads/2026/06/3.jpg" alt="EduConnect USA students studying and working in the United States" />
@@ -409,7 +401,6 @@
         </div>
       </div>
     </div>
-    <!-- Floating social-proof card pinned to the bottom of the hero, half-extending into the lead -->
     <div class="hero__social">
       <div class="container">
         <div class="social-proof__card">
@@ -439,7 +430,7 @@
     </div>
   </section>
 
-  <!-- ====== Lead: heading + 3 cards + form (gray bg) ====== -->
+  <!-- ====== Lead ====== -->
   <section class="lead" id="apply">
     <div class="container">
       <div class="lead__head">
@@ -494,7 +485,7 @@
     </div>
   </section>
 
-  <!-- ====== Alliant University (purple) ====== -->
+  <!-- ====== Alliant ====== -->
   <section class="alliant">
     <div class="container">
       <div class="alliant__grid">
@@ -522,7 +513,7 @@
       <div class="section-head">
         <span class="eyebrow eyebrow--light">How it Works</span>
         <h2 class="section-title">Start working &amp; studying in 3 steps</h2>
-        <p class="how__intro">Our programs use something called <strong>Curricular Practical Training (CPT)</strong>, a U.S. work authorization for students whose program includes practical training as part of the curriculum. Alliant authorizes you to begin from the first day of class, which is why it's called <strong>Day 1 CPT</strong>. Here's what that looks like:</p>
+        <p class="how__intro">Our programs use something called Curricular Practical Training (CPT), a U.S. work authorization for students whose program includes practical training as part of the curriculum. Alliant authorizes you to begin from the first day of class, which is why it's called <strong>Day 1 CPT</strong>. Here's what that looks like:</p>
       </div>
       <div class="steps">
         <article class="step">
@@ -548,12 +539,12 @@
     </div>
   </section>
 
-  <!-- ====== Testimonials (Google reviews) ====== -->
+  <!-- ====== Testimonials ====== -->
   <section class="testimonials" data-slider-root>
     <div class="container">
       <div class="testimonials__head">
         <div class="testimonials__heading">
-          <h2>Hear from students already working &amp; studying in the U.S.</h2>
+          <h2>Hear from our current students in the U.S.</h2>
           <span class="google-badge">
             <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -735,7 +726,7 @@
     </div>
   </section>
 
-  <!-- ====== FAQ (last) ====== -->
+  <!-- ====== FAQ ====== -->
   <section class="faq">
     <div class="container">
       <div class="section-head">
