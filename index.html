@@ -58,7 +58,7 @@
 
     /* ====== Brand logo ====== */
     .educonnect-lp .hero__brand { position: relative; z-index: 7; display: block; margin-bottom: 24px; }
-    .educonnect-lp .hero__brand img { width: clamp(150px, 13vw, 200px); height: auto; }
+    .educonnect-lp .hero__brand img { width: clamp(70px, 7vw, 100px); height: auto; }
 
     /* ====== Hero ====== */
     .educonnect-lp .hero { position: relative; background: var(--bg-dark); color: #fff; padding: 28px 0 120px; }
@@ -76,20 +76,20 @@
     .educonnect-lp .hero__img-wrap img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
     .educonnect-lp .hero__clip { position: absolute; top: -22px; left: 50%; transform: translateX(-50%) rotate(8deg); width: 22px; height: 64px; color: var(--accent); z-index: 4; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
 
-    /* Hero arrow — desktop only, refined design */
+    /* Hero arrow — desktop only. Squiggle from the photo down to the CTA button. */
     .educonnect-lp .hero__arrow {
       position: absolute;
-      bottom: -10px;
-      left: -240px;
-      width: 320px;
+      bottom: 0;
+      left: -320px;
+      width: 380px;
       height: auto;
       pointer-events: none;
       z-index: 3;
       opacity: 0.95;
-      transform: rotate(-2deg);
     }
     .educonnect-lp .hero__arrow path { stroke: var(--accent); }
-    .educonnect-lp .hero__arrow circle { fill: var(--accent); }
+    .educonnect-lp .hero__arrow circle { stroke: var(--accent); }
+    .educonnect-lp .hero__arrow circle.dot { fill: var(--accent); stroke: none; }
 
     /* ====== Sections ====== */
     .educonnect-lp section { padding: var(--space-section) 0; }
@@ -252,8 +252,8 @@
       :root, .educonnect-lp { --space-section: 64px; --space-block: 48px; --space-cta: 44px; --space-card: 28px; }
       .educonnect-lp .container { padding: 0 24px; }
       .educonnect-lp .hero { padding: 28px 0 130px; }
-      .educonnect-lp .hero__brand { margin-bottom: 22px; }
-      .educonnect-lp .hero__brand img { width: clamp(140px, 16vw, 180px); }
+      .educonnect-lp .hero__brand { margin-bottom: 20px; }
+      .educonnect-lp .hero__brand img { width: clamp(65px, 9vw, 90px); }
       .educonnect-lp .hero__grid { gap: 36px; }
       .educonnect-lp .hero__title { font-size: clamp(30px, 4.6vw, 42px); }
       .educonnect-lp .hero__subtitle { font-size: 18px; }
@@ -276,12 +276,13 @@
       .educonnect-lp .container { padding: 0 24px; }
       .educonnect-lp .hero { padding: 16px 0 130px; }
       .educonnect-lp .hero__brand { margin-bottom: 18px; }
-      .educonnect-lp .hero__brand img { width: clamp(140px, 26vw, 170px); margin-left: auto; margin-right: auto; }
+      .educonnect-lp .hero__brand img { width: clamp(70px, 12vw, 95px); margin-left: auto; margin-right: auto; }
       .educonnect-lp .hero__grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
       .educonnect-lp .hero__title { font-size: clamp(28px, 7vw, 38px); margin-bottom: 16px; }
       .educonnect-lp .hero__subtitle { font-size: 17px; margin-left: auto; margin-right: auto; margin-bottom: 26px; }
       .educonnect-lp .hero__cta-note { text-align: center; }
-      .educonnect-lp .hero__media { margin: 0 auto; max-width: 480px; }
+      /* Hero image: fill the wrapped container width on tablet so it sits within the same margins as text */
+      .educonnect-lp .hero__media { margin: 0 auto; max-width: 100%; width: 100%; }
       .educonnect-lp .hero__img-wrap { transform: none; padding: 12px; }
       .educonnect-lp .hero__clip { display: none; }
       .educonnect-lp .hero::before { display: none; }
@@ -330,13 +331,13 @@
     /* Phone — extend closer to edges */
     @media (max-width: 480px) {
       :root, .educonnect-lp { --space-section: 48px; --space-block: 32px; --space-cta: 32px; --space-card: 22px; }
-      .educonnect-lp .container { padding: 0 14px; }
+      .educonnect-lp .container { padding: 0 4px; }
       .educonnect-lp .hero { padding: 10px 0 120px; }
       .educonnect-lp .hero__brand { margin-bottom: 14px; }
-      .educonnect-lp .hero__brand img { width: clamp(130px, 36vw, 160px); }
+      .educonnect-lp .hero__brand img { width: clamp(70px, 18vw, 90px); }
       .educonnect-lp .hero__title { font-size: clamp(26px, 7.6vw, 32px); margin-bottom: 14px; }
       .educonnect-lp .hero__subtitle { font-size: 16px; margin-bottom: 22px; }
-      .educonnect-lp .gallery .slider { padding-left: 14px; padding-right: 14px; }
+      .educonnect-lp .gallery .slider { padding-left: 4px; padding-right: 4px; }
       .educonnect-lp .btn { padding: 13px 22px; font-size: 14px; }
       .educonnect-lp .section-title { font-size: clamp(22px, 6.4vw, 28px); }
       .educonnect-lp .lead__head h2 { font-size: clamp(22px, 6.4vw, 28px); }
@@ -386,11 +387,15 @@
           <p class="hero__cta-note">Free consultation · No commitment required</p>
         </div>
         <div class="hero__media">
-          <!-- Refined hero arrow: clean dashed curve with arrowhead and accent dot -->
-          <svg class="hero__arrow" viewBox="0 0 320 200" fill="none" aria-hidden="true">
-            <path d="M 18 184 C 70 174, 110 90, 230 56" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2 9" fill="none"/>
-            <path d="M 218 44 L 234 56 L 222 72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle cx="18" cy="184" r="5"/>
+          <!-- Hero arrow: squiggle from photo (upper-right target) curving down to the CTA button (lower-left arrowhead) -->
+          <svg class="hero__arrow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
+            <!-- Dashed squiggle path from upper-right (photo) to lower-left (button) -->
+            <path d="M 328 38 C 290 60, 260 50, 220 80 S 150 130, 110 160 S 70 195, 55 205" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2 9" fill="none"/>
+            <!-- Arrowhead pointing down-left toward the button -->
+            <path d="M 70 198 L 52 208 L 64 222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Target ring sitting on the photo -->
+            <circle cx="332" cy="34" r="9" fill="none" stroke-width="2.2"/>
+            <circle class="dot" cx="332" cy="34" r="3.2"/>
           </svg>
           <div class="hero__img-wrap">
             <img src="https://educonnectusa.com/wp-content/uploads/2026/06/3.jpg" alt="EduConnect USA students studying and working in the United States" />
