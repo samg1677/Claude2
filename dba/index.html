@@ -51,7 +51,8 @@
 #dba-page :focus-visible{outline:3px solid var(--dba-teal);outline-offset:2px;border-radius:4px}
 
 /* ---------- Shared ---------- */
-.dba-wrap{max-width:var(--dba-max);margin:0 auto;padding:0 24px}
+/* max-width includes side padding (border-box), so add it on top to give 1280px of actual content */
+.dba-wrap{max-width:calc(var(--dba-max) + 48px);margin:0 auto;padding:0 24px}
 .dba-eyebrow{
   display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;line-height:1.5;
   text-transform:uppercase;color:var(--dba-orange);margin-bottom:16px;
@@ -87,7 +88,7 @@
   gap:clamp(32px,4vw,56px);align-items:center;
   padding:clamp(64px,7vw,110px) 0 clamp(56px,6vw,96px);
 }
-.dba-hero .dba-eyebrow{color:#ffb37a;margin-bottom:20px}
+.dba-hero .dba-eyebrow{color:var(--dba-orange);margin-bottom:20px}
 #dba-page .dba-hero h1{
   color:#fff;font-size:clamp(32px,4.2vw,52px);letter-spacing:-.5px;margin-bottom:24px;
 }
@@ -265,9 +266,18 @@
 .dba-cta p{color:rgba(255,255,255,.88);font-size:16px;line-height:2}
 .dba-cta__actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:flex-end}
 
-/* ---------- Spacing fixes (raise specificity above the #dba-page p / ul reset) ---------- */
-#dba-page .dba-benefits{margin-top:44px}
-#dba-page .dba-why{margin-top:36px}
+/* ---------- Spacing rhythm (raise specificity above the #dba-page h/p/ul reset) ----------
+   One consistent 28px beat: eyebrow > h2 > lede > content all breathe equally.
+   .dba-path gets 28px visual + 18px extra because its number circles overhang the cards. */
+#dba-page .dba-h2{margin-bottom:28px}
+#dba-page .dba-lede{margin-bottom:0}
+#dba-page .dba-highlights{margin-top:28px}
+#dba-page .dba-benefits{margin-top:28px}
+#dba-page .dba-why{margin-top:28px}
+#dba-page .dba-acc{margin-top:28px}
+#dba-page .dba-ft{margin-top:28px}
+#dba-page .dba-fees{margin-top:28px}
+#dba-page .dba-path{margin-top:46px}
 #dba-page .dba-transfer-note{margin-top:24px;padding:20px 24px}
 #dba-page .dba-credits__foot{padding:18px 26px}
 #dba-page .dba-feecard>p{margin-bottom:20px}
