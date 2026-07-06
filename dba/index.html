@@ -1,162 +1,649 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Doctor of Business Administration (DBA) | EduConnect USA</title>
-<meta name="description" content="The Alliant DBA, now EduConnected. Earn the highest professional degree in business in about 3 years, extend your stay in the USA, and keep working while you study." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+<title>DBA - Doctor of Business Administration - Doctorate Degree | EduConnect USA</title>
+<meta name="description" content="Earn an accredited Doctor of Business Administration with Day 1 CPT and OPT eligibility, grants up to $15,000, and a change of status that extends your stay in the U.S. for 3-4 more years." />
 </head>
 <body>
+<!-- ============================================================
+     EduConnect USA — DBA Program Page
+     PASTE EVERYTHING BETWEEN THE "BEGIN/END DIVI CODE MODULE"
+     MARKERS INTO A SINGLE DIVI CODE MODULE.
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow">Doctor of Business Administration</span>
-      <h1>The Alliant DBA is now <span class="accent">EduConnected</span></h1>
-      <p class="lede">
-        Earn the highest professional degree in business in about three years — extend your stay,
-        keep working, and build your future in the USA.
-      </p>
-      <div class="btn-row">
-        <a href="#apply" class="btn btn-primary">Apply for the DBA</a>
-        <a href="#program" class="btn btn-ghost">Explore the Program</a>
+     IMAGES: upload these two files (in /images) to your WordPress
+     media library, then replace the src values below:
+       images/dba-graduation.jpg  -> hero photo
+       images/dba-usa-la.jpg      -> "extend your stay" photo
+============================================================ -->
+<!-- BEGIN DIVI CODE MODULE CONTENT -->
+<style>
+/* ---------- Brand tokens ---------- */
+#dba-page{
+  --dba-teal:#4ed3cc;
+  --dba-orange:#ff7400;
+  --dba-orange-hov:#cc5c00;
+  --dba-plum:#332959;
+  --dba-ink:#2a2f31;
+  --dba-body:#686868;
+  --dba-bg-soft:#f2f2f2;
+  --dba-line:#e4eaee;
+  --dba-radius:12px;
+  --dba-radius-sm:8px;
+  --dba-shadow:0 16px 40px rgba(42,47,49,.10),0 2px 6px rgba(42,47,49,.06);
+  --dba-font:Arial,Helvetica,sans-serif;
+  --dba-max:1280px;
+  font-family:var(--dba-font);
+  color:var(--dba-body);
+  font-size:16px;
+  line-height:2;
+  background:#fff;
+}
+#dba-page *,#dba-page *::before,#dba-page *::after{box-sizing:border-box}
+#dba-page img{max-width:100%;height:auto;display:block}
+#dba-page ul,#dba-page ol{list-style:none;margin:0;padding:0}
+#dba-page a{text-decoration:none}
+#dba-page h1,#dba-page h2,#dba-page h3,#dba-page h4{
+  color:var(--dba-ink);margin:0;padding:0;line-height:1.25;font-weight:700;text-wrap:balance;
+}
+#dba-page p{margin:0;padding:0;font-size:16px;line-height:2}
+#dba-page :focus-visible{outline:3px solid var(--dba-teal);outline-offset:2px;border-radius:4px}
+
+/* ---------- Shared ---------- */
+.dba-wrap{max-width:var(--dba-max);margin:0 auto;padding:0 24px}
+.dba-eyebrow{
+  display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;line-height:1.5;
+  text-transform:uppercase;color:var(--dba-orange);margin-bottom:16px;
+}
+.dba-h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.5px;margin-bottom:20px}
+.dba-lede{font-size:16px;line-height:2}
+.dba-section{padding:clamp(64px,7vw,96px) 0}
+.dba-section--soft{background:var(--dba-bg-soft)}
+.dba-section--plum{background:var(--dba-plum)}
+#dba-page .dba-section--plum .dba-h2{color:#fff}
+.dba-section--plum .dba-lede{color:rgba(255,255,255,.85)}
+
+.dba-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px 30px;border-radius:6px;border:2px solid transparent;
+  font:700 16px/1.3 var(--dba-font);letter-spacing:.5px;cursor:pointer;
+}
+.dba-btn--primary{background:var(--dba-orange);color:#fff !important;box-shadow:0 12px 18px -6px rgba(0,0,0,.3)}
+.dba-btn--primary:hover{background:var(--dba-orange-hov)}
+.dba-btn--ghost{background:transparent;color:#fff !important;border-color:rgba(255,255,255,.55)}
+.dba-btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+.dba-check{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:2}
+.dba-check svg{flex:0 0 22px;width:22px;height:22px;margin-top:5px;fill:var(--dba-teal)}
+
+/* ---------- Hero ---------- */
+.dba-hero{
+  background:linear-gradient(300deg,#4ed3cc 0%,#332959 69%) #332959;
+  color:#fff;overflow:hidden;
+}
+.dba-hero__inner{
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:clamp(40px,5vw,72px);align-items:center;
+  padding:clamp(64px,7vw,110px) 0 clamp(56px,6vw,96px);
+}
+.dba-hero .dba-eyebrow{color:#ffb37a;margin-bottom:20px}
+#dba-page .dba-hero h1{
+  color:#fff;font-size:clamp(32px,4.2vw,52px);letter-spacing:-.5px;margin-bottom:24px;
+}
+.dba-hero__sub{
+  font-size:16px;line-height:2;color:rgba(255,255,255,.9);
+  max-width:58ch;margin-bottom:24px;
+}
+.dba-hero__sub strong{color:#fff}
+#dba-page .dba-hero__tag{
+  border-left:4px solid var(--dba-orange);padding-left:20px;
+  font-style:italic;color:rgba(255,255,255,.78);font-size:16px;line-height:2;
+}
+.dba-hero__cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
+.dba-hero__media{position:relative}
+.dba-hero__media img{
+  border-radius:var(--dba-radius);box-shadow:var(--dba-shadow);
+  aspect-ratio:4/3;object-fit:cover;width:100%;
+}
+.dba-hero__badge{
+  position:absolute;left:-14px;bottom:-18px;background:#fff;color:var(--dba-ink);
+  border-radius:10px;box-shadow:var(--dba-shadow);padding:14px 20px;
+  font-size:14px;line-height:1.6;
+}
+.dba-hero__badge b{display:block;color:var(--dba-plum);font-size:16px}
+
+/* stat strip */
+.dba-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.18);
+  border-top:1px solid rgba(255,255,255,.18);
+}
+.dba-stat{background:rgba(51,41,89,.35);padding:20px;text-align:center}
+.dba-stat b{display:block;color:#fff;font-size:17px;letter-spacing:.2px;line-height:1.5}
+.dba-stat span{color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.5px;text-transform:uppercase;line-height:1.6}
+
+/* ---------- Highlights ---------- */
+.dba-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.dba-highlight{
+  background:#fff;border:1px solid var(--dba-line);border-top:5px solid var(--dba-teal);
+  border-radius:var(--dba-radius);padding:32px 28px;box-shadow:var(--dba-shadow);
+}
+.dba-highlight--orange{border-top-color:var(--dba-orange)}
+.dba-highlight--plum{border-top-color:var(--dba-plum)}
+.dba-highlight b{display:block;font-size:clamp(26px,2.4vw,32px);color:var(--dba-ink);line-height:1.3;margin-bottom:6px}
+.dba-highlight h3{font-size:18px;margin-bottom:14px;color:var(--dba-plum)}
+.dba-highlight p{font-size:16px;line-height:2}
+
+/* ---------- Benefits ---------- */
+.dba-benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 32px;margin-top:44px}
+.dba-benefits .dba-check{
+  background:#fff;border:1px solid var(--dba-line);border-radius:var(--dba-radius-sm);
+  padding:16px 20px;color:var(--dba-ink);
+}
+
+/* ---------- Why choose / details ---------- */
+.dba-twocol{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,4vw,64px);align-items:start}
+.dba-why{margin-top:36px;display:grid;gap:16px}
+.dba-why .dba-check{color:var(--dba-ink)}
+.dba-photo{margin-top:44px}
+.dba-photo img{border-radius:var(--dba-radius);box-shadow:var(--dba-shadow);width:100%;aspect-ratio:16/9;object-fit:cover}
+.dba-photo figcaption{font-size:14px;line-height:1.8;margin-top:12px;color:var(--dba-body)}
+.dba-detailcard{
+  background:var(--dba-plum);color:#fff;border-radius:var(--dba-radius);
+  box-shadow:var(--dba-shadow);padding:clamp(28px,3vw,40px);
+}
+#dba-page .dba-detailcard h3{color:#fff;font-size:24px;margin-bottom:24px}
+#dba-page .dba-detailcard h4{color:var(--dba-teal);font-size:14px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;margin:24px 0 8px}
+.dba-detailcard p{color:rgba(255,255,255,.9)}
+.dba-detailcard .dba-check{color:rgba(255,255,255,.92);margin-top:12px}
+.dba-detailcard .dba-btn{width:100%;margin-top:32px}
+
+/* ---------- Accordions ---------- */
+.dba-acc{margin-top:44px;display:grid;gap:14px}
+.dba-acc details{
+  background:#fff;border:1px solid var(--dba-line);border-radius:var(--dba-radius-sm);overflow:hidden;
+}
+.dba-acc details[open]{box-shadow:var(--dba-shadow)}
+.dba-acc summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 24px;font:700 18px/1.4 var(--dba-font);color:var(--dba-ink);
+}
+.dba-acc summary::-webkit-details-marker{display:none}
+.dba-acc summary svg{flex:0 0 20px;width:20px;height:20px;fill:var(--dba-orange)}
+.dba-acc details[open] summary{color:var(--dba-plum)}
+.dba-acc details[open] summary svg{transform:rotate(180deg)}
+.dba-acc__body{padding:0 24px 26px;font-size:16px;line-height:2}
+.dba-acc__body a{color:var(--dba-orange);font-weight:700}
+.dba-acc__body a:hover{text-decoration:underline}
+.dba-acc__body p + p{margin-top:14px}
+
+/* ---------- Fast-Track ---------- */
+.dba-ft{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,4vw,64px);align-items:start;margin-top:44px}
+.dba-courses{display:grid;gap:12px}
+.dba-course{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  background:#fff;border:1px solid var(--dba-line);border-radius:var(--dba-radius-sm);
+  padding:16px 20px;font-size:16px;line-height:1.8;color:var(--dba-ink);
+}
+.dba-course code{
+  font-family:var(--dba-font);font-weight:700;color:var(--dba-plum);
+  background:var(--dba-bg-soft);border-radius:5px;padding:4px 10px;font-size:14px;line-height:1.5;white-space:nowrap;
+}
+.dba-course span{flex:1}
+.dba-course b{white-space:nowrap;color:var(--dba-orange);font-size:15px}
+.dba-transfer-note{
+  margin-top:24px;background:#fff;border-left:5px solid var(--dba-teal);border-radius:var(--dba-radius-sm);
+  padding:20px 24px;font-size:16px;line-height:2;color:var(--dba-ink);box-shadow:var(--dba-shadow);
+}
+.dba-credits{
+  background:#fff;border:1px solid var(--dba-line);border-radius:var(--dba-radius);
+  box-shadow:var(--dba-shadow);overflow:hidden;
+}
+#dba-page .dba-credits h3{font-size:19px;padding:22px 26px;border-bottom:1px solid var(--dba-line)}
+.dba-credits table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.8}
+.dba-credits td{padding:16px 26px;border-bottom:1px solid var(--dba-line);color:var(--dba-ink)}
+.dba-credits td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.dba-credits tr.dba-credits__minus td{color:var(--dba-plum)}
+.dba-credits tr.dba-credits__total td{background:var(--dba-plum);color:#fff;font-weight:700;border:0}
+.dba-credits__foot{padding:18px 26px;font-size:15px;line-height:1.9;background:var(--dba-bg-soft);color:var(--dba-body)}
+
+/* ---------- Fees ---------- */
+.dba-fees{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:44px}
+.dba-feecard{
+  background:#fff;border:1px solid var(--dba-line);border-radius:var(--dba-radius);
+  padding:clamp(28px,3vw,38px);box-shadow:var(--dba-shadow);
+}
+#dba-page .dba-feecard h3{font-size:20px;margin-bottom:8px}
+.dba-feecard>p{font-size:15px;line-height:1.9;margin-bottom:20px}
+.dba-feerow{
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+  padding:15px 0;border-bottom:1px dashed var(--dba-line);font-size:16px;line-height:1.8;color:var(--dba-ink);
+}
+.dba-feerow small{display:block;color:var(--dba-body);font-size:14px;line-height:1.7}
+.dba-feerow b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.dba-feerow--credit b{color:var(--dba-plum)}
+.dba-feerow--grant{background:#f0fbfa;border:1px solid var(--dba-teal);border-radius:var(--dba-radius-sm);padding:15px 18px;margin:4px -18px}
+.dba-feerow--grant b{color:var(--dba-plum)}
+.dba-feerow--net{border:0;padding-top:20px}
+.dba-feerow--net span{font-weight:700}
+.dba-feerow--net b{font-size:clamp(26px,2.6vw,32px);color:var(--dba-orange)}
+.dba-paysteps{display:grid;counter-reset:pay}
+.dba-paystep{display:flex;gap:18px;padding:18px 0;border-bottom:1px dashed var(--dba-line)}
+.dba-paystep:last-child{border:0}
+.dba-paystep::before{
+  counter-increment:pay;content:counter(pay);
+  flex:0 0 36px;height:36px;border-radius:50%;background:var(--dba-bg-soft);
+  color:var(--dba-plum);font-weight:700;display:grid;place-items:center;font-size:15px;
+}
+.dba-paystep b{display:block;color:var(--dba-ink);font-size:16px;line-height:1.8}
+.dba-paystep span{font-size:15px;line-height:1.8}
+.dba-fees__note{margin-top:24px;font-size:15px;line-height:1.9;max-width:80ch}
+
+/* ---------- Pathway ---------- */
+.dba-path{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.dba-path__step{
+  position:relative;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--dba-radius);padding:32px 24px 26px;
+}
+.dba-path__num{
+  position:absolute;top:-18px;left:22px;width:36px;height:36px;border-radius:50%;
+  background:var(--dba-orange);color:#fff;font-weight:700;display:grid;place-items:center;font-size:16px;
+  box-shadow:0 6px 14px rgba(0,0,0,.25);
+}
+#dba-page .dba-path__step h3{color:#fff;font-size:18px;margin:6px 0 12px}
+.dba-path__step p{color:rgba(255,255,255,.82);font-size:16px;line-height:2}
+.dba-path__step em{display:block;margin-top:14px;font-style:normal;font-size:13px;letter-spacing:1px;line-height:1.6;text-transform:uppercase;color:var(--dba-teal);font-weight:700}
+.dba-path__note{margin-top:32px;color:rgba(255,255,255,.75);font-size:15px;line-height:1.9}
+
+/* ---------- Final CTA ---------- */
+.dba-cta{
+  background:linear-gradient(300deg,#4ed3cc 0%,#332959 69%) #332959;
+  border-radius:var(--dba-radius);padding:clamp(40px,5vw,60px);
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:center;color:#fff;
+}
+#dba-page .dba-cta h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin-bottom:14px}
+.dba-cta p{color:rgba(255,255,255,.88);font-size:16px;line-height:2}
+.dba-cta__actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:flex-end}
+
+/* ---------- Tablet ---------- */
+@media (max-width:1023px){
+  .dba-hero__inner{grid-template-columns:1fr;gap:44px}
+  .dba-hero__media{max-width:560px}
+  .dba-stats{grid-template-columns:repeat(2,1fr)}
+  .dba-highlights{grid-template-columns:1fr;max-width:640px}
+  .dba-twocol,.dba-ft{grid-template-columns:1fr}
+  .dba-path{grid-template-columns:repeat(2,1fr);gap:32px 20px}
+  .dba-fees{grid-template-columns:1fr}
+  .dba-cta{grid-template-columns:1fr}
+  .dba-cta__actions{justify-content:flex-start}
+}
+
+/* ---------- Phone ---------- */
+@media (max-width:640px){
+  .dba-wrap{padding:0 18px}
+  .dba-benefits{grid-template-columns:1fr}
+  .dba-stats{grid-template-columns:repeat(2,1fr)}
+  .dba-stat{padding:16px 10px}
+  .dba-path{grid-template-columns:1fr;gap:34px}
+  .dba-hero__badge{position:static;margin-top:16px;display:inline-block}
+  .dba-course{flex-wrap:wrap}
+  .dba-btn{width:100%}
+}
+</style>
+
+<div id="dba-page">
+
+  <!-- ================= HERO ================= -->
+  <section class="dba-hero">
+    <div class="dba-wrap">
+      <div class="dba-hero__inner">
+        <div>
+          <span class="dba-eyebrow">Day 1 CPT Doctorate Program</span>
+          <h1>Doctor of Business Administration (DBA)</h1>
+          <p class="dba-hero__sub">
+            Earn an accredited doctorate with <strong>Day 1 CPT and OPT eligibility</strong>,
+            <strong>grants up to $15,000</strong>, and a change of status that extends your stay
+            in the U.S. for <strong>3&ndash;4 more years</strong> while you work and study.
+          </p>
+          <p class="dba-hero__tag">Earn your doctorate. Build your future.</p>
+          <div class="dba-hero__cta">
+            <a class="dba-btn dba-btn--primary" href="https://educonnectusa.com/apply-now/" target="_blank" rel="noopener">Get Started Now</a>
+            <a class="dba-btn dba-btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="dba-hero__media">
+          <img fetchpriority="high" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2026/03/21.jpg"
+               width="1600" height="1066"
+               alt="Graduates at a university commencement ceremony" />
+          <div class="dba-hero__badge">
+            <b>Grants up to $15,000</b>
+            EduConnect/Alliant grant, prorated per credit
+          </div>
+        </div>
       </div>
     </div>
-    <figure class="hero-visual">
-      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/21.jpg"
-           alt="EduConnect students at their graduation ceremony" width="720" height="760" fetchpriority="high" decoding="async">
-    </figure>
-  </div>
-</section>
+    <div class="dba-stats" role="list">
+      <div class="dba-stat" role="listitem"><b>~3 Years</b><span>Depending on pace</span></div>
+      <div class="dba-stat" role="listitem"><b>Los Angeles</b><span>Campus</span></div>
+      <div class="dba-stat" role="listitem"><b>Hybrid</b><span>On campus every 8 weeks</span></div>
+      <div class="dba-stat" role="listitem"><b>Day 1 CPT</b><span>Work while you study</span></div>
+    </div>
+  </section>
 
-<!-- Stat strip -->
-<section class="stripe">
-  <div class="container stat-row">
-    <div class="stat"><strong>~3 Years</strong><span>Time to complete</span></div>
-    <div class="stat"><strong>Up to $15K</strong><span>EduConnect grant</span></div>
-    <div class="stat"><strong>OPT + Day 1 CPT</strong><span>Work while you study</span></div>
-    <div class="stat"><strong>WASC · ACBSP</strong><span>Accredited</span></div>
-  </div>
-</section>
-
-<!-- What is a DBA -->
-<section class="section section-alt">
-  <div class="container zigzag">
-    <figure class="media">
-      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/12.jpg"
-           alt="An EduConnect graduate student" width="640" height="700" loading="lazy" decoding="async">
-    </figure>
-    <div class="prose">
-      <span class="eyebrow eyebrow-alt">What is a DBA?</span>
-      <h2>The highest professional degree in business</h2>
-      <p>
-        A Doctor of Business Administration is designed for experienced professionals who want to
-        solve real business problems and lead organizations. Unlike a traditional PhD focused on
-        academic research, the DBA turns your MBA into applied, executive-level expertise.
+  <!-- ================= KEY HIGHLIGHTS ================= -->
+  <section class="dba-section" id="dba-highlights">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Why This Program</span>
+      <h2 class="dba-h2">Three reasons students choose this DBA</h2>
+      <p class="dba-lede">
+        Whatever master&rsquo;s degree you hold, the DBA is the next level up &mdash; and moving up a
+        degree level is what unlocks a new period of work authorization and time in the U.S.
       </p>
-      <ul class="ticks">
-        <li>Become a recognized expert and prepare for executive leadership</li>
-        <li>Build consulting credentials and grow long-term earning potential</li>
-        <li>Extend your stay in the USA for 4 years while you work and study</li>
+      <div class="dba-highlights">
+        <div class="dba-highlight dba-highlight--orange">
+          <b>$15,000</b>
+          <h3>Grant Opportunities</h3>
+          <p>The EduConnect/Alliant grant covers up to $15,000 of your tuition, prorated per credit &mdash; combined with an interest-free payment plan.</p>
+        </div>
+        <div class="dba-highlight dba-highlight--plum">
+          <b>3&ndash;4 Years</b>
+          <h3>Extend Your Stay</h3>
+          <p>A change of status or SEVIS transfer into the DBA extends your time in the U.S. for the length of the program &mdash; we handle the paperwork with you.</p>
+        </div>
+        <div class="dba-highlight">
+          <b>CPT + OPT</b>
+          <h3>Work While You Study</h3>
+          <p>Day 1 CPT keeps you working throughout the program. And because the DBA is a higher degree level, you qualify for a new period of OPT when you finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BENEFITS ================= -->
+  <section class="dba-section dba-section--soft" id="dba-benefits">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">The Case for a Doctorate</span>
+      <h2 class="dba-h2">A DBA helps you</h2>
+      <p class="dba-lede">
+        A Doctor of Business Administration is the highest professional degree in business &mdash;
+        designed for professionals who want to solve real business problems and lead organizations.
+      </p>
+      <ul class="dba-benefits">
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Become a recognized expert in your field</li>
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Prepare for executive leadership</li>
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Build consulting credentials</li>
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Increase long-term earning potential</li>
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Develop advanced research and problem-solving skills</li>
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Open opportunities in numerous industries</li>
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Extend your stay in the USA for 3&ndash;4 years</li>
+        <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Continue to work and study in the USA</li>
       </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Why Choose Alliant -->
-<section class="section" id="program">
-  <div class="container">
-    <header class="head">
-      <span class="eyebrow eyebrow-alt">Why Alliant</span>
-      <h2>Built for working professionals</h2>
-      <p>Flexible, accredited, and designed to keep you moving forward.</p>
-    </header>
-    <div class="grid grid-3">
-      <article class="card"><h3>~3 Years to Complete</h3><p>Finish in about three years, depending on your pace.</p></article>
-      <article class="card"><h3>Hybrid Executive Format</h3><p>On campus every 8 weeks — the rest online.</p></article>
-      <article class="card"><h3>Faculty Mentoring</h3><p>Work one-on-one with faculty on practical research.</p></article>
-      <article class="card"><h3>WASC &amp; ACBSP Accredited</h3><p>Recognized regional and business accreditation.</p></article>
-      <article class="card"><h3>Los Angeles Campus</h3><p>Study in the heart of Southern California.</p></article>
-      <article class="card"><h3>OPT &amp; Day 1 CPT</h3><p>Keep working in the USA from day one.</p></article>
+  <!-- ================= WHY CHOOSE / DETAILS ================= -->
+  <section class="dba-section" id="dba-details">
+    <div class="dba-wrap dba-twocol">
+      <div>
+        <span class="dba-eyebrow">Why Choose Alliant&rsquo;s DBA</span>
+        <h2 class="dba-h2">A doctorate built around your career</h2>
+        <p class="dba-lede">
+          The School of Management and Leadership pairs a practical, industry-focused curriculum
+          with the flexibility working professionals need. The hybrid executive format brings you
+          on campus every 8 weeks &mdash; the rest fits around your job.
+        </p>
+        <ul class="dba-why">
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Complete in approximately 3 years, depending on pace</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Los Angeles campus with hybrid delivery &mdash; classes on campus every 8 weeks</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Faculty dissertation mentoring from prospectus through final defense</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Practical business research and industry-focused curriculum</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Accredited business school &mdash; WASC and ACBSP</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Day 1 CPT throughout the program, and OPT eligible after</li>
+        </ul>
+        <figure class="dba-photo">
+          <img loading="lazy" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2026/06/Firefly_Gemini-Flash_can-you-turn-the-image-into-a-more-hero-banner-that-has-the-flag-present-387840.png"
+               width="1200" height="900"
+               alt="Palm trees and the American flag against a blue sky in Los Angeles" />
+          <figcaption>Study on campus in Los Angeles &mdash; and stay in the U.S. for the length of your doctorate.</figcaption>
+        </figure>
+      </div>
+      <aside class="dba-detailcard" aria-label="Program details at a glance">
+        <h3>Program Details</h3>
+        <h4>Start Dates</h4>
+        <p>Intakes in January, March, May, July, August, and October</p>
+        <h4>Degree Length</h4>
+        <p>Approximately 3 years, depending on pace &mdash; 8-week term format</p>
+        <h4>Key Offerings</h4>
+        <ul>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Hybrid executive course format</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Work while you study with Day 1 CPT</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Change of status and SEVIS transfer support</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Grant opportunities up to $15,000</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Interest-free payment plan</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>CareerConnect placement support</li>
+        </ul>
+        <a class="dba-btn dba-btn--primary" href="https://educonnectusa.com/find-the-right-program/" target="_blank" rel="noopener">Request More Information</a>
+      </aside>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Specializations -->
-<section class="section section-alt">
-  <div class="container zigzag">
-    <div class="prose">
-      <span class="eyebrow eyebrow-alt">Specializations</span>
-      <h2>Choose a track that fits your future</h2>
-      <p>Focus your doctorate on the field where you want to lead.</p>
-      <div class="grid grid-2 spec-grid">
-        <div class="spec">Hospitality Management</div>
-        <div class="spec">Management</div>
-        <div class="spec">Information &amp; Data Science</div>
-        <div class="spec">Marketing</div>
+  <!-- ================= CONCENTRATIONS ================= -->
+  <section class="dba-section dba-section--soft" id="dba-concentrations">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Choose Your Focus</span>
+      <h2 class="dba-h2">DBA Concentration Options</h2>
+      <p class="dba-lede">Four concentrations, each combining doctoral research with hands-on practical training from Day 1.</p>
+      <div class="dba-acc">
+        <details name="dba-spec" open>
+          <summary>Hospitality Management <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>A specialization in hospitality management prepares you for work in international strategy and leadership, cultivating foundational skills for consulting and corporate positions. Internships provide a hands-on learning environment where you sharpen management skills and build business relationships in your community &mdash; real-world experience that strengthens your resume and showcases your skills to future employers.</p>
+          </div>
+        </details>
+        <details name="dba-spec">
+          <summary>Management <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>The management concentration develops executive-level leaders ready for an AI-driven landscape. You will study contemporary leadership theory, organizational strategy, and change management, then apply that research directly to the organizations you work with. It is the broadest pathway for professionals targeting senior leadership, consulting, or entrepreneurship.</p>
+          </div>
+        </details>
+        <details name="dba-spec">
+          <summary>Information &amp; Data Science <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>Designed for students who want to lead the data revolution, this specialization builds advanced skills in data science, analytics, and intelligent automation. You will learn to contribute to your field through quantitative analysis while examining the ethical and societal considerations of data usage. Guided practical training is available from Day 1, so you sharpen your skills in a real business setting.</p>
+          </div>
+        </details>
+        <details name="dba-spec">
+          <summary>Marketing <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>The marketing specialization supplies broad knowledge across diverse industries &mdash; how marketing drives organizational strategy in both business and politics. Coursework spans human behavior, social influencing, marketing research, and data analytics, while internship-focused training connects you with prospective employers and adds practical value to your resume.</p>
+          </div>
+        </details>
       </div>
     </div>
-    <figure class="media">
-      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/61.jpg"
-           alt="Hospitality management students" width="640" height="700" loading="lazy" decoding="async">
-    </figure>
-  </div>
-</section>
+  </section>
 
-<!-- Fast-Track & Tuition -->
-<section class="section">
-  <div class="container zigzag">
-    <figure class="media">
-      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/60.jpg"
-           alt="Santa Monica, California" width="640" height="700" loading="lazy" decoding="async">
-    </figure>
-    <div class="prose">
-      <span class="eyebrow eyebrow-alt">Fast-Track &amp; Tuition</span>
-      <h2>You are closer than you think</h2>
-      <p>Alliant MBA graduates can apply up to <strong>9 units</strong> of qualifying coursework toward the DBA — saving time and tuition.</p>
-      <div class="cost-card">
-        <div class="cost-row"><span>Total program</span><strong>$71,344</strong></div>
-        <div class="cost-row"><span>EduConnect / Alliant grant</span><strong>up to −$15,000</strong></div>
-        <div class="cost-row"><span>MBA transfer credit (up to 9 units)</span><strong>−$12,348</strong></div>
-        <div class="cost-row cost-total"><span>Estimated total</span><strong>$46,612</strong></div>
+  <!-- ================= FAST-TRACK ================= -->
+  <section class="dba-section" id="dba-fasttrack">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Fast-Track &amp; Transfer Credit</span>
+      <h2 class="dba-h2">Already have a master&rsquo;s? You are closer than you think</h2>
+      <p class="dba-lede">
+        Alliant MBA alumni can Fast-Track <strong>up to 9 units</strong> into the DBA by completing
+        the courses below with a B or higher. Earned your master&rsquo;s elsewhere? You may still be able
+        to transfer eligible credits &mdash; an advisor will evaluate your transcript and confirm what applies.
+      </p>
+      <div class="dba-ft">
+        <div>
+          <ul class="dba-courses">
+            <li class="dba-course"><code>IST74880</code><span>Data Analytics and Decision Making for Business</span><b>3 units</b></li>
+            <li class="dba-course"><code>DAT70500</code><span>Big Data Platforms and Intelligent Automation Augmented with AI</span><b>3 units</b></li>
+            <li class="dba-course"><code>MKT70360</code><span>Marketing Research and Data Analytics</span><b>3 units</b></li>
+            <li class="dba-course"><code>LDR70150</code><span>Contemporary Leadership Theory in an AI-Driven Landscape</span><b>3 units</b></li>
+            <li class="dba-course"><code>HMG70100</code><span>Trends and Systems in Hospitality &amp; Tourism</span><b>3 units</b></li>
+            <li class="dba-course"><code>HMG70200</code><span>Entrepreneurship in Hospitality</span><b>3 units</b></li>
+            <li class="dba-course"><code>CPD70000</code><span>Career and Professional Development</span><b>3 units</b></li>
+          </ul>
+          <p class="dba-transfer-note">
+            Not an Alliant graduate? Transfer credit from other accredited master&rsquo;s programs is
+            evaluated case by case. <a href="https://wa.me/16263443218" target="_blank" rel="noopener" style="color:#ff7400;font-weight:700">Talk to an advisor</a>
+            to see how many units you can apply.
+          </p>
+        </div>
+        <div class="dba-credits">
+          <h3>Required Credits &mdash; Alliant MBA Alumni</h3>
+          <table>
+            <tbody>
+              <tr><td>Coursework credit</td><td>40</td></tr>
+              <tr><td>Dissertation Research (DR)</td><td>12</td></tr>
+              <tr class="dba-credits__minus"><td>Fast-Track coursework credit</td><td>&minus;9</td></tr>
+              <tr class="dba-credits__total"><td>Total credits required</td><td>43</td></tr>
+            </tbody>
+          </table>
+          <p class="dba-credits__foot">Complete in about 3 years &mdash; with CPT work authorization throughout the program.</p>
+        </div>
       </div>
-      <p class="note">Interest-free plan — <strong>$375</strong> registration, <strong>$4,000</strong> down, then <strong>$650</strong> every 2 weeks.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Pathway -->
-<section class="section section-alt">
-  <div class="container">
-    <header class="head">
-      <span class="eyebrow eyebrow-alt">The Pathway</span>
-      <h2>From MBA to your doctorate in four steps</h2>
-    </header>
-    <div class="grid grid-4 dba-steps">
-      <div class="card dba-step-card"><span class="dba-step">1</span><h3>MBA Graduation</h3><p>Finish Fast-Track courses with a B or higher and tell your Program Director.</p></div>
-      <div class="card dba-step-card"><span class="dba-step">2</span><h3>OPT</h3><p>Work up to 12 months full-time and pay off your MBA fees.</p></div>
-      <div class="card dba-step-card"><span class="dba-step">3</span><h3>Register</h3><p>Enroll 3–6 months in advance to secure your seat.</p></div>
-      <div class="card dba-step-card"><span class="dba-step">4</span><h3>Work &amp; Study</h3><p>Continue your CPT and study for 3 more years in the USA.</p></div>
+  <!-- ================= FEES ================= -->
+  <section class="dba-section dba-section--soft" id="dba-fees">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Fees &amp; Payment</span>
+      <h2 class="dba-h2">Transparent pricing, interest-free plan</h2>
+      <div class="dba-fees">
+        <div class="dba-feecard">
+          <h3>Program Cost Breakdown</h3>
+          <p>52 units &times; $1,372 per unit</p>
+          <div class="dba-feerow"><span>Total program fees</span><b>$71,344</b></div>
+          <div class="dba-feerow dba-feerow--credit dba-feerow--grant">
+            <span>EduConnect/Alliant grant <small>Up to $15,000, prorated per credit</small></span><b>&minus;$15,000</b>
+          </div>
+          <div class="dba-feerow dba-feerow--credit">
+            <span>Transferred units <small>Example: 9 Fast-Track units &times; $1,372</small></span><b>&minus;$12,348</b>
+          </div>
+          <div class="dba-feerow dba-feerow--net">
+            <span>Estimated program fees<br /><small>After grant and 9 transfer units</small></span><b>$46,612</b>
+          </div>
+        </div>
+        <div class="dba-feecard">
+          <h3>Interest-Free Payment Plan</h3>
+          <p>Spread the cost across your program &mdash; no interest, ever.</p>
+          <div class="dba-paysteps">
+            <div class="dba-paystep"><div><b>$375 registration fee</b><span>Due at registration of program</span></div></div>
+            <div class="dba-paystep"><div><b>$4,000 down payment</b><span>Due at admission</span></div></div>
+            <div class="dba-paystep"><div><b>$650 every 2 weeks</b><span>For 3 years</span></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="dba-fees__note">
+        Grant amounts are prorated per credit and subject to eligibility. Private and public scholarships,
+        loans, grants, federal work-study, and military aid may also be available if you qualify.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="section cta" id="apply">
-  <div class="container">
-    <h2>Ready to earn the highest professional degree in business?</h2>
-    <p>Talk with an EduConnect advisor to check your eligibility for Fast-Track credit and the EduConnect grant.</p>
-    <div class="btn-row btn-row-center">
-      <a href="mailto:admissions@educonnectusa.com" class="btn btn-primary btn-lg">Apply Now</a>
-      <a href="mailto:admissions@educonnectusa.com" class="btn btn-outline-light btn-lg">Talk to an Advisor</a>
+  <!-- ================= PATHWAY ================= -->
+  <section class="dba-section dba-section--plum" id="dba-pathway">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">A Common Path</span>
+      <h2 class="dba-h2">From your master&rsquo;s to a doctorate</h2>
+      <p class="dba-lede">
+        Many of our students move from a master&rsquo;s degree into the DBA &mdash; here is how the
+        transition typically works, with no gap in status.
+      </p>
+      <div class="dba-path">
+        <div class="dba-path__step">
+          <span class="dba-path__num" aria-hidden="true">1</span>
+          <h3>Finish Your Master&rsquo;s</h3>
+          <p>Complete your degree in good standing. Alliant MBA students: finish Fast-Track courses with a B or higher and tell your Program Director.</p>
+          <em>Any accredited master&rsquo;s</em>
+        </div>
+        <div class="dba-path__step">
+          <span class="dba-path__num" aria-hidden="true">2</span>
+          <h3>Work on OPT</h3>
+          <p>Work for up to 12 months full-time, gain U.S. experience, and save toward your doctorate.</p>
+          <em>12 months full-time</em>
+        </div>
+        <div class="dba-path__step">
+          <span class="dba-path__num" aria-hidden="true">3</span>
+          <h3>Register for the DBA</h3>
+          <p>Register 3&ndash;6 months in advance so your start date lines up with the end of OPT &mdash; we support your change of status or SEVIS transfer.</p>
+          <em>3&ndash;6 months ahead</em>
+        </div>
+        <div class="dba-path__step">
+          <span class="dba-path__num" aria-hidden="true">4</span>
+          <h3>Work &amp; Study</h3>
+          <p>Extend your stay for 3&ndash;4 more years with Day 1 CPT throughout &mdash; and a new period of OPT when you graduate.</p>
+          <em>CPT throughout</em>
+        </div>
+      </div>
+      <p class="dba-path__note">
+        Coming straight from a master&rsquo;s, from OPT, or on another visa? Each situation is a little
+        different &mdash; an advisor will map the right timing for you.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- ================= FAQ ================= -->
+  <section class="dba-section" id="dba-faq">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Good to Know</span>
+      <h2 class="dba-h2">Frequently Asked Questions</h2>
+      <div class="dba-acc">
+        <details open>
+          <summary>When does the DBA program start? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>The program runs on an eight-week term structure with intakes in January, March, May, July, August, and October. If you are finishing a master&rsquo;s or OPT, register 3&ndash;6 months in advance so your start date lines up. You can review the <a href="https://www.alliant.edu/academic-calendar" target="_blank" rel="noopener">academic calendar</a> to plan ahead.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Do I need an MBA to apply? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>No. The DBA accepts graduates from accredited master&rsquo;s programs &mdash; the MBA-to-DBA route is simply the most common path among our students. Because the doctorate is a higher degree level than any master&rsquo;s, moving up also qualifies you for a new period of OPT after you graduate.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How long does it take to complete the DBA? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>The DBA is a 52-unit program that most students complete in approximately 3 years, depending on pace and dissertation progress. Students who transfer 9 eligible units complete 43 credits.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Can I work while I study? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>Yes. The program includes Day 1 CPT, so practical training is part of the curriculum from your first term and continues throughout the program. The hybrid executive format &mdash; on campus every 8 weeks &mdash; is designed so you can hold a professional role while you study, and you qualify for OPT when you finish.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What grants and financial aid are available? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>The EduConnect/Alliant grant covers up to $15,000, prorated per credit. Combined with transfer units, estimated program fees come to $46,612 &mdash; payable through an interest-free plan ($375 registration, $4,000 down, then $650 every two weeks for 3 years).</p>
+            <p>Private and public scholarships, loans, grants, federal work-study, and military aid may also be available: <a href="https://scholarships.alliant.edu/" target="_blank" rel="noopener">Scholarship opportunities</a> | <a href="https://files.alliant.edu/marketing/supporting-collateral/financial-aid-brochure.pdf" target="_blank" rel="noopener">Financial Options Guide</a>.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="dba-section" id="dba-apply" style="padding-top:0">
+    <div class="dba-wrap">
+      <div class="dba-cta">
+        <div>
+          <h2>Ready to earn your doctorate?</h2>
+          <p>Talk to an advisor today &mdash; we respond within 48 hours and guide you through admission, your change of status, and transfer credit.</p>
+        </div>
+        <div class="dba-cta__actions">
+          <a class="dba-btn dba-btn--primary" href="https://educonnectusa.com/apply-now/" target="_blank" rel="noopener">Get Started Now</a>
+          <a class="dba-btn dba-btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END DIVI CODE MODULE CONTENT -->
 </body>
 </html>
