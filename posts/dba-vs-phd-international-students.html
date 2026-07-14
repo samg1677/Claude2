@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DBA vs PhD for International Students: Which One in 2026? | EduConnect</title>
+<meta name="description" content="DBA vs PhD explained for international students: how they differ, why immigration treats them the same, and which doctorate fits your career in 2026." />
+<link rel="canonical" href="https://educonnect.example/2026/07/dba-vs-phd-international-students/" />
+<style>
+  :root {
+    --navy: #0f2a4a;
+    --navy-2: #163a63;
+    --ink: #1c2b3a;
+    --muted: #5a6b7b;
+    --line: #e4e9f0;
+    --paper: #ffffff;
+    --wash: #f4f7fb;
+    --brand: #1e6bd6;      /* EduConnect blue */
+    --brand-dark: #144e9e;
+    --accent: #f5a623;     /* warm amber accent */
+    --accent-soft: #fff4e0;
+    --teal: #0fa3a3;
+    --teal-soft: #e4f6f6;
+    --green: #1f9d57;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(15, 42, 74, 0.08);
+    --shadow-lg: 0 24px 60px rgba(15, 42, 74, 0.14);
+    --maxw: 760px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--wash);
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  a { color: var(--brand); }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--brand), var(--teal));
+    display: grid; place-items: center;
+    color: #fff; font-weight: 800; font-size: 18px;
+    box-shadow: 0 6px 16px rgba(30,107,214,0.35);
+  }
+  .logo span { color: var(--brand); }
+  .topbar-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .topbar-cta:hover { background: var(--brand); transform: translateY(-1px); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background:
+      radial-gradient(1200px 400px at 85% -10%, rgba(15,163,163,0.18), transparent 60%),
+      radial-gradient(900px 380px at 0% 0%, rgba(30,107,214,0.20), transparent 55%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #eaf1fb;
+    padding: 56px 24px 120px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px; height: 80px;
+    background: var(--wash);
+    clip-path: polygon(0 100%, 100% 100%, 100% 35%, 0 100%);
+  }
+  .hero-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #bfe0ff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5.5vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 20px 0 16px;
+    color: #fff;
+    font-weight: 800;
+  }
+  .hero p.dek {
+    font-size: 19px;
+    color: #cfe0f4;
+    margin: 0 0 26px;
+    max-width: 620px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 18px;
+    font-size: 14px;
+    color: #a9c4e4;
+  }
+  .meta-row .pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 5px 12px; border-radius: 999px;
+    color: #dbe8f8; font-weight: 600;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* ---------- Article shell ---------- */
+  .wrap {
+    max-width: var(--maxw);
+    margin: -60px auto 0;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 3;
+  }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px clamp(22px, 5vw, 52px);
+  }
+
+  article { color: var(--ink); }
+  article p { margin: 0 0 20px; }
+
+  h2 {
+    font-size: clamp(23px, 3.6vw, 30px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 46px 0 16px;
+    padding-top: 8px;
+    font-weight: 800;
+    scroll-margin-top: 80px;
+  }
+  h2 .kicker {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 6px;
+  }
+  h3 { font-size: 20px; color: var(--navy); margin: 30px 0 10px; font-weight: 700; }
+
+  /* ---------- TL;DR / short answer ---------- */
+  .tldr {
+    background: linear-gradient(180deg, var(--wash), #eef4fb);
+    border: 1px solid #d8e5f3;
+    border-left: 5px solid var(--brand);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 4px 0 28px;
+  }
+  .tldr .label {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--brand); margin-bottom: 8px;
+  }
+  .tldr p { margin: 0; font-size: 17.5px; }
+
+  /* ---------- Alert / note ---------- */
+  .note {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--accent-soft);
+    border: 1px solid #f2dcaf;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 0 0 28px;
+    font-size: 15.5px;
+    color: #7a5a12;
+  }
+  .note .ic {
+    flex: none; width: 26px; height: 26px; border-radius: 8px;
+    background: var(--accent); color: #fff; display: grid; place-items: center;
+    font-weight: 800; font-size: 15px;
+  }
+
+  /* ---------- Definition cards ---------- */
+  .def {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 6px 0 26px;
+  }
+  .def-head {
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+    color: #fff; font-weight: 700;
+  }
+  .def.dba .def-head { background: linear-gradient(120deg, var(--brand), var(--brand-dark)); }
+  .def.phd .def-head { background: linear-gradient(120deg, var(--teal), #0b7d7d); }
+  .def-tag {
+    margin-left: auto;
+    font-size: 12px; font-weight: 700; letter-spacing: .05em;
+    background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 999px;
+  }
+  .def-body { padding: 18px 20px 4px; background: var(--paper); }
+
+  /* ---------- Comparison table ---------- */
+  .table-scroll { overflow-x: auto; margin: 8px 0 28px; border-radius: 14px; box-shadow: var(--shadow); }
+  table.cmp {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+    background: var(--paper);
+    font-size: 16px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left;
+    padding: 15px 18px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp thead th {
+    font-size: 14px; letter-spacing: .02em;
+    color: #fff;
+    background: var(--navy);
+  }
+  table.cmp thead th:first-child { background: var(--navy-2); border-top-left-radius: 0; }
+  table.cmp thead th.dba-col { background: linear-gradient(120deg, var(--brand), var(--brand-dark)); }
+  table.cmp thead th.phd-col { background: linear-gradient(120deg, var(--teal), #0b7d7d); }
+  table.cmp tbody th {
+    font-weight: 700; color: var(--navy); width: 30%;
+    background: var(--wash);
+  }
+  table.cmp tbody tr:last-child td, table.cmp tbody tr:last-child th { border-bottom: none; }
+  table.cmp td { color: var(--muted); }
+
+  /* ---------- Pull quote ---------- */
+  .pull {
+    margin: 30px 0;
+    padding: 8px 0 8px 26px;
+    border-left: 4px solid var(--accent);
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Decision cards ---------- */
+  .choose-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 10px 0 28px;
+  }
+  .choose {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+  .choose h4 { margin: 0 0 4px; font-size: 17px; color: var(--navy); }
+  .choose .who { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .choose.dba .who { color: var(--brand); }
+  .choose.phd .who { color: var(--teal); }
+  .choose p { font-size: 15.5px; color: var(--muted); margin: 8px 0 0; }
+  .choose .badge {
+    display: inline-block; margin-bottom: 12px; font-size: 22px;
+  }
+
+  /* ---------- Alliant highlight ---------- */
+  .spotlight {
+    background: linear-gradient(160deg, #0f2a4a, #14477e);
+    color: #eaf1fb;
+    border-radius: 18px;
+    padding: 30px clamp(22px, 4vw, 34px);
+    margin: 34px 0;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .spotlight::before {
+    content: "";
+    position: absolute; right: -40px; top: -40px;
+    width: 180px; height: 180px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(15,163,163,0.5), transparent 70%);
+  }
+  .spotlight h3 { color: #fff; margin: 0 0 6px; font-size: 22px; position: relative; }
+  .spotlight .sub { color: #bcd4ee; font-size: 14px; margin-bottom: 18px; position: relative; }
+  .facts {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    position: relative; margin-bottom: 20px;
+  }
+  .fact {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 12px; padding: 14px;
+  }
+  .fact .num { font-size: 22px; font-weight: 800; color: var(--accent); line-height: 1.1; }
+  .fact .cap { font-size: 12.5px; color: #cfe0f4; margin-top: 4px; }
+  .spotlight ul { margin: 0 0 4px; padding-left: 20px; position: relative; }
+  .spotlight ul li { margin-bottom: 8px; color: #dbe8f8; font-size: 15.5px; }
+  .spotlight ul li::marker { color: var(--accent); }
+
+  /* ---------- FAQ ---------- */
+  .faq { margin: 12px 0 8px; }
+  .faq details {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background: var(--paper);
+    overflow: hidden;
+    transition: box-shadow .15s ease;
+  }
+  .faq details[open] { box-shadow: var(--shadow); }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 16px 48px 16px 20px;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 17px;
+    position: relative;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+    font-size: 24px; font-weight: 400; color: var(--brand);
+    transition: transform .2s ease;
+  }
+  .faq details[open] summary::after { content: "\2212"; }
+  .faq .answer { padding: 0 20px 18px; color: var(--muted); font-size: 16px; }
+
+  /* ---------- Disclaimer ---------- */
+  .disclaimer {
+    font-size: 14px; color: var(--muted);
+    background: var(--wash);
+    border: 1px dashed #cdd8e6;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 30px 0;
+    font-style: italic;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .cta {
+    background:
+      radial-gradient(600px 200px at 100% 0%, rgba(15,163,163,0.35), transparent 60%),
+      linear-gradient(135deg, var(--brand), var(--brand-dark));
+    color: #fff;
+    border-radius: 20px;
+    padding: 38px clamp(24px, 5vw, 44px);
+    text-align: center;
+    margin: 40px 0 10px;
+    box-shadow: var(--shadow-lg);
+  }
+  .cta h3 { color: #fff; font-size: 26px; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .cta p { color: #e5f0ff; margin: 0 auto 24px; max-width: 520px; font-size: 17px; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    text-decoration: none; font-weight: 700; font-size: 16px;
+    padding: 14px 26px; border-radius: 999px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary { background: #fff; color: var(--brand-dark); box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+  .btn-whatsapp { background: #25d366; color: #06381b; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    text-align: center;
+    padding: 30px 24px 50px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .site-footer .logo { justify-content: center; margin-bottom: 10px; font-size: 17px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 620px) {
+    body { font-size: 17px; }
+    .card { padding: 28px 20px; }
+    .choose-grid { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr; }
+    .topbar-cta { display: none; }
+    .pull { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="#top">
+        <span class="logo-mark">E</span>Edu<span>Connect</span>
+      </a>
+      <a class="topbar-cta" href="#book">Book a free call &rarr;</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <span class="eyebrow"><span class="dot"></span> Doctorate &amp; Immigration Guide</span>
+      <h1>DBA vs PhD: Which Doctorate Should an International Student Choose in 2026?</h1>
+      <p class="dek">Same immigration standing, very different careers. Here&rsquo;s how to pick the doctorate that actually fits where you want to be five years from now.</p>
+      <div class="meta-row">
+        <span class="pill">📅 July 2026</span>
+        <span class="pill">⏱ ~7 min read</span>
+        <span class="pill">🎓 DBA vs PhD</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="card">
+      <article>
+
+        <div class="note">
+          <span class="ic">!</span>
+          <div>The rule replacing Duration of Status is still being finalized, so confirm the current details before you enroll.</div>
+        </div>
+
+        <div class="tldr">
+          <div class="label">The short answer</div>
+          <p>A <strong>DBA</strong> is an applied doctorate built for professionals who want to stay in industry. A <strong>PhD</strong> is a research doctorate built for people who want a career in academia. As an immigration matter, they are <strong>identical</strong>&mdash;both sit one full level above every master&rsquo;s, both count as academic progression under the rule replacing Duration of Status, and both can carry Day&nbsp;1 CPT when the program requires practical training. The choice isn&rsquo;t about your visa. It&rsquo;s about what you want your career to look like when you graduate.</p>
+        </div>
+
+        <p>That distinction matters more in 2026 than it ever has. With the new rule putting weight on genuine progression, thousands of F-1 students who hold a master&rsquo;s are looking at the doctoral level for the first time&mdash;and &ldquo;DBA vs PhD&rdquo; is the question that decides which program they apply to.</p>
+
+        <p>This guide covers what each degree is actually for, where they differ in the work you do, and which one fits which kind of student. Whether a doctorate is the right next move <em>at all</em> is a separate decision, and it has its own guide.</p>
+
+        <h2><span class="kicker">Degree #1</span>What a DBA actually is</h2>
+        <p>The <strong>Doctor of Business Administration</strong> is a doctorate in the full sense. It is not an extended MBA and not a certificate with a long name. It is a terminal degree&mdash;the highest credential in business&mdash;at the same academic level as a PhD.</p>
+
+        <div class="def dba">
+          <div class="def-head">🏢 The DBA in one line <span class="def-tag">Applied &middot; Industry</span></div>
+          <div class="def-body">
+            <p>What makes it different is its <strong>purpose</strong>. The DBA trains <em>practitioner researchers</em>. You study advanced management theory and research methods, then apply them to real business problems&mdash;often problems drawn from the company you work for. The dissertation is applied research: instead of producing new theory for an academic journal, you produce evidence-based answers to a problem an organization actually has. That&rsquo;s why the degree pairs naturally with a career&mdash;the work you do at your job and the work you do in the program feed each other.</p>
+          </div>
+        </div>
+
+        <p>The typical DBA student is a working professional in their late twenties to forties who already holds a master&rsquo;s&mdash;usually an MBA, but any accredited master&rsquo;s qualifies&mdash;and wants the doctoral credential for executive leadership, consulting, or senior strategy roles. Many DBA graduates also teach as adjunct faculty at business schools, since the doctorate qualifies them for it, but teaching is the side door rather than the destination.</p>
+
+        <h2><span class="kicker">Degree #2</span>What a PhD actually is</h2>
+        <p>The <strong>PhD</strong> is the research doctorate. Its purpose is to produce <em>scholars</em>: people who create original theoretical knowledge and build careers in universities as professors and researchers. The dissertation is a contribution to the academic literature, judged by whether it advances what the field knows, and the training around it is built for a life of publishing, peer review, and teaching.</p>
+
+        <div class="def phd">
+          <div class="def-head">🎓 The PhD in one line <span class="def-tag">Theoretical &middot; Academia</span></div>
+          <div class="def-body">
+            <p>A PhD in a business field is a serious and respected path, and for the right student it is the correct one. If your goal is a tenure-track faculty position, a research role at a think tank, or a career defined by publication, the PhD is built for that and the DBA is not. Full-time PhD programs at research universities are often funded through assistantships&mdash;part of the trade: the funding usually comes with the expectation that the program is your full-time occupation for four to six years.</p>
+          </div>
+        </div>
+
+        <p>Some schools also run <strong>applied PhD programs</strong> in executive formats, structured for working professionals rather than full-time campus researchers. At schools that build required practical training into those programs, the PhD carries CPT on the same basis as the DBA. The label matters less than the structure.</p>
+
+        <h2><span class="kicker">Head to head</span>Where the two degrees actually differ</h2>
+        <p>Strip away the branding and the differences come down to the work itself.</p>
+
+        <div class="table-scroll">
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="dba-col">DBA &mdash; Doctor of Business Administration</th>
+                <th class="phd-col">PhD &mdash; Doctor of Philosophy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>The research question</th>
+                <td>&ldquo;How should this organization solve this problem?&rdquo; Judged by whether it <strong>works</strong>.</td>
+                <td>&ldquo;What does this finding add to the theory?&rdquo; Judged by whether it&rsquo;s <strong>new</strong>.</td>
+              </tr>
+              <tr>
+                <th>The career outcome</th>
+                <td>Back into industry with a terminal degree that separates you in executive searches, consulting, and board consideration.</td>
+                <td>Compete for faculty and research posts&mdash;a market where openings are limited and the credential is the entry ticket.</td>
+              </tr>
+              <tr>
+                <th>The format</th>
+                <td>Executive: evening, hybrid, or low-residency schedules built around a job.</td>
+                <td>Traditional: the degree <em>is</em> the job&mdash;full-time study for four to six years.</td>
+              </tr>
+              <tr>
+                <th>Typical length</th>
+                <td>~3 years while working full-time (transfer credit can shorten it).</td>
+                <td>4&ndash;6 years, usually full-time.</td>
+              </tr>
+              <tr>
+                <th>Academic standing</th>
+                <td colspan="2" style="background:var(--accent-soft); color:#7a5a12; text-align:center; font-weight:700;">Identical &mdash; both are terminal doctoral degrees. Neither outranks the other.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The one place they do <em>not</em> differ is standing. A DBA from an accredited university is a doctorate, full stop. Nobody at the degree level above you or below you outranks the other.</p>
+
+        <div class="pull">&ldquo;Both are rigorous. They&rsquo;re rigorous about different things.&rdquo;</div>
+
+        <h2><span class="kicker">Immigration</span>What immigration cares about &mdash; and what it doesn&rsquo;t</h2>
+        <p>Here&rsquo;s the part international students overthink. <strong>USCIS and SEVP do not rank the DBA against the PhD.</strong> What the framework recognizes is degree <em>level</em>, and both are doctoral. Moving from any master&rsquo;s into either one is the upward academic progression the rule replacing Duration of Status is built to approve&mdash;the same progression that restores OPT eligibility at a new degree level after you graduate.</p>
+
+        <p>Day&nbsp;1 CPT works the same way at both. CPT is available from the first term when a graduate program <em>requires</em> immediate participation in practical training as part of an established curriculum&mdash;and that&rsquo;s a feature of how the program is built, not of which doctorate it is. A DBA structured around required experiential learning carries it. A PhD structured the same way carries it on the same basis. The full mechanics of doctoral-level CPT&mdash;including the full-time versus part-time distinction and the 12-month OPT interaction&mdash;are covered in their own guide.</p>
+
+        <div class="note">
+          <span class="ic">✓</span>
+          <div><strong>The honest framing:</strong> if you&rsquo;re choosing between a DBA and a PhD because you think one is safer for your status, you&rsquo;re solving the wrong problem. Both are safe when the program is accredited, SEVP-certified, and academically genuine. Choose based on the career, then confirm the program is built properly.</div>
+        </div>
+
+        <h2><span class="kicker">Your call</span>Which one fits you</h2>
+        <p>The decision usually resolves in one question: <strong>where do you want to be working five years after graduation?</strong></p>
+
+        <div class="choose-grid">
+          <div class="choose dba">
+            <div class="badge">🏢</div>
+            <div class="who">If the answer is industry</div>
+            <h4>Choose the DBA</h4>
+            <p>Executive management, consulting, entrepreneurship, senior strategy, or a leadership track inside the field you already work in. You keep your job through the program, your dissertation solves a problem your industry recognizes, and you graduate with a terminal degree <em>and</em> three more years of US work experience instead of a gap.</p>
+          </div>
+          <div class="choose phd">
+            <div class="badge">🎓</div>
+            <div class="who">If the answer is a university</div>
+            <h4>Choose the PhD</h4>
+            <p>Faculty positions require it, research careers are built on it, and the publishing apprenticeship that feels like overkill for an executive is exactly the training a future professor needs.</p>
+          </div>
+        </div>
+
+        <p>If you&rsquo;re genuinely torn, the tiebreaker for most working international students is <strong>economics</strong>. A DBA lets you earn a full-time salary through the entire program, which changes the real cost of the degree more than any scholarship does.</p>
+
+        <div class="pull">&ldquo;The most expensive part of a traditional doctorate was never tuition. It was the income you gave up to complete it.&rdquo;</div>
+
+        <h2><span class="kicker">In practice</span>What the DBA route looks like</h2>
+        <p>The <strong>Alliant University DBA</strong> that EduConnect supports is a working example of the applied doctorate this article describes. The university is WASC accredited&mdash;the same accreditor as the University of California and Cal State systems&mdash;with ACBSP accreditation for the business school. Day&nbsp;1 CPT is required throughout the program as part of its experiential learning, which means roughly three years of full-time, degree-related work from the first class to graduation.</p>
+
+        <div class="spotlight">
+          <h3>Spotlight: The Alliant University DBA</h3>
+          <div class="sub">WASC &amp; ACBSP accredited &middot; Los Angeles &middot; Hybrid executive format</div>
+          <div class="facts">
+            <div class="fact"><div class="num">Day 1</div><div class="cap">CPT required throughout the program</div></div>
+            <div class="fact"><div class="num">~3 yrs</div><div class="cap">Full-time, degree-related work</div></div>
+            <div class="fact"><div class="num">$15K</div><div class="cap">Grant for eligible students</div></div>
+          </div>
+          <ul>
+            <li>Hybrid executive schedule at the LA campus&mdash;on campus every eight weeks, the rest built around your work.</li>
+            <li>Six intakes a year and four concentrations: Management, Marketing, Information &amp; Data Science, and Hospitality Management.</li>
+            <li>Qualifying master&rsquo;s credits transfer in and shorten the program.</li>
+            <li>Interest-free payment plan spreads the balance across the three years while you earn.</li>
+            <li>CareerConnect placement support to help you land the paid, degree-related role the CPT requires.</li>
+          </ul>
+        </div>
+
+        <p>For students set on the academic track, the same school runs a <strong>PhD in Leadership</strong> in an executive format with CPT on the same basis&mdash;so the DBA vs PhD choice does not force a choice of school.</p>
+
+        <h2><span class="kicker">Answers</span>DBA vs PhD: your questions</h2>
+        <div class="faq">
+          <details open>
+            <summary>Is a DBA equal to a PhD?</summary>
+            <div class="answer">Yes, in academic level. Both are terminal doctoral degrees, and accredited universities, employers, and immigration all treat them as the same degree level. They differ in <em>purpose</em>: the DBA is applied research for a career in industry, the PhD is theoretical research for a career in academia.</div>
+          </details>
+          <details>
+            <summary>Is a DBA or PhD better for international students?</summary>
+            <div class="answer">Neither is better for your immigration status, since both are doctoral-level degrees and both count as academic progression under the new rule. The DBA is the usual fit for students who want to work in industry through and after the program; the PhD fits students aiming at faculty or research careers.</div>
+          </details>
+          <details>
+            <summary>Can international students work during a DBA or PhD?</summary>
+            <div class="answer">Yes, in programs where required practical training is part of the curriculum, through Day&nbsp;1 CPT. Programs like the Alliant DBA authorize full-time CPT from the first term through graduation&mdash;roughly three years of degree-related work. The same applies to PhD programs structured with the same requirement.</div>
+          </details>
+          <details>
+            <summary>Does a DBA give me OPT after a master&rsquo;s?</summary>
+            <div class="answer">Yes. Completing a doctorate is a higher degree level than your master&rsquo;s, which makes you eligible for a new period of OPT after graduation. Keep in mind that 12 or more months of full-time CPT during the doctorate removes OPT eligibility at that level, so plan the balance with your DSO before your first authorization.</div>
+          </details>
+          <details>
+            <summary>Is a DBA worth it compared to a PhD?</summary>
+            <div class="answer">For a professional building a career in business, usually yes. The DBA delivers the same terminal credential while you keep working and earning, and its applied dissertation maps directly onto executive and consulting work. The PhD is worth it when your goal is academia, where it is the required credential.</div>
+          </details>
+          <details>
+            <summary>How long does a DBA take compared to a PhD?</summary>
+            <div class="answer">A DBA typically takes about three years in an executive format while you work full-time. Traditional PhD programs run four to six years and usually assume full-time study. Transfer credit from your master&rsquo;s can shorten the DBA further.</div>
+          </details>
+        </div>
+
+        <div class="disclaimer">
+          This article is general information for international students and is not legal or immigration advice. Program and immigration decisions depend on your individual case. Consult your DSO and a licensed immigration attorney before making decisions about your status or your next degree.
+        </div>
+
+        <div class="cta" id="book">
+          <h3>Decided which doctorate is yours?</h3>
+          <p>EduConnect helps international students enroll in Alliant University&rsquo;s accredited DBA and PhD programs&mdash;with a $15,000 grant opportunity, transfer credit for the master&rsquo;s you already hold, and CareerConnect placement support.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" href="#book">📞 Book a call with our team</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/16263443218">💬 WhatsApp +1 (626) 344-3218</a>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <a class="logo" href="#top"><span class="logo-mark">E</span>Edu<span>Connect</span></a>
+    <div>Helping international students find the right doctorate &mdash; and the right path to stay and work.</div>
+  </footer>
+
+</body>
+</html>
