@@ -168,6 +168,21 @@
     border: 1px dashed #d3cde0; border-radius: 12px; padding: 16px 18px; margin: 30px 0 6px; font-style: italic;
   }
 
+  /* In-content CTA */
+  .ec-article .ec-cta {
+    background: linear-gradient(150deg, var(--ec-purple), var(--ec-purple-2));
+    color: #fff; border-radius: 18px; padding: 32px 30px; text-align: center; margin: 30px 0 8px;
+  }
+  .ec-article .ec-cta h3 { color: #fff; font-size: 24px; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .ec-article .ec-cta p { color: #dcd4ee; margin: 0 auto 22px; max-width: 520px; font-size: 16.5px; }
+  .ec-article .ec-cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .ec-article .ec-btn {
+    display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+    font-weight: 700; font-size: 16px; padding: 13px 24px; border-radius: 999px;
+  }
+  .ec-article .ec-btn-primary { background: var(--ec-orange); color: #fff; }
+  .ec-article .ec-btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.28); }
+
   @media (max-width: 620px) {
     .ec-article { font-size: 17px; }
     .ec-article h2 { font-size: 24px; }
@@ -346,6 +361,15 @@
 
   <div class="ec-disclaimer">
     This article is general information for international students and is not legal or immigration advice. Program and immigration decisions depend on your individual case. Consult your DSO and a licensed immigration attorney before making decisions about your status or your next degree.
+  </div>
+
+  <div class="ec-cta">
+    <h3>Decided which doctorate is yours?</h3>
+    <p>EduConnect helps international students enroll in Alliant University&rsquo;s accredited DBA and PhD programs&mdash;with a $15,000 grant opportunity, transfer credit for the master&rsquo;s you already hold, and CareerConnect placement support.</p>
+    <div class="ec-cta-buttons">
+      <a class="ec-btn ec-btn-primary" href="#">📞 Book a call with our team</a>
+      <a class="ec-btn ec-btn-secondary" href="https://wa.me/16263443218">💬 WhatsApp +1 (626) 344-3218</a>
+    </div>
   </div>
 
 </div>
