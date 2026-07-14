@@ -8,29 +8,28 @@
 <link rel="canonical" href="https://educonnect.example/2026/07/dba-vs-phd-international-students/" />
 <style>
   :root {
-    --navy: #0f2a4a;
-    --navy-2: #163a63;
-    --ink: #1c2b3a;
-    --muted: #5a6b7b;
-    --line: #e4e9f0;
+    --purple: #332959;
+    --purple-2: #473c73;
+    --orange: #ff7400;
+    --teal: #4ed3cc;
+    --teal-deep: #2b9c96;
+
+    --ink: #2b2740;
+    --muted: #66627a;
+    --line: #e7e4ef;
     --paper: #ffffff;
-    --wash: #f4f7fb;
-    --brand: #1e6bd6;      /* EduConnect blue */
-    --brand-dark: #144e9e;
-    --accent: #f5a623;     /* warm amber accent */
-    --accent-soft: #fff4e0;
-    --teal: #0fa3a3;
-    --teal-soft: #e4f6f6;
-    --green: #1f9d57;
+    --wash: #f6f5fa;
+
+    --purple-soft: #efedf6;
+    --orange-soft: #fff2e6;
+    --teal-soft: #e7f7f6;
+
     --radius: 16px;
-    --shadow: 0 10px 30px rgba(15, 42, 74, 0.08);
-    --shadow-lg: 0 24px 60px rgba(15, 42, 74, 0.14);
+    --shadow: 0 8px 24px rgba(51, 41, 89, 0.07);
     --maxw: 760px;
   }
 
   * { box-sizing: border-box; }
-
-  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
   body {
     margin: 0;
@@ -43,136 +42,64 @@
   }
 
   img { max-width: 100%; }
-
-  a { color: var(--brand); }
-
-  /* ---------- Top bar ---------- */
-  .topbar {
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    position: sticky;
-    top: 0;
-    z-index: 20;
-  }
-  .topbar-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--navy);
-    font-size: 20px;
-    text-decoration: none;
-  }
-  .logo-mark {
-    width: 34px; height: 34px;
-    border-radius: 9px;
-    background: linear-gradient(135deg, var(--brand), var(--teal));
-    display: grid; place-items: center;
-    color: #fff; font-weight: 800; font-size: 18px;
-    box-shadow: 0 6px 16px rgba(30,107,214,0.35);
-  }
-  .logo span { color: var(--brand); }
-  .topbar-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--navy);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 9px 16px;
-    border-radius: 999px;
-    transition: transform .15s ease, background .15s ease;
-  }
-  .topbar-cta:hover { background: var(--brand); transform: translateY(-1px); }
+  a { color: var(--purple-2); }
 
   /* ---------- Hero ---------- */
   .hero {
-    background:
-      radial-gradient(1200px 400px at 85% -10%, rgba(15,163,163,0.18), transparent 60%),
-      radial-gradient(900px 380px at 0% 0%, rgba(30,107,214,0.20), transparent 55%),
-      linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
-    color: #eaf1fb;
-    padding: 56px 24px 120px;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(155deg, #2c2350 0%, var(--purple) 60%, #3a2f66 100%);
+    color: #efeaf7;
+    padding: 52px 24px 44px;
   }
-  .hero::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; bottom: -1px; height: 80px;
-    background: var(--wash);
-    clip-path: polygon(0 100%, 100% 100%, 100% 35%, 0 100%);
-  }
-  .hero-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
+  .hero-inner { max-width: var(--maxw); margin: 0 auto; }
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 13px;
+    gap: 9px;
+    font-size: 12.5px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.09em;
-    color: #bfe0ff;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.16);
-    padding: 6px 14px;
+    color: #d7cdea;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 13px;
     border-radius: 999px;
   }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
   .hero h1 {
-    font-size: clamp(30px, 5.5vw, 46px);
-    line-height: 1.12;
+    font-size: clamp(29px, 5.2vw, 44px);
+    line-height: 1.14;
     letter-spacing: -0.025em;
-    margin: 20px 0 16px;
+    margin: 18px 0 14px;
     color: #fff;
     font-weight: 800;
   }
-  .hero p.dek {
+  .hero .dek {
     font-size: 19px;
-    color: #cfe0f4;
-    margin: 0 0 26px;
+    color: #cdc4e2;
+    margin: 0 0 24px;
     max-width: 620px;
   }
   .meta-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px 18px;
+    gap: 9px 12px;
     font-size: 14px;
-    color: #a9c4e4;
   }
   .meta-row .pill {
     display: inline-flex; align-items: center; gap: 7px;
     background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.14);
     padding: 5px 12px; border-radius: 999px;
-    color: #dbe8f8; font-weight: 600;
+    color: #e3daf3; font-weight: 600;
   }
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
   /* ---------- Article shell ---------- */
   .wrap {
     max-width: var(--maxw);
-    margin: -60px auto 0;
-    padding: 0 24px 80px;
-    position: relative;
-    z-index: 3;
+    margin: 0 auto;
+    padding: 34px 24px 70px;
   }
   .card {
     background: var(--paper);
@@ -189,54 +116,53 @@
     font-size: clamp(23px, 3.6vw, 30px);
     line-height: 1.25;
     letter-spacing: -0.02em;
-    color: var(--navy);
+    color: var(--purple);
     margin: 46px 0 16px;
-    padding-top: 8px;
     font-weight: 800;
-    scroll-margin-top: 80px;
   }
   h2 .kicker {
     display: block;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--brand);
+    color: var(--teal-deep);
     margin-bottom: 6px;
   }
-  h3 { font-size: 20px; color: var(--navy); margin: 30px 0 10px; font-weight: 700; }
+  h3 { font-size: 20px; color: var(--purple); margin: 30px 0 10px; font-weight: 700; }
 
-  /* ---------- TL;DR / short answer ---------- */
+  /* ---------- TL;DR ---------- */
   .tldr {
-    background: linear-gradient(180deg, var(--wash), #eef4fb);
-    border: 1px solid #d8e5f3;
-    border-left: 5px solid var(--brand);
+    background: var(--purple-soft);
+    border: 1px solid #ddd7ea;
+    border-left: 5px solid var(--purple);
     border-radius: 14px;
     padding: 22px 24px;
     margin: 4px 0 28px;
   }
   .tldr .label {
     font-size: 12px; font-weight: 800; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--brand); margin-bottom: 8px;
+    text-transform: uppercase; color: var(--purple); margin-bottom: 8px;
   }
   .tldr p { margin: 0; font-size: 17.5px; }
 
-  /* ---------- Alert / note ---------- */
+  /* ---------- Note boxes ---------- */
   .note {
     display: flex; gap: 14px; align-items: flex-start;
-    background: var(--accent-soft);
-    border: 1px solid #f2dcaf;
     border-radius: 12px;
     padding: 16px 18px;
     margin: 0 0 28px;
     font-size: 15.5px;
-    color: #7a5a12;
   }
   .note .ic {
     flex: none; width: 26px; height: 26px; border-radius: 8px;
-    background: var(--accent); color: #fff; display: grid; place-items: center;
+    color: #fff; display: grid; place-items: center;
     font-weight: 800; font-size: 15px;
   }
+  .note.warn { background: var(--orange-soft); border: 1px solid #ffdcbb; color: #8a4a06; }
+  .note.warn .ic { background: var(--orange); }
+  .note.ok { background: var(--teal-soft); border: 1px solid #c6ece9; color: #1f6b66; }
+  .note.ok .ic { background: var(--teal-deep); }
 
   /* ---------- Definition cards ---------- */
   .def {
@@ -246,21 +172,21 @@
     margin: 6px 0 26px;
   }
   .def-head {
-    padding: 16px 20px;
+    padding: 15px 20px;
     display: flex; align-items: center; gap: 12px;
     color: #fff; font-weight: 700;
   }
-  .def.dba .def-head { background: linear-gradient(120deg, var(--brand), var(--brand-dark)); }
-  .def.phd .def-head { background: linear-gradient(120deg, var(--teal), #0b7d7d); }
+  .def.dba .def-head { background: var(--purple); }
+  .def.phd .def-head { background: var(--teal-deep); }
   .def-tag {
     margin-left: auto;
-    font-size: 12px; font-weight: 700; letter-spacing: .05em;
-    background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 700; letter-spacing: .04em;
+    background: rgba(255,255,255,0.18); padding: 4px 10px; border-radius: 999px;
   }
   .def-body { padding: 18px 20px 4px; background: var(--paper); }
 
   /* ---------- Comparison table ---------- */
-  .table-scroll { overflow-x: auto; margin: 8px 0 28px; border-radius: 14px; box-shadow: var(--shadow); }
+  .table-scroll { overflow-x: auto; margin: 8px 0 28px; border: 1px solid var(--line); border-radius: 14px; }
   table.cmp {
     width: 100%;
     border-collapse: collapse;
@@ -270,34 +196,33 @@
   }
   table.cmp th, table.cmp td {
     text-align: left;
-    padding: 15px 18px;
+    padding: 14px 18px;
     vertical-align: top;
     border-bottom: 1px solid var(--line);
   }
-  table.cmp thead th {
-    font-size: 14px; letter-spacing: .02em;
-    color: #fff;
-    background: var(--navy);
-  }
-  table.cmp thead th:first-child { background: var(--navy-2); border-top-left-radius: 0; }
-  table.cmp thead th.dba-col { background: linear-gradient(120deg, var(--brand), var(--brand-dark)); }
-  table.cmp thead th.phd-col { background: linear-gradient(120deg, var(--teal), #0b7d7d); }
+  table.cmp thead th { font-size: 14px; color: #fff; background: var(--purple-2); }
+  table.cmp thead th:first-child { background: var(--purple); }
+  table.cmp thead th.phd-col { background: var(--teal-deep); }
   table.cmp tbody th {
-    font-weight: 700; color: var(--navy); width: 30%;
+    font-weight: 700; color: var(--purple); width: 30%;
     background: var(--wash);
   }
   table.cmp tbody tr:last-child td, table.cmp tbody tr:last-child th { border-bottom: none; }
   table.cmp td { color: var(--muted); }
+  .cmp .same {
+    background: var(--orange-soft); color: #8a4a06;
+    text-align: center; font-weight: 700;
+  }
 
   /* ---------- Pull quote ---------- */
   .pull {
     margin: 30px 0;
-    padding: 8px 0 8px 26px;
-    border-left: 4px solid var(--accent);
-    font-size: 22px;
+    padding: 6px 0 6px 24px;
+    border-left: 4px solid var(--orange);
+    font-size: 21px;
     line-height: 1.4;
     font-weight: 700;
-    color: var(--navy);
+    color: var(--purple);
     letter-spacing: -0.01em;
   }
 
@@ -313,50 +238,40 @@
     border-radius: 14px;
     padding: 20px;
     background: var(--paper);
-    box-shadow: var(--shadow);
   }
-  .choose h4 { margin: 0 0 4px; font-size: 17px; color: var(--navy); }
-  .choose .who { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-  .choose.dba .who { color: var(--brand); }
-  .choose.phd .who { color: var(--teal); }
+  .choose.dba { border-top: 3px solid var(--purple); }
+  .choose.phd { border-top: 3px solid var(--teal); }
+  .choose h4 { margin: 2px 0 4px; font-size: 17px; color: var(--purple); }
+  .choose .who { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .choose.dba .who { color: var(--purple-2); }
+  .choose.phd .who { color: var(--teal-deep); }
   .choose p { font-size: 15.5px; color: var(--muted); margin: 8px 0 0; }
-  .choose .badge {
-    display: inline-block; margin-bottom: 12px; font-size: 22px;
-  }
+  .choose .badge { display: inline-block; margin-bottom: 8px; font-size: 22px; }
 
-  /* ---------- Alliant highlight ---------- */
+  /* ---------- Alliant spotlight ---------- */
   .spotlight {
-    background: linear-gradient(160deg, #0f2a4a, #14477e);
-    color: #eaf1fb;
+    background: linear-gradient(155deg, var(--purple), #3b3068);
+    color: #eee9f6;
     border-radius: 18px;
     padding: 30px clamp(22px, 4vw, 34px);
     margin: 34px 0;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    overflow: hidden;
   }
-  .spotlight::before {
-    content: "";
-    position: absolute; right: -40px; top: -40px;
-    width: 180px; height: 180px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(15,163,163,0.5), transparent 70%);
-  }
-  .spotlight h3 { color: #fff; margin: 0 0 6px; font-size: 22px; position: relative; }
-  .spotlight .sub { color: #bcd4ee; font-size: 14px; margin-bottom: 18px; position: relative; }
+  .spotlight h3 { color: #fff; margin: 0 0 6px; font-size: 22px; }
+  .spotlight .sub { color: #c6bce0; font-size: 14px; margin-bottom: 18px; }
   .facts {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
-    position: relative; margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .fact {
-    background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.14);
     border-radius: 12px; padding: 14px;
   }
-  .fact .num { font-size: 22px; font-weight: 800; color: var(--accent); line-height: 1.1; }
-  .fact .cap { font-size: 12.5px; color: #cfe0f4; margin-top: 4px; }
-  .spotlight ul { margin: 0 0 4px; padding-left: 20px; position: relative; }
-  .spotlight ul li { margin-bottom: 8px; color: #dbe8f8; font-size: 15.5px; }
-  .spotlight ul li::marker { color: var(--accent); }
+  .fact .num { font-size: 22px; font-weight: 800; color: var(--teal); line-height: 1.1; }
+  .fact .cap { font-size: 12.5px; color: #cec4e4; margin-top: 4px; }
+  .spotlight ul { margin: 0; padding-left: 20px; }
+  .spotlight ul li { margin-bottom: 8px; color: #ded6ee; font-size: 15.5px; }
+  .spotlight ul li::marker { color: var(--orange); }
 
   /* ---------- FAQ ---------- */
   .faq { margin: 12px 0 8px; }
@@ -366,15 +281,13 @@
     margin-bottom: 12px;
     background: var(--paper);
     overflow: hidden;
-    transition: box-shadow .15s ease;
   }
-  .faq details[open] { box-shadow: var(--shadow); }
   .faq summary {
     cursor: pointer;
     list-style: none;
     padding: 16px 48px 16px 20px;
     font-weight: 700;
-    color: var(--navy);
+    color: var(--purple);
     font-size: 17px;
     position: relative;
   }
@@ -382,8 +295,7 @@
   .faq summary::after {
     content: "+";
     position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
-    font-size: 24px; font-weight: 400; color: var(--brand);
-    transition: transform .2s ease;
+    font-size: 24px; font-weight: 400; color: var(--orange);
   }
   .faq details[open] summary::after { content: "\2212"; }
   .faq .answer { padding: 0 20px 18px; color: var(--muted); font-size: 16px; }
@@ -392,7 +304,7 @@
   .disclaimer {
     font-size: 14px; color: var(--muted);
     background: var(--wash);
-    border: 1px dashed #cdd8e6;
+    border: 1px dashed #d3cde0;
     border-radius: 12px;
     padding: 16px 18px;
     margin: 30px 0;
@@ -401,37 +313,23 @@
 
   /* ---------- Final CTA ---------- */
   .cta {
-    background:
-      radial-gradient(600px 200px at 100% 0%, rgba(15,163,163,0.35), transparent 60%),
-      linear-gradient(135deg, var(--brand), var(--brand-dark));
+    background: linear-gradient(150deg, var(--purple), var(--purple-2));
     color: #fff;
     border-radius: 20px;
-    padding: 38px clamp(24px, 5vw, 44px);
+    padding: 36px clamp(24px, 5vw, 44px);
     text-align: center;
-    margin: 40px 0 10px;
-    box-shadow: var(--shadow-lg);
+    margin: 40px 0 0;
   }
-  .cta h3 { color: #fff; font-size: 26px; margin: 0 0 10px; letter-spacing: -0.02em; }
-  .cta p { color: #e5f0ff; margin: 0 auto 24px; max-width: 520px; font-size: 17px; }
+  .cta h3 { color: #fff; font-size: 25px; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .cta p { color: #dcd4ee; margin: 0 auto 24px; max-width: 520px; font-size: 17px; }
   .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn {
     display: inline-flex; align-items: center; gap: 9px;
     text-decoration: none; font-weight: 700; font-size: 16px;
     padding: 14px 26px; border-radius: 999px;
-    transition: transform .15s ease, box-shadow .15s ease;
   }
-  .btn-primary { background: #fff; color: var(--brand-dark); box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
-  .btn-whatsapp { background: #25d366; color: #06381b; }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
-
-  /* ---------- Footer ---------- */
-  .site-footer {
-    text-align: center;
-    padding: 30px 24px 50px;
-    color: var(--muted);
-    font-size: 14px;
-  }
-  .site-footer .logo { justify-content: center; margin-bottom: 10px; font-size: 17px; }
+  .btn-primary { background: var(--orange); color: #fff; }
+  .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.28); }
 
   /* ---------- Responsive ---------- */
   @media (max-width: 620px) {
@@ -439,25 +337,14 @@
     .card { padding: 28px 20px; }
     .choose-grid { grid-template-columns: 1fr; }
     .facts { grid-template-columns: 1fr; }
-    .topbar-cta { display: none; }
     .pull { font-size: 19px; }
   }
 </style>
 </head>
 <body>
 
-  <!-- Top bar -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="logo" href="#top">
-        <span class="logo-mark">E</span>Edu<span>Connect</span>
-      </a>
-      <a class="topbar-cta" href="#book">Book a free call &rarr;</a>
-    </div>
-  </header>
-
   <!-- Hero -->
-  <section class="hero" id="top">
+  <section class="hero">
     <div class="hero-inner">
       <span class="eyebrow"><span class="dot"></span> Doctorate &amp; Immigration Guide</span>
       <h1>DBA vs PhD: Which Doctorate Should an International Student Choose in 2026?</h1>
@@ -474,7 +361,7 @@
     <div class="card">
       <article>
 
-        <div class="note">
+        <div class="note warn">
           <span class="ic">!</span>
           <div>The rule replacing Duration of Status is still being finalized, so confirm the current details before you enroll.</div>
         </div>
@@ -520,7 +407,7 @@
             <thead>
               <tr>
                 <th></th>
-                <th class="dba-col">DBA &mdash; Doctor of Business Administration</th>
+                <th>DBA &mdash; Doctor of Business Administration</th>
                 <th class="phd-col">PhD &mdash; Doctor of Philosophy</th>
               </tr>
             </thead>
@@ -547,7 +434,7 @@
               </tr>
               <tr>
                 <th>Academic standing</th>
-                <td colspan="2" style="background:var(--accent-soft); color:#7a5a12; text-align:center; font-weight:700;">Identical &mdash; both are terminal doctoral degrees. Neither outranks the other.</td>
+                <td colspan="2" class="same">Identical &mdash; both are terminal doctoral degrees. Neither outranks the other.</td>
               </tr>
             </tbody>
           </table>
@@ -562,7 +449,7 @@
 
         <p>Day&nbsp;1 CPT works the same way at both. CPT is available from the first term when a graduate program <em>requires</em> immediate participation in practical training as part of an established curriculum&mdash;and that&rsquo;s a feature of how the program is built, not of which doctorate it is. A DBA structured around required experiential learning carries it. A PhD structured the same way carries it on the same basis. The full mechanics of doctoral-level CPT&mdash;including the full-time versus part-time distinction and the 12-month OPT interaction&mdash;are covered in their own guide.</p>
 
-        <div class="note">
+        <div class="note ok">
           <span class="ic">✓</span>
           <div><strong>The honest framing:</strong> if you&rsquo;re choosing between a DBA and a PhD because you think one is safer for your status, you&rsquo;re solving the wrong problem. Both are safe when the program is accredited, SEVP-certified, and academically genuine. Choose based on the career, then confirm the program is built properly.</div>
         </div>
@@ -643,23 +530,18 @@
           This article is general information for international students and is not legal or immigration advice. Program and immigration decisions depend on your individual case. Consult your DSO and a licensed immigration attorney before making decisions about your status or your next degree.
         </div>
 
-        <div class="cta" id="book">
+        <div class="cta">
           <h3>Decided which doctorate is yours?</h3>
           <p>EduConnect helps international students enroll in Alliant University&rsquo;s accredited DBA and PhD programs&mdash;with a $15,000 grant opportunity, transfer credit for the master&rsquo;s you already hold, and CareerConnect placement support.</p>
           <div class="cta-buttons">
-            <a class="btn btn-primary" href="#book">📞 Book a call with our team</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/16263443218">💬 WhatsApp +1 (626) 344-3218</a>
+            <a class="btn btn-primary" href="#">📞 Book a call with our team</a>
+            <a class="btn btn-secondary" href="https://wa.me/16263443218">💬 WhatsApp +1 (626) 344-3218</a>
           </div>
         </div>
 
       </article>
     </div>
   </div>
-
-  <footer class="site-footer">
-    <a class="logo" href="#top"><span class="logo-mark">E</span>Edu<span>Connect</span></a>
-    <div>Helping international students find the right doctorate &mdash; and the right path to stay and work.</div>
-  </footer>
 
 </body>
 </html>
