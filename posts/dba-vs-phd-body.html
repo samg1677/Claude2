@@ -1,8 +1,9 @@
 <!-- ================= EduConnect blog body: DBA vs PhD =================
      Paste this whole block into the content area of the blog template.
      The template supplies the H1, the date/read-time line, and the
-     right-hand rail (social share + book-a-call). Styles are scoped to
-     .ec-article so nothing leaks into the rest of the page. -->
+     right-hand rail. Styles are scoped to .ec-article so nothing leaks
+     into the rest of the page. Body text is 16px throughout.
+     Photos load from educonnectusa.com — swap any src you like. -->
 
 <style>
   .ec-article {
@@ -10,7 +11,6 @@
     --ec-purple-2: #473c73;
     --ec-orange: #ff7400;
     --ec-teal: #4ed3cc;
-    --ec-teal-deep: #2b9c96;
 
     --ec-ink: #2b2740;
     --ec-muted: #66627a;
@@ -20,11 +20,10 @@
 
     --ec-purple-soft: #efedf6;
     --ec-orange-soft: #fff2e6;
-    --ec-teal-soft: #e7f7f6;
 
     font-family: inherit;
     color: var(--ec-ink);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
     width: 100%;
   }
@@ -33,29 +32,30 @@
   .ec-article *::before,
   .ec-article *::after { box-sizing: border-box; }
 
-  .ec-article p { margin: 0 0 20px; }
+  .ec-article p { margin: 0 0 20px; font-size: 16px; }
   .ec-article strong { color: inherit; }
   .ec-article a { color: var(--ec-purple-2); }
+  .ec-article img { max-width: 100%; display: block; }
 
   .ec-article h2 {
     font-family: inherit;
-    font-size: 27px;
+    font-size: 26px;
     line-height: 1.25;
     letter-spacing: -0.02em;
     color: var(--ec-purple);
-    margin: 44px 0 16px;
+    margin: 46px 0 16px;
     font-weight: 800;
   }
   .ec-article h2 .ec-kicker {
     display: block;
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--ec-teal-deep);
+    color: var(--ec-orange);
     margin-bottom: 6px;
   }
-  .ec-article h3 { font-size: 20px; color: var(--ec-purple); margin: 30px 0 10px; font-weight: 700; }
+  .ec-article h3 { font-size: 19px; color: var(--ec-purple); margin: 30px 0 10px; font-weight: 700; }
 
   /* TL;DR */
   .ec-article .ec-tldr {
@@ -70,44 +70,49 @@
     font-size: 12px; font-weight: 800; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--ec-purple); margin-bottom: 8px;
   }
-  .ec-article .ec-tldr p { margin: 0; font-size: 17.5px; }
+  .ec-article .ec-tldr p { margin: 0; }
 
   /* Note boxes */
   .ec-article .ec-note {
     display: flex; gap: 14px; align-items: flex-start;
-    border-radius: 12px; padding: 16px 18px; margin: 0 0 28px; font-size: 15.5px;
+    border-radius: 12px; padding: 16px 18px; margin: 0 0 28px;
   }
+  .ec-article .ec-note p { margin: 0; }
   .ec-article .ec-note .ec-ic {
     flex: none; width: 26px; height: 26px; border-radius: 8px;
     color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 15px;
   }
   .ec-article .ec-note.warn { background: var(--ec-orange-soft); border: 1px solid #ffdcbb; color: #8a4a06; }
   .ec-article .ec-note.warn .ec-ic { background: var(--ec-orange); }
-  .ec-article .ec-note.ok { background: var(--ec-teal-soft); border: 1px solid #c6ece9; color: #1f6b66; }
-  .ec-article .ec-note.ok .ec-ic { background: var(--ec-teal-deep); }
+  .ec-article .ec-note.ok { background: #eafaf9; border: 1px solid #bfeae7; color: #185f5a; }
+  .ec-article .ec-note.ok .ec-ic { background: #1f8f88; }
 
-  /* Definition cards */
-  .ec-article .ec-def { border: 1px solid var(--ec-line); border-radius: 14px; overflow: hidden; margin: 6px 0 26px; }
-  .ec-article .ec-def-head {
-    padding: 15px 20px; display: flex; align-items: center; gap: 12px; color: #fff; font-weight: 700;
+  /* Feature split (image + text) */
+  .ec-article .ec-feature {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid var(--ec-line); border-radius: 16px; overflow: hidden; margin: 10px 0 28px;
   }
-  .ec-article .ec-def.dba .ec-def-head { background: var(--ec-purple); }
-  .ec-article .ec-def.phd .ec-def-head { background: var(--ec-teal-deep); }
-  .ec-article .ec-def-tag {
-    margin-left: auto; font-size: 12px; font-weight: 700; letter-spacing: .04em;
-    background: rgba(255,255,255,0.18); padding: 4px 10px; border-radius: 999px;
+  .ec-article .ec-feat-img { min-height: 260px; }
+  .ec-article .ec-feat-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ec-article .ec-feat-body { padding: 26px 28px; }
+  .ec-article .ec-feat-body.dba { background: var(--ec-paper); }
+  .ec-article .ec-feat-body.phd { background: var(--ec-purple-soft); }
+  .ec-article .ec-feat-body p { margin: 0; }
+  .ec-article .ec-feat-tag {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; padding: 4px 11px; border-radius: 999px; margin-bottom: 12px;
   }
-  .ec-article .ec-def-body { padding: 18px 20px 4px; background: var(--ec-paper); }
-  .ec-article .ec-def-body p { color: var(--ec-ink); }
+  .ec-article .ec-feat-tag.dba { background: var(--ec-purple); color: #fff; }
+  .ec-article .ec-feat-tag.phd { background: var(--ec-teal); color: var(--ec-purple); }
+  .ec-article .ec-feat-body h3 { margin: 0 0 10px; }
 
   /* Comparison table */
   .ec-article .ec-table-scroll { overflow-x: auto; margin: 8px 0 28px; border: 1px solid var(--ec-line); border-radius: 14px; }
   .ec-article table.ec-cmp { width: 100%; border-collapse: collapse; min-width: 560px; background: var(--ec-paper); font-size: 16px; }
   .ec-article table.ec-cmp th,
-  .ec-article table.ec-cmp td { text-align: left; padding: 14px 18px; vertical-align: top; border-bottom: 1px solid var(--ec-line); }
-  .ec-article table.ec-cmp thead th { font-size: 14px; color: #fff; background: var(--ec-purple-2); font-weight: 700; }
+  .ec-article table.ec-cmp td { text-align: left; padding: 14px 18px; vertical-align: top; border-bottom: 1px solid var(--ec-line); font-size: 16px; }
+  .ec-article table.ec-cmp thead th { color: #fff; background: var(--ec-purple-2); font-weight: 700; }
   .ec-article table.ec-cmp thead th:first-child { background: var(--ec-purple); }
-  .ec-article table.ec-cmp thead th.phd-col { background: var(--ec-teal-deep); }
   .ec-article table.ec-cmp tbody th { font-weight: 700; color: var(--ec-purple); width: 30%; background: var(--ec-wash); }
   .ec-article table.ec-cmp tbody tr:last-child td,
   .ec-article table.ec-cmp tbody tr:last-child th { border-bottom: none; }
@@ -117,8 +122,13 @@
   /* Pull quote */
   .ec-article .ec-pull {
     margin: 30px 0; padding: 6px 0 6px 24px; border-left: 4px solid var(--ec-orange);
-    font-size: 21px; line-height: 1.4; font-weight: 700; color: var(--ec-purple); letter-spacing: -0.01em;
+    font-size: 20px; line-height: 1.4; font-weight: 700; color: var(--ec-purple); letter-spacing: -0.01em;
   }
+
+  /* Photo band */
+  .ec-article .ec-photo-band { margin: 30px 0; }
+  .ec-article .ec-photo-band img { width: 100%; height: 300px; object-fit: cover; border-radius: 16px; }
+  .ec-article .ec-photo-cap { font-size: 13px; color: var(--ec-muted); margin: 10px 2px 0; }
 
   /* Decision cards */
   .ec-article .ec-choose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 28px; }
@@ -126,33 +136,43 @@
   .ec-article .ec-choose.dba { border-top: 3px solid var(--ec-purple); }
   .ec-article .ec-choose.phd { border-top: 3px solid var(--ec-teal); }
   .ec-article .ec-choose h4 { margin: 2px 0 4px; font-size: 17px; color: var(--ec-purple); font-weight: 700; }
-  .ec-article .ec-choose .ec-who { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .ec-article .ec-choose .ec-who { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
   .ec-article .ec-choose.dba .ec-who { color: var(--ec-purple-2); }
-  .ec-article .ec-choose.phd .ec-who { color: var(--ec-teal-deep); }
-  .ec-article .ec-choose p { font-size: 15.5px; color: var(--ec-muted); margin: 8px 0 0; }
+  .ec-article .ec-choose.phd .ec-who { color: #1f8f88; }
+  .ec-article .ec-choose p { font-size: 16px; color: var(--ec-muted); margin: 8px 0 0; }
   .ec-article .ec-choose .ec-badge { display: inline-block; margin-bottom: 8px; font-size: 22px; }
 
   /* Alliant spotlight */
   .ec-article .ec-spotlight {
-    background: linear-gradient(155deg, var(--ec-purple), #3b3068);
-    color: #eee9f6; border-radius: 18px; padding: 30px 30px; margin: 34px 0;
+    border-radius: 18px; overflow: hidden; margin: 34px 0;
+    background: linear-gradient(155deg, var(--ec-purple), #3b3068); color: #eee9f6;
   }
-  .ec-article .ec-spotlight h3 { color: #fff; margin: 0 0 6px; font-size: 22px; }
-  .ec-article .ec-spotlight .ec-sub { color: #c6bce0; font-size: 14px; margin-bottom: 18px; }
+  .ec-article .ec-spotlight-img { height: 190px; }
+  .ec-article .ec-spotlight-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ec-article .ec-spotlight-body { padding: 28px 30px; }
+  .ec-article .ec-spotlight h3 { color: #fff; margin: 0 0 6px; font-size: 21px; }
+  .ec-article .ec-spotlight .ec-sub { color: #c6bce0; font-size: 13px; margin-bottom: 18px; }
   .ec-article .ec-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
   .ec-article .ec-fact { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 14px; }
   .ec-article .ec-fact .ec-num { font-size: 22px; font-weight: 800; color: var(--ec-teal); line-height: 1.1; }
-  .ec-article .ec-fact .ec-cap { font-size: 12.5px; color: #cec4e4; margin-top: 4px; }
+  .ec-article .ec-fact .ec-cap { font-size: 12px; color: #cec4e4; margin-top: 4px; }
   .ec-article .ec-spotlight ul { margin: 0; padding-left: 20px; }
-  .ec-article .ec-spotlight ul li { margin-bottom: 8px; color: #ded6ee; font-size: 15.5px; }
+  .ec-article .ec-spotlight ul li { margin-bottom: 8px; color: #ded6ee; font-size: 16px; }
   .ec-article .ec-spotlight ul li::marker { color: var(--ec-orange); }
+
+  /* Student photo grid */
+  .ec-article .ec-gallery-head { text-align: center; margin: 40px 0 16px; }
+  .ec-article .ec-gallery-head h3 { margin: 0 0 4px; }
+  .ec-article .ec-gallery-head p { margin: 0; font-size: 14px; color: var(--ec-muted); }
+  .ec-article .ec-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 4px 0 28px; }
+  .ec-article .ec-gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
 
   /* FAQ */
   .ec-article .ec-faq { margin: 12px 0 8px; }
   .ec-article .ec-faq details { border: 1px solid var(--ec-line); border-radius: 12px; margin-bottom: 12px; background: var(--ec-paper); overflow: hidden; }
   .ec-article .ec-faq summary {
     cursor: pointer; list-style: none; padding: 16px 48px 16px 20px;
-    font-weight: 700; color: var(--ec-purple); font-size: 17px; position: relative;
+    font-weight: 700; color: var(--ec-purple); font-size: 16px; position: relative;
   }
   .ec-article .ec-faq summary::-webkit-details-marker { display: none; }
   .ec-article .ec-faq summary::after {
@@ -161,6 +181,7 @@
   }
   .ec-article .ec-faq details[open] summary::after { content: "\2212"; }
   .ec-article .ec-faq .ec-answer { padding: 0 20px 18px; color: var(--ec-muted); font-size: 16px; }
+  .ec-article .ec-faq .ec-answer p { font-size: 16px; margin: 0; }
 
   /* Disclaimer */
   .ec-article .ec-disclaimer {
@@ -168,27 +189,24 @@
     border: 1px dashed #d3cde0; border-radius: 12px; padding: 16px 18px; margin: 30px 0 6px; font-style: italic;
   }
 
-  /* In-content CTA */
-  .ec-article .ec-cta {
+  /* Form CTA */
+  .ec-article .ec-form-cta {
     background: linear-gradient(150deg, var(--ec-purple), var(--ec-purple-2));
-    color: #fff; border-radius: 18px; padding: 32px 30px; text-align: center; margin: 30px 0 8px;
+    border-radius: 18px; padding: 34px 30px; margin: 34px 0 8px; text-align: center;
   }
-  .ec-article .ec-cta h3 { color: #fff; font-size: 24px; margin: 0 0 10px; letter-spacing: -0.02em; }
-  .ec-article .ec-cta p { color: #dcd4ee; margin: 0 auto 22px; max-width: 520px; font-size: 16.5px; }
-  .ec-article .ec-cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .ec-article .ec-btn {
-    display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
-    font-weight: 700; font-size: 16px; padding: 13px 24px; border-radius: 999px;
-  }
-  .ec-article .ec-btn-primary { background: var(--ec-orange); color: #fff; }
-  .ec-article .ec-btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.28); }
+  .ec-article .ec-form-cta h3 { color: #fff; font-size: 23px; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .ec-article .ec-form-cta > p { color: #d7cfe8; font-size: 16px; margin: 0 auto 22px; max-width: 480px; }
+  .ec-article .ec-form-card { background: #fff; border-radius: 14px; padding: 26px 22px; max-width: 520px; margin: 0 auto; text-align: left; }
 
   @media (max-width: 620px) {
-    .ec-article { font-size: 17px; }
-    .ec-article h2 { font-size: 24px; }
+    .ec-article h2 { font-size: 23px; }
+    .ec-article .ec-feature { grid-template-columns: 1fr; }
+    .ec-article .ec-feat-img { min-height: 200px; height: 200px; }
     .ec-article .ec-choose-grid { grid-template-columns: 1fr; }
     .ec-article .ec-facts { grid-template-columns: 1fr; }
-    .ec-article .ec-pull { font-size: 19px; }
+    .ec-article .ec-gallery { grid-template-columns: repeat(2, 1fr); }
+    .ec-article .ec-photo-band img { height: 220px; }
+    .ec-article .ec-pull { font-size: 18px; }
   }
 </style>
 
@@ -196,7 +214,7 @@
 
   <div class="ec-note warn">
     <span class="ec-ic">!</span>
-    <div>The rule replacing Duration of Status is still being finalized, so confirm the current details before you enroll.</div>
+    <p>The rule replacing Duration of Status is still being finalized, so confirm the current details before you enroll.</p>
   </div>
 
   <div class="ec-tldr">
@@ -211,10 +229,14 @@
   <h2><span class="ec-kicker">Degree #1</span>What a DBA actually is</h2>
   <p>The <strong>Doctor of Business Administration</strong> is a doctorate in the full sense. It is not an extended MBA and not a certificate with a long name. It is a terminal degree&mdash;the highest credential in business&mdash;at the same academic level as a PhD.</p>
 
-  <div class="ec-def dba">
-    <div class="ec-def-head">🏢 The DBA in one line <span class="ec-def-tag">Applied &middot; Industry</span></div>
-    <div class="ec-def-body">
-      <p>What makes it different is its <strong>purpose</strong>. The DBA trains <em>practitioner researchers</em>. You study advanced management theory and research methods, then apply them to real business problems&mdash;often problems drawn from the company you work for. The dissertation is applied research: instead of producing new theory for an academic journal, you produce evidence-based answers to a problem an organization actually has. That&rsquo;s why the degree pairs naturally with a career&mdash;the work you do at your job and the work you do in the program feed each other.</p>
+  <div class="ec-feature">
+    <div class="ec-feat-img">
+      <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/2.jpg" alt="International graduate student in a professional setting" />
+    </div>
+    <div class="ec-feat-body dba">
+      <span class="ec-feat-tag dba">Applied &middot; Industry</span>
+      <h3>Built for practitioners</h3>
+      <p>What makes it different is its <strong>purpose</strong>. The DBA trains <em>practitioner researchers</em>. You study advanced management theory and research methods, then apply them to real business problems&mdash;often problems drawn from the company you work for. The dissertation is applied research: instead of producing new theory for a journal, you produce evidence-based answers to a problem an organization actually has.</p>
     </div>
   </div>
 
@@ -223,10 +245,14 @@
   <h2><span class="ec-kicker">Degree #2</span>What a PhD actually is</h2>
   <p>The <strong>PhD</strong> is the research doctorate. Its purpose is to produce <em>scholars</em>: people who create original theoretical knowledge and build careers in universities as professors and researchers. The dissertation is a contribution to the academic literature, judged by whether it advances what the field knows, and the training around it is built for a life of publishing, peer review, and teaching.</p>
 
-  <div class="ec-def phd">
-    <div class="ec-def-head">🎓 The PhD in one line <span class="ec-def-tag">Theoretical &middot; Academia</span></div>
-    <div class="ec-def-body">
-      <p>A PhD in a business field is a serious and respected path, and for the right student it is the correct one. If your goal is a tenure-track faculty position, a research role at a think tank, or a career defined by publication, the PhD is built for that and the DBA is not. Full-time PhD programs at research universities are often funded through assistantships&mdash;part of the trade: the funding usually comes with the expectation that the program is your full-time occupation for four to six years.</p>
+  <div class="ec-feature">
+    <div class="ec-feat-img">
+      <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/19.jpg" alt="Doctoral student researching on campus" />
+    </div>
+    <div class="ec-feat-body phd">
+      <span class="ec-feat-tag phd">Theoretical &middot; Academia</span>
+      <h3>Built for scholars</h3>
+      <p>A PhD in a business field is a serious and respected path, and for the right student it is the correct one. If your goal is a tenure-track faculty position, a research role at a think tank, or a career defined by publication, the PhD is built for that and the DBA is not. Full-time PhD programs are often funded through assistantships&mdash;part of the trade is that the program is your full-time occupation for four to six years.</p>
     </div>
   </div>
 
@@ -241,7 +267,7 @@
         <tr>
           <th></th>
           <th>DBA &mdash; Doctor of Business Administration</th>
-          <th class="phd-col">PhD &mdash; Doctor of Philosophy</th>
+          <th>PhD &mdash; Doctor of Philosophy</th>
         </tr>
       </thead>
       <tbody>
@@ -282,9 +308,14 @@
 
   <p>Day&nbsp;1 CPT works the same way at both. CPT is available from the first term when a graduate program <em>requires</em> immediate participation in practical training as part of an established curriculum&mdash;and that&rsquo;s a feature of how the program is built, not of which doctorate it is. A DBA structured around required experiential learning carries it. A PhD structured the same way carries it on the same basis. The full mechanics of doctoral-level CPT&mdash;including the full-time versus part-time distinction and the 12-month OPT interaction&mdash;are covered in their own guide.</p>
 
+  <div class="ec-photo-band">
+    <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/photo-students-group.jpg" alt="International students on a US university campus" />
+    <div class="ec-photo-cap">Both doctorates count as academic progression under the new rule &mdash; the choice is about your career, not your status.</div>
+  </div>
+
   <div class="ec-note ok">
-    <span class="ec-ic">✓</span>
-    <div><strong>The honest framing:</strong> if you&rsquo;re choosing between a DBA and a PhD because you think one is safer for your status, you&rsquo;re solving the wrong problem. Both are safe when the program is accredited, SEVP-certified, and academically genuine. Choose based on the career, then confirm the program is built properly.</div>
+    <span class="ec-ic">&#10003;</span>
+    <p><strong>The honest framing:</strong> if you&rsquo;re choosing between a DBA and a PhD because you think one is safer for your status, you&rsquo;re solving the wrong problem. Both are safe when the program is accredited, SEVP-certified, and academically genuine. Choose based on the career, then confirm the program is built properly.</p>
   </div>
 
   <h2><span class="ec-kicker">Your call</span>Which one fits you</h2>
@@ -313,49 +344,65 @@
   <p>The <strong>Alliant University DBA</strong> that EduConnect supports is a working example of the applied doctorate this article describes. The university is WASC accredited&mdash;the same accreditor as the University of California and Cal State systems&mdash;with ACBSP accreditation for the business school. Day&nbsp;1 CPT is required throughout the program as part of its experiential learning, which means roughly three years of full-time, degree-related work from the first class to graduation.</p>
 
   <div class="ec-spotlight">
-    <h3>Spotlight: The Alliant University DBA</h3>
-    <div class="ec-sub">WASC &amp; ACBSP accredited &middot; Los Angeles &middot; Hybrid executive format</div>
-    <div class="ec-facts">
-      <div class="ec-fact"><div class="ec-num">Day 1</div><div class="ec-cap">CPT required throughout the program</div></div>
-      <div class="ec-fact"><div class="ec-num">~3 yrs</div><div class="ec-cap">Full-time, degree-related work</div></div>
-      <div class="ec-fact"><div class="ec-num">$15K</div><div class="ec-cap">Grant for eligible students</div></div>
+    <div class="ec-spotlight-img">
+      <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/30.jpg" alt="Alliant University students" />
     </div>
-    <ul>
-      <li>Hybrid executive schedule at the LA campus&mdash;on campus every eight weeks, the rest built around your work.</li>
-      <li>Six intakes a year and four concentrations: Management, Marketing, Information &amp; Data Science, and Hospitality Management.</li>
-      <li>Qualifying master&rsquo;s credits transfer in and shorten the program.</li>
-      <li>Interest-free payment plan spreads the balance across the three years while you earn.</li>
-      <li>CareerConnect placement support to help you land the paid, degree-related role the CPT requires.</li>
-    </ul>
+    <div class="ec-spotlight-body">
+      <h3>Spotlight: The Alliant University DBA</h3>
+      <div class="ec-sub">WASC &amp; ACBSP accredited &middot; Los Angeles &middot; Hybrid executive format</div>
+      <div class="ec-facts">
+        <div class="ec-fact"><div class="ec-num">Day 1</div><div class="ec-cap">CPT required throughout the program</div></div>
+        <div class="ec-fact"><div class="ec-num">~3 yrs</div><div class="ec-cap">Full-time, degree-related work</div></div>
+        <div class="ec-fact"><div class="ec-num">$15K</div><div class="ec-cap">Grant for eligible students</div></div>
+      </div>
+      <ul>
+        <li>Hybrid executive schedule at the LA campus&mdash;on campus every eight weeks, the rest built around your work.</li>
+        <li>Six intakes a year and four concentrations: Management, Marketing, Information &amp; Data Science, and Hospitality Management.</li>
+        <li>Qualifying master&rsquo;s credits transfer in and shorten the program.</li>
+        <li>Interest-free payment plan spreads the balance across the three years while you earn.</li>
+        <li>CareerConnect placement support to help you land the paid, degree-related role the CPT requires.</li>
+      </ul>
+    </div>
   </div>
 
   <p>For students set on the academic track, the same school runs a <strong>PhD in Leadership</strong> in an executive format with CPT on the same basis&mdash;so the DBA vs PhD choice does not force a choice of school.</p>
+
+  <div class="ec-gallery-head">
+    <h3>International students, building US careers</h3>
+    <p>Working professionals earning a doctorate while they keep earning.</p>
+  </div>
+  <div class="ec-gallery">
+    <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/3.jpg" alt="EduConnect student" />
+    <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="EduConnect student" />
+    <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/127.jpg" alt="EduConnect student" />
+    <img loading="lazy" src="https://educonnectusa.com/wp-content/uploads/2026/03/165.jpg" alt="EduConnect student" />
+  </div>
 
   <h2><span class="ec-kicker">Answers</span>DBA vs PhD: your questions</h2>
   <div class="ec-faq">
     <details open>
       <summary>Is a DBA equal to a PhD?</summary>
-      <div class="ec-answer">Yes, in academic level. Both are terminal doctoral degrees, and accredited universities, employers, and immigration all treat them as the same degree level. They differ in <em>purpose</em>: the DBA is applied research for a career in industry, the PhD is theoretical research for a career in academia.</div>
+      <div class="ec-answer"><p>Yes, in academic level. Both are terminal doctoral degrees, and accredited universities, employers, and immigration all treat them as the same degree level. They differ in <em>purpose</em>: the DBA is applied research for a career in industry, the PhD is theoretical research for a career in academia.</p></div>
     </details>
     <details>
       <summary>Is a DBA or PhD better for international students?</summary>
-      <div class="ec-answer">Neither is better for your immigration status, since both are doctoral-level degrees and both count as academic progression under the new rule. The DBA is the usual fit for students who want to work in industry through and after the program; the PhD fits students aiming at faculty or research careers.</div>
+      <div class="ec-answer"><p>Neither is better for your immigration status, since both are doctoral-level degrees and both count as academic progression under the new rule. The DBA is the usual fit for students who want to work in industry through and after the program; the PhD fits students aiming at faculty or research careers.</p></div>
     </details>
     <details>
       <summary>Can international students work during a DBA or PhD?</summary>
-      <div class="ec-answer">Yes, in programs where required practical training is part of the curriculum, through Day&nbsp;1 CPT. Programs like the Alliant DBA authorize full-time CPT from the first term through graduation&mdash;roughly three years of degree-related work. The same applies to PhD programs structured with the same requirement.</div>
+      <div class="ec-answer"><p>Yes, in programs where required practical training is part of the curriculum, through Day&nbsp;1 CPT. Programs like the Alliant DBA authorize full-time CPT from the first term through graduation&mdash;roughly three years of degree-related work. The same applies to PhD programs structured with the same requirement.</p></div>
     </details>
     <details>
       <summary>Does a DBA give me OPT after a master&rsquo;s?</summary>
-      <div class="ec-answer">Yes. Completing a doctorate is a higher degree level than your master&rsquo;s, which makes you eligible for a new period of OPT after graduation. Keep in mind that 12 or more months of full-time CPT during the doctorate removes OPT eligibility at that level, so plan the balance with your DSO before your first authorization.</div>
+      <div class="ec-answer"><p>Yes. Completing a doctorate is a higher degree level than your master&rsquo;s, which makes you eligible for a new period of OPT after graduation. Keep in mind that 12 or more months of full-time CPT during the doctorate removes OPT eligibility at that level, so plan the balance with your DSO before your first authorization.</p></div>
     </details>
     <details>
       <summary>Is a DBA worth it compared to a PhD?</summary>
-      <div class="ec-answer">For a professional building a career in business, usually yes. The DBA delivers the same terminal credential while you keep working and earning, and its applied dissertation maps directly onto executive and consulting work. The PhD is worth it when your goal is academia, where it is the required credential.</div>
+      <div class="ec-answer"><p>For a professional building a career in business, usually yes. The DBA delivers the same terminal credential while you keep working and earning, and its applied dissertation maps directly onto executive and consulting work. The PhD is worth it when your goal is academia, where it is the required credential.</p></div>
     </details>
     <details>
       <summary>How long does a DBA take compared to a PhD?</summary>
-      <div class="ec-answer">A DBA typically takes about three years in an executive format while you work full-time. Traditional PhD programs run four to six years and usually assume full-time study. Transfer credit from your master&rsquo;s can shorten the DBA further.</div>
+      <div class="ec-answer"><p>A DBA typically takes about three years in an executive format while you work full-time. Traditional PhD programs run four to six years and usually assume full-time study. Transfer credit from your master&rsquo;s can shorten the DBA further.</p></div>
     </details>
   </div>
 
@@ -363,14 +410,24 @@
     This article is general information for international students and is not legal or immigration advice. Program and immigration decisions depend on your individual case. Consult your DSO and a licensed immigration attorney before making decisions about your status or your next degree.
   </div>
 
-  <div class="ec-cta">
+  <div class="ec-form-cta">
     <h3>Decided which doctorate is yours?</h3>
-    <p>EduConnect helps international students enroll in Alliant University&rsquo;s accredited DBA and PhD programs&mdash;with a $15,000 grant opportunity, transfer credit for the master&rsquo;s you already hold, and CareerConnect placement support.</p>
-    <div class="ec-cta-buttons">
-      <a class="ec-btn ec-btn-primary" href="#">📞 Book a call with our team</a>
-      <a class="ec-btn ec-btn-secondary" href="https://wa.me/16263443218">💬 WhatsApp +1 (626) 344-3218</a>
+    <p>EduConnect helps international students enroll in Alliant University&rsquo;s accredited DBA and PhD programs&mdash;with a $15,000 grant opportunity, transfer credit for your master&rsquo;s, and CareerConnect placement support. Tell us where to reach you.</p>
+    <div class="ec-form-card">
+      <div id="ec-hs-form"></div>
     </div>
   </div>
 
 </div>
+
+<!-- HubSpot form embed -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "48135637",
+    formId: "61f1de6d-9698-4710-8d6b-8d7b21cf0608",
+    region: "na1",
+    target: "#ec-hs-form"
+  });
+</script>
 <!-- ================= end EduConnect blog body ================= -->
