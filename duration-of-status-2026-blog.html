@@ -1,0 +1,439 @@
+<!-- ================= EduConnect blog body: End of Duration of Status 2026 =================
+     Paste this whole block into the content area of the blog template.
+     The template supplies the H1, the date/read-time line, and the
+     right-hand rail (social share + book-a-call). Styles are scoped to
+     .ec-article so nothing leaks into the rest of the page.
+
+     Suggested H1:  The End of Duration of Status: What F-1 Students Must Do in 2026
+     Suggested slug: /end-of-duration-of-status-2026
+     No em dashes used anywhere in this copy.
+============================================================================== -->
+
+<style>
+  .ec-article {
+    --ec-purple: #332959;
+    --ec-purple-2: #473c73;
+    --ec-orange: #ff7400;
+    --ec-teal: #4ed3cc;
+    --ec-teal-deep: #4ed3cc;
+
+    --ec-ink: #2b2740;
+    --ec-muted: #66627a;
+    --ec-line: #e7e4ef;
+    --ec-paper: #ffffff;
+    --ec-wash: #f6f5fa;
+
+    --ec-purple-soft: #efedf6;
+    --ec-orange-soft: #fff2e6;
+    --ec-teal-soft: #e7f7f6;
+
+    font-family: inherit;
+    color: var(--ec-ink);
+    font-size: 18px;
+    line-height: 1.7;
+    width: 100%;
+  }
+
+  .ec-article *,
+  .ec-article *::before,
+  .ec-article *::after { box-sizing: border-box; }
+
+  .ec-article p { margin: 0 0 20px; }
+  .ec-article strong { color: inherit; }
+  .ec-article a { color: var(--ec-purple-2); }
+
+  .ec-article h2 {
+    font-family: inherit;
+    font-size: 27px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--ec-purple);
+    margin: 44px 0 16px;
+    font-weight: 800;
+  }
+  .ec-article h2 .ec-kicker {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ec-teal-deep);
+    margin-bottom: 6px;
+  }
+  .ec-article h3 { font-size: 20px; color: var(--ec-purple); margin: 30px 0 10px; font-weight: 700; }
+
+  /* TL;DR */
+  .ec-article .ec-tldr {
+    background: var(--ec-purple-soft);
+    border: 1px solid #ddd7ea;
+    border-left: 5px solid var(--ec-purple);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 4px 0 28px;
+  }
+  .ec-article .ec-tldr .ec-label {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ec-purple); margin-bottom: 8px;
+  }
+  .ec-article .ec-tldr p { margin: 0; font-size: 17.5px; }
+
+  /* Note boxes */
+  .ec-article .ec-note {
+    display: flex; gap: 14px; align-items: flex-start;
+    border-radius: 12px; padding: 16px 18px; margin: 0 0 28px; font-size: 15.5px;
+  }
+  .ec-article .ec-note .ec-ic {
+    flex: none; width: 26px; height: 26px; border-radius: 8px;
+    color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 15px;
+  }
+  .ec-article .ec-note.warn { background: var(--ec-orange-soft); border: 1px solid #ffdcbb; color: #8a4a06; }
+  .ec-article .ec-note.warn .ec-ic { background: var(--ec-orange); }
+  .ec-article .ec-note.ok { background: var(--ec-teal-soft); border: 1px solid #c6ece9; color: #1f6b66; }
+  .ec-article .ec-note.ok .ec-ic { background: var(--ec-teal-deep); }
+
+  /* Definition cards */
+  .ec-article .ec-def { border: 1px solid var(--ec-line); border-radius: 14px; overflow: hidden; margin: 6px 0 26px; }
+  .ec-article .ec-def-head {
+    padding: 15px 20px; display: flex; align-items: center; gap: 12px; color: #fff; font-weight: 700;
+  }
+  .ec-article .ec-def.old .ec-def-head { background: var(--ec-purple-2); }
+  .ec-article .ec-def.new .ec-def-head { background: var(--ec-purple); }
+  .ec-article .ec-def.phd .ec-def-head { background: var(--ec-teal-deep); }
+  .ec-article .ec-def-tag {
+    margin-left: auto; font-size: 12px; font-weight: 700; letter-spacing: .04em;
+    background: rgba(255,255,255,0.18); padding: 4px 10px; border-radius: 999px;
+  }
+  .ec-article .ec-def-body { padding: 18px 20px 4px; background: var(--ec-paper); }
+  .ec-article .ec-def-body p { color: var(--ec-ink); }
+
+  /* Comparison table */
+  .ec-article .ec-table-scroll { overflow-x: auto; margin: 8px 0 28px; border: 1px solid var(--ec-line); border-radius: 14px; }
+  .ec-article table.ec-cmp { width: 100%; border-collapse: collapse; min-width: 560px; background: var(--ec-paper); font-size: 16px; }
+  .ec-article table.ec-cmp th,
+  .ec-article table.ec-cmp td { text-align: left; padding: 14px 18px; vertical-align: top; border-bottom: 1px solid var(--ec-line); }
+  .ec-article table.ec-cmp thead th { font-size: 14px; color: #fff; background: var(--ec-purple-2); font-weight: 700; }
+  .ec-article table.ec-cmp thead th:first-child { background: var(--ec-purple); }
+  .ec-article table.ec-cmp thead th.win-col { background: var(--ec-teal-deep); }
+  .ec-article table.ec-cmp tbody th { font-weight: 700; color: var(--ec-purple); width: 30%; background: var(--ec-wash); }
+  .ec-article table.ec-cmp tbody tr:last-child td,
+  .ec-article table.ec-cmp tbody tr:last-child th { border-bottom: none; }
+  .ec-article table.ec-cmp td { color: var(--ec-muted); }
+  .ec-article .ec-cmp .ec-same { background: var(--ec-orange-soft); color: #8a4a06; text-align: center; font-weight: 700; }
+
+  /* Pull quote */
+  .ec-article .ec-pull {
+    margin: 30px 0; padding: 6px 0 6px 24px; border-left: 4px solid var(--ec-orange);
+    font-size: 21px; line-height: 1.4; font-weight: 700; color: var(--ec-purple); letter-spacing: -0.01em;
+  }
+
+  /* Numbered steps */
+  .ec-article .ec-steps { margin: 10px 0 28px; }
+  .ec-article .ec-step { position: relative; padding: 2px 0 20px 58px; }
+  .ec-article .ec-step:not(:last-child)::before {
+    content: ""; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--ec-line);
+  }
+  .ec-article .ec-step .ec-n {
+    position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--ec-purple); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 17px;
+  }
+  .ec-article .ec-step h4 { margin: 7px 0 4px; color: var(--ec-purple); font-size: 17.5px; font-weight: 700; }
+  .ec-article .ec-step p { margin: 0; font-size: 15.5px; color: var(--ec-muted); }
+
+  /* Decision cards */
+  .ec-article .ec-choose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 28px; }
+  .ec-article .ec-choose { border: 1px solid var(--ec-line); border-radius: 14px; padding: 20px; background: var(--ec-paper); }
+  .ec-article .ec-choose.no { border-top: 3px solid #c9c3d8; }
+  .ec-article .ec-choose.yes { border-top: 3px solid var(--ec-teal); }
+  .ec-article .ec-choose h4 { margin: 2px 0 4px; font-size: 17px; color: var(--ec-purple); font-weight: 700; }
+  .ec-article .ec-choose .ec-who { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .ec-article .ec-choose.no .ec-who { color: var(--ec-muted); }
+  .ec-article .ec-choose.yes .ec-who { color: var(--ec-teal-deep); }
+  .ec-article .ec-choose p { font-size: 15.5px; color: var(--ec-muted); margin: 8px 0 0; }
+  .ec-article .ec-choose .ec-badge { display: inline-block; margin-bottom: 8px; font-size: 22px; }
+
+  /* Alliant spotlight */
+  .ec-article .ec-spotlight {
+    background: linear-gradient(155deg, var(--ec-purple), #3b3068);
+    color: #eee9f6; border-radius: 18px; padding: 30px 30px; margin: 34px 0;
+  }
+  .ec-article .ec-spotlight h3 { color: #fff; margin: 0 0 6px; font-size: 22px; }
+  .ec-article .ec-spotlight .ec-sub { color: #c6bce0; font-size: 14px; margin-bottom: 18px; }
+  .ec-article .ec-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+  .ec-article .ec-fact { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 14px; }
+  .ec-article .ec-fact .ec-num { font-size: 22px; font-weight: 800; color: var(--ec-teal); line-height: 1.1; }
+  .ec-article .ec-fact .ec-cap { font-size: 12.5px; color: #cec4e4; margin-top: 4px; }
+  .ec-article .ec-spotlight ul { margin: 0; padding-left: 20px; }
+  .ec-article .ec-spotlight ul li { margin-bottom: 8px; color: #ded6ee; font-size: 15.5px; }
+  .ec-article .ec-spotlight ul li::marker { color: var(--ec-orange); }
+
+  /* FAQ */
+  .ec-article .ec-faq { margin: 12px 0 8px; }
+  .ec-article .ec-faq details { border: 1px solid var(--ec-line); border-radius: 12px; margin-bottom: 12px; background: var(--ec-paper); overflow: hidden; }
+  .ec-article .ec-faq summary {
+    cursor: pointer; list-style: none; padding: 16px 48px 16px 20px;
+    font-weight: 700; color: var(--ec-purple); font-size: 17px; position: relative;
+  }
+  .ec-article .ec-faq summary::-webkit-details-marker { display: none; }
+  .ec-article .ec-faq summary::after {
+    content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+    font-size: 24px; font-weight: 400; color: var(--ec-orange);
+  }
+  .ec-article .ec-faq details[open] summary::after { content: "\2212"; }
+  .ec-article .ec-faq .ec-answer { padding: 0 20px 18px; color: var(--ec-muted); font-size: 16px; }
+
+  /* Disclaimer */
+  .ec-article .ec-disclaimer {
+    font-size: 14px; color: var(--ec-muted); background: var(--ec-wash);
+    border: 1px dashed #d3cde0; border-radius: 12px; padding: 16px 18px; margin: 30px 0 6px; font-style: italic;
+  }
+
+  /* In-content CTA */
+  .ec-article .ec-cta {
+    background: linear-gradient(150deg, var(--ec-purple), var(--ec-purple-2));
+    color: #fff; border-radius: 18px; padding: 32px 30px; text-align: center; margin: 30px 0 8px;
+  }
+  .ec-article .ec-cta h3 { color: #fff; font-size: 24px; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .ec-article .ec-cta p { color: #dcd4ee; margin: 0 auto 22px; max-width: 520px; font-size: 16.5px; }
+  .ec-article .ec-cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .ec-article .ec-btn {
+    display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+    font-weight: 700; font-size: 16px; padding: 13px 24px; border-radius: 999px;
+  }
+  .ec-article .ec-btn-primary { background: var(--ec-orange); color: #fff; }
+  .ec-article .ec-btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.28); }
+
+  @media (max-width: 620px) {
+    .ec-article { font-size: 17px; }
+    .ec-article h2 { font-size: 24px; }
+    .ec-article .ec-choose-grid { grid-template-columns: 1fr; }
+    .ec-article .ec-facts { grid-template-columns: 1fr; }
+    .ec-article .ec-pull { font-size: 19px; }
+  }
+</style>
+
+<div class="ec-article">
+
+  <div class="ec-note warn">
+    <span class="ec-ic">!</span>
+    <div>This rule was clearing its final federal review in mid-2026 and takes effect 60 days after it is published. Dates and fees can still move, so confirm the current details with your DSO before you act.</div>
+  </div>
+
+  <div class="ec-tldr">
+    <div class="ec-label">The short answer</div>
+    <p>The government is ending <strong>Duration of Status</strong> (D/S) for F-1 students. Instead of an open-ended stay, your I-94 will carry a <strong>fixed end date</strong> tied to your program, capped at <strong>four years</strong>. When you need more time, or move to a new program, you will file <strong>Form I-539</strong> with USCIS and pay a fee. This changes the math on a <strong>second master&rsquo;s</strong>: a lateral degree at the same level is now harder to justify, while moving <em>up</em> to a doctorate is clean academic progression. An accredited, affordable <strong>DBA</strong> like Alliant University&rsquo;s is the move that keeps you progressing and keeps <strong>Day&nbsp;1 CPT</strong> on the table.</p>
+  </div>
+
+  <p>For years, F-1 students lived under three simple letters on their I-94: <strong>D/S</strong>. As long as you kept full-time enrollment and a valid I-20, you were in status, no expiration date attached. That era is ending. The Department of Homeland Security has finalized a rule that replaces Duration of Status with a fixed period of admission, and it is expected to take effect in the fall of 2026.</p>
+
+  <p>If you are already studying in the United States, planning a second master&rsquo;s, or weighing a doctorate, this is the single most important change to understand this year. This guide explains what is actually changing, exactly what you will need to do, and why the smart academic move under the new rule is to <strong>level up, not sideways</strong>.</p>
+
+  <h2><span class="ec-kicker">The change</span>What is Duration of Status, and what is replacing it?</h2>
+  <p>Understanding the shift is easier when you see the old system and the new one side by side.</p>
+
+  <div class="ec-def old">
+    <div class="ec-def-head">🕰️ The old system: Duration of Status <span class="ec-def-tag">Ending 2026</span></div>
+    <div class="ec-def-body">
+      <p>Under D/S, F-1 students were admitted for &ldquo;the duration of status&rdquo; with <strong>no fixed end date</strong> on the I-94. You stayed in status by staying enrolled full time and keeping a valid Form I-20. There was no separate application to USCIS to keep studying, even across multiple degrees.</p>
+    </div>
+  </div>
+
+  <div class="ec-def new">
+    <div class="ec-def-head">📅 The new system: a fixed period of admission <span class="ec-def-tag">Takes effect fall 2026</span></div>
+    <div class="ec-def-body">
+      <p>Under the new rule, you are admitted until a <strong>specific date</strong> on your I-94, generally matching the program end date on your I-20 and <strong>capped at four years</strong>. Need more time than that, or want to start a new program? You file <strong>Form I-539, Application to Extend or Change Nonimmigrant Status</strong>, with USCIS. The rule also cuts the post-graduation grace period from <strong>60 days to 30</strong>.</p>
+    </div>
+  </div>
+
+  <p>The rule cleared its final review at the Office of Management and Budget in June 2026 and becomes effective 60 days after it is published in the Federal Register, which puts the likely start around <strong>September 2026</strong>, in time for the fall intake. This is not a proposal anymore. It is a finalized rule on a countdown.</p>
+
+  <div class="ec-pull">&ldquo;Duration of Status was open-ended. The new rule puts a clock on your I-94, and gives you a form to reset it.&rdquo;</div>
+
+  <h2><span class="ec-kicker">If you are already here</span>What happens to students already in the US?</h2>
+  <p>Good news first: the rule does not end anyone&rsquo;s status overnight. If you are already inside the United States in valid F-1 status when the rule takes effect, you are generally protected until your current program end date, up to a maximum of four years from the effective date. After that, more time means an I-539.</p>
+
+  <p>The friction shows up at every point where D/S used to carry you automatically:</p>
+
+  <div class="ec-note warn">
+    <span class="ec-ic">!</span>
+    <div><strong>The things D/S used to make automatic now need a filing.</strong> Finishing a long program, starting a new degree after this one, and in many cases extending into OPT and STEM OPT can now require a Form I-539 or a fresh authorization step. Build the timeline and the fees into your plan instead of assuming enrollment alone keeps you covered.</div>
+  </div>
+
+  <p>There is one more change that matters enormously for anyone thinking about switching direction: under the new rule, <strong>graduate students generally cannot change programs once enrolled</strong>, and undergraduates are barred from changing schools or programs in their first year. In plain terms, the degree you choose now is much harder to swap later. Choosing the right level up front is no longer just efficient. It is the safe play.</p>
+
+  <h2><span class="ec-kicker">Your action plan</span>Do you need to file Form I-539? What to do now</h2>
+  <p>Form I-539 is the paperwork center of the new system. Here is how to think about it as a continuing or incoming F-1 student.</p>
+
+  <div class="ec-steps">
+    <div class="ec-step">
+      <span class="ec-n">1</span>
+      <h4>Find your real deadline</h4>
+      <p>Look at the program end date on your I-20 and the admit-until date that will appear on your I-94. That date, not &ldquo;D/S,&rdquo; is now your clock. Anything you want to do beyond it needs a filing.</p>
+    </div>
+    <div class="ec-step">
+      <span class="ec-n">2</span>
+      <h4>Decide if you need an extension</h4>
+      <p>If your program will run past the fixed end date, or you plan to begin a new degree after this one, you will generally file <strong>Form I-539</strong> to extend or change your stay. Expect a filing fee (around $420 as of 2026) and a biometrics appointment. Fees change, so verify before you file.</p>
+    </div>
+    <div class="ec-step">
+      <span class="ec-n">3</span>
+      <h4>File early, not at the deadline</h4>
+      <p>USCIS processing is not instant. File well before your I-94 date so you are not caught between programs. Your DSO issues the updated I-20 that supports the filing, so loop them in first.</p>
+    </div>
+    <div class="ec-step">
+      <span class="ec-n">4</span>
+      <h4>Choose your next degree deliberately</h4>
+      <p>Because program changes are restricted after enrollment, the degree you pick for your next step should be the one you actually want to finish in. This is where the second-master&rsquo;s question gets serious.</p>
+    </div>
+  </div>
+
+  <div class="ec-note ok">
+    <span class="ec-ic">✓</span>
+    <div><strong>The mindset shift:</strong> the old rule rewarded staying enrolled. The new rule rewards planning ahead. Students who map their degree path and their filings early will move through this smoothly. The ones who wait until their I-94 date are the ones who get stuck.</div>
+  </div>
+
+  <h2><span class="ec-kicker">The key decision</span>Second master&rsquo;s or doctorate? Why level matters now</h2>
+  <p>This is the question thousands of students who already hold a master&rsquo;s are asking in 2026: <em>should I do a second master&rsquo;s, or move up to a doctorate?</em> Under D/S, a second master&rsquo;s was an easy way to stay enrolled. Under the new rule, the calculus changes, and it changes in favor of moving up.</p>
+
+  <p>A second master&rsquo;s is a <strong>lateral move</strong>: another degree at the same academic level you already hold. It does not advance your standing, and when the system is scrutinizing whether your enrollment reflects genuine academic progression, repeating a level you have already reached is the weaker story. A <strong>doctorate</strong> is unambiguous upward progression: it sits one full level above every master&rsquo;s, which is exactly the trajectory the framework is built to recognize.</p>
+
+  <div class="ec-table-scroll">
+    <table class="ec-cmp">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A second master&rsquo;s</th>
+          <th class="win-col">A doctorate (DBA or PhD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Academic level</th>
+          <td>Same level you already hold. A lateral move.</td>
+          <td>One level up. Clear, genuine progression.</td>
+        </tr>
+        <tr>
+          <th>Progression story</th>
+          <td>Harder to justify as advancement, since you are repeating a level.</td>
+          <td>The strongest version of academic progression there is.</td>
+        </tr>
+        <tr>
+          <th>Career credential</th>
+          <td>A second credential at a level employers already know you have.</td>
+          <td>A terminal degree that separates you in leadership and consulting.</td>
+        </tr>
+        <tr>
+          <th>OPT after graduation</th>
+          <td>Same degree level, so a fresh OPT period is not guaranteed.</td>
+          <td>Higher degree level restores eligibility for a new OPT period.</td>
+        </tr>
+        <tr>
+          <th>Day 1 CPT</th>
+          <td colspan="2" class="ec-same">Available in either one only when the program requires practical training from the first term.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>None of this makes a second master&rsquo;s wrong for everyone. If you genuinely need a specific master&rsquo;s in a new field, that is a real reason. But for a professional who already holds a master&rsquo;s and wants to keep progressing in the United States, a doctorate is the stronger academic move <em>and</em> the stronger immigration story, at the same time.</p>
+
+  <div class="ec-pull">&ldquo;Under the new rule, repeating a level you already reached is the weak story. Leveling up is the clean one.&rdquo;</div>
+
+  <h2><span class="ec-kicker">Cleared up</span>Day 1 CPT under the new rule, explained</h2>
+  <p>Here is where confusion runs highest, so let us be precise. <strong>The new Duration of Status rule does not eliminate Day&nbsp;1 CPT.</strong> The two are separate things. Curricular Practical Training is authorized by your school under the CPT regulations. The D/S change is about how long you are admitted and when you file to extend. One does not cancel the other.</p>
+
+  <p>Day&nbsp;1 CPT is available from your first term when a graduate program <strong>requires</strong> practical training as an integral part of its established curriculum. That is a feature of how the program is built, not of which degree it is or of the D/S rule. A properly structured doctorate that requires experiential learning from term one still authorizes CPT the same way it did before.</p>
+
+  <div class="ec-note ok">
+    <span class="ec-ic">✓</span>
+    <div><strong>What actually matters for Day&nbsp;1 CPT:</strong> that the program is accredited, SEVP-certified, and genuinely requires practical training as part of the curriculum. Choose a program built that way and work with your DSO on the authorization. Keep in mind that 12 or more months of full-time CPT removes OPT eligibility at that degree level, so plan the balance before your first authorization.</div>
+  </div>
+
+  <p>The takeaway: the new rule changes your <em>paperwork and timeline</em>, not your ability to work through a properly designed CPT program. Pick the right program and the work stays intact.</p>
+
+  <h2><span class="ec-kicker">In practice</span>An affordable, accredited doctorate: the Alliant DBA</h2>
+  <p>If leveling up to a doctorate is the smart move under the new rule, the next question is which one is accessible and legitimate. The <strong>Alliant University Doctor of Business Administration (DBA)</strong> that EduConnect supports is built exactly for this moment: an accredited, affordable, applied doctorate designed for working professionals.</p>
+
+  <p>Alliant is <strong>WASC accredited</strong>, the same regional accreditor as the University of California and Cal State systems, with <strong>ACBSP accreditation</strong> for the business school. Day&nbsp;1 CPT is required throughout the program as part of its experiential learning, which means roughly three years of full-time, degree-related work from your first class to graduation. And the cost structure is what makes it realistic for international students, not just possible on paper.</p>
+
+  <div class="ec-spotlight">
+    <h3>Spotlight: The Alliant University DBA</h3>
+    <div class="ec-sub">WASC &amp; ACBSP accredited &middot; Los Angeles &middot; Hybrid executive format</div>
+    <div class="ec-facts">
+      <div class="ec-fact"><div class="ec-num">Day 1</div><div class="ec-cap">CPT required throughout the program</div></div>
+      <div class="ec-fact"><div class="ec-num">~3 yrs</div><div class="ec-cap">Full-time, degree-related work</div></div>
+      <div class="ec-fact"><div class="ec-num">$15K</div><div class="ec-cap">Grant for eligible students</div></div>
+    </div>
+    <ul>
+      <li>A genuine level-up from your master&rsquo;s: clean academic progression under the new rule, not a lateral second master&rsquo;s.</li>
+      <li>Hybrid executive schedule at the LA campus, on campus every eight weeks and the rest built around your work.</li>
+      <li>Six intakes a year and four concentrations: Management, Marketing, Information &amp; Data Science, and Hospitality Management.</li>
+      <li>Qualifying master&rsquo;s credits transfer in and shorten the program.</li>
+      <li>Interest-free payment plan spreads the balance across the three years while you earn a full-time salary.</li>
+      <li>CareerConnect placement support to help you land the paid, degree-related role the CPT requires.</li>
+    </ul>
+  </div>
+
+  <p>For students set on the academic track, the same school runs a <strong>PhD in Leadership</strong> in an executive format with CPT on the same basis, so choosing between an applied and a research doctorate does not force a choice of school. Not sure which doctorate fits you? Our companion guide on <strong>DBA vs PhD</strong> breaks down the difference.</p>
+
+  <div class="ec-choose-grid">
+    <div class="ec-choose no">
+      <div class="ec-badge">↔️</div>
+      <div class="ec-who">The weaker move</div>
+      <h4>A second master&rsquo;s</h4>
+      <p>Repeats a level you already hold, offers no new degree standing, and is the harder story to tell when the system is looking for genuine progression. Right only when you truly need a specific new master&rsquo;s.</p>
+    </div>
+    <div class="ec-choose yes">
+      <div class="ec-badge">⬆️</div>
+      <div class="ec-who">The stronger move</div>
+      <h4>An accredited DBA</h4>
+      <p>Real upward progression, a terminal credential for your career, a fresh OPT period at a higher level, and Day&nbsp;1 CPT when the program requires it. All while you keep working and earning.</p>
+    </div>
+  </div>
+
+  <h2><span class="ec-kicker">Answers</span>End of Duration of Status: your questions</h2>
+  <div class="ec-faq">
+    <details open>
+      <summary>Is Duration of Status really ending in 2026?</summary>
+      <div class="ec-answer">Yes. DHS has finalized a rule replacing Duration of Status for F-1, J-1, and I nonimmigrants with a fixed period of admission. It cleared final federal review in June 2026 and takes effect 60 days after publication in the Federal Register, with a likely start around September 2026. Confirm current dates with your DSO, since timing can still shift.</div>
+    </details>
+    <details>
+      <summary>Do I need to file Form I-539 as an F-1 student?</summary>
+      <div class="ec-answer">You need it when you want more time than your fixed I-94 end date allows, or when you move to a new program after your current one. Form I-539 is the Application to Extend or Change Nonimmigrant Status, filed with USCIS with a filing fee (around $420 as of 2026) and biometrics. You do not file it just to keep attending your current program within its authorized end date. Your DSO issues the updated I-20 that supports the filing.</div>
+    </details>
+    <details>
+      <summary>How long can F-1 students stay under the new rule?</summary>
+      <div class="ec-answer">Your admission is tied to your program end date on the I-20 and capped at four years. If your program runs longer, you file Form I-539 for an extension. Students already in the US when the rule takes effect are generally protected until their program end date, up to four years from the effective date.</div>
+    </details>
+    <details>
+      <summary>Should I do a second master&rsquo;s or a doctorate under the new rule?</summary>
+      <div class="ec-answer">For most professionals who already hold a master&rsquo;s, a doctorate is the stronger move. A second master&rsquo;s is a lateral step at the same level, which is harder to present as academic progression. A doctorate is a clear level up, it restores eligibility for a new OPT period, and an applied DBA lets you keep working through the program. A second master&rsquo;s makes sense mainly when you genuinely need a specific new master&rsquo;s degree.</div>
+    </details>
+    <details>
+      <summary>Does the new Duration of Status rule end Day 1 CPT?</summary>
+      <div class="ec-answer">No. Day 1 CPT and the Duration of Status change are separate. CPT is authorized by your school when the program requires practical training as part of its curriculum from the first term. The new rule changes your admission period and when you file to extend, not your ability to use a properly structured Day 1 CPT program.</div>
+    </details>
+    <details>
+      <summary>Is the Alliant DBA accredited and affordable for international students?</summary>
+      <div class="ec-answer">Yes. Alliant University is WASC accredited, the same regional accreditor as the UC and Cal State systems, with ACBSP accreditation for the business school. It offers a $15,000 grant for eligible students, transfer credit for qualifying master&rsquo;s work, and an interest-free payment plan spread across the roughly three-year program, during which you work full time under required Day 1 CPT.</div>
+    </details>
+    <details>
+      <summary>What happens to the grace period after I graduate?</summary>
+      <div class="ec-answer">The new rule shortens the post-completion grace period from 60 days to 30 days. That leaves less room to change status, depart, or begin a new program, which is another reason to plan your next degree and any filings well before you finish.</div>
+    </details>
+  </div>
+
+  <div class="ec-disclaimer">
+    This article is general information for international students and is not legal or immigration advice. The Duration of Status rule, its effective date, fees, and procedures can change, and how they apply depends on your individual case. Consult your DSO and a licensed immigration attorney before making decisions about your status, your filings, or your next degree.
+  </div>
+
+  <div class="ec-cta">
+    <h3>Plan your next degree before the clock starts</h3>
+    <p>EduConnect helps international students level up into Alliant University&rsquo;s accredited, affordable DBA and PhD programs, with a $15,000 grant opportunity, transfer credit for the master&rsquo;s you already hold, and CareerConnect placement support.</p>
+    <div class="ec-cta-buttons">
+      <a class="ec-btn ec-btn-primary" href="#">📞 Book a call with our team</a>
+      <a class="ec-btn ec-btn-secondary" href="https://wa.me/16263443218">💬 WhatsApp +1 (626) 344-3218</a>
+    </div>
+  </div>
+
+</div>
+<!-- ================= end EduConnect blog body ================= -->
