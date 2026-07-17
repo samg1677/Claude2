@@ -179,7 +179,7 @@
 .pt-spotlight-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,4vw,64px);align-items:stretch}
 .pt-prose p+p{margin-top:16px}
 .pt-prose strong{color:var(--pt-ink)}
-.pt-spotlight-img{margin-bottom:22px;border-radius:var(--pt-radius);overflow:hidden;box-shadow:var(--pt-shadow);border:1px solid var(--pt-line);background:#fff}
+.pt-spotlight-img{max-width:400px;margin:0 0 26px;padding:22px 28px;border-radius:var(--pt-radius);box-shadow:var(--pt-shadow);border:1px solid var(--pt-line);background:#fff}
 .pt-spotlight-img img{width:100%;height:auto}
 .pt-sidecard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--pt-line);border-top:5px solid var(--pt-teal);border-radius:var(--pt-radius);box-shadow:var(--pt-shadow);padding:clamp(28px,3vw,36px)}
 #pt-page .pt-sidecard h3{font-size:18px;margin-bottom:18px}
@@ -187,14 +187,6 @@
 .pt-sidecard .pt-check{color:var(--pt-ink);padding:8px 0}
 .pt-sidecard .pt-btn{width:100%;margin-top:24px}
 .pt-sidecard__note{margin-top:14px;font-size:13px;line-height:1.7;text-align:center;color:var(--pt-body)}
-
-/* ---------- Named partners cards ---------- */
-.pt-partner-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
-.pt-partner-card{background:#fff;border:1px solid var(--pt-line);border-left:5px solid var(--pt-teal);border-radius:var(--pt-radius);box-shadow:var(--pt-shadow);padding:28px 30px}
-#pt-page .pt-partner-card h3{font-size:19px;color:var(--pt-plum);margin-bottom:8px}
-.pt-partner-card .pt-tagline{display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--pt-orange);line-height:1.6;margin-bottom:12px}
-.pt-partner-card p{font-size:16px;line-height:1.85}
-.pt-partner-card p strong{color:var(--pt-ink)}
 
 /* ---------- Logo marquee ---------- */
 .pt-marquee{position:relative;overflow:hidden;margin-top:40px;padding:36px 0;background:#fff;border:1px solid var(--pt-line);border-radius:var(--pt-radius);box-shadow:var(--pt-shadow)}
@@ -266,7 +258,6 @@
   .pt-stats{grid-template-columns:repeat(2,1fr)}
   .pt-pillars{grid-template-columns:1fr;max-width:680px}
   .pt-spotlight-grid{grid-template-columns:1fr}
-  .pt-partner-cards{grid-template-columns:1fr;max-width:680px}
   .pt-twocol{grid-template-columns:1fr}
   .pt-ctaband__inner{grid-template-columns:1fr}
   .pt-ctaband__actions{justify-content:flex-start}
@@ -349,21 +340,21 @@
           <div class="pt-pillar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM10 4h4v2h-4V4zm10 15H4v-5h16v5zm0-7H4V8h16v4z"/></svg></div>
           <div>
             <h3>Host employers</h3>
-            <p>Companies that provide CPT and OPT placements, supported by our recruitment partner <strong>InternMatch</strong>, so students build paid experience in their field.</p>
+            <p>Companies that provide <strong>CPT and OPT placements</strong> and internships, so students build paid experience in their field of study.</p>
           </div>
         </div>
         <div class="pt-pillar">
           <div class="pt-pillar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4zm-2 15-4-4 1.4-1.4L10 13.2l6.6-6.6L18 8l-8 8z"/></svg></div>
           <div>
             <h3>Accreditation &amp; quality</h3>
-            <p>Bodies like <strong>EQUAA</strong>, the WASC Senior College and University Commission, and the ACBSP certify that our programs meet rigorous international standards.</p>
+            <p>Recognized accreditation and quality bodies certify that our partner programs <strong>meet rigorous international standards</strong> you can trust.</p>
           </div>
         </div>
         <div class="pt-pillar">
           <div class="pt-pillar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.6a15.7 15.7 0 0 0-1.3-3.3A8 8 0 0 1 18.9 8zM12 4c.8 1.1 1.4 2.5 1.8 4h-3.6C10.6 6.5 11.2 5.1 12 4zM4.3 14a8 8 0 0 1 0-4h3a17.6 17.6 0 0 0 0 4h-3zm.8 2h2.6c.3 1.2.8 2.3 1.3 3.3A8 8 0 0 1 5.1 16zm2.6-8H5.1a8 8 0 0 1 3.9-3.3C8.5 5.7 8 6.8 7.7 8zM12 20c-.8-1.1-1.4-2.5-1.8-4h3.6c-.4 1.5-1 2.9-1.8 4zm2.2-6H9.8a15.6 15.6 0 0 1 0-4h4.4a15.6 15.6 0 0 1 0 4zm.8 5.3c.5-1 1-2.1 1.3-3.3h2.6a8 8 0 0 1-3.9 3.3zm2-5.3a17.6 17.6 0 0 0 0-4h3a8 8 0 0 1 0 4h-3z"/></svg></div>
           <div>
             <h3>Agent &amp; education network</h3>
-            <p>International educators, students, and agents such as <strong>KareerKrafters</strong> extend our community and connect more students to opportunity.</p>
+            <p>A community of <strong>international educators, students, and agents</strong> extends our reach and connects more students to opportunity.</p>
           </div>
         </div>
       </div>
@@ -418,29 +409,6 @@
         At EduConnect USA, we are proud to collaborate with many esteemed partners. Each one plays a vital role in
         enhancing global opportunities for our students, from academic quality to internships to career services.
       </p>
-
-      <div class="pt-partner-cards">
-        <div class="pt-partner-card">
-          <span class="pt-tagline">Quality Assurance</span>
-          <h3>EQUAA</h3>
-          <p>We work with EQUAA to ensure our programs meet <strong>top-tier international educational standards</strong>, giving students confidence in the quality of their degree.</p>
-        </div>
-        <div class="pt-partner-card">
-          <span class="pt-tagline">Internships &amp; Placement</span>
-          <h3>InternMatch</h3>
-          <p>Our partnership with InternMatch offers students <strong>global internship placements</strong> that turn classroom learning into real, hands-on experience.</p>
-        </div>
-        <div class="pt-partner-card">
-          <span class="pt-tagline">Academic Excellence</span>
-          <h3>De La Salle College of St. Benilde</h3>
-          <p>We collaborate with De La Salle College of St. Benilde, a recognized <strong>leader in academic excellence</strong>, to broaden the pathways open to our students.</p>
-        </div>
-        <div class="pt-partner-card">
-          <span class="pt-tagline">Career Services</span>
-          <h3>KareerKrafters</h3>
-          <p>We partner with KareerKrafters to provide <strong>tailored career services</strong>, helping students prepare for and land the right roles.</p>
-        </div>
-      </div>
 
       <!-- Logo marquee -->
       <div class="pt-marquee" aria-label="Partner and affiliate logos">
