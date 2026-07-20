@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DBA - Doctor of Business Administration - Doctorate Degree | EduConnect USA</title>
+<meta name="description" content="Continue working while earning your Doctor of Business Administration. Day 1 CPT, Grants up to $15,000, transfer credits, and a flexible executive schedule." />
+</head>
+<body>
+<!-- ============================================================
+     EduConnect USA - DBA Landing Page
+     PASTE EVERYTHING BETWEEN THE "BEGIN/END DIVI CODE MODULE"
+     MARKERS INTO A SINGLE DIVI CODE MODULE.
+============================================================ -->
+<!-- BEGIN DIVI CODE MODULE CONTENT -->
+<style>
+/* ---------- Brand tokens ---------- */
+#dba-page{
+  --dba-teal:#4ed3cc;
+  --dba-orange:#ff7400;
+  --dba-orange-hov:#cc5c00;
+  --dba-plum:#332959;
+  --dba-ink:#2a2f31;
+  --dba-body:#686868;
+  --dba-bg-soft:#f2f2f2;
+  --dba-line:#e4eaee;
+  --dba-gold:#FDB600;
+  --dba-radius:12px;
+  --dba-radius-sm:8px;
+  --dba-shadow:0 16px 40px rgba(42,47,49,.10),0 2px 6px rgba(42,47,49,.06);
+  --dba-font:Arial,Helvetica,sans-serif;
+  --dba-max:1280px;
+  font-family:var(--dba-font);
+  color:var(--dba-body);
+  font-size:16px;
+  line-height:2;
+  background:#fff;
+}
+#dba-page *,#dba-page *::before,#dba-page *::after{box-sizing:border-box}
+#dba-page img{max-width:100%;height:auto;display:block}
+#dba-page ul,#dba-page ol{list-style:none;margin:0;padding:0}
+#dba-page a{text-decoration:none}
+#dba-page h1,#dba-page h2,#dba-page h3,#dba-page h4{
+  color:var(--dba-ink);margin:0;padding:0;line-height:1.25;font-weight:700;text-wrap:balance;
+}
+#dba-page p{margin:0;padding:0;font-size:16px;line-height:2}
+#dba-page :focus-visible{outline:3px solid var(--dba-teal);outline-offset:2px;border-radius:4px}
+
+/* ---------- Shared ---------- */
+/* max-width includes side padding (border-box), so add it on top to give 1280px of actual content */
+.dba-wrap{max-width:calc(var(--dba-max) + 48px);margin:0 auto;padding:0 24px}
+.dba-eyebrow{
+  display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;line-height:1.5;
+  text-transform:uppercase;color:var(--dba-orange);margin-bottom:16px;
+}
+.dba-h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.5px;margin-bottom:20px}
+.dba-lede{font-size:16px;line-height:2}
+.dba-lede strong{color:var(--dba-ink)}
+.dba-section{padding:clamp(64px,7vw,96px) 0}
+.dba-section--soft{background:var(--dba-bg-soft)}
+.dba-section--plum{background:var(--dba-plum)}
+#dba-page .dba-section--plum .dba-h2{color:#fff}
+.dba-section--plum .dba-lede{color:rgba(255,255,255,.85)}
+.dba-section--plum .dba-lede strong{color:#fff}
+
+.dba-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px 30px;border-radius:6px;border:2px solid transparent;
+  font:700 16px/1.3 var(--dba-font);letter-spacing:.5px;cursor:pointer;
+}
+.dba-btn--primary{background:var(--dba-orange);color:#fff !important;box-shadow:0 12px 18px -6px rgba(0,0,0,.3)}
+.dba-btn--primary:hover{background:var(--dba-orange-hov)}
+.dba-btn--ghost{background:transparent;color:#fff !important;border-color:rgba(255,255,255,.55)}
+.dba-btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+.dba-check{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:2}
+.dba-check svg{flex:0 0 22px;width:22px;height:22px;margin-top:5px;fill:var(--dba-teal)}
+
+/* ---------- Hero ---------- */
+.dba-hero{
+  background:linear-gradient(300deg,#4ed3cc 0%,#332959 69%) #332959;
+  color:#fff;overflow:hidden;
+}
+.dba-hero__inner{
+  display:grid;grid-template-columns:minmax(0,34rem) minmax(0,1fr);
+  gap:clamp(32px,4vw,56px);align-items:center;
+  padding:clamp(64px,7vw,110px) 0 clamp(56px,6vw,96px);
+}
+.dba-hero .dba-eyebrow{color:var(--dba-orange);margin-bottom:20px}
+#dba-page .dba-hero h1{
+  color:#fff;font-size:clamp(32px,4.2vw,52px);letter-spacing:-.5px;margin-bottom:24px;
+}
+#dba-page .dba-hero__sub{
+  font-size:16px;line-height:2;color:rgba(255,255,255,.9);
+  max-width:34rem;margin-bottom:24px;
+}
+.dba-hero__sub strong{color:#fff}
+#dba-page .dba-hero__tag{
+  border-left:4px solid var(--dba-orange);padding-left:20px;
+  font-style:italic;color:rgba(255,255,255,.78);font-size:16px;line-height:2;
+}
+.dba-hero__cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
+#dba-page .dba-hero__note{margin-top:14px;font-size:13px;line-height:1.6;color:rgba(255,255,255,.7)}
+.dba-hero__media{position:relative}
+.dba-hero__media img{
+  border-radius:var(--dba-radius);box-shadow:var(--dba-shadow);
+  aspect-ratio:4/3;object-fit:cover;width:100%;
+}
+.dba-hero__badge{
+  position:absolute;left:-14px;bottom:-18px;background:#fff;color:var(--dba-ink);
+  border-radius:10px;box-shadow:var(--dba-shadow);padding:14px 20px;
+  font-size:14px;line-height:1.6;
+}
+.dba-hero__badge b{display:block;color:var(--dba-plum);font-size:16px}
+.dba-hero__badge b span{color:var(--dba-orange)}
+
+/* stat strip */
+.dba-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.18);
+  border-top:1px solid rgba(255,255,255,.18);
+}
+.dba-stat{background:rgba(51,41,89,.35);padding:20px;text-align:center}
+.dba-stat b{display:block;color:#fff;font-size:16px;letter-spacing:.2px;line-height:1.5}
+.dba-stat span{color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.5px;text-transform:uppercase;line-height:1.6}
+
+/* ---------- Highlights + form ---------- */
+.dba-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.dba-highlight{
+  background:#fff;border:1px solid var(--dba-line);border-top:5px solid var(--dba-teal);
+  border-radius:var(--dba-radius);padding:32px 28px;box-shadow:var(--dba-shadow);
+}
+.dba-highlight--orange{border-top-color:var(--dba-orange)}
+.dba-highlight--plum{border-top-color:var(--dba-plum)}
+.dba-highlight b{display:block;font-size:clamp(22px,2.4vw,24px);color:var(--dba-ink);line-height:1.3;margin-bottom:6px}
+.dba-highlight h3{font-size:18px;margin-bottom:14px;color:var(--dba-plum)}
+.dba-highlight p{font-size:16px;line-height:2}
+.dba-highlight p strong{color:var(--dba-ink)}
+
+/* Form card: plum panel so it reads as the action, not another info card.
+   Deep brand purple breaks up the white-card-on-white stack above it. */
+.dba-formcard{
+  background:var(--dba-plum);
+  color:#fff;
+  border-top:5px solid var(--dba-orange);
+  border-radius:var(--dba-radius);
+  box-shadow:var(--dba-shadow);
+  padding:clamp(28px,3vw,38px);
+  margin-top:28px;
+}
+
+#dba-page .dba-formcard h3{
+  color:#fff;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.dba-formcard__hint{
+  font-size:16px;
+  line-height:2;
+  color:rgba(255,255,255,.85);
+  margin-bottom:20px;
+}
+
+.dba-formcard__hint strong{
+  color:#fff;
+}
+
+/* HubSpot form overrides */
+.dba-formcard .hs-form-field{
+  margin-bottom:14px;
+}
+
+.dba-formcard .hs-form-field > label{
+  display:block;
+  font-size:14px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:6px;
+  line-height:1.5;
+}
+
+.dba-formcard .hs-input{
+  width:100% !important;
+  padding:13px 14px;
+  border:1.5px solid var(--dba-line);
+  border-radius:var(--dba-radius-sm);
+  font:400 16px/1.5 var(--dba-font);
+  background:#fff;
+  color:var(--dba-ink);
+}
+
+.dba-formcard textarea.hs-input{
+  min-height:100px;
+  resize:vertical;
+}
+
+.dba-formcard .hs-input:focus{
+  outline:none;
+  border-color:var(--dba-teal);
+  box-shadow:0 0 0 3px rgba(78,211,204,.35);
+}
+
+.dba-formcard .hs-error-msgs{
+  list-style:none;
+  padding:0;
+  margin:4px 0 0;
+  color:#d32f2f;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.dba-formcard .hs-button{
+  width:100%;
+  margin-top:8px;
+  padding:16px 30px;
+  border-radius:6px;
+  border:2px solid var(--dba-orange);
+  font:700 16px/1.3 var(--dba-font);
+  letter-spacing:.5px;
+  cursor:pointer;
+  background:var(--dba-orange);
+  color:#fff;
+  box-shadow:0 12px 18px -6px rgba(0,0,0,.3);
+}
+
+.dba-formcard .hs-button:hover{
+  background:var(--dba-orange-hov);
+  border-color:var(--dba-orange-hov);
+}
+
+.dba-formcard .legal-consent-container{
+  font-size:13px;
+  line-height:1.7;
+  color:rgba(255,255,255,.8);
+  margin-top:6px;
+}
+
+.dba-formcard .legal-consent-container a{
+  color:var(--dba-teal);
+}
+
+.dba-formcard .hs-form-booleancheckbox label{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  font-size:13px;
+  line-height:1.7;
+  color:rgba(255,255,255,.85);
+}
+/* ---------- What is a DBA (side-by-side cards) ---------- */
+.dba-vsgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:28px}
+.dba-vslist{margin-top:14px;display:grid;gap:2px}
+.dba-vslist .dba-check{color:var(--dba-ink)}
+.dba-vslist--muted .dba-check{color:var(--dba-body)}
+.dba-vslist--muted .dba-check svg{fill:#c3cbd1}
+.dba-note{margin-top:28px;font-size:16px;line-height:2}
+.dba-note strong{color:var(--dba-ink)}
+
+/* ---------- Split layout: prose left + side card right ---------- */
+.dba-splitgrid{
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:clamp(40px,4vw,64px);align-items:start;
+}
+.dba-prose p + p{margin-top:16px}
+.dba-prose strong{color:var(--dba-ink)}
+.dba-prose a{color:var(--dba-orange);font-weight:700}
+.dba-prose a:hover{text-decoration:underline}
+.dba-sidecard{
+  background:#fff;border:1px solid var(--dba-line);border-top:5px solid var(--dba-teal);
+  border-radius:var(--dba-radius);box-shadow:var(--dba-shadow);padding:clamp(28px,3vw,38px);
+}
+#dba-page .dba-sidecard h3{font-size:18px;margin-bottom:18px}
+.dba-sidecard .dba-check{color:var(--dba-ink);padding:8px 0}
+.dba-sidecard .dba-btn{width:100%;margin-top:24px}
+.dba-sidecard__note{margin-top:14px;font-size:13px;line-height:1.7;text-align:center;color:var(--dba-body)}
+
+/* ---------- Why choose / details ---------- */
+.dba-twocol{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,4vw,64px);align-items:start}
+.dba-why{margin-top:36px;display:grid;gap:16px}
+.dba-why .dba-check{color:var(--dba-body)}
+.dba-photo{margin-top:44px}
+.dba-photo img{border-radius:var(--dba-radius);box-shadow:var(--dba-shadow);width:100%;aspect-ratio:16/9;object-fit:cover}
+.dba-detailcard{
+  background:var(--dba-plum);color:#fff;border-radius:var(--dba-radius);
+  box-shadow:var(--dba-shadow);padding:clamp(28px,3vw,40px);
+}
+#dba-page .dba-detailcard h3{color:#fff;font-size:24px;margin-bottom:24px}
+#dba-page .dba-detailcard h4{color:var(--dba-teal);font-size:14px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;margin:24px 0 8px}
+.dba-detailcard p{color:rgba(255,255,255,.9)}
+.dba-detailcard .dba-check{color:rgba(255,255,255,.92);margin-top:12px}
+.dba-detailcard .dba-btn{width:100%;margin-top:32px}
+
+/* ---------- Google reviews ---------- */
+.dba-reviews-head{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+.dba-google-badge{
+  display:inline-flex;align-items:center;gap:10px;background:#fff;
+  border:1px solid var(--dba-line);border-radius:999px;padding:10px 18px;
+  font-size:14px;color:var(--dba-ink);line-height:1.5;
+}
+.dba-google-badge b{font-size:16px}
+.dba-stars{display:inline-flex;gap:2px;color:var(--dba-gold);vertical-align:middle}
+.dba-stars svg{width:16px;height:16px;fill:currentColor}
+.dba-google-g{width:20px;height:20px;flex:0 0 20px}
+.dba-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px}
+.dba-review{
+  background:#fff;border:1px solid var(--dba-line);border-radius:var(--dba-radius);
+  box-shadow:var(--dba-shadow);padding:26px 24px;display:flex;flex-direction:column;
+}
+.dba-review__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.dba-review__quote{font-size:16px;line-height:2;color:var(--dba-ink);flex:1}
+.dba-review__author{display:flex;align-items:center;gap:12px;margin-top:20px}
+.dba-avatar{
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:0 0 44px;
+  color:#fff;font-weight:700;font-size:17px;line-height:1;text-transform:uppercase;
+}
+.dba-avatar--blue{background:#4285F4}
+.dba-avatar--green{background:#34A853}
+.dba-avatar--yellow{background:#FBBC05}
+.dba-avatar--red{background:#EA4335}
+.dba-avatar--teal{background:#2fa9a2}
+.dba-avatar--plum{background:var(--dba-plum)}
+.dba-review__author b{display:block;color:var(--dba-ink);font-size:14px;line-height:1.5}
+.dba-review__author span{font-size:13px;line-height:1.6;color:var(--dba-body)}
+
+/* ---------- Accordions ---------- */
+.dba-acc{margin-top:44px;display:grid;gap:14px}
+.dba-acc details{
+  background:#fff;border:1px solid var(--dba-line);border-radius:var(--dba-radius-sm);overflow:hidden;
+}
+.dba-acc details[open]{box-shadow:var(--dba-shadow)}
+.dba-acc summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 24px;font:700 18px/1.4 var(--dba-font);color:var(--dba-ink);
+}
+.dba-acc summary::-webkit-details-marker{display:none}
+.dba-acc summary svg{flex:0 0 20px;width:20px;height:20px;fill:var(--dba-orange)}
+.dba-acc details[open] summary{color:var(--dba-plum)}
+.dba-acc details[open] summary svg{transform:rotate(180deg)}
+.dba-acc__body{padding:0 24px 26px;font-size:16px;line-height:2}
+.dba-acc__body strong{color:var(--dba-ink)}
+.dba-acc__body a{color:var(--dba-orange);font-weight:700}
+.dba-acc__body a:hover{text-decoration:underline}
+.dba-acc__body p + p{margin-top:14px}
+/* tinted accordions for white sections */
+.dba-acc--tint details{background:var(--dba-bg-soft)}
+
+/* ---------- Where you'll study (Alliant) ---------- */
+.dba-alliant{
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+  gap:clamp(40px,4vw,64px);align-items:center;
+}
+.dba-alliant__photo img{
+  border-radius:var(--dba-radius);box-shadow:var(--dba-shadow);
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+}
+.dba-badges{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:28px}
+.dba-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+  color:#fff;font-size:13px;font-weight:700;letter-spacing:.5px;line-height:1.5;
+}
+.dba-badge svg{flex:0 0 14px;width:14px;height:14px;fill:var(--dba-teal)}
+.dba-alliant-logo{width:auto;max-height:40px;max-width:180px;object-fit:contain}
+
+/* ---------- Final CTA (full-bleed gradient band) ---------- */
+.dba-ctaband{
+  background:linear-gradient(300deg,#4ed3cc 0%,#332959 69%) #332959;
+  color:#fff;
+}
+.dba-ctaband__inner{
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:32px;align-items:center;
+}
+#dba-page .dba-ctaband h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin-bottom:14px}
+.dba-ctaband p{color:rgba(255,255,255,.88);font-size:16px;line-height:2}
+.dba-ctaband__actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:flex-end}
+
+/* ---------- Spacing rhythm (raise specificity above the #dba-page h/p/ul reset) ----------
+   One consistent 28px beat: eyebrow > h2 > lede > content all breathe equally. */
+#dba-page .dba-h2{margin-bottom:28px}
+#dba-page .dba-lede{margin-bottom:0}
+#dba-page .dba-highlights{margin-top:28px}
+#dba-page .dba-formcard{margin-top:28px}
+#dba-page .dba-vsgrid{margin-top:28px}
+#dba-page .dba-note{margin-top:28px}
+#dba-page .dba-splitgrid{margin-top:28px}
+#dba-page .dba-why{margin-top:28px}
+#dba-page .dba-acc{margin-top:28px}
+#dba-page .dba-reviews{margin-top:28px}
+#dba-page .dba-badges{margin-top:28px}
+
+/* ---------- Tablet ---------- */
+@media (max-width:1023px){
+  .dba-hero__inner{grid-template-columns:1fr;gap:44px}
+  .dba-hero__media{max-width:560px}
+  .dba-stats{grid-template-columns:repeat(2,1fr)}
+  .dba-highlights{grid-template-columns:1fr;max-width:640px}
+  .dba-vsgrid{grid-template-columns:1fr}
+  .dba-twocol,.dba-splitgrid,.dba-alliant{grid-template-columns:1fr}
+  .dba-alliant__photo{max-width:640px}
+  .dba-reviews{grid-template-columns:repeat(2,1fr)}
+  .dba-ctaband__inner{grid-template-columns:1fr}
+  .dba-ctaband__actions{justify-content:flex-start}
+}
+
+/* ---------- Phone ---------- */
+@media (max-width:640px){
+  .dba-wrap{padding:0 18px}
+  .dba-stats{grid-template-columns:repeat(2,1fr)}
+  .dba-stat{padding:16px 10px}
+  .dba-reviews{grid-template-columns:1fr}
+  .dba-hero__badge{position:static;margin-top:16px;display:inline-block}
+  .dba-btn{width:100%}
+}
+</style>
+
+<div id="dba-page">
+
+  <!-- ================= HERO ================= -->
+  <section class="dba-hero">
+    <div class="dba-wrap">
+      <div class="dba-hero__inner">
+        <div>
+          <span class="dba-eyebrow">Day 1 CPT Doctorate for Master&rsquo;s Degree Holders</span>
+          <h1>Doctor of Business Administration (DBA)</h1>
+          <p class="dba-hero__sub">
+            You have a master&rsquo;s degree. You want to stay in the U.S. <strong>This is the solution built for you:</strong>
+            an accredited doctorate with <strong>CPT from day one through graduation</strong>, a
+            <strong>$15,000 Grant</strong> with an interest-free payment plan, and
+            <strong>3-4 more years</strong> in the U.S. while you work and study.
+          </p>
+          <p class="dba-hero__tag">You bring the master&rsquo;s. We handle everything else, from A to Z.</p>
+          <div class="dba-hero__cta">
+            <a class="dba-btn dba-btn--primary hs-cta-trigger-button hs-cta-trigger-button-213790450726" href="#dba-form">Let&rsquo;s Get Started</a>
+            <a class="dba-btn dba-btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+          <p class="dba-hero__note">Free consultation &middot; No commitment required</p>
+        </div>
+        <div class="dba-hero__media">
+          <img fetchpriority="high" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2026/03/21.jpg"
+               width="1600" height="1066"
+               alt="Graduates at a university commencement ceremony" />
+          <div class="dba-hero__badge">
+            <b><span>$15,000</span> Grant Opportunities</b>
+            Plus an interest-free, pay-as-you-go plan
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dba-stats" role="list">
+      <div class="dba-stat" role="listitem"><b>~3 Years</b><span>Depending on pace</span></div>
+      <div class="dba-stat" role="listitem"><b>Los Angeles</b><span>Campus</span></div>
+      <div class="dba-stat" role="listitem"><b>Hybrid</b><span>On campus every 8 weeks</span></div>
+      <div class="dba-stat" role="listitem"><b>Day 1 CPT</b><span>Throughout the program</span></div>
+    </div>
+  </section>
+
+  <!-- ================= KEY HIGHLIGHTS / A-TO-Z + FORM ================= -->
+  <section class="dba-section" id="dba-highlights">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">The Complete A-to-Z Package</span>
+      <h2 class="dba-h2">One program. Everything handled.</h2>
+      <p class="dba-lede">
+        We give you the academics, we place you in a paid position, you keep your status, you work
+        from day one, and you pay as you go.
+      </p>
+      <div class="dba-highlights">
+        <div class="dba-highlight">
+          <b>$15,000 Grant</b>
+          <h3>Grant + Interest-Free Payment Plan</h3>
+          <p>Eligible students receive up to a <strong>$15,000 Grant</strong> toward tuition, combined with an interest-free payment plan that spreads the rest across your program. No loans, no interest. You pay as you go while you keep earning.</p>
+        </div>
+        <div class="dba-highlight">
+          <b>Day 1 CPT</b>
+          <h3>CPT Throughout the Entire Program</h3>
+          <p>Many universities cap how much CPT you can use per year or per degree level. Not here. You are authorized for <strong>full-time CPT from your first day of class through graduation</strong>, roughly 3 years of uninterrupted work in your field.</p>
+        </div>
+        <div class="dba-highlight">
+          <b>3-4 Years Extension</b>
+          <h3>Extend Your Stay, Then Earn New OPT</h3>
+          <p>Whatever master&rsquo;s you hold, the doctorate is the next level up, and moving up a degree level makes you <strong>eligible for a fresh period of OPT after graduation</strong>. Change of status and SEVIS transfers fully supported, with no gap in status.</p>
+        </div>
+        <div class="dba-highlight">
+          <b>Work Placement</b>
+          <h3>CareerConnect CPT/OPT Work Placement Assistance</h3>
+          <p>Already have an employer? We make the transition seamless. If not, our <strong>CareerConnect</strong> team matches you with a paid position aligned with your degree: resume help, employer introductions, and placement support included.</p>
+        </div>
+      </div>
+      <div class="dba-formcard" id="dba-form">
+        <h3>See if you qualify. Request more information.</h3>
+        <br>
+        <div id="hubspotForm"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT IS A DBA ================= -->
+  <section class="dba-section dba-section--soft" id="dba-what">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">First Things First</span>
+      <h2 class="dba-h2">What exactly is a DBA?</h2>
+      <p class="dba-lede">
+        <strong>DBA stands for Doctor of Business Administration.</strong> It is a doctorate, the highest
+        degree level in business, one full level above every master&rsquo;s degree, including the MBA.
+        If you are from outside the U.S., you may only know one kind of doctorate, the PhD.
+        <strong>They are not the same, and the difference matters.</strong>
+      </p>
+      <div class="dba-vsgrid">
+        <div class="dba-highlight dba-highlight--orange">
+          <b>DBA</b>
+          <h3>Doctor of Business Administration</h3>
+          <p>The doctorate built for <strong>working professionals</strong> who want the highest degree in business without leaving their career.</p>
+          <ul class="dba-vslist">
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Applied research that solves real business problems</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Keep your job: on campus every 8 weeks, the rest fits around work</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>About 3 years while working full-time the entire way</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Leads to executive leadership, consulting, and boardrooms</li>
+          </ul>
+        </div>
+        <div class="dba-highlight dba-highlight--plum">
+          <b>PhD</b>
+          <h3>Doctor of Philosophy</h3>
+          <p>The doctorate built for <strong>full-time academics</strong> who want to research and teach at a university.</p>
+          <ul class="dba-vslist dba-vslist--muted">
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Theoretical research written for scholarly journals</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Full-time on campus, with little room for a career outside</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Typically 4-6+ years to complete</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Leads to professorships and academic tenure</li>
+          </ul>
+        </div>
+      </div>
+      <p class="dba-note">
+        Both earn you the title of <strong>Doctor</strong>, and both sit a full degree level above your master&rsquo;s.
+        That higher level is what unlocks your new period of work authorization. And you do not need an MBA:
+        <strong>any accredited master&rsquo;s degree qualifies you</strong> for the next level up.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE / DETAILS ================= -->
+  <section class="dba-section" id="dba-details">
+    <div class="dba-wrap dba-twocol">
+      <div>
+        <span class="dba-eyebrow">Why Choose Alliant&rsquo;s DBA</span>
+        <h2 class="dba-h2">A doctorate built around your career</h2>
+        <p class="dba-lede">
+          The School of Management and Leadership pairs a practical, industry-focused curriculum
+          with the flexibility working professionals need. The hybrid executive format brings you
+          on campus every 8 weeks; the rest fits around your job.
+        </p>
+        <ul class="dba-why">
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Complete in approximately 3 years, depending on pace</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Los Angeles campus with hybrid delivery: classes on campus every 8 weeks</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Faculty dissertation mentoring from prospectus through final defense</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Accredited business school: WASC and ACBSP</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Day 1 CPT throughout the program, and a new period of OPT after</li>
+        </ul>
+        <figure class="dba-photo">
+          <img loading="lazy" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2026/06/Firefly_Gemini-Flash_can-you-turn-the-image-into-a-more-hero-banner-that-has-the-flag-present-387840.png"
+               width="1200" height="900"
+               alt="Palm trees and the American flag against a blue sky in Los Angeles" />
+        </figure>
+      </div>
+      <aside class="dba-detailcard" aria-label="Program details at a glance">
+        <h3>Program Details</h3>
+        <h4>Start Dates</h4>
+        <p>Intakes in January, March, May, July, August, and October</p>
+        <h4>Degree Length</h4>
+        <p>Approximately 3 years; 8-week term format</p>
+        <h4>Key Offerings</h4>
+        <ul>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Change of status and SEVIS transfer support</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>$15,000 Grant opportunities</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Interest-free, pay-as-you-go payment plan</li>
+          <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>CareerConnect CPT/OPT work placement assistance</li>
+        </ul>
+        <a class="dba-btn dba-btn--primary hs-cta-trigger-button hs-cta-trigger-button-213790450726" href="#dba-form">Request More Information</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= GOOGLE REVIEWS ================= -->
+  <section class="dba-section dba-section--soft" id="dba-reviews">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Real Students, Real Reviews</span>
+      <div class="dba-reviews-head">
+        <h2 class="dba-h2" style="margin-bottom:0">Hear from our students in the U.S.</h2>
+        <span class="dba-google-badge">
+          <svg class="dba-google-g" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          <b>4.9</b>
+          <span class="dba-stars" aria-label="4.9 out of 5 stars">
+            <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+          </span>
+          Google reviews
+        </span>
+      </div>
+      <div class="dba-reviews">
+        <article class="dba-review">
+          <div class="dba-review__top">
+            <span class="dba-stars" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="dba-google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="dba-review__quote">&ldquo;I can&rsquo;t say enough about my experience with EduConnect. From the moment I started my visa and school application, everything was handled so professionally and efficiently. They supported me not just with paperwork, but with every step of the journey.&rdquo;</p>
+          <div class="dba-review__author">
+            <span class="dba-avatar dba-avatar--blue">L</span>
+            <span><b>Loic Rabearivelo</b><span>a week ago</span></span>
+          </div>
+        </article>
+        <article class="dba-review">
+          <div class="dba-review__top">
+            <span class="dba-stars" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="dba-google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="dba-review__quote">&ldquo;I&rsquo;m thrilled with my experience with EduConnect USA. A special thanks to Sandra and Aubrey for their kindness and professionalism. I highly recommend EduConnect to anyone planning to study in the U.S.&rdquo;</p>
+          <div class="dba-review__author">
+            <span class="dba-avatar dba-avatar--green">L</span>
+            <span><b>Landy Lalaina Hanitriniala</b><span>a week ago</span></span>
+          </div>
+        </article>
+        <article class="dba-review">
+          <div class="dba-review__top">
+            <span class="dba-stars" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="dba-google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="dba-review__quote">&ldquo;From the first consultation, the team was professional, clear, and responsive. They explained the program structure, tuition, visa process, and work authorization in a way that was easy to understand.&rdquo;</p>
+          <div class="dba-review__author">
+            <span class="dba-avatar dba-avatar--plum">B</span>
+            <span><b>Brian O&rsquo;Hara</b><span>3 months ago</span></span>
+          </div>
+        </article>
+        <article class="dba-review">
+          <div class="dba-review__top">
+            <span class="dba-stars" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="dba-google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="dba-review__quote">&ldquo;Big shoutout to Aubrey. She really helped me all the way through this whole process. She didn&rsquo;t just guide me, she supported me emotionally, kept me calm, and boosted my confidence when I needed it most.&rdquo;</p>
+          <div class="dba-review__author">
+            <span class="dba-avatar dba-avatar--teal">K</span>
+            <span><b>Kristian Galinato</b><span>a month ago</span></span>
+          </div>
+        </article>
+        <article class="dba-review">
+          <div class="dba-review__top">
+            <span class="dba-stars" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="dba-google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="dba-review__quote">&ldquo;Fantastic experience with EduConnect USA! Their team provided clear, supportive guidance throughout the entire process. They took the time to understand my goals and matched me to the right opportunity.&rdquo;</p>
+          <div class="dba-review__author">
+            <span class="dba-avatar dba-avatar--yellow">G</span>
+            <span><b>Grace Julius</b><span>3 months ago</span></span>
+          </div>
+        </article>
+        <article class="dba-review">
+          <div class="dba-review__top">
+            <span class="dba-stars" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 12.5l-3.7 2.2.7-4.2-3-2.9 4.2-.5L8 3.3l1.8 3.8 4.2.5-3 2.9.7 4.2z"/></svg>
+            </span>
+            <svg class="dba-google-g" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+          </div>
+          <p class="dba-review__quote">&ldquo;They are extremely professional. Amazing group of people, specially Anastasia, she is really attentive and helpful.&rdquo;</p>
+          <div class="dba-review__author">
+            <span class="dba-avatar dba-avatar--red">A</span>
+            <span><b>Abhishek Ray</b><span>5 days ago</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONCENTRATIONS ================= -->
+  <section class="dba-section" id="dba-concentrations">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Choose Your Focus</span>
+      <h2 class="dba-h2">Four concentrations, one doctorate</h2>
+      <p class="dba-lede">Every concentration pairs doctoral research with <strong>paid, hands-on work in your field from day one</strong>, so the degree builds your resume while you earn it.</p>
+      <div class="dba-acc dba-acc--tint">
+        <details name="dba-spec" open>
+          <summary>Management <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>The broadest pathway, and the most popular. Study contemporary leadership, organizational strategy, and change management for an AI-driven business landscape, then apply that research directly to the organizations you work with. Built for professionals targeting <strong>senior leadership, consulting, or entrepreneurship</strong>.</p>
+          </div>
+        </details>
+        <details name="dba-spec">
+          <summary>Information &amp; Data Science <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>For professionals who want to lead the data revolution rather than watch it. Build advanced capability in <strong>data science, analytics, and intelligent automation</strong>, with doctoral research grounded in quantitative analysis and the ethics of data usage, sharpened daily in a real business setting.</p>
+          </div>
+        </details>
+        <details name="dba-spec">
+          <summary>Marketing <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>Study how marketing drives organizational strategy across industries: human behavior, social influence, marketing research, and data analytics. Your work placement connects you directly with prospective employers while you complete your doctorate.</p>
+          </div>
+        </details>
+        <details name="dba-spec">
+          <summary>Hospitality Management <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>Prepare for international strategy and leadership roles in one of the world&rsquo;s largest industries. Doctoral coursework in hospitality systems and entrepreneurship pairs with hands-on placements that build the management experience and business relationships employers look for.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRANSFER CREDITS ================= -->
+  <section class="dba-section dba-section--soft" id="dba-transfer">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Transfer Your Credits</span>
+      <h2 class="dba-h2">Your master&rsquo;s already did some of the work</h2>
+      <div class="dba-splitgrid">
+        <div class="dba-prose">
+          <p>
+            <br>  The credits you earned in your master&rsquo;s program don&rsquo;t have to stay behind.
+        <strong>Eligible graduate coursework transfers directly into the DBA</strong>, reducing the
+        credits you need to complete, and what you pay.
+            Alliant MBA alumni can transfer up to 9 units of qualifying coursework straight into the doctorate. Earned your master&rsquo;s somewhere else? Your transcript is <strong>evaluated case by case</strong>, and many students from other accredited universities can transfer up to 12 credits.
+         <br><br> You don&rsquo;t need to figure out which courses qualify. That&rsquo;s our job. Send us your transcript and an advisor will tell you exactly how many units apply, how much shorter your program becomes, and how much less you pay. <a href="https://wa.me/16263443218" target="_blank" rel="noopener">Talk to an advisor</a> to see how many units you can apply.</p>
+        </div>
+        <aside class="dba-sidecard" aria-label="Free transcript evaluation">
+          <h3>What a free transcript review tells you</h3>
+          <ul>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>How many of your master&rsquo;s credits transfer in</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>How much shorter your DBA becomes</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Your $15,000 Grant eligibility</li>
+            <li class="dba-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Your personalized interest-free payment plan</li>
+          </ul>
+          <a class="dba-btn dba-btn--primary hs-cta-trigger-button hs-cta-trigger-button-213790450726" href="#dba-form">Get My Free Evaluation</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHERE YOU'LL STUDY ================= -->
+  <section class="dba-section dba-section--plum" id="dba-alliant">
+    <div class="dba-wrap dba-alliant">
+      <div class="dba-alliant__photo">
+        <img loading="lazy" decoding="async"
+             src="https://educonnectusa.com/wp-content/uploads/2026/03/59.jpg"
+             width="1200" height="900"
+             alt="Alliant University campus in Los Angeles" />
+      </div>
+      <div>
+        <span class="dba-eyebrow">Where You&rsquo;ll Study</span>
+        <h2 class="dba-h2">Alliant University</h2>
+        <p class="dba-lede">
+          Your doctorate comes from <strong>Alliant University&rsquo;s School of Management and Leadership</strong>,
+          an accredited university whose degrees are recognized worldwide. Faculty mentor your dissertation from
+          first prospectus to final defense, and the hybrid executive format brings you to the Los Angeles campus
+          every 8 weeks, with the rest built around your job.
+          With <strong>six intakes a year</strong>, in January, March,
+          May, July, August, and October, your start date lines up with your plans, not the other way around.
+        </p>
+        <div class="dba-badges">
+          <span class="dba-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>WASC Accredited</span>
+          <span class="dba-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>ACBSP Accredited</span>
+          <img class="dba-alliant-logo" loading="lazy" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2026/05/AlliantUniversity-Logo-White.png"
+               alt="Alliant International University" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="dba-section dba-section--soft" id="dba-faq">
+    <div class="dba-wrap">
+      <span class="dba-eyebrow">Good to Know</span>
+      <h2 class="dba-h2">Frequently Asked Questions</h2>
+      <div class="dba-acc">
+        <details open>
+          <summary>What is a DBA, in plain English? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p><strong>DBA stands for Doctor of Business Administration.</strong> It is a doctorate, the highest degree level in business, a full step above every master&rsquo;s degree including the MBA. Graduates hold the title of Doctor. Unlike a traditional academic doctorate, the DBA is designed for working professionals: you research and solve real business problems while continuing your career, on an executive schedule with campus sessions every 8 weeks in Los Angeles.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Is a DBA the same thing as a PhD? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>No, and this confuses a lot of people from outside the U.S., where &ldquo;doctorate&rdquo; often just means PhD. Both are doctoral degrees and both earn you the title of Doctor, but they serve different goals. A <strong>PhD</strong> trains full-time academics: years on campus producing theoretical research for scholarly journals, usually aiming at a professorship. A <strong>DBA</strong> applies that same doctoral rigor to the real world: applied research on actual business problems, built around your job, aimed at executive leadership and consulting. If you want to keep working and advance your career, the DBA is the doctorate built for you.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Do I need an MBA to apply? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>No. <strong>Any accredited master&rsquo;s degree qualifies you.</strong> The MBA-to-DBA route is simply the most common among our students. Whatever master&rsquo;s you hold, the doctorate is the next degree level up, and that is what makes you eligible for a new period of OPT after you graduate.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Can I really work through the entire program? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>Yes, and this is where this DBA stands apart. Many universities limit how much CPT you can use per year or per degree level, forcing students to pause their jobs mid-program. Here, your <strong>CPT runs from day one straight through graduation</strong>, roughly 3 years of uninterrupted, full-time work authorization in your field. And because the doctorate is a higher degree level than your master&rsquo;s, you qualify for a <strong>fresh period of OPT</strong> after you finish.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What does the program cost? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>It depends on you, in a good way. Eligible students receive up to a <strong>$15,000 Grant</strong> toward tuition, transfer credits from your master&rsquo;s reduce it further, and the remainder is spread across an <strong>interest-free, pay-as-you-go plan</strong> designed to be covered while you work. An advisor will give you your exact numbers in your free consultation, based on your transcript and Grant eligibility.</p>
+          </div>
+        </details>
+        <details>
+          <summary>When does the DBA start, and what is the format? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>Most students finish in <strong>approximately 3 years</strong>, depending on pace, transfer credits, and dissertation progress. The program runs on 8-week terms with a hybrid executive format: on campus in Los Angeles every 8 weeks, with the rest built around your work schedule. Intakes open in January, March, May, July, August, and October. If you are finishing a master&rsquo;s or OPT, register 3-6 months ahead so your start date lines up with no gap in status. You can review the <a href="https://www.alliant.edu/academic-calendar" target="_blank" rel="noopener">academic calendar</a> to plan ahead.</p>
+          </div>
+        </details>
+        <details>
+          <summary>I&rsquo;m on OPT right now. How does the transition work? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>This is the most common path. Register for the DBA 3-6 months before your OPT ends; we handle the <strong>SEVIS transfer or change of status</strong> so your student status continues seamlessly. Your Day 1 CPT activates on the first day of class, meaning you can keep the same job without interruption.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What if I don&rsquo;t have a job, or my employer isn&rsquo;t set up for CPT? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="dba-acc__body">
+            <p>Either way, you are covered. If you already have an employer, we make the arrangement compliant so you keep working from day one. If you don&rsquo;t, <strong>CareerConnect, our CPT/OPT work placement assistance</strong>, matches you with a paid position aligned with your degree, with resume support and employer introductions before your program starts.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="dba-section dba-ctaband" id="dba-apply">
+    <div class="dba-wrap">
+      <div class="dba-ctaband__inner">
+        <div>
+          <h2>Your master&rsquo;s got you here. Your doctorate keeps you here.</h2>
+          <p>Talk to an advisor today. We respond within 48 hours and confirm your $15,000 Grant, your transfer credits, your timeline, and your work placement, from A to Z.</p>
+        </div>
+        <div class="dba-ctaband__actions">
+          <a class="dba-btn dba-btn--primary hs-cta-trigger-button hs-cta-trigger-button-213790450726" href="#dba-form">Let&rsquo;s Get Started</a>
+          <a class="dba-btn dba-btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- HubSpot form -->
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "48135637",
+    formId: "840a3bfe-350e-400f-95c2-aef9d28ba768",
+    region: "na1",
+    target: "#hubspotForm"
+  });
+</script>
+<!-- END DIVI CODE MODULE CONTENT -->
+</body>
+</html>
