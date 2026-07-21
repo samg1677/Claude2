@@ -184,8 +184,12 @@
 
 /* ---------- What We Do split (prose + video) ---------- */
 .is-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,4.5vw,64px);align-items:center}
+.is-split--top{align-items:start}
 .is-split--rev .is-split__media{order:2}
 .is-split__media img{border-radius:var(--is-radius);box-shadow:var(--is-shadow);aspect-ratio:1/1;object-fit:cover;width:100%}
+/* wide logo/banner image — show it in full instead of cropping to a square */
+.is-split__media--logo{background:#fff;border:1px solid var(--is-line);border-radius:var(--is-radius);box-shadow:var(--is-shadow);padding:clamp(24px,4vw,52px);display:flex;align-items:center;justify-content:center}
+.is-split__media--logo img{aspect-ratio:auto;width:100%;height:auto;object-fit:contain;border-radius:0;box-shadow:none}
 .is-prose p+p{margin-top:16px}
 .is-prose strong{color:var(--is-ink)}
 .is-split__body .is-btn{margin-top:30px}
@@ -193,7 +197,7 @@
 #is-page .is-section--plum .is-featlist .is-check{color:rgba(255,255,255,.92)}
 #is-page .is-section--plum .is-featlist .is-check strong{color:#fff}
 
-.is-video{position:relative;padding-top:62%;border-radius:var(--is-radius);overflow:hidden;box-shadow:var(--is-shadow);border:4px solid var(--is-teal)}
+.is-video{position:relative;aspect-ratio:16/9;border-radius:var(--is-radius);overflow:hidden;box-shadow:var(--is-shadow);border:4px solid var(--is-teal);background:#000}
 .is-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* ---------- Pillars (4 quick links) ---------- */
@@ -236,11 +240,14 @@
 
 /* ---------- Campuses ---------- */
 .is-campus-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
-.is-campus{position:relative;border-radius:var(--is-radius);overflow:hidden;box-shadow:var(--is-shadow);min-height:220px;display:flex;align-items:flex-end;padding:28px;background:linear-gradient(180deg,rgba(51,41,89,.05) 0%,rgba(51,41,89,.85) 100%),var(--is-plum)}
-.is-campus__pin{position:absolute;top:22px;left:22px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#fff}
-.is-campus__pin svg{width:26px;height:26px;fill:var(--is-orange)}
-#is-page .is-campus h3{color:#fff;font-size:26px;position:relative}
-.is-campus p{color:rgba(255,255,255,.85);font-size:14px;line-height:1.6;position:relative}
+.is-campus{background:#fff;border:1px solid var(--is-line);border-radius:var(--is-radius);box-shadow:var(--is-shadow);padding:32px;display:flex;gap:20px;align-items:flex-start;border-top:4px solid var(--is-teal);transition:transform .2s,box-shadow .2s}
+.is-campus:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(42,47,49,.16),0 3px 8px rgba(42,47,49,.08)}
+.is-campus__pin{flex:0 0 auto;width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(160deg,#e8f7f5,#fff)}
+.is-campus__pin svg{width:28px;height:28px;fill:var(--is-orange)}
+#is-page .is-campus h3{color:var(--is-ink);font-size:24px;margin-bottom:8px}
+.is-campus p{color:var(--is-body);font-size:15px;line-height:1.7;margin-bottom:16px}
+.is-campus__chips{display:flex;flex-wrap:wrap;gap:8px}
+.is-campus__chips li{font:700 12.5px/1 var(--is-font);padding:8px 12px;border-radius:999px;background:var(--is-bg-soft);color:var(--is-plum);border:1px solid var(--is-line)}
 
 /* ---------- Accordions (FAQ) ---------- */
 .is-acc{margin-top:28px;display:grid;gap:14px}
@@ -345,7 +352,7 @@
   <!-- ================= WHAT WE DO + VIDEO ================= -->
   <section class="is-section">
     <div class="is-wrap">
-      <div class="is-split">
+      <div class="is-split is-split--top">
         <div class="is-split__body">
           <span class="is-eyebrow">What We Do</span>
           <h2 class="is-h2">Study in the U.S. &mdash; and gain real work experience</h2>
@@ -378,7 +385,7 @@
 
   <!-- ================= PILLARS ================= -->
   <section class="is-section is-section--soft">
-    <div class="is-wrap is-center">
+    <div class="is-wrap">
       <span class="is-eyebrow">How We Help</span>
       <h2 class="is-h2">Everything you need, in one place</h2>
       <p class="is-lede">From graduate admissions to work placement and visa support, our team guides you through every stage of your U.S. journey.</p>
@@ -472,7 +479,7 @@
 
   <!-- ================= PROGRAMS (grouped rows) ================= -->
   <section class="is-section is-section--soft" id="is-programs">
-    <div class="is-wrap is-center">
+    <div class="is-wrap">
       <span class="is-eyebrow">Work &amp; Study USA Programs</span>
       <h2 class="is-h2">Pick the graduate degree that fits your career</h2>
       <p class="is-lede">
@@ -624,7 +631,7 @@
             </p>
           </div>
         </div>
-        <div class="is-split__media">
+        <div class="is-split__media is-split__media--logo">
           <img loading="lazy" decoding="async"
                src="https://educonnectusa.com/wp-content/uploads/2026/01/Untitled-2000-x-1000-px.png"
                width="2000" height="1000"
@@ -636,7 +643,7 @@
 
   <!-- ================= CAMPUSES ================= -->
   <section class="is-section is-section--soft">
-    <div class="is-wrap is-center">
+    <div class="is-wrap">
       <span class="is-eyebrow">Campus Locations</span>
       <h2 class="is-h2">Choose a California campus</h2>
       <p class="is-lede">
@@ -651,18 +658,26 @@
           <span class="is-campus__pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
           <div>
             <h3>Los Angeles</h3>
-            <p>A global hub for business, entertainment and technology careers.</p>
+            <p>A global hub for business, entertainment and technology careers, with a huge international community.</p>
+            <ul class="is-campus__chips">
+              <li>Business &amp; Media</li>
+              <li>Global Networking</li>
+            </ul>
           </div>
         </div>
         <div class="is-campus">
           <span class="is-campus__pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
           <div>
             <h3>San Diego</h3>
-            <p>A thriving coastal city with a strong tech, health and biotech economy.</p>
+            <p>A thriving coastal city with a strong tech, health and biotech economy and a relaxed lifestyle.</p>
+            <ul class="is-campus__chips">
+              <li>Tech &amp; Biotech</li>
+              <li>Coastal Living</li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="is-center" style="margin-top:36px">
+      <div style="margin-top:36px">
         <a class="is-btn is-btn--primary" href="https://educonnectusa.com/campus-locations/">See More on Campuses</a>
       </div>
     </div>
