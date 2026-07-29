@@ -98,6 +98,25 @@
 ============================================================================ -->
 
 <style>
+/* ===== DIVI CONTAINER RESET ==============================================
+   Divi wraps a Code Module in section > row > column > module, each with its
+   own max-width and gutter padding. Left alone, that padding stacks on top of
+   this module's own .md-wrap padding, which pushes every heading and paragraph
+   off-center relative to the site header. These rules only touch the specific
+   containers that hold #md-page, so nothing else on the site is affected.
+   In the editor, also set the Section and Row to fullwidth with zero custom
+   padding. Delete this block if you'd rather control it in Divi's UI.
+========================================================================== */
+.et_pb_section:has(#md-page),
+.et_pb_row:has(#md-page),
+.et_pb_column:has(#md-page),
+.et_pb_module:has(#md-page),
+.et_pb_code:has(#md-page),
+.et_pb_code_inner:has(#md-page){
+  width:100%;max-width:none;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;
+  margin-left:auto;margin-right:auto;
+}
+
 /* ===== TOKENS ============================================================ */
 #md-page{
   --md-teal:#4ed3cc;
@@ -154,7 +173,10 @@
 .md-lede{font-size:16px;line-height:1.95}
 .md-lede strong{color:var(--md-ink)}
 .md-center{text-align:center}
-.md-narrow{max-width:760px;margin-left:auto;margin-right:auto}
+/* ID-scoped so it beats the #md-page h2 / #md-page p margin resets above —
+   without this the block is 760px wide but pinned left instead of centered. */
+#md-page .md-narrow{max-width:760px;margin-left:auto;margin-right:auto}
+#md-page .md-center>*{margin-left:auto;margin-right:auto}
 
 /* ===== BUTTONS =========================================================== */
 #md-page .md-btn{
@@ -186,18 +208,18 @@
 }
 .md-hero__inner{
   position:relative;z-index:2;display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(0,460px);
-  gap:clamp(32px,4vw,64px);align-items:start;
+  grid-template-columns:minmax(0,34rem) minmax(0,1fr);
+  gap:clamp(32px,4.5vw,64px);align-items:center;
   padding:clamp(60px,7vw,100px) 0 clamp(100px,9vw,140px);
 }
 #md-page .md-hero h1{color:#fff}
-.md-hero__sub{color:rgba(255,255,255,.9);font-size:clamp(17px,1.6vw,19px);line-height:1.8;max-width:36em}
+#md-page .md-hero__sub{color:rgba(255,255,255,.9);font-size:clamp(17px,1.6vw,19px);line-height:1.8}
 #md-page .md-hero__tag{
   border-left:4px solid var(--md-orange);padding-left:20px;font-style:italic;
   color:rgba(255,255,255,.82);margin:26px 0 0;
 }
-.md-hero__ticks{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:11px}
-.md-hero__ticks li{
+#md-page .md-hero__ticks{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:11px}
+#md-page .md-hero__ticks li{
   position:relative;padding-left:32px;color:rgba(255,255,255,.92);
   font-size:16px;line-height:1.6;margin:0;
 }
@@ -210,15 +232,32 @@
   border:solid var(--md-plum);border-width:0 2px 2px 0;transform:rotate(45deg);
 }
 
-/* Hero lead-capture card */
+/* Hero image + floating badge */
+.md-hero__media{position:relative}
+.md-hero__media img{
+  border-radius:var(--md-radius);box-shadow:var(--md-shadow-lg);
+  aspect-ratio:4/3;object-fit:cover;width:100%;
+}
+.md-hero__badge{
+  position:absolute;left:-14px;bottom:-20px;background:#fff;
+  border-radius:12px;box-shadow:var(--md-shadow);padding:16px 22px;max-width:250px;
+}
+.md-hero__badge b{display:block;font-size:26px;line-height:1.2;color:var(--md-plum)}
+.md-hero__badge span{
+  display:block;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--md-orange);line-height:1.5;margin-top:4px;
+}
+
+/* ===== INTRO + LEAD FORM ================================================= */
+.md-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(32px,4vw,60px);align-items:start}
 .md-formcard{
-  background:#fff;border-radius:var(--md-radius);box-shadow:var(--md-shadow-lg);
+  background:#fff;border-radius:var(--md-radius);box-shadow:var(--md-shadow);
   border-top:5px solid var(--md-orange);padding:clamp(24px,2.6vw,34px);color:var(--md-body);
 }
 #md-page .md-formcard h2{font-size:clamp(22px,2vw,26px);margin-bottom:10px}
-.md-formcard__note{font-size:15px;line-height:1.7;margin-bottom:20px}
-.md-formcard__foot{
-  margin-top:18px;padding-top:16px;border-top:1px solid var(--md-line);
+#md-page .md-formcard__note{font-size:15px;line-height:1.7;margin-bottom:20px}
+#md-page .md-formcard__foot{
+  margin:18px 0 0;padding-top:16px;border-top:1px solid var(--md-line);
   font-size:13px;line-height:1.7;color:#8a9096;
 }
 #md-page .md-formcard .hs-form-frame{margin:0}
@@ -347,8 +386,8 @@
 
 /* ===== TUITION =========================================================== */
 .md-cost{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:clamp(32px,4vw,60px);align-items:center}
-.md-cost__points{display:grid;gap:16px;margin:26px 0 0;padding:0;list-style:none}
-.md-cost__points li{position:relative;margin:0;padding:0 0 0 40px;font-size:16px;line-height:1.8}
+#md-page .md-cost__points{display:grid;gap:16px;margin:26px 0 0;padding:0;list-style:none}
+#md-page .md-cost__points li{position:relative;margin:0;padding:0 0 0 40px;font-size:16px;line-height:1.8}
 .md-cost__points li b{color:var(--md-ink)}
 .md-cost__points li::before{
   content:"";position:absolute;left:0;top:.3em;width:24px;height:24px;border-radius:7px;
@@ -416,7 +455,9 @@
 /* ===== RESPONSIVE ======================================================== */
 @media (max-width:1080px){
   .md-hero__inner{grid-template-columns:1fr;padding-bottom:clamp(90px,10vw,120px)}
-  .md-formcard{max-width:560px}
+  .md-hero__media{max-width:620px}
+  .md-intro{grid-template-columns:1fr}
+  .md-formcard{max-width:620px}
   .md-bento{grid-template-columns:repeat(2,minmax(0,1fr))}
   .md-tile--wide,.md-tile--hero{grid-column:span 2}
   .md-spec,.md-conc,.md-cost{grid-template-columns:1fr}
@@ -433,6 +474,7 @@
   .md-rail__cell:nth-last-child(-n+2){border-bottom:0}
   .md-faq{grid-template-columns:1fr}
   .md-spec__stamp{position:static;margin-top:16px;max-width:none}
+  .md-hero__badge{position:static;margin-top:16px;max-width:none}
 }
 @media (max-width:560px){
   .md-bento{grid-template-columns:1fr}
@@ -480,20 +522,13 @@
           </div>
         </div>
 
-        <!-- ===== LEAD FORM (HubSpot) ===== -->
-        <div class="md-formcard" id="md-form">
-          <h2>Talk to an advisor</h2>
-          <p class="md-formcard__note">
-            Tell us where you are in your journey and we'll send you start dates, admission
-            requirements, and a full cost breakdown &mdash; usually within one business day.
-          </p>
-
-          <script src="https://js.hsforms.net/forms/embed/48135637.js" defer></script>
-          <div class="hs-form-frame" data-region="na1" data-form-id="e7ac32d0-2d64-4c44-9456-c9b8c300723c" data-portal-id="48135637"></div>
-
-          <p class="md-formcard__foot">
-            No obligation. We never share your information, and you can opt out at any time.
-          </p>
+        <div class="md-hero__media">
+          <img src="https://educonnectusa.com/wp-content/uploads/2026/03/3.jpg"
+               alt="International graduate student in a Master of Science in Data Analytics program" />
+          <div class="md-hero__badge">
+            <b>6 starts a year</b>
+            <span>Jan &middot; Mar &middot; May &middot; Jul &middot; Sep &middot; Nov</span>
+          </div>
         </div>
 
       </div>
@@ -522,8 +557,55 @@
     </div>
   </section>
 
-  <!-- ================= WHY THIS DEGREE (BENTO) ================= -->
+  <!-- ================= INTRO + LEAD FORM ================= -->
   <section class="md-sec">
+    <div class="md-wrap">
+      <div class="md-intro">
+
+        <div>
+          <span class="md-eyebrow">Executive MS in Data Analytics</span>
+          <h2>A STEM master's designed around your visa and your job</h2>
+          <p class="md-lede">
+            The Executive Master of Science in Data Analytics is delivered by an accredited
+            California institution and built for international professionals who cannot afford to
+            stop working for two years. It is <strong>33 credits</strong>, takes
+            <strong>12&ndash;16 months</strong>, and runs in a hybrid format &mdash; coursework
+            online, on campus only twice per 8-week term in Los Angeles or San Diego.
+          </p>
+          <p class="md-lede">
+            Because the degree is STEM-designated and <strong>Day 1 CPT eligible</strong>, you can
+            begin paid U.S. employment in your very first term and continue working on STEM OPT for
+            up to three years after you graduate. Tuition is paid in small, interest-free
+            installments, and a <strong>$5,500 grant</strong> is available.
+          </p>
+          <p class="md-lede">
+            Our advisors handle the part most students find hardest &mdash; documents, deadlines,
+            the I-20, and keeping your F-1 status clean while you work.
+          </p>
+        </div>
+
+        <!-- ===== LEAD FORM (HubSpot) ===== -->
+        <div class="md-formcard" id="md-form">
+          <h2>Talk to an advisor</h2>
+          <p class="md-formcard__note">
+            Tell us where you are in your journey and we'll send you start dates, admission
+            requirements, and a full cost breakdown &mdash; usually within one business day.
+          </p>
+
+          <script src="https://js.hsforms.net/forms/embed/48135637.js" defer></script>
+          <div class="hs-form-frame" data-region="na1" data-form-id="e7ac32d0-2d64-4c44-9456-c9b8c300723c" data-portal-id="48135637"></div>
+
+          <p class="md-formcard__foot">
+            No obligation. We never share your information, and you can opt out at any time.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY THIS DEGREE (BENTO) ================= -->
+  <section class="md-sec md-sec--soft">
     <div class="md-wrap">
       <div class="md-center">
         <span class="md-eyebrow">Why students choose it</span>
@@ -596,7 +678,7 @@
   </section>
 
   <!-- ================= PROGRAM SPEC SHEET ================= -->
-  <section class="md-sec md-sec--soft">
+  <section class="md-sec">
     <div class="md-wrap">
       <div class="md-spec">
 
@@ -604,8 +686,8 @@
           <span class="md-eyebrow">The program at a glance</span>
           <h2>Everything students ask about, in one place</h2>
           <p class="md-lede">
-            The Executive Master of Science in Data Analytics is delivered by an accredited California
-            institution and designed around working international professionals.
+            The details that decide whether a program actually fits your status, your budget, and your
+            schedule &mdash; without digging through a course catalog.
           </p>
 
           <div class="md-spec__list">
@@ -641,11 +723,11 @@
         </div>
 
         <div class="md-spec__media">
-          <img src="https://educonnectusa.com/wp-content/uploads/2026/03/3.jpg"
-               alt="International graduate student working on data analytics coursework" loading="lazy" />
+          <img src="https://educonnectusa.com/wp-content/uploads/2024/09/pexels-buro-millennial-636760-1438072-scaled.jpg"
+               alt="Graduate students collaborating on a data analytics project" loading="lazy" />
           <div class="md-spec__stamp">
-            <b>$5,500</b>
-            <span>Grant applied to your tuition &mdash; ask an advisor if you qualify</span>
+            <b>Day 1 CPT</b>
+            <span>Plus up to 3 years of STEM OPT after you graduate</span>
           </div>
         </div>
 
@@ -654,7 +736,7 @@
   </section>
 
   <!-- ================= HYBRID TERM RIBBON ================= -->
-  <section class="md-sec">
+  <section class="md-sec md-sec--soft">
     <div class="md-wrap">
       <div class="md-center">
         <span class="md-eyebrow">How an 8-week term works</span>
@@ -703,7 +785,7 @@
   </section>
 
   <!-- ================= CONCENTRATIONS ================= -->
-  <section class="md-sec md-sec--soft">
+  <section class="md-sec">
     <div class="md-wrap">
       <div class="md-conc">
 
