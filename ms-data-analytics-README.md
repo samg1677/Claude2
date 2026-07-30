@@ -8,8 +8,9 @@ card/chip/accordion components, plum CTA band, end-cap divider).
 |------|------|-----------------|-----------|
 | `ms-data-analytics-divi-module.html` | `/ms-data-analytics/` | `e7ac32d0-2d64-4c44-9456-c9b8c300723c` | `#md-page` |
 | `ms-healthcare-analytics-divi-module.html` | `/ms-healthcare-analytics/` | `ee1e92b3-3ed2-4416-a9c4-7ee54cc7ec19` | `#hc-page` |
+| `ms-information-systems-technology-divi-module.html` | `/ms-information-systems-technology/` | `b99ff43c-7bea-46db-a2b6-fd2a25f545d4` | `#is-page` |
 
-Both use HubSpot portal `48135637`.
+All use HubSpot portal `48135637`.
 
 ## How to install (per page)
 1. Edit the target page in Divi.
@@ -40,10 +41,31 @@ Same style as the J1 page, but its own section flow — not a section-for-sectio
 10. **FAQ** — two-column `<details>` accordions (no JS) + legal disclaimer.
 11. **Final CTA band** + gradient end-cap.
 
+## MSIST page layout (`ms-information-systems-technology-divi-module.html`)
+Same section flow and components as the MSDA module, rewritten for Information Systems
+& Technology. What differs from MSDA:
+
+- **Start dates**: January, March, May, July, **August, October** (MSDA is Sep/Nov).
+- **Concentrations**: **Cybersecurity** (dual-stack IPv6/IPv4 transition, ARP spoofing,
+  man-in-the-middle attacks, network reconnaissance) and **Technology Management**
+  (digital transformation, complex IT infrastructure, tech-to-business translation).
+- **Spec sheet** adds a **University** row for the Alliant International University partnership.
+- **Careers** chips are IST roles (network architect, systems analyst, information security
+  analyst, cybersecurity specialist, software engineer, developer, programmer, product manager);
+  the three hiring cards are Technology & consulting / Security & infrastructure /
+  Business & operations. **CareerConnect** placement support is called out in the intro,
+  the careers lede, and the last FAQ.
+- **Tuition** wording says *initial registration fee* (not "down payment") and drops the
+  "across two years" phrasing, matching the live page.
+- **Hero primary CTA** points at `/apply-now/` ("Get Started Now") rather than the HubSpot
+  share link; the share link is still the secondary CTA in the final band.
+- Images: hero `2026/03/8.jpg`, spec sheet `2024/08/MG_1594-scaled.jpg`,
+  concentrations `2024/12/job_recruitement_04.jpg`.
+
 ## Notes
-- **All CSS is scoped** to each page's namespace (`#md-page` / `#hc-page`) and prefixed
-  (`md-` / `hc-`), so the modules never collide with each other, Divi, the mega-menu,
-  or the footer.
+- **All CSS is scoped** to each page's namespace (`#md-page` / `#hc-page` / `#is-page`) and
+  prefixed (`md-` / `hc-` / `is-`), so the modules never collide with each other, Divi,
+  the mega-menu, or the footer.
 - The **HubSpot form is embedded once per page**. Every other "talk to an advisor" button
   is an anchor to `#md-form`, so there is one form instance and one scroll target.
   The "Request More Details" buttons still point at the HubSpot share link.
