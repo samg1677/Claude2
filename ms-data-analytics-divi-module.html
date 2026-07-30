@@ -172,6 +172,10 @@
 .md-lede{font-size:16px;line-height:2}
 .md-lede strong{color:var(--md-ink)}
 .md-center{text-align:center}
+/* Section intro: left aligned across the full content width, as on the J1 page */
+.md-sechead{margin-bottom:clamp(28px,3vw,40px)}
+#md-page .md-sechead h2{margin-bottom:20px}
+#md-page .md-sechead .md-lede{max-width:66rem}
 /* ID-scoped so it beats the #md-page h2 / #md-page p margin resets above —
    without this the block is 760px wide but pinned left instead of centered. */
 #md-page .md-narrow{max-width:760px;margin-left:auto;margin-right:auto}
@@ -272,7 +276,6 @@
 .md-tile__ico svg{width:26px;height:26px;stroke:var(--md-plum);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 #md-page .md-tile h3{margin-bottom:10px}
 .md-tile p{font-size:16px;line-height:1.9}
-.md-tile--wide{grid-column:span 2}
 .md-tile--hero{
   grid-column:span 2;color:#fff;border-color:transparent;
   background:linear-gradient(135deg,var(--md-plum) 0%,#463a75 100%);
@@ -288,8 +291,8 @@
 .md-tile--teal .md-tile__ico{background:rgba(255,255,255,.45)}
 
 /* ===== SPEC SHEET ======================================================== */
-.md-spec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:center}
-.md-spec__list{background:#fff;border:1px solid var(--md-line);border-radius:var(--md-radius);overflow:hidden;box-shadow:var(--md-shadow);margin-top:26px}
+.md-spec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,4.5vw,64px);align-items:start}
+.md-spec__list{background:#fff;border:1px solid var(--md-line);border-radius:var(--md-radius);overflow:hidden;box-shadow:var(--md-shadow)}
 .md-spec__row{
   display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:18px;
   padding:16px clamp(18px,2vw,26px);border-bottom:1px solid var(--md-line);align-items:baseline;
@@ -299,8 +302,8 @@
 .md-spec__t{font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8a9096;line-height:1.6}
 .md-spec__d{font-size:16px;color:var(--md-ink);font-weight:700;line-height:1.6}
 .md-spec__d span{display:block;font-weight:400;color:var(--md-body);font-size:15px}
-.md-spec__media{position:relative}
-.md-spec__media img{border-radius:var(--md-radius);box-shadow:var(--md-shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+.md-spec__media{position:relative;align-self:stretch;min-height:420px}
+.md-spec__media img{position:absolute;inset:0;border-radius:var(--md-radius);box-shadow:var(--md-shadow);width:100%;height:100%;object-fit:cover}
 .md-spec__stamp{
   position:absolute;right:-14px;bottom:-22px;background:var(--md-orange);color:#fff;
   border-radius:12px;padding:18px 24px;box-shadow:var(--md-shadow);max-width:240px;
@@ -353,7 +356,7 @@
 #md-page .md-careers h2{color:#fff}
 .md-careers .md-lede{color:rgba(255,255,255,.85)}
 .md-careers .md-lede strong{color:#fff}
-.md-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:clamp(26px,3vw,38px)}
+.md-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;margin-top:clamp(26px,3vw,38px)}
 .md-chip{
   background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);color:#fff;
   border-radius:999px;padding:11px 22px;font-size:16px;font-weight:700;line-height:1.4;
@@ -443,7 +446,7 @@
   .md-intro{grid-template-columns:1fr}
   .md-formcard{max-width:620px}
   .md-bento{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .md-tile--wide,.md-tile--hero{grid-column:span 2}
+  .md-tile--hero{grid-column:span 2}
   .md-spec,.md-conc,.md-cost{grid-template-columns:1fr}
   .md-conc__media{max-width:420px}
   .md-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
@@ -459,7 +462,7 @@
 }
 @media (max-width:560px){
   .md-bento{grid-template-columns:1fr}
-  .md-tile--wide,.md-tile--hero{grid-column:span 1}
+  .md-tile--hero{grid-column:span 1}
   .md-steps{grid-template-columns:1fr;gap:24px}
   .md-spec__row{grid-template-columns:1fr;gap:4px}
   #md-page .md-btn{width:100%}
@@ -564,10 +567,10 @@
   <!-- ================= WHY THIS DEGREE (BENTO) ================= -->
   <section class="md-sec md-sec--soft">
     <div class="md-wrap">
-      <div class="md-center">
+      <div class="md-sechead">
         <span class="md-eyebrow">Why students choose it</span>
-        <h2 class="md-narrow">A data degree that pays for itself while you earn it</h2>
-        <p class="md-lede md-narrow">
+        <h2>A data degree that pays for itself while you earn it</h2>
+        <p class="md-lede">
           Most master's programs ask you to stop working. This one is built on the opposite idea:
           you gain U.S. experience and income from your first term, and graduate with both a STEM
           credential and a resume American employers recognize.
@@ -618,15 +621,15 @@
           </p>
         </div>
 
-        <div class="md-tile md-tile--wide">
+        <div class="md-tile">
           <span class="md-tile__ico" aria-hidden="true">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
           </span>
-          <h3>Six start dates a year &mdash; you don't wait for fall</h3>
+          <h3>Six start dates a year</h3>
           <p>
             Terms begin in <strong>January, March, May, July, September, and November</strong>, so you
-            can enroll when your status, your employer, or your travel plans allow &mdash; not when a
-            traditional academic calendar says you can.
+            enroll when your status and your employer allow &mdash; not when a traditional academic
+            calendar says you can.
           </p>
         </div>
 
@@ -637,17 +640,18 @@
   <!-- ================= PROGRAM SPEC SHEET ================= -->
   <section class="md-sec">
     <div class="md-wrap">
+      <div class="md-sechead">
+        <span class="md-eyebrow">The program at a glance</span>
+        <h2>Everything students ask about, in one place</h2>
+        <p class="md-lede">
+          The details that decide whether a program actually fits your status, your budget, and your
+          schedule &mdash; without digging through a course catalog.
+        </p>
+      </div>
+
       <div class="md-spec">
 
-        <div>
-          <span class="md-eyebrow">The program at a glance</span>
-          <h2>Everything students ask about, in one place</h2>
-          <p class="md-lede">
-            The details that decide whether a program actually fits your status, your budget, and your
-            schedule &mdash; without digging through a course catalog.
-          </p>
-
-          <div class="md-spec__list">
+        <div class="md-spec__list">
             <div class="md-spec__row">
               <span class="md-spec__t">Degree</span>
               <span class="md-spec__d">Executive MS in Data Analytics <span>STEM-designated</span></span>
@@ -672,10 +676,9 @@
               <span class="md-spec__t">Work options</span>
               <span class="md-spec__d">Day 1 CPT + STEM OPT <span>Up to 3 years of post-graduation work authorization</span></span>
             </div>
-            <div class="md-spec__row">
-              <span class="md-spec__t">Concentrations</span>
-              <span class="md-spec__d">Healthcare Analytics or Informatics</span>
-            </div>
+          <div class="md-spec__row">
+            <span class="md-spec__t">Concentrations</span>
+            <span class="md-spec__d">Healthcare Analytics or Informatics</span>
           </div>
         </div>
 
@@ -695,10 +698,10 @@
   <!-- ================= HYBRID TERM RIBBON ================= -->
   <section class="md-sec md-sec--soft">
     <div class="md-wrap">
-      <div class="md-center">
+      <div class="md-sechead">
         <span class="md-eyebrow">How an 8-week term works</span>
-        <h2 class="md-narrow">Built around a full-time job, not against it</h2>
-        <p class="md-lede md-narrow">
+        <h2>Built around a full-time job, not against it</h2>
+        <p class="md-lede">
           Each term runs eight weeks. You are on campus at the beginning and the end &mdash; the rest
           is online, on your schedule.
         </p>
@@ -787,10 +790,10 @@
 
   <!-- ================= CAREERS ================= -->
   <section class="md-sec md-careers">
-    <div class="md-wrap md-center">
+    <div class="md-wrap">
       <span class="md-eyebrow">Where it takes you</span>
-      <h2 class="md-narrow">Roles our graduates move into</h2>
-      <p class="md-lede md-narrow">
+      <h2>Roles our graduates move into</h2>
+      <p class="md-lede">
         Data analytics is one of the few fields where a STEM master's and real U.S. work experience can
         be earned at the same time. Employers hire for both.
       </p>
@@ -862,10 +865,10 @@
   <!-- ================= ADMISSIONS STEPS ================= -->
   <section class="md-sec md-sec--soft">
     <div class="md-wrap">
-      <div class="md-center">
+      <div class="md-sechead">
         <span class="md-eyebrow">How to enroll</span>
-        <h2 class="md-narrow">Five steps from first question to first day of class</h2>
-        <p class="md-lede md-narrow">
+        <h2>Five steps from first question to first day of class</h2>
+        <p class="md-lede">
           You won't do any of it alone &mdash; an EduConnect advisor stays with you from the first
           conversation through your first term.
         </p>
@@ -899,10 +902,8 @@
         </div>
       </div>
 
-      <div class="md-center">
-        <div class="md-btnrow md-btnrow--center">
-          <a class="md-btn md-btn--dark" href="#md-form">Start With a Free Consultation</a>
-        </div>
+      <div class="md-btnrow">
+        <a class="md-btn md-btn--dark" href="#md-form">Start With a Free Consultation</a>
       </div>
     </div>
   </section>
@@ -910,9 +911,9 @@
   <!-- ================= FAQ ================= -->
   <section class="md-sec">
     <div class="md-wrap">
-      <div class="md-center">
+      <div class="md-sechead">
         <span class="md-eyebrow">Questions</span>
-        <h2 class="md-narrow">Frequently asked questions</h2>
+        <h2>Frequently asked questions</h2>
       </div>
 
       <div class="md-faq">
@@ -988,7 +989,7 @@
     <div class="md-wrap">
       <span class="md-eyebrow">Next start dates are filling</span>
       <h2 class="md-narrow">Let's find out if you qualify</h2>
-      <p class="md-lede md-narrow">
+      <p class="md-lede">
         One short conversation tells you your start date, your total cost after the grant, and exactly
         what your CPT timeline looks like. No pressure, no obligation.
       </p>
