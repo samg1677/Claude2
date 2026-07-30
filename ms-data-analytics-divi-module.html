@@ -127,9 +127,9 @@
   --md-plum-deep:#241d40;
   --md-ink:#2a2f31;
   --md-body:#686868;
-  --md-bg-soft:#f6f7f9;
+  --md-bg-soft:#f2f2f2;
   --md-line:#e4eaee;
-  --md-radius:14px;
+  --md-radius:12px;
   --md-radius-sm:8px;
   --md-btn-radius:6px;
   --md-shadow:0 16px 40px rgba(42,47,49,.10),0 2px 6px rgba(42,47,49,.06);
@@ -139,22 +139,22 @@
   font-family:var(--md-font);
   color:var(--md-body);
   font-size:16px;
-  line-height:1.9;
+  line-height:2;
   background:#fff;
   -webkit-font-smoothing:antialiased;
 }
 #md-page *,#md-page *::before,#md-page *::after{box-sizing:border-box}
 #md-page img{max-width:100%;height:auto;display:block}
-#md-page p{margin:0 0 18px;font-size:16px}
+#md-page p{margin:0 0 18px;font-size:16px;line-height:2}
 #md-page p:last-child{margin-bottom:0}
 #md-page h1,#md-page h2,#md-page h3,#md-page h4{
   font-family:var(--md-font);color:var(--md-ink);margin:0 0 16px;
   line-height:1.25;font-weight:700;text-wrap:balance;
 }
-#md-page h1{font-size:clamp(32px,4.6vw,52px);letter-spacing:-.5px}
-#md-page h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.5px}
-#md-page h3{font-size:clamp(19px,1.7vw,23px)}
-#md-page h4{font-size:17px}
+#md-page h1{font-size:clamp(32px,4.2vw,50px);letter-spacing:-.5px;margin-bottom:22px}
+#md-page h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.5px;margin-bottom:28px}
+#md-page h3{font-size:20px}
+#md-page h4{font-size:18px}
 #md-page a{color:var(--md-orange);text-decoration:none}
 #md-page a:hover{color:var(--md-orange-hov)}
 #md-page :focus-visible{outline:3px solid var(--md-teal);outline-offset:3px;border-radius:4px}
@@ -162,15 +162,14 @@
 #md-page li{margin-bottom:8px}
 
 .md-wrap{width:100%;max-width:calc(var(--md-max) + 48px);margin:0 auto;padding:0 24px}
-.md-sec{padding:clamp(60px,7vw,100px) 0}
+.md-sec{padding:clamp(60px,7vw,92px) 0}
 .md-sec--soft{background:var(--md-bg-soft)}
 
 .md-eyebrow{
   display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;
   text-transform:uppercase;color:var(--md-orange);margin-bottom:16px;line-height:1.5;
 }
-.md-eyebrow--light{color:var(--md-teal)}
-.md-lede{font-size:16px;line-height:1.95}
+.md-lede{font-size:16px;line-height:2}
 .md-lede strong{color:var(--md-ink)}
 .md-center{text-align:center}
 /* ID-scoped so it beats the #md-page h2 / #md-page p margin resets above —
@@ -190,7 +189,7 @@
 #md-page .md-btn--teal{background:var(--md-teal);color:var(--md-plum);box-shadow:0 12px 18px -6px rgba(0,0,0,.18)}
 #md-page .md-btn--teal:hover{background:#3cc3bc;color:var(--md-plum);transform:translateY(-2px)}
 #md-page .md-btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
-#md-page .md-btn--ghost:hover{background:#fff;color:var(--md-plum);border-color:#fff;transform:translateY(-2px)}
+#md-page .md-btn--ghost:hover{background:rgba(255,255,255,.1);color:#fff;border-color:#fff;transform:translateY(-2px)}
 #md-page .md-btn--dark{background:var(--md-plum);color:#fff}
 #md-page .md-btn--dark:hover{background:var(--md-plum-deep);color:#fff;transform:translateY(-2px)}
 .md-btnrow{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
@@ -209,28 +208,27 @@
 .md-hero__inner{
   position:relative;z-index:2;display:grid;
   grid-template-columns:minmax(0,34rem) minmax(0,1fr);
-  gap:clamp(32px,4.5vw,64px);align-items:center;
-  padding:clamp(60px,7vw,100px) 0 clamp(100px,9vw,140px);
+  gap:clamp(32px,4vw,56px);align-items:center;
+  padding:clamp(64px,7vw,110px) 0 clamp(56px,6vw,96px);
 }
 #md-page .md-hero h1{color:#fff}
-#md-page .md-hero__sub{color:rgba(255,255,255,.9);font-size:clamp(17px,1.6vw,19px);line-height:1.8}
+.md-hero .md-eyebrow{margin-bottom:20px}
+#md-page .md-hero__sub{
+  font-size:17px;line-height:1.9;color:rgba(255,255,255,.92);max-width:36rem;margin-bottom:20px;
+}
+.md-hero__sub strong{color:#fff}
 #md-page .md-hero__tag{
   border-left:4px solid var(--md-orange);padding-left:20px;font-style:italic;
-  color:rgba(255,255,255,.82);margin:26px 0 0;
+  color:rgba(255,255,255,.8);font-size:16px;line-height:1.9;margin:0;
 }
-#md-page .md-hero__ticks{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:11px}
-#md-page .md-hero__ticks li{
-  position:relative;padding-left:32px;color:rgba(255,255,255,.92);
-  font-size:16px;line-height:1.6;margin:0;
-}
-.md-hero__ticks li::before{
-  content:"";position:absolute;left:0;top:.35em;width:19px;height:19px;border-radius:50%;
-  background:var(--md-teal);box-shadow:inset 0 0 0 2px rgba(255,255,255,.3);
-}
-.md-hero__ticks li::after{
-  content:"";position:absolute;left:6.5px;top:.66em;width:5px;height:9px;
-  border:solid var(--md-plum);border-width:0 2px 2px 0;transform:rotate(45deg);
-}
+.md-hero__cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+#md-page .md-hero__note{margin:14px 0 0;font-size:13px;line-height:1.6;color:rgba(255,255,255,.7)}
+
+/* Stat strip — the four selling points, attached to the bottom of the hero */
+.md-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.18)}
+.md-stat{background:rgba(51,41,89,.35);padding:20px;text-align:center}
+.md-stat b{display:block;color:#fff;font-size:16px;letter-spacing:.2px;line-height:1.5}
+.md-stat span{color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.5px;text-transform:uppercase;line-height:1.6}
 
 /* Hero image + floating badge */
 .md-hero__media{position:relative}
@@ -255,24 +253,12 @@
   border-top:5px solid var(--md-orange);padding:clamp(24px,2.6vw,34px);color:var(--md-body);
 }
 #md-page .md-formcard h2{font-size:clamp(22px,2vw,26px);margin-bottom:10px}
-#md-page .md-formcard__note{font-size:15px;line-height:1.7;margin-bottom:20px}
+#md-page .md-formcard__note{font-size:16px;line-height:1.9;margin-bottom:20px}
 #md-page .md-formcard__foot{
   margin:18px 0 0;padding-top:16px;border-top:1px solid var(--md-line);
   font-size:13px;line-height:1.7;color:#8a9096;
 }
 #md-page .md-formcard .hs-form-frame{margin:0}
-
-/* Stat rail — overlaps the hero / white boundary */
-.md-rail{position:relative;z-index:3;margin-top:clamp(-72px,-6vw,-56px)}
-.md-rail__grid{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  background:#fff;border-radius:var(--md-radius);box-shadow:var(--md-shadow);overflow:hidden;
-}
-.md-rail__cell{padding:clamp(22px,2.2vw,30px) clamp(16px,1.8vw,26px);text-align:center;border-right:1px solid var(--md-line)}
-.md-rail__cell:last-child{border-right:0}
-.md-rail__k{display:block;font-size:clamp(26px,2.6vw,34px);font-weight:700;color:var(--md-plum);line-height:1.1;margin-bottom:8px}
-.md-rail__k em{font-style:normal;color:var(--md-orange)}
-.md-rail__v{display:block;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#7d848a;line-height:1.5}
 
 /* ===== BENTO VALUE GRID ================================================== */
 .md-bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.8vw,24px);margin-top:clamp(30px,3.2vw,46px)}
@@ -287,7 +273,7 @@
 }
 .md-tile__ico svg{width:26px;height:26px;stroke:var(--md-plum);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 #md-page .md-tile h3{margin-bottom:10px}
-.md-tile p{font-size:15.5px;line-height:1.8}
+.md-tile p{font-size:16px;line-height:1.9}
 .md-tile--wide{grid-column:span 2}
 .md-tile--hero{
   grid-column:span 2;color:#fff;border-color:transparent;
@@ -314,7 +300,7 @@
 .md-spec__row:nth-child(odd){background:#fbfcfd}
 .md-spec__t{font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8a9096;line-height:1.6}
 .md-spec__d{font-size:16px;color:var(--md-ink);font-weight:700;line-height:1.6}
-.md-spec__d span{display:block;font-weight:400;color:var(--md-body);font-size:14.5px}
+.md-spec__d span{display:block;font-weight:400;color:var(--md-body);font-size:15px}
 .md-spec__media{position:relative}
 .md-spec__media img{border-radius:var(--md-radius);box-shadow:var(--md-shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
 .md-spec__stamp{
@@ -336,7 +322,7 @@
 }
 .md-week__n{display:block;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px;color:var(--md-orange)}
 #md-page .md-week h3{font-size:20px;margin-bottom:8px}
-.md-week p{font-size:15px;line-height:1.8}
+.md-week p{font-size:16px;line-height:1.9}
 .md-week--campus{background:linear-gradient(135deg,var(--md-plum) 0%,#3d3169 100%);border-color:transparent;color:rgba(255,255,255,.86)}
 #md-page .md-week--campus h3{color:#fff}
 .md-week--campus .md-week__n{color:var(--md-teal)}
@@ -344,7 +330,7 @@
 .md-week--online .md-week__n{color:var(--md-teal-deep)}
 .md-term__foot{
   margin-top:20px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;
-  font-size:15px;color:var(--md-body);
+  font-size:16px;color:var(--md-body);
 }
 .md-pin{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--md-plum)}
 .md-pin svg{width:18px;height:18px;stroke:var(--md-orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -361,7 +347,7 @@
 .md-conc__card:hover{transform:translateX(4px);box-shadow:var(--md-shadow)}
 .md-conc__card--alt{border-left-color:var(--md-orange)}
 #md-page .md-conc__card h3{margin-bottom:8px}
-.md-conc__card p{font-size:15.5px;line-height:1.8}
+.md-conc__card p{font-size:16px;line-height:1.9}
 .md-tagline{display:block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#8a9096;margin-bottom:8px}
 
 /* ===== CAREERS =========================================================== */
@@ -372,7 +358,7 @@
 .md-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:clamp(26px,3vw,38px)}
 .md-chip{
   background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);color:#fff;
-  border-radius:999px;padding:11px 22px;font-size:15px;font-weight:700;line-height:1.4;
+  border-radius:999px;padding:11px 22px;font-size:16px;font-weight:700;line-height:1.4;
   transition:background-color .2s,border-color .2s,color .2s,transform .2s;
 }
 .md-chip:hover{background:var(--md-teal);border-color:var(--md-teal);color:var(--md-plum);transform:translateY(-2px)}
@@ -382,7 +368,7 @@
 }
 .md-hire__cell{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--md-radius);padding:clamp(22px,2.2vw,30px)}
 #md-page .md-hire__cell h4{color:#fff;margin-bottom:8px}
-.md-hire__cell p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.8)}
+.md-hire__cell p{font-size:16px;line-height:1.9;color:rgba(255,255,255,.8)}
 
 /* ===== TUITION =========================================================== */
 .md-cost{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:clamp(32px,4vw,60px);align-items:center}
@@ -403,7 +389,7 @@
 }
 .md-grant__amt{font-size:clamp(46px,5.4vw,68px);font-weight:700;color:var(--md-plum);line-height:1;letter-spacing:-1.5px}
 .md-grant__lab{display:block;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--md-orange);margin:14px 0 16px}
-.md-grant p{font-size:15px;line-height:1.8}
+.md-grant p{font-size:16px;line-height:1.9}
 #md-page .md-grant .md-btn{margin-top:22px;width:100%}
 
 /* ===== ADMISSIONS STEPS ================================================== */
@@ -419,7 +405,7 @@
   background:linear-gradient(90deg,var(--md-teal),rgba(78,211,204,.2));z-index:1;
 }
 #md-page .md-step h4{margin-bottom:8px}
-.md-step p{font-size:14.5px;line-height:1.75}
+.md-step p{font-size:15px;line-height:1.8}
 
 /* ===== FAQ =============================================================== */
 .md-faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,20px);margin-top:clamp(30px,3.2vw,44px);align-items:start}
@@ -430,7 +416,7 @@
 .md-q[open]{box-shadow:var(--md-shadow);border-color:transparent}
 .md-q>summary{
   list-style:none;cursor:pointer;padding:20px clamp(48px,5vw,58px) 20px clamp(18px,2vw,26px);
-  font-weight:700;font-size:16.5px;color:var(--md-ink);position:relative;line-height:1.5;
+  font-weight:700;font-size:18px;color:var(--md-ink);position:relative;line-height:1.4;
 }
 .md-q>summary::-webkit-details-marker{display:none}
 .md-q>summary::after{
@@ -439,12 +425,12 @@
   transform:translateY(-70%) rotate(45deg);transition:transform .2s;
 }
 .md-q[open]>summary::after{transform:translateY(-25%) rotate(-135deg)}
-.md-q__a{padding:0 clamp(18px,2vw,26px) 22px;font-size:15.5px;line-height:1.85}
+.md-q__a{padding:0 clamp(18px,2vw,26px) 26px;font-size:16px;line-height:2}
 .md-note{
-  margin-top:clamp(28px,3vw,40px);background:#fff;border-left:5px solid var(--md-teal);
-  border-radius:var(--md-radius-sm);padding:22px clamp(18px,2vw,26px);
-  font-size:14px;line-height:1.8;color:#7a8085;box-shadow:0 2px 8px rgba(42,47,49,.05);
+  margin-top:clamp(28px,3vw,40px);border:1px dashed var(--md-line);border-radius:var(--md-radius);
+  background:var(--md-bg-soft);padding:24px 26px;font-size:14px;line-height:1.85;color:#7a8085;
 }
+.md-note strong{color:var(--md-ink)}
 
 /* ===== FINAL CTA ========================================================= */
 .md-cta{background:linear-gradient(300deg,#4ed3cc 0%,#332959 72%) #332959;color:rgba(255,255,255,.9);text-align:center}
@@ -468,10 +454,7 @@
   .md-term__track{grid-template-columns:1fr}
 }
 @media (max-width:820px){
-  .md-rail__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .md-rail__cell{border-right:1px solid var(--md-line);border-bottom:1px solid var(--md-line)}
-  .md-rail__cell:nth-child(2n){border-right:0}
-  .md-rail__cell:nth-last-child(-n+2){border-bottom:0}
+  .md-stats{grid-template-columns:repeat(2,1fr)}
   .md-faq{grid-template-columns:1fr}
   .md-spec__stamp{position:static;margin-top:16px;max-width:none}
   .md-hero__badge{position:static;margin-top:16px;max-width:none}
@@ -482,7 +465,7 @@
   .md-steps{grid-template-columns:1fr;gap:24px}
   .md-spec__row{grid-template-columns:1fr;gap:4px}
   #md-page .md-btn{width:100%}
-  .md-rail{margin-top:-44px}
+  .md-stat{padding:16px 10px}
 }
 @media (prefers-reduced-motion:reduce){
   #md-page *{transition:none !important}
@@ -497,29 +480,19 @@
       <div class="md-hero__inner">
 
         <div class="md-hero__copy">
-          <span class="md-eyebrow md-eyebrow--light">Day 1 CPT and STEM OPT Eligibility</span>
+          <span class="md-eyebrow">Day 1 CPT and STEM OPT Eligibility</span>
           <h1>Master of Science in Data Analytics</h1>
           <p class="md-hero__sub">
-            A STEM-designated executive master's built for international students who want to work
-            while they study. Earn your degree in California in 12&ndash;16 months, start paid U.S.
-            employment from your first term, and keep working for up to three years after you graduate.
+            A <strong>STEM-designated</strong> executive master's built for international students who
+            want to work while they study. Earn your degree in California in 12&ndash;16 months and
+            start paid U.S. employment in your very first term.
           </p>
-
-          <ul class="md-hero__ticks">
-            <li>Work legally from term one with <strong>Day 1 CPT</strong></li>
-            <li>Up to <strong>3 additional years</strong> of U.S. work authorization on STEM OPT</li>
-            <li>Hybrid format &mdash; on campus only twice per 8-week term</li>
-            <li><strong>$5,500 grant</strong> plus interest-free biweekly tuition payments</li>
-          </ul>
-
-          <p class="md-hero__tag">
-            Study, work, and get paid &mdash; without pausing your career or your visa status.
-          </p>
-
-          <div class="md-btnrow">
+          <p class="md-hero__tag">Study, work, and get paid &mdash; without pausing your career or your visa status.</p>
+          <div class="md-hero__cta">
             <a class="md-btn md-btn--primary" href="https://share.hsforms.com/2fxVOVfePT-CMhc2GKjXCdQsnpp1" target="_blank" rel="noopener">Request More Details</a>
             <a class="md-btn md-btn--ghost" href="#md-tuition">See Tuition &amp; Grant</a>
           </div>
+          <p class="md-hero__note">33 credits &middot; Los Angeles &amp; San Diego &middot; Six start dates a year</p>
         </div>
 
         <div class="md-hero__media">
@@ -534,26 +507,12 @@
       </div>
     </div>
 
-    <!-- overlapping stat rail -->
-    <div class="md-wrap md-rail">
-      <div class="md-rail__grid">
-        <div class="md-rail__cell">
-          <span class="md-rail__k">STEM</span>
-          <span class="md-rail__v">Designated Degree</span>
-        </div>
-        <div class="md-rail__cell">
-          <span class="md-rail__k">Day&nbsp;<em>1</em></span>
-          <span class="md-rail__v">CPT Eligibility</span>
-        </div>
-        <div class="md-rail__cell">
-          <span class="md-rail__k">33</span>
-          <span class="md-rail__v">Credits &middot; 12&ndash;16 Months</span>
-        </div>
-        <div class="md-rail__cell">
-          <span class="md-rail__k">$5,500</span>
-          <span class="md-rail__v">Grant Available</span>
-        </div>
-      </div>
+    <!-- the four selling points, in the J1 stat-strip style -->
+    <div class="md-stats" role="list">
+      <div class="md-stat" role="listitem"><b>Day 1 CPT</b><span>Work from term one</span></div>
+      <div class="md-stat" role="listitem"><b>3 years</b><span>STEM OPT after graduation</span></div>
+      <div class="md-stat" role="listitem"><b>12&ndash;16 months</b><span>Hybrid, 8-week terms</span></div>
+      <div class="md-stat" role="listitem"><b>$5,500</b><span>Tuition grant</span></div>
     </div>
   </section>
 
@@ -831,7 +790,7 @@
   <!-- ================= CAREERS ================= -->
   <section class="md-sec md-careers">
     <div class="md-wrap md-center">
-      <span class="md-eyebrow md-eyebrow--light">Where it takes you</span>
+      <span class="md-eyebrow">Where it takes you</span>
       <h2 class="md-narrow">Roles our graduates move into</h2>
       <p class="md-lede md-narrow">
         Data analytics is one of the few fields where a STEM master's and real U.S. work experience can
@@ -1029,7 +988,7 @@
   <!-- ================= FINAL CTA ================= -->
   <section class="md-sec md-cta">
     <div class="md-wrap">
-      <span class="md-eyebrow md-eyebrow--light">Next start dates are filling</span>
+      <span class="md-eyebrow">Next start dates are filling</span>
       <h2 class="md-narrow">Let's find out if you qualify</h2>
       <p class="md-lede md-narrow">
         One short conversation tells you your start date, your total cost after the grant, and exactly
