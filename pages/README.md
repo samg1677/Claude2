@@ -55,3 +55,59 @@ collide with Divi, the mega menu, other program pages, or the footer.
 - Add the page to the mega menu (Services → Visa Support) and the footer
   (Services & Visas column), and cross-link it from the visa-support and program
   pages.
+
+---
+
+## ms-information-systems-technology.html
+
+Rebuild of the **existing** page at `/ms-information-systems-technology/`. The
+live version is still assembled from native Divi text / blurb / accordion
+modules; this replaces it with a single Code Module built in the same design
+language as the MS Healthcare Analytics and MS Data Analytics pages.
+
+**How to publish**
+
+1. Edit the existing page — do **not** create a new one, and do **not** change
+   the slug (`ms-information-systems-technology`), so links and rankings hold.
+2. Delete the old Divi modules (duplicate the page first if you want a
+   rollback copy sitting in drafts).
+3. One Section → one Row (fullwidth, zero custom padding) → one Code Module.
+4. Paste everything between the BEGIN/END markers into that Code Module.
+5. Rank Math → Edit Snippet: copy the `<title>`, meta description and canonical
+   from the `<head>` of this file.
+6. The `<head>` also carries a `FAQPage` JSON-LD block. Either paste it into a
+   second Code Module at the bottom of the page, or rebuild the Q&As as native
+   Rank Math FAQ blocks — do not do both, or the schema duplicates.
+
+**Styling**
+
+Same tokens and section rhythm as MSHA, scoped to `#mi-page` with every class
+prefixed `mi-`, so the three program pages can coexist without collisions.
+
+Sections in order: hero + four-cell stat strip → intro with the HubSpot lead
+form → bento value grid → spec sheet → 8-week term ribbon → the two
+concentrations → careers (dark) → tuition + `$5,500` grant → five-step
+admissions rail → FAQ + legal note → final CTA.
+
+**Content pulled from the live page**
+
+- 33 credits, 12–16 months, hybrid, on campus twice per 8-week term
+- Los Angeles & San Diego; study and work from any U.S. state between sessions
+- Six starts a year: Jan · Mar · May · Jul · Aug · Oct
+- Concentrations: Cybersecurity, Technology Management
+- Day 1 CPT, STEM-designated, up to 3 years STEM OPT, $5,500 grant
+- Interest-free installment payments
+
+**Before it goes live — check these**
+
+- Hero image is `2026/03/8.jpg` and the spec/concentration images are
+  `2024/08/MG_1594-scaled.jpg` and `2024/12/job_recruitement_04.jpg`. Confirm
+  those are the ones you want, or swap the `src` values.
+- The lead form reuses the form ID already embedded on the live MSIST page
+  (`b99ff43c-7bea-46db-a2b6-fd2a25f545d4`, portal `48135637`). Confirm it is
+  still the form you want MSIST leads routed to.
+- Verify the 33-credit count, the 12–16 month range and the STEM designation
+  against current Alliant catalogue copy before publishing.
+- Confirm you have clearance to name **Alliant University** in body copy on
+  this page.
+- Cross-link the new `/day-1-cpt/` page from the CPT sections here.
