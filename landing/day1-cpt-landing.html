@@ -1,0 +1,1392 @@
+<title>Day 1 CPT Graduate Programs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+/* ============================================================
+   EduConnect USA — Day 1 CPT landing page
+   Self-contained: no build step, no external JS libraries.
+   Everything is scoped under #ec so it can drop into a Divi
+   Code Module without colliding with theme CSS.
+============================================================ */
+
+#ec {
+  /* --- light palette (also the base every theme overrides) --- */
+  --plum:      #2b2350;
+  --plum-deep: #1b1636;
+  --teal:      #4ed3cc;
+  --teal-ink:  #1c6a66;
+  --orange:    #ff7400;
+  --orange-dk: #d85f00;
+
+  --ground:    #f5f4f9;
+  --surface:   #ffffff;
+  --surface-2: #edebf4;
+  --line:      #e3e1ee;
+  --ink:       #201b3c;
+  --ink-soft:  #55507a;
+  --ink-mute:  #7d789c;
+  --on-dark:   #f2f0fa;
+  --on-dark-soft: rgba(242,240,250,.74);
+
+  --ok:        #1f9d76;
+
+  --radius:    14px;
+  --radius-sm: 9px;
+  --shadow:    0 18px 44px -22px rgba(27,22,54,.45), 0 2px 6px rgba(27,22,54,.06);
+  --shadow-lg: 0 34px 70px -28px rgba(27,22,54,.55);
+
+  --display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --body:    "Source Sans 3", -apple-system, "Segoe UI", Arial, sans-serif;
+  --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  --wrap: 1240px;
+
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--ground);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- dark: system default (no stamp) + explicit toggle --- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #ec {
+    --ground:    #14112a;
+    --surface:   #1e1940;
+    --surface-2: #262051;
+    --line:      #332c60;
+    --ink:       #eeebf8;
+    --ink-soft:  #b6b0d6;
+    --ink-mute:  #8e88b4;
+    --plum:      #241e47;
+    --plum-deep: #17132f;
+    --teal-ink:  #6fe0d9;
+    --shadow:    0 18px 44px -22px rgba(0,0,0,.7), 0 2px 6px rgba(0,0,0,.3);
+    --shadow-lg: 0 34px 70px -28px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"] #ec {
+  --ground:    #14112a;
+  --surface:   #1e1940;
+  --surface-2: #262051;
+  --line:      #332c60;
+  --ink:       #eeebf8;
+  --ink-soft:  #b6b0d6;
+  --ink-mute:  #8e88b4;
+  --plum:      #241e47;
+  --plum-deep: #17132f;
+  --teal-ink:  #6fe0d9;
+  --shadow:    0 18px 44px -22px rgba(0,0,0,.7), 0 2px 6px rgba(0,0,0,.3);
+  --shadow-lg: 0 34px 70px -28px rgba(0,0,0,.8);
+}
+
+#ec *, #ec *::before, #ec *::after { box-sizing: border-box; }
+#ec img { max-width: 100%; height: auto; display: block; }
+#ec ul, #ec ol { list-style: none; margin: 0; padding: 0; }
+#ec p { margin: 0; }
+#ec h1, #ec h2, #ec h3, #ec h4 {
+  font-family: var(--display);
+  margin: 0; padding: 0;
+  color: var(--ink);
+  line-height: 1.14;
+  letter-spacing: -.018em;
+  text-wrap: balance;
+  font-weight: 700;
+}
+#ec a { color: var(--orange-dk); text-decoration: none; }
+#ec a:hover { text-decoration: underline; }
+#ec :focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+#ec .wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: 22px;
+}
+
+/* code / term-of-art type — the paperwork vernacular */
+#ec .code {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: .88em;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+
+#ec .eyebrow {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* ===================== BUTTONS ===================== */
+#ec .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 16.5px;
+  letter-spacing: -.005em;
+  padding: 15px 26px;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color .18s ease, transform .18s ease, box-shadow .18s ease, color .18s ease;
+}
+#ec .btn:hover { text-decoration: none; }
+#ec .btn--primary {
+  background: var(--orange); color: #fff;
+  box-shadow: 0 10px 22px -10px rgba(255,116,0,.8);
+}
+#ec .btn--primary:hover { background: var(--orange-dk); transform: translateY(-1px); }
+#ec .btn--ghost {
+  background: transparent; color: var(--on-dark);
+  border-color: rgba(255,255,255,.32);
+}
+#ec .btn--ghost:hover { border-color: var(--teal); background: rgba(78,211,204,.12); }
+#ec .btn--block { width: 100%; }
+#ec .btn--wa { background: #25d366; color: #0c2d17; }
+#ec .btn--wa:hover { background: #1fbb59; transform: translateY(-1px); }
+
+/* ===================== TRUST STRIP ===================== */
+#ec .trust {
+  background: var(--plum-deep);
+  color: var(--on-dark-soft);
+  font-size: 13.5px;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
+#ec .trust__in {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px;
+  padding-block: 11px;
+}
+#ec .trust__item { display: inline-flex; align-items: center; gap: 8px; }
+#ec .trust__item svg { width: 15px; height: 15px; flex: none; fill: var(--teal); }
+#ec .trust__item b { color: #fff; font-weight: 600; }
+#ec .trust__wa { margin-left: auto; color: #fff; font-weight: 600; }
+#ec .trust__wa:hover { color: var(--teal); text-decoration: none; }
+
+/* ===================== HERO ===================== */
+#ec .hero {
+  position: relative;
+  background:
+    radial-gradient(1100px 520px at 84% -8%, rgba(78,211,204,.26), transparent 62%),
+    radial-gradient(760px 440px at 4% 108%, rgba(255,116,0,.17), transparent 60%),
+    linear-gradient(168deg, var(--plum) 0%, var(--plum-deep) 100%);
+  color: var(--on-dark);
+  overflow: hidden;
+}
+#ec .hero__in { padding-block: clamp(48px, 6vw, 78px) clamp(38px, 4vw, 54px); }
+#ec .hero .eyebrow { color: var(--teal); }
+#ec .hero h1 {
+  color: #fff;
+  font-size: clamp(34px, 5vw, 59px);
+  font-weight: 800;
+  letter-spacing: -.028em;
+  max-width: 17ch;
+  margin-bottom: 20px;
+}
+#ec .hero h1 em { font-style: normal; color: var(--teal); }
+#ec .hero__sub {
+  font-size: clamp(17px, 1.5vw, 19.5px);
+  line-height: 1.6;
+  color: var(--on-dark-soft);
+  max-width: 58ch;
+}
+#ec .hero__sub strong { color: #fff; font-weight: 600; }
+
+/* eligibility chips — "is this me?" scan */
+#ec .chips {
+  display: flex; flex-wrap: wrap; gap: 9px;
+  margin-top: 26px;
+}
+#ec .chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+  border-radius: 999px;
+  padding: 7px 15px 7px 12px;
+  font-size: 14.5px;
+  color: var(--on-dark);
+}
+#ec .chip .code { color: var(--teal); font-size: 13px; }
+#ec .hero__cta { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+#ec .hero__note {
+  margin-top: 15px; font-size: 13.5px; color: rgba(242,240,250,.6);
+}
+
+/* stat bar pinned to the bottom of the hero */
+#ec .stats {
+  border-top: 1px solid rgba(255,255,255,.15);
+  background: rgba(0,0,0,.17);
+}
+#ec .stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.13);
+  border-inline: 1px solid rgba(255,255,255,.13);
+}
+#ec .stat {
+  background: var(--plum-deep);
+  padding: 17px 16px;
+  text-align: center;
+}
+#ec .stat b {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(17px, 1.8vw, 21px);
+  color: #fff;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+#ec .stat span {
+  display: block; margin-top: 3px;
+  font-size: 12.5px; letter-spacing: .055em; text-transform: uppercase;
+  color: rgba(242,240,250,.62);
+}
+
+/* ===================== TWO-COLUMN BODY ===================== */
+#ec .body { padding-block: clamp(44px, 5vw, 66px) clamp(52px, 6vw, 76px); }
+#ec .cols {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 386px;
+  gap: clamp(34px, 4vw, 58px);
+  align-items: start;
+}
+#ec .main { display: flex; flex-direction: column; gap: clamp(42px, 4.6vw, 62px); min-width: 0; }
+
+#ec .rail { position: sticky; top: 18px; align-self: start; display: flex; flex-direction: column; gap: 16px; }
+
+/* ===================== FORM CARD ===================== */
+#ec .formcard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--orange);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+#ec .formcard__head { padding: 22px 22px 0; }
+#ec .formcard__head h2 {
+  font-size: 23px; line-height: 1.18; letter-spacing: -.024em;
+}
+#ec .formcard__head p {
+  margin-top: 8px; font-size: 14.5px; line-height: 1.5; color: var(--ink-soft);
+}
+#ec .formcard__body { padding: 18px 22px 22px; }
+
+#ec .field { display: block; margin-bottom: 13px; }
+#ec .field > span {
+  display: block;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .045em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 6px;
+}
+#ec .field input,
+#ec .field select {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+  transition: border-color .15s ease, background-color .15s ease;
+  appearance: none;
+}
+#ec .field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237d789c' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 20px;
+  padding-right: 34px;
+}
+#ec .field input:focus, #ec .field select:focus {
+  border-color: var(--teal); background: var(--surface);
+}
+#ec .field input::placeholder { color: var(--ink-mute); }
+
+#ec .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+
+#ec .consent {
+  display: flex; gap: 9px; align-items: flex-start;
+  font-size: 12.8px; line-height: 1.45; color: var(--ink-mute);
+  margin: 4px 0 14px;
+}
+#ec .consent input { margin-top: 3px; accent-color: var(--teal); flex: none; }
+
+#ec .formcard__foot {
+  margin-top: 13px; padding-top: 13px;
+  border-top: 1px solid var(--line);
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: var(--ink-mute);
+}
+#ec .formcard__foot svg { width: 14px; height: 14px; fill: var(--ok); flex: none; }
+
+/* rail mini-card */
+#ec .railcard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+#ec .railcard h3 {
+  font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  font-family: var(--mono); font-weight: 600; color: var(--teal-ink);
+  margin-bottom: 12px;
+}
+#ec .railcard li {
+  display: flex; gap: 9px; align-items: flex-start;
+  font-size: 14.5px; line-height: 1.45; color: var(--ink-soft);
+  padding-block: 6px;
+}
+#ec .railcard li + li { border-top: 1px solid var(--line); }
+#ec .railcard li svg { width: 15px; height: 15px; fill: var(--teal); flex: none; margin-top: 4px; }
+#ec .railcard li b { color: var(--ink); font-weight: 600; }
+
+/* ===================== SECTION SHELL ===================== */
+#ec .sec__head { margin-bottom: 24px; }
+#ec .sec__head h2 {
+  font-size: clamp(27px, 3.1vw, 37px);
+  letter-spacing: -.028em;
+  margin-bottom: 12px;
+}
+#ec .sec__head p {
+  font-size: 17.5px; line-height: 1.6; color: var(--ink-soft); max-width: 62ch;
+}
+#ec .sec__head p strong { color: var(--ink); font-weight: 600; }
+
+/* ===================== VISA PATHS ===================== */
+#ec .paths { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+#ec .path {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 17px 19px;
+}
+#ec .path__tag {
+  font-family: var(--mono); font-weight: 600; font-size: 13px;
+  color: var(--teal-ink); letter-spacing: .03em;
+  display: block; margin-bottom: 5px;
+}
+#ec .path h3 { font-size: 17.5px; margin-bottom: 6px; letter-spacing: -.015em; }
+#ec .path p { font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+#ec .path--alt { border-left-color: var(--orange); }
+#ec .path--alt .path__tag { color: var(--orange-dk); }
+
+#ec .paths__foot {
+  margin-top: 16px;
+  border: 1px dashed var(--line);
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 16px 19px;
+  font-size: 15.5px; line-height: 1.6; color: var(--ink-soft);
+}
+#ec .paths__foot strong { color: var(--ink); font-weight: 700; }
+
+/* ===================== PROGRAM TABLE ===================== */
+#ec .tablewrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); }
+#ec table.progs { width: 100%; border-collapse: collapse; min-width: 620px; font-size: 15.5px; }
+#ec table.progs th {
+  text-align: left;
+  font-family: var(--mono); font-weight: 600; font-size: 11.5px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+  white-space: nowrap;
+}
+#ec table.progs td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+#ec table.progs tr:last-child td { border-bottom: 0; }
+#ec table.progs .pname { font-weight: 600; color: var(--ink); font-family: var(--display); font-size: 16px; letter-spacing: -.01em; }
+#ec table.progs .psub { display: block; font-size: 13.5px; color: var(--ink-mute); font-family: var(--body); font-weight: 400; letter-spacing: 0; }
+#ec table.progs .num { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink-soft); }
+#ec table.progs .money { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink); white-space: nowrap; }
+#ec .stem {
+  display: inline-block;
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .07em;
+  background: rgba(78,211,204,.18); color: var(--teal-ink);
+  border-radius: 4px; padding: 3px 7px;
+}
+#ec .dash { color: var(--ink-mute); }
+#ec .tablenote { margin-top: 12px; font-size: 14px; color: var(--ink-mute); line-height: 1.55; }
+
+/* ===================== TERM DIAGRAM ===================== */
+#ec .term {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+#ec .week {
+  border-radius: var(--radius-sm);
+  padding: 18px 18px 20px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+#ec .week__n {
+  font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: .11em; text-transform: uppercase;
+  color: var(--orange-dk); display: block; margin-bottom: 8px;
+}
+#ec .week h3 { font-size: 18px; margin-bottom: 6px; letter-spacing: -.015em; }
+#ec .week p { font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+#ec .week--campus {
+  background: linear-gradient(160deg, var(--plum) 0%, var(--plum-deep) 100%);
+  border-color: transparent;
+}
+#ec .week--campus h3 { color: #fff; }
+#ec .week--campus p { color: var(--on-dark-soft); }
+#ec .week--campus .week__n { color: var(--teal); }
+#ec .week--online { background: rgba(78,211,204,.09); border-color: rgba(78,211,204,.38); }
+#ec .week--online .week__n { color: var(--teal-ink); }
+
+#ec .termfoot {
+  display: flex; flex-wrap: wrap; gap: 10px 24px;
+  margin-top: 16px; font-size: 15px; color: var(--ink-soft);
+}
+#ec .pin { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); }
+#ec .pin svg { width: 17px; height: 17px; fill: none; stroke: var(--orange); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ===================== MONEY ===================== */
+#ec .money-grid {
+  display: grid; grid-template-columns: minmax(0,1fr) 264px; gap: 26px; align-items: start;
+}
+#ec .checks { display: grid; gap: 11px; }
+#ec .checks li {
+  display: flex; gap: 11px; align-items: flex-start;
+  font-size: 16px; line-height: 1.55; color: var(--ink-soft);
+}
+#ec .checks li svg { width: 20px; height: 20px; fill: var(--ok); flex: none; margin-top: 3px; }
+#ec .checks li b { color: var(--ink); font-weight: 700; }
+
+#ec .grantcard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+#ec .grantcard b {
+  display: block;
+  font-family: var(--display); font-weight: 800;
+  font-size: 46px; line-height: 1; letter-spacing: -.04em;
+  color: var(--plum);
+  font-variant-numeric: tabular-nums;
+}
+:root[data-theme="dark"] #ec .grantcard b { color: var(--teal); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #ec .grantcard b { color: var(--teal); } }
+#ec .grantcard .lbl {
+  display: block; margin: 11px 0 9px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--orange-dk);
+}
+#ec .grantcard p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); }
+
+/* ===================== ACCREDITATION ===================== */
+#ec .accred {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+}
+#ec .accred__lede { grid-column: 1 / -1; font-size: 17px; line-height: 1.6; color: var(--ink-soft); }
+#ec .accred__lede strong { color: var(--ink); font-weight: 700; }
+#ec .badge { border-top: 2px solid var(--teal); padding-top: 14px; }
+#ec .badge span {
+  font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--teal-ink);
+  display: block; margin-bottom: 6px;
+}
+#ec .badge h3 { font-size: 17px; margin-bottom: 7px; letter-spacing: -.015em; }
+#ec .badge p { font-size: 14.8px; line-height: 1.55; color: var(--ink-soft); }
+
+/* ===================== TESTIMONIALS ===================== */
+#ec .quotes { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+#ec .quote {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 19px;
+  display: flex; flex-direction: column;
+}
+#ec .quote__stars { color: var(--orange); font-size: 14px; letter-spacing: .12em; margin-bottom: 10px; }
+#ec .quote p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); flex: 1; }
+#ec .quote footer { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+#ec .quote__name { display: block; font-weight: 700; font-size: 14.5px; color: var(--ink); }
+#ec .quote__path {
+  display: block; margin-top: 2px;
+  font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--teal-ink);
+}
+
+/* ===================== TIMELINE / STARTS ===================== */
+#ec .starts {
+  display: flex; flex-wrap: wrap; gap: 9px;
+  margin-bottom: 18px;
+}
+#ec .start {
+  font-family: var(--mono); font-weight: 600; font-size: 14px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: 7px 15px; color: var(--ink);
+}
+#ec .steps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; counter-reset: s; }
+#ec .step { position: relative; padding-top: 16px; border-top: 2px solid var(--line); }
+#ec .step::before {
+  counter-increment: s; content: counter(s);
+  position: absolute; top: -13px; left: 0;
+  width: 25px; height: 25px; border-radius: 50%;
+  background: var(--plum); color: #fff;
+  font-family: var(--mono); font-weight: 600; font-size: 12.5px;
+  display: grid; place-items: center;
+}
+:root[data-theme="dark"] #ec .step::before { background: var(--teal); color: #12102a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #ec .step::before { background: var(--teal); color: #12102a; } }
+#ec .step h3 { font-size: 16.5px; margin: 14px 0 6px; letter-spacing: -.015em; }
+#ec .step p { font-size: 14.8px; line-height: 1.55; color: var(--ink-soft); }
+
+#ec .timing {
+  margin-top: 20px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+}
+#ec .timing h3 { font-size: 17.5px; margin-bottom: 7px; letter-spacing: -.015em; }
+#ec .timing p { font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); }
+#ec .timing strong { color: var(--ink); font-weight: 700; }
+
+/* ===================== FAQ ===================== */
+#ec .faq { display: grid; gap: 10px; }
+#ec details.q {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+#ec details.q[open] { box-shadow: var(--shadow); }
+#ec details.q summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 48px 16px 18px;
+  position: relative;
+  font-family: var(--display); font-weight: 600; font-size: 17.5px;
+  letter-spacing: -.015em; color: var(--ink);
+}
+#ec details.q summary::-webkit-details-marker { display: none; }
+#ec details.q summary::after {
+  content: ""; position: absolute; right: 20px; top: 50%;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--orange); border-bottom: 2px solid var(--orange);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform .18s ease;
+}
+#ec details.q[open] summary::after { transform: translateY(-25%) rotate(-135deg); }
+#ec details.q .a { padding: 0 18px 18px; font-size: 15.8px; line-height: 1.65; color: var(--ink-soft); }
+#ec details.q .a strong { color: var(--ink); font-weight: 600; }
+#ec details.q .a p + p { margin-top: 10px; }
+
+#ec .disclaimer {
+  margin-top: 22px;
+  border: 1px dashed var(--line);
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 17px 19px;
+  font-size: 13.6px; line-height: 1.65; color: var(--ink-mute);
+}
+#ec .disclaimer strong { color: var(--ink-soft); font-weight: 700; }
+
+/* ===================== CLOSING CTA ===================== */
+#ec .close {
+  background:
+    radial-gradient(760px 380px at 88% 0%, rgba(78,211,204,.22), transparent 62%),
+    linear-gradient(160deg, var(--plum) 0%, var(--plum-deep) 100%);
+  color: var(--on-dark);
+  padding-block: clamp(46px, 5vw, 66px);
+}
+#ec .close__in { display: grid; grid-template-columns: minmax(0,1.25fr) auto; gap: 30px; align-items: center; }
+#ec .close h2 { color: #fff; font-size: clamp(26px, 3vw, 36px); letter-spacing: -.028em; margin-bottom: 11px; }
+#ec .close p { color: var(--on-dark-soft); font-size: 17px; line-height: 1.6; max-width: 56ch; }
+#ec .close__btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+#ec .foot {
+  background: var(--plum-deep);
+  color: rgba(242,240,250,.5);
+  font-size: 13px; line-height: 1.6;
+  padding-block: 20px;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+#ec .foot a { color: rgba(242,240,250,.78); }
+
+/* ===================== MOBILE STICKY BAR ===================== */
+#ec .mobilebar {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  gap: 10px;
+  box-shadow: 0 -8px 26px -14px rgba(27,22,54,.5);
+}
+#ec .mobilebar .btn { flex: 1; padding-block: 13px; font-size: 15.5px; }
+#ec .mobilebar .btn--wa { flex: 0 0 auto; padding-inline: 16px; }
+#ec .mobilebar .btn--wa svg { width: 21px; height: 21px; fill: currentColor; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1080px) {
+  #ec .cols { grid-template-columns: 1fr; }
+  #ec .rail { position: static; order: -1; }
+  #ec .formcard { max-width: 640px; margin-inline: auto; }
+  #ec .railcard { max-width: 640px; margin-inline: auto; width: 100%; }
+  #ec .money-grid { grid-template-columns: 1fr; }
+  #ec .grantcard { max-width: 380px; }
+  #ec .close__in { grid-template-columns: 1fr; }
+}
+@media (max-width: 880px) {
+  #ec .term { grid-template-columns: 1fr; }
+  #ec .quotes { grid-template-columns: 1fr; }
+  #ec .steps { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px 14px; }
+}
+@media (max-width: 640px) {
+  #ec { font-size: 16.5px; }
+  #ec .wrap { padding-inline: 17px; }
+  #ec .stats__grid { grid-template-columns: repeat(2, 1fr); }
+  #ec .paths { grid-template-columns: 1fr; }
+  #ec .accred { grid-template-columns: 1fr; padding: 20px; }
+  #ec .row2 { grid-template-columns: 1fr; }
+  #ec .body { padding-bottom: 96px; }
+  #ec .mobilebar { display: flex; }
+  #ec .trust__wa { margin-left: 0; }
+  #ec .hero__cta .btn { width: 100%; }
+}
+@media (max-width: 420px) {
+  #ec .steps { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ec *, #ec *::before, #ec *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+</style>
+
+<div id="ec">
+
+  <!-- ============ TRUST STRIP ============ -->
+  <div class="trust">
+    <div class="wrap trust__in">
+      <span class="trust__item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+        <b>WASC</b>-accredited university
+      </span>
+      <span class="trust__item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+        Official enrollment partner of <b>Alliant University</b>
+      </span>
+      <span class="trust__item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+        Students in <b>40+ states</b>
+      </span>
+      <a class="trust__wa" href="https://wa.me/16263443218" target="_blank" rel="noopener">WhatsApp +1 (626) 344-3218</a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="wrap hero__in">
+      <span class="eyebrow">Day 1 CPT &middot; F-1 status &middot; 6 graduate programs</span>
+      <h1>Keep working in the U.S. <em>from week one</em> of your master&rsquo;s.</h1>
+      <p class="hero__sub">
+        Accredited U.S. graduate programs with <strong>CPT work authorization from your first term</strong> &mdash;
+        not after a year of waiting. Hybrid schedule, so you live and work anywhere in the country.
+        We handle the change of status, the <span class="code">I-20</span>, and the employer paperwork.
+      </p>
+
+      <ul class="chips" aria-label="Who this page is for">
+        <li class="chip"><span class="code">F-1</span> OPT running out</li>
+        <li class="chip"><span class="code">H-1B</span> not selected in the lottery</li>
+        <li class="chip"><span class="code">J-1</span> DS-2019 ending</li>
+        <li class="chip"><span class="code">B-1/B-2</span> visitor in the U.S.</li>
+        <li class="chip"><span class="code">F-1</span> transferring schools</li>
+      </ul>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#apply">Check my eligibility &mdash; free</a>
+        <a class="btn btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+      <p class="hero__note">No cost, no obligation. An advisor replies with your specific timeline, not a brochure.</p>
+    </div>
+
+    <div class="stats">
+      <div class="wrap">
+        <div class="stats__grid" role="list">
+          <div class="stat" role="listitem"><b>Day 1 CPT</b><span>Work from term one</span></div>
+          <div class="stat" role="listitem"><b>12&ndash;16 months</b><span>To your degree</span></div>
+          <div class="stat" role="listitem"><b>3 STEM options</b><span>+24-month OPT</span></div>
+          <div class="stat" role="listitem"><b>Up to $15,000</b><span>Scholarship</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ BODY: content + sticky form ============ -->
+  <div class="body">
+    <div class="wrap cols">
+
+      <!-- ---------- LEFT: content ---------- -->
+      <main class="main">
+
+        <!-- WHO IT'S FOR -->
+        <section>
+          <div class="sec__head">
+            <span class="eyebrow">Start here</span>
+            <h2>Find your situation below</h2>
+            <p>
+              Most people land on this page for one of five reasons. Each one has a legal route into
+              <strong>F-1 student status with work authorization</strong> &mdash; and for everyone already in the U.S.,
+              you do it <strong>without leaving the country</strong>.
+            </p>
+          </div>
+
+          <div class="paths">
+            <article class="path">
+              <span class="path__tag">F-1 &rarr; F-1</span>
+              <h3>Your OPT is about to expire</h3>
+              <p>A <span class="code">SEVIS</span> transfer moves your record to the new program with no gap in status, and CPT eligibility starts with your first term here.</p>
+            </article>
+
+            <article class="path path--alt">
+              <span class="path__tag">H-1B &rarr; F-1</span>
+              <h3>You weren&rsquo;t selected in the lottery</h3>
+              <p>Enroll now, work on CPT while you study, and be in valid status and employed when the next registration window opens.</p>
+            </article>
+
+            <article class="path">
+              <span class="path__tag">J-1 &rarr; F-1</span>
+              <h3>Your DS-2019 is ending</h3>
+              <p>A change of status into F-1 lets you stay, start the program, and continue with your current employer. File before your current status expires.</p>
+            </article>
+
+            <article class="path">
+              <span class="path__tag">B-1/B-2 &rarr; F-1</span>
+              <h3>You&rsquo;re here as a visitor</h3>
+              <p>We file the <span class="code">I-539</span> change of status so you can enroll and begin working on CPT from your first term &mdash; no consular trip.</p>
+            </article>
+
+            <article class="path path--alt">
+              <span class="path__tag">Outside the U.S.</span>
+              <h3>You&rsquo;re applying from abroad</h3>
+              <p>We issue your <span class="code">I-20</span>, prep you for the F-1 interview, and help you land a paid role once you arrive.</p>
+            </article>
+
+            <article class="path">
+              <span class="path__tag">ESL &rarr; Graduate</span>
+              <h3>You&rsquo;re in a language program</h3>
+              <p>Move from ESL into an accredited master&rsquo;s on the same F-1 status, with work eligibility you didn&rsquo;t have before.</p>
+            </article>
+          </div>
+
+          <p class="paths__foot">
+            <strong>Timing is the whole game.</strong> Start the conversation three to six months before your current
+            status or OPT ends and there is no gap &mdash; which means you keep the same job without a single week
+            of interruption. Premium processing can cut the USCIS wait to roughly
+            <span class="code">30 business days</span>.
+          </p>
+        </section>
+
+        <!-- PROGRAMS -->
+        <section>
+          <div class="sec__head">
+            <span class="eyebrow">The programs</span>
+            <h2>Six degrees. All Day 1 CPT eligible.</h2>
+            <p>
+              Every program below is offered through <strong>Alliant University</strong>, where EduConnect USA is the
+              official international enrollment partner for the School of Management and Leadership. Same hybrid
+              schedule, same CPT eligibility &mdash; you&rsquo;re choosing a specialty, not a different deal.
+            </p>
+          </div>
+
+          <div class="tablewrap">
+            <table class="progs">
+              <thead>
+                <tr>
+                  <th scope="col">Program</th>
+                  <th scope="col">Length</th>
+                  <th scope="col">STEM</th>
+                  <th scope="col">Scholarship</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="pname">Executive MBA<span class="psub">Management, Marketing, Info &amp; Tech, or Hospitality</span></span></td>
+                  <td class="num">12 months</td>
+                  <td><span class="dash">&mdash;</span></td>
+                  <td class="money">$6,000</td>
+                </tr>
+                <tr>
+                  <td><span class="pname">MS Data Analytics<span class="psub">Turn data into decisions</span></span></td>
+                  <td class="num">12&ndash;16 months</td>
+                  <td><span class="stem">STEM</span></td>
+                  <td class="money">$5,500</td>
+                </tr>
+                <tr>
+                  <td><span class="pname">MS Healthcare Analytics<span class="psub">Analytics for health systems</span></span></td>
+                  <td class="num">12&ndash;16 months</td>
+                  <td><span class="stem">STEM</span></td>
+                  <td class="money">$5,500</td>
+                </tr>
+                <tr>
+                  <td><span class="pname">MS Information Systems &amp; Technology<span class="psub">Enterprise systems and data</span></span></td>
+                  <td class="num">12&ndash;16 months</td>
+                  <td><span class="stem">STEM</span></td>
+                  <td class="money">$5,500</td>
+                </tr>
+                <tr>
+                  <td><span class="pname">Doctor of Business Administration<span class="psub">DBA &mdash; applied doctoral research</span></span></td>
+                  <td class="num">Doctoral</td>
+                  <td><span class="dash">&mdash;</span></td>
+                  <td class="money">$15,000</td>
+                </tr>
+                <tr>
+                  <td><span class="pname">PhD in Organizational Leadership<span class="psub">Fast-track option available</span></span></td>
+                  <td class="num">Doctoral</td>
+                  <td><span class="dash">&mdash;</span></td>
+                  <td class="money">Ask an advisor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tablenote">
+            The three STEM-designated master&rsquo;s degrees qualify for the <span class="code">24-month STEM OPT</span>
+            extension on top of the standard 12 months of OPT &mdash; three years of post-graduation work authorization in total.
+          </p>
+        </section>
+
+        <!-- HOW A TERM WORKS -->
+        <section>
+          <div class="sec__head">
+            <span class="eyebrow">How an 8-week term works</span>
+            <h2>Built around a full-time job, not against it</h2>
+            <p>
+              You are on campus at the start and the end of each term. Everything in between is online, on your
+              schedule, while you work on CPT. <strong>You do not have to move to California.</strong>
+            </p>
+          </div>
+
+          <div class="term">
+            <div class="week week--campus">
+              <span class="week__n">Week 1</span>
+              <h3>On campus</h3>
+              <p>Open the term in person with faculty and your cohort in Los Angeles or San Diego.</p>
+            </div>
+            <div class="week week--online">
+              <span class="week__n">Weeks 2&ndash;7</span>
+              <h3>Online &amp; working</h3>
+              <p>Coursework online, around your job. Because CPT is curricular, the work you&rsquo;re doing connects back to what you&rsquo;re studying &mdash; it&rsquo;s part of the degree, not a distraction from it. Full-time enrollment keeps your F-1 status active throughout.</p>
+            </div>
+            <div class="week week--campus">
+              <span class="week__n">Week 8</span>
+              <h3>On campus</h3>
+              <p>Close the term in person with presentations, assessments and cohort sessions.</p>
+            </div>
+          </div>
+
+          <div class="termfoot">
+            <span class="pin">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              Los Angeles &amp; San Diego campuses
+            </span>
+            <span class="pin">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              2 campus visits per 8-week term
+            </span>
+            <span>Live and work in any U.S. state between sessions.</span>
+          </div>
+        </section>
+
+        <!-- COST -->
+        <section id="cost">
+          <div class="sec__head">
+            <span class="eyebrow">What it costs</span>
+            <h2>Priced to be paid while you work</h2>
+            <p>
+              The reason most people hesitate on a U.S. degree is the invoice. This one is structured so you are
+              never asked for a large lump sum, and so the income you earn on CPT can cover the payments as they come.
+            </p>
+          </div>
+
+          <div class="money-grid">
+            <ul class="checks">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                <span><b>Scholarships from $5,500 to $15,000</b> applied directly to tuition for eligible students &mdash; money off the top, not a loan you repay later.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                <span><b>Interest-free bi-weekly payments.</b> No loans and no financing charges, on a schedule designed to be covered while you work.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                <span><b>You earn while you study</b>, because CPT starts in your first term rather than after a year of waiting.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+                <span><b>Work placement if you need it.</b> Already employed? We help you keep that role. If not, our CareerConnect team helps you find a paid position aligned with your degree.</span>
+              </li>
+            </ul>
+
+            <aside class="grantcard">
+              <b>$6,000</b>
+              <span class="lbl">MBA scholarship</span>
+              <p>An advisor gives you your exact bi-weekly number once the scholarship is applied &mdash; on the first call, not after you apply.</p>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ACCREDITATION -->
+        <section>
+          <div class="sec__head">
+            <span class="eyebrow">The part people check first</span>
+            <h2>Accreditation, in plain terms</h2>
+          </div>
+
+          <div class="accred">
+            <p class="accred__lede">
+              Accreditation is what makes a degree recognized by employers, by other universities, and by
+              immigration authorities. Alliant University is a private university with campuses in Los Angeles and
+              San Diego. <strong>It holds the same regional accreditation as USC, UCLA and UC San Diego.</strong>
+            </p>
+
+            <div class="badge">
+              <span>Regional accreditation</span>
+              <h3>WASC Senior College and University Commission</h3>
+              <p>WSCUC is the top tier of U.S. institutional accreditation &mdash; the same accreditor behind USC, UCLA and UC San Diego.</p>
+            </div>
+
+            <div class="badge">
+              <span>Programmatic accreditation</span>
+              <h3>ACBSP-accredited business programs</h3>
+              <p>All business programs additionally hold Accreditation Council for Business Schools and Programs standing, a specialized standard for teaching quality and student outcomes.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section>
+          <div class="sec__head">
+            <span class="eyebrow">From students who did it</span>
+            <h2>They changed status. Then they changed careers.</h2>
+          </div>
+
+          <div class="quotes">
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>&ldquo;The staff were professional, supportive, and guided me clearly through every step of the process. Their assistance gave me confidence and peace of mind.&rdquo;</p>
+              <footer>
+                <span class="quote__name">Jay-Ar</span>
+                <span class="quote__path">B-1/B-2 &rarr; F-1</span>
+              </footer>
+            </figure>
+
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>&ldquo;EduConnect USA helped me a lot and they&rsquo;re very responsive. I would highly recommend them to anyone looking for reliable guidance.&rdquo;</p>
+              <footer>
+                <span class="quote__name">Shaira Anne Mae Libo-on</span>
+                <span class="quote__path">J-1 &rarr; F-1</span>
+              </footer>
+            </figure>
+
+            <figure class="quote">
+              <div class="quote__stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>&ldquo;They supported me step by step through the entire admission process. Always helpful, resourceful, and quick to respond. I would strongly recommend them.&rdquo;</p>
+              <footer>
+                <span class="quote__name">Nicole Arlini</span>
+                <span class="quote__path">J-1 &rarr; F-1</span>
+              </footer>
+            </figure>
+          </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section>
+          <div class="sec__head">
+            <span class="eyebrow">Getting in</span>
+            <h2>Four steps and six start dates a year</h2>
+            <p>You won&rsquo;t do any of it alone &mdash; one advisor stays with you from the first message through your first term.</p>
+          </div>
+
+          <div class="starts" role="list" aria-label="Start months">
+            <span class="start" role="listitem">January</span>
+            <span class="start" role="listitem">March</span>
+            <span class="start" role="listitem">May</span>
+            <span class="start" role="listitem">July</span>
+            <span class="start" role="listitem">August</span>
+            <span class="start" role="listitem">October</span>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <h3>Free eligibility review</h3>
+              <p>We look at your current status, your timeline and your goals, and confirm which programs and scholarships you qualify for.</p>
+            </div>
+            <div class="step">
+              <h3>Documents &amp; application</h3>
+              <p>Transcripts, passport, visa records, financials. We tell you exactly what&rsquo;s needed and review everything before it&rsquo;s filed.</p>
+            </div>
+            <div class="step">
+              <h3>Admission &amp; I-20</h3>
+              <p>Acceptance, enrollment, and your <span class="code">I-20</span> issued &mdash; then the <span class="code">I-539</span> change of status or SEVIS transfer if you&rsquo;re already here.</p>
+            </div>
+            <div class="step">
+              <h3>Classes &amp; CPT</h3>
+              <p>Begin your program and, with CPT authorization from your Designated School Official, keep or start paid employment from your first term.</p>
+            </div>
+          </div>
+
+          <div class="timing">
+            <h3>On a J-1, B-1/B-2 or F-1 right now? Start 3&ndash;6 months early.</h3>
+            <p>
+              Whether you need a <strong>change of status</strong> or a <strong>SEVIS transfer</strong>, the process
+              runs smoothest when it begins three to six months before your current status or OPT ends. Start early
+              and your student status continues with no gap &mdash; which means you can keep the same job without a
+              single week of interruption.
+            </p>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+          <div class="sec__head">
+            <span class="eyebrow">Straight answers</span>
+            <h2>The questions everyone asks</h2>
+          </div>
+
+          <div class="faq">
+            <details class="q" open>
+              <summary>What actually is &ldquo;Day 1 CPT&rdquo;?</summary>
+              <div class="a">
+                <p>Curricular Practical Training is off-campus work authorization tied to your field of study. In most programs you have to complete one full academic year before you can use it. In these programs, the curriculum is structured so CPT is available <strong>from your first term</strong> &mdash; which is why people call it Day 1 CPT.</p>
+                <p>It is authorized by the school&rsquo;s Designated School Official and recorded on your <span class="code">I-20</span>. It is not a separate visa and it is not a workaround; it is the standard F-1 CPT provision applied to a curriculum built around working professionals.</p>
+              </div>
+            </details>
+
+            <details class="q">
+              <summary>Do I have to leave the U.S. to change my status?</summary>
+              <div class="a">
+                <p>No. The entire change of status process is handled domestically through USCIS. You don&rsquo;t visit a consulate and you don&rsquo;t leave the country &mdash; you stay in the U.S. through the application, the approval and your enrollment.</p>
+              </div>
+            </details>
+
+            <details class="q">
+              <summary>How long does the change of status take?</summary>
+              <div class="a">
+                <p>Standard USCIS processing is typically <strong>3&ndash;5 months</strong>. Premium processing is available for an additional fee and generally returns a decision in about <span class="code">30 business days</span>. Premium processing speeds up the answer; it doesn&rsquo;t change the outcome. We recommend it when your current visa is close to expiring.</p>
+              </div>
+            </details>
+
+            <details class="q">
+              <summary>Can I keep my current job?</summary>
+              <div class="a">
+                <p>Usually yes, if the role relates to your field of study. If you already have an employer, we help with the transition and the paperwork on their side. If you don&rsquo;t, our work placement team helps you find a paid position aligned with your degree so your CPT is put to use from the start.</p>
+              </div>
+            </details>
+
+            <details class="q">
+              <summary>Do I have to move to California?</summary>
+              <div class="a">
+                <p>No. The hybrid schedule means you can live and work in <strong>any U.S. state</strong> &mdash; our students are spread across most of them. The only requirement is attending the two in-person sessions each 8-week term at a California campus, Los Angeles or San Diego, whichever is easier for you.</p>
+              </div>
+            </details>
+
+            <details class="q">
+              <summary>What happens after I graduate?</summary>
+              <div class="a">
+                <p>You&rsquo;re eligible for <strong>OPT</strong>, which is up to 12 months of post-graduation work authorization. If you graduate from one of the three STEM-designated master&rsquo;s programs, you can apply for the <span class="code">24-month STEM OPT</span> extension on top of that &mdash; three years of work authorization in total.</p>
+              </div>
+            </details>
+
+            <details class="q">
+              <summary>Is the degree properly accredited?</summary>
+              <div class="a">
+                <p>Yes. Alliant University is accredited by the <strong>WASC Senior College and University Commission</strong> &mdash; the same regional accreditor as USC, UCLA and UC San Diego. All business programs additionally hold <strong>ACBSP</strong> accreditation.</p>
+              </div>
+            </details>
+
+            <details class="q">
+              <summary>What does it cost, honestly?</summary>
+              <div class="a">
+                <p>Eligible students receive a scholarship between <strong>$5,500 and $15,000</strong> depending on the program, applied directly to tuition. The remaining balance is paid through an interest-free bi-weekly plan &mdash; no loans, no financing charges. An advisor gives you your exact numbers on the first call, before you apply.</p>
+              </div>
+            </details>
+          </div>
+
+          <p class="disclaimer">
+            <strong>Please note:</strong> EduConnect USA is an education services provider, not a law firm, and does
+            not provide legal advice. CPT and OPT eligibility and authorization, change of status, SEVIS transfers
+            and maintenance of F-1 status are determined by the school&rsquo;s Designated School Official and by U.S.
+            federal regulations. Scholarship eligibility, program details, start dates and tuition are set by the
+            institution and subject to change. For guidance on your individual situation, speak with a licensed
+            immigration attorney.
+          </p>
+        </section>
+
+      </main>
+
+      <!-- ---------- RIGHT: sticky form ---------- -->
+      <aside class="rail" id="apply">
+        <div class="formcard">
+          <div class="formcard__head">
+            <h2>Check your eligibility</h2>
+            <p>Tell us where you are today. An advisor comes back with your options, your timeline and your real cost.</p>
+          </div>
+
+          <div class="formcard__body">
+
+            <!-- ==========================================================
+                 SWAP POINT — HubSpot
+                 Delete the <form> below and paste your HubSpot embed here.
+                 The .hs-form CSS further down already styles it to match.
+
+                 <script charset="utf-8" type="text/javascript"
+                         src="//js.hsforms.net/forms/embed/v2.js"></script>
+                 <script>
+                   hbspt.forms.create({
+                     portalId: "48135637",
+                     formId:   "YOUR-FORM-ID-HERE",
+                     region:   "na1"
+                   });
+                 </script>
+            ========================================================== -->
+
+            <form id="ec-lead" novalidate>
+              <label class="field" for="ec-name">
+                <span>Full name</span>
+                <input id="ec-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+              </label>
+
+              <label class="field" for="ec-email">
+                <span>Email</span>
+                <input id="ec-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              </label>
+
+              <label class="field" for="ec-phone">
+                <span>Phone / WhatsApp</span>
+                <input id="ec-phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code" required>
+              </label>
+
+              <label class="field" for="ec-status">
+                <span>Your status right now</span>
+                <select id="ec-status" name="status" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>F-1 &mdash; currently on OPT</option>
+                  <option>F-1 &mdash; enrolled, want to transfer</option>
+                  <option>H-1B &mdash; not selected in the lottery</option>
+                  <option>J-1 &mdash; DS-2019 ending</option>
+                  <option>B-1 / B-2 visitor in the U.S.</option>
+                  <option>Other status in the U.S.</option>
+                  <option>Outside the U.S.</option>
+                </select>
+              </label>
+
+              <div class="row2">
+                <label class="field" for="ec-program">
+                  <span>Program</span>
+                  <select id="ec-program" name="program" required>
+                    <option value="" selected disabled>Select</option>
+                    <option>Not sure yet</option>
+                    <option>Executive MBA</option>
+                    <option>MS Data Analytics</option>
+                    <option>MS Healthcare Analytics</option>
+                    <option>MS Information Systems</option>
+                    <option>DBA</option>
+                    <option>PhD Organizational Leadership</option>
+                  </select>
+                </label>
+
+                <label class="field" for="ec-start">
+                  <span>Target start</span>
+                  <select id="ec-start" name="start" required>
+                    <option value="" selected disabled>Select</option>
+                    <option>As soon as possible</option>
+                    <option>Next 3 months</option>
+                    <option>3&ndash;6 months</option>
+                    <option>6+ months</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="consent" for="ec-consent">
+                <input id="ec-consent" name="consent" type="checkbox" checked>
+                <span>I agree to be contacted by email, phone and SMS about my application.</span>
+              </label>
+
+              <button class="btn btn--primary btn--block" type="submit">Check my eligibility &rarr;</button>
+            </form>
+
+            <p class="formcard__foot">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4Zm-1.2 15L7 12.2l1.4-1.4 2.4 2.4 5-5L17.2 9l-6.4 7Z"/></svg>
+              We never sell your information. Free, no obligation.
+            </p>
+          </div>
+        </div>
+
+        <div class="railcard">
+          <h3>Why students pick us</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><b>One advisor</b> from first message to first class</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><b>Change of status</b> filed for you, start to finish</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><b>Work placement</b> if you don&rsquo;t have an employer yet</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><b>Interest-free</b> bi-weekly payment plans</span></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="close">
+    <div class="wrap close__in">
+      <div>
+        <h2>Your status has a deadline. This conversation doesn&rsquo;t cost anything.</h2>
+        <p>
+          One short call tells you which program fits, what your bi-weekly payment looks like after the scholarship,
+          and exactly when your CPT can start. If it&rsquo;s not the right move for you, we&rsquo;ll say so.
+        </p>
+      </div>
+      <div class="close__btns">
+        <a class="btn btn--primary" href="#apply">Check my eligibility</a>
+        <a class="btn btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      &copy; <span id="ec-year">2026</span> EduConnect USA LLC &middot; Education services provider, not a law firm &middot;
+      Information here is general and is not legal advice &middot;
+      <a href="https://educonnectusa.com/privacy-policy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE STICKY BAR ============ -->
+  <div class="mobilebar">
+    <a class="btn btn--primary" href="#apply">Check my eligibility</a>
+    <a class="btn btn--wa" href="https://wa.me/16263443218" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 13.6c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-1-.4-1.7-.7-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.1.2-.3.4-.4.5-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.7.8 2 1 .3.1.5.2.6.3.1.1.1.7-.2 1.4z"/></svg>
+    </a>
+  </div>
+
+</div>
+
+<style>
+/* ============================================================
+   HubSpot form skin — activates automatically once you paste
+   the HubSpot embed into the swap point above. Harmless until then.
+============================================================ */
+#ec .hs-form-field { margin-bottom: 13px; }
+#ec .hs-form-field > label {
+  display: block;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .045em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 6px;
+}
+#ec .hs-form-field > label .hs-form-required { color: var(--orange); }
+#ec .hs-input:not([type="checkbox"]):not([type="radio"]) {
+  width: 100% !important;
+  font-family: var(--body); font-size: 16px; color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+}
+#ec .hs-input:focus { border-color: var(--teal); background: var(--surface); outline: none; }
+#ec .hs-form textarea.hs-input { min-height: 88px; }
+#ec .hs-error-msg, #ec .hs-error-msgs label { color: #d13a3a; font-size: 13px; }
+#ec .hs-form .inputs-list { list-style: none; margin: 0; padding: 0; }
+#ec .hs-form .hs-form-booleancheckbox label {
+  display: flex; gap: 9px; align-items: flex-start;
+  font-size: 12.8px; line-height: 1.45; color: var(--ink-mute); text-transform: none;
+  letter-spacing: 0; font-weight: 400;
+}
+#ec .hs-form input[type="checkbox"] { accent-color: var(--teal); margin-top: 3px; }
+#ec .hs-button.primary {
+  width: 100%;
+  font-family: var(--display); font-weight: 700; font-size: 16.5px;
+  background: var(--orange); color: #fff;
+  border: 0; border-radius: var(--radius-sm);
+  padding: 15px 26px; cursor: pointer;
+  box-shadow: 0 10px 22px -10px rgba(255,116,0,.8);
+  transition: background-color .18s ease, transform .18s ease;
+}
+#ec .hs-button.primary:hover { background: var(--orange-dk); transform: translateY(-1px); }
+#ec .submitted-message { font-size: 16px; color: var(--ink); }
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('ec');
+  if (!root) return;
+
+  var y = document.getElementById('ec-year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Smooth-scroll the in-page CTAs to the form, and focus the first field
+  // so mobile users land ready to type.
+  root.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href="#apply"]');
+    if (!a) return;
+    var target = document.getElementById('apply');
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start'
+    });
+    if (window.matchMedia('(max-width: 640px)').matches) {
+      setTimeout(function () {
+        var first = document.getElementById('ec-name');
+        if (first) first.focus({ preventScroll: true });
+      }, 500);
+    }
+  });
+
+  // Demo handler for the built-in form. Remove this block when you
+  // swap in the HubSpot embed.
+  var form = document.getElementById('ec-lead');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      if (!form.checkValidity()) {
+        var bad = form.querySelector(':invalid');
+        if (bad) bad.focus();
+        return;
+      }
+      if (btn) {
+        btn.textContent = 'Sent — we’ll be in touch';
+        btn.disabled = true;
+        btn.style.background = '#1f9d76';
+        btn.style.boxShadow = 'none';
+      }
+    });
+  }
+})();
+</script>
