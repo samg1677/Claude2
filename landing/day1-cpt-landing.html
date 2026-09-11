@@ -188,13 +188,92 @@
   overflow: hidden;
 }
 #ec .hero__in { padding-block: clamp(48px, 6vw, 78px) clamp(38px, 4vw, 54px); }
+#ec .hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 414px);
+  gap: clamp(30px, 4vw, 58px);
+  align-items: center;
+}
+
+/* --- hero photo panel --- */
+#ec .hero__media { margin: 0; position: relative; }
+#ec .hero__media::before {
+  content: "";
+  position: absolute;
+  inset: 20px -15px -18px 18px;
+  border: 1px solid rgba(78,211,204,.42);
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+#ec .hero__frame {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(155deg, #3b3070 0%, #1a1535 100%);
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: var(--shadow-lg);
+}
+#ec .hero__frame img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+#ec .hero__ph { display: none; }
+#ec .hero__frame.is-fallback img { display: none; }
+#ec .hero__frame.is-fallback .hero__ph {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 7px;
+  aspect-ratio: 4 / 3;
+  padding: 26px 24px;
+  background:
+    radial-gradient(420px 240px at 78% 12%, rgba(78,211,204,.26), transparent 66%),
+    radial-gradient(320px 220px at 8% 96%, rgba(255,116,0,.2), transparent 64%);
+}
+#ec .hero__ph-kicker {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+#ec .hero__ph-name {
+  font-family: var(--display);
+  font-size: clamp(23px, 2.4vw, 30px);
+  font-weight: 800;
+  letter-spacing: -.022em;
+  line-height: 1.1;
+  color: #fff;
+}
+#ec .hero__ph-meta { font-size: 13.5px; color: var(--on-dark-soft); }
+#ec .hero__cap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 11px 15px;
+  background: rgba(0,0,0,.34);
+  border-top: 1px solid rgba(255,255,255,.13);
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--on-dark-soft);
+}
+#ec .hero__cap .code { color: var(--teal); font-size: 12px; }
+
+@media (max-width: 1000px) {
+  #ec .hero__grid { grid-template-columns: 1fr; gap: 34px; }
+  #ec .hero__media { max-width: 520px; }
+  #ec .hero__media::before { inset: 18px -12px -14px 16px; }
+}
 #ec .hero .eyebrow { color: var(--teal); }
 #ec .hero h1 {
   color: #fff;
-  font-size: clamp(34px, 5vw, 59px);
+  font-size: clamp(33px, 4.1vw, 53px);
   font-weight: 800;
   letter-spacing: -.028em;
-  max-width: 17ch;
+  max-width: 16ch;
   margin-bottom: 20px;
 }
 #ec .hero h1 em { font-style: normal; color: var(--teal); }
@@ -711,6 +790,8 @@
   <!-- ============ HERO ============ -->
   <header class="hero">
     <div class="wrap hero__in">
+      <div class="hero__grid">
+      <div class="hero__copy">
       <span class="eyebrow">Day 1 CPT &middot; F-1 status &middot; 6 graduate programs</span>
       <h1>Keep working in the U.S. <em>from week one</em> of your master&rsquo;s.</h1>
       <p class="hero__sub">
@@ -732,6 +813,26 @@
         <a class="btn btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </div>
       <p class="hero__note">No cost, no obligation. An advisor replies with your specific timeline, not a brochure.</p>
+      </div><!-- /.hero__copy -->
+
+      <figure class="hero__media">
+        <div class="hero__frame" id="ec-heroframe">
+          <img id="ec-heroimg"
+               src="https://educonnectusa.com/wp-content/uploads/2026/09/Alliant-EduConnect.jpeg"
+               alt="EduConnect USA students at Alliant International University"
+               width="1200" height="900" decoding="async">
+          <!-- shown only if the photo fails to load (e.g. in a preview sandbox) -->
+          <div class="hero__ph" aria-hidden="true">
+            <span class="hero__ph-kicker">Official enrollment partner</span>
+            <strong class="hero__ph-name">Alliant International University</strong>
+            <span class="hero__ph-meta">Founded 1969 &middot; San Diego &middot; Irvine &middot; Fresno &middot; Sacramento</span>
+          </div>
+          <figcaption class="hero__cap">
+            <span class="code">WASC</span> accredited &middot; <span class="code">ACBSP</span> business programs &middot; SEVP-certified for <span class="code">F-1</span> students
+          </figcaption>
+        </div>
+      </figure>
+      </div><!-- /.hero__grid -->
     </div>
 
     <div class="stats">
@@ -1347,6 +1448,16 @@
 
   var y = document.getElementById('ec-year');
   if (y) y.textContent = new Date().getFullYear();
+
+  // If the hero photo can't load (a preview sandbox, a moved file), fall back
+  // to the typographic partnership panel instead of a broken image icon.
+  var heroImg = document.getElementById('ec-heroimg');
+  var heroFrame = document.getElementById('ec-heroframe');
+  if (heroImg && heroFrame) {
+    var heroFallback = function () { heroFrame.classList.add('is-fallback'); };
+    heroImg.addEventListener('error', heroFallback);
+    if (heroImg.complete && heroImg.naturalWidth === 0) heroFallback();
+  }
 
   // Smooth-scroll the in-page CTAs to the form, and focus the first field
   // so mobile users land ready to type.
