@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EduConnect USA - Simple Header</title>
+</head>
+<body style="margin:0">
+
+<!-- ============================================================================
+     EduConnect USA - simplified header (logo left, phone right)
+
+     BEGIN DIVI CODE MODULE CONTENT
+     Paste from this line down to the END marker into a Divi Code Module,
+     or into Theme Builder if you want it as a page-specific header.
+     Scoped to .ech-header, all classes prefixed ech- so it can't collide
+     with the main site header (.ec-header) or the webinar page (#dos-page).
+============================================================================ -->
+
+<style>
+.ech-header{
+  --ech-teal:#4ed3cc;
+  --ech-teal-deep:#2fb3ac;
+  --ech-orange:#ff7400;
+  --ech-ink:#2a2f31;
+  --ech-line:#e4eaee;
+  --ech-font:Arial,Helvetica,sans-serif;
+  --ech-max:1280px;
+  --ech-h:82px;
+
+  position:relative;z-index:50;
+  background:#fff;border-bottom:1px solid var(--ech-line);
+  font-family:var(--ech-font);
+}
+.ech-header *,.ech-header *::before,.ech-header *::after{box-sizing:border-box}
+.ech-header img{display:block;max-width:100%;height:auto}
+.ech-header a{text-decoration:none;box-shadow:none}
+.ech-header :focus-visible{outline:3px solid var(--ech-teal);outline-offset:3px;border-radius:6px}
+
+.ech-inner{
+  width:100%;max-width:calc(var(--ech-max) + 48px);margin:0 auto;padding:0 24px;
+  min-height:var(--ech-h);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+
+/* ---------- logo (upper left) ---------- */
+.ech-logo{display:inline-flex;align-items:center;gap:12px;flex:0 0 auto}
+.ech-logo img{width:52px;height:52px;border-radius:10px;object-fit:contain}
+.ech-logo-text{display:flex;flex-direction:column;line-height:1}
+.ech-logo-text strong{
+  font:700 19px/1 var(--ech-font);letter-spacing:.2px;color:var(--ech-ink);
+}
+.ech-logo-text em{
+  font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:3px;
+  color:var(--ech-teal-deep);margin-top:4px;
+}
+
+/* ---------- phone (upper right) ---------- */
+.ech-phone{
+  display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;
+  font:700 16px/1 var(--ech-font);color:var(--ech-ink) !important;
+  transition:color .2s ease;
+}
+.ech-phone:hover{color:var(--ech-orange) !important}
+.ech-phone svg{width:18px;height:18px;fill:var(--ech-orange);flex:none}
+.ech-phone-label{font-weight:400;color:#8a9096}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .ech-phone-label{display:none}
+}
+@media (max-width:640px){
+  .ech-header{--ech-h:68px}
+  .ech-inner{padding:0 16px;gap:12px}
+  .ech-logo img{width:42px;height:42px;border-radius:9px}
+  .ech-logo-text strong{font-size:16px}
+  .ech-logo-text em{font-size:10px;letter-spacing:2.2px;margin-top:3px}
+  .ech-phone{font-size:15px;gap:7px}
+}
+@media (max-width:400px){
+  .ech-logo-text{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .ech-header *{transition:none !important}
+}
+</style>
+
+<header class="ech-header">
+  <div class="ech-inner">
+
+    <a class="ech-logo" href="https://educonnectusa.com/" aria-label="EduConnect USA home">
+      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/EduConnectUSA-Logo.png"
+           alt="EduConnect USA" width="52" height="52" />
+      <span class="ech-logo-text">
+        <strong>EduConnect</strong>
+        <em>USA</em>
+      </span>
+    </a>
+
+    <a class="ech-phone" href="tel:+16263443218">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+      <span class="ech-phone-label">Call Us Today:</span>&nbsp;<span>+1 (626) 344-3218</span>
+    </a>
+
+  </div>
+</header>
+
+<!-- ============================================================================
+     END DIVI CODE MODULE CONTENT
+============================================================================ -->
+
+</body>
+</html>
