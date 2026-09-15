@@ -17,6 +17,18 @@ Landing page for **"End of Duration of Status: What It Means for Your CPT, OPT, 
 
 Opening `index.html` in a browser also previews it standalone — the `<head>` outside the markers only carries the meta tags and Event schema.
 
+## Layout
+
+This follows the VisaPro webinar page section for section:
+
+1. **Hero** — three blurred orbs, "Free Webinar" badge with pulsing dot, typewriter headline, subhead, "Register Now - It's Free"
+2. **Two-column body** — left: About The Webinar eyebrow, date/time/online pills, intro copy, "You'll Learn" checklist card with the orange PLUS row, attorney block, testimonials; right: registration form card + privacy note
+3. **CTA strip** — "Reserve Your Free Seat Today"
+4. **Legal note**, then the endcap rule
+5. **Mobile save bar** — fixed, appears under 820px
+
+The form carries the same field shape as the reference (Full Name, Phone, City, Email, free-text question, SMS + marketing consent), with Job Title and Company Name swapped for **Current Status** and **School / University** since the audience is students.
+
 ## Brand
 
 Colors, fonts and radii are lifted from the live `/mba/` page, so this matches the rest of the site rather than approximating it:
@@ -32,11 +44,12 @@ Also matched: Arial stack, `line-height: 2` body, 12px card radius / 6px button 
 
 ## Before it goes live
 
-1. **Ravneet's photo** is hotlinked from visapro.com. Upload a copy to your media library and swap the `src`. (It falls back to an "RB" tile if it fails, so nothing breaks.)
-2. **Her bio** is adapted from VisaPro's attorney page and reframed for a student audience — worth a quick sign-off from her or VisaPro.
-3. **OG image** currently points at `/uploads/2026/03/52.jpg` from the MBA page. Swap in a webinar-specific 1200×630 image or link previews will show the MBA photo.
-4. **Canonical URL** is set to `/webinar-duration-of-status/` — update if you use a different slug.
-5. **Agenda wording.** The "You'll Learn" bullets are written as *topics*, not as claims about what the rule does — the page shouldn't state legal conclusions about a rule that just took effect. Have Ravneet confirm they match what she plans to cover.
+1. **Testimonials are placeholders.** The three cards say `[Replace with a real student testimonial...]` on purpose — I don't have your student quotes and won't invent them. Paste three real ones from `/student-testimonials/` and swap the initials tiles for student photos.
+2. **Ravneet's photo** is hotlinked from visapro.com. Upload a copy to your media library and swap the `src`. (It falls back to an "RB" tile if it fails, so nothing breaks.)
+3. **Her bio** is adapted from VisaPro's attorney page and reframed for a student audience — worth a quick sign-off from her or VisaPro.
+4. **OG image** currently points at `/uploads/2026/03/52.jpg` from the MBA page. Swap in a webinar-specific 1200×630 image or link previews will show the MBA photo.
+5. **Canonical URL** is set to `/webinar-duration-of-status/` — update if you use a different slug.
+6. **Agenda wording.** The "You'll Learn" bullets are written as *topics*, not as claims about what the rule does — the page shouldn't state legal conclusions about a rule that just took effect. Have Ravneet confirm they match what she plans to cover.
 
 ## Registration: two options
 
@@ -59,6 +72,6 @@ Setup:
 
 **HubSpot option.** Since the rest of the site runs HubSpot forms (portal `48135637`), you can drop a HubSpot embed in instead — there's a commented-out `hbspt.forms.create({...})` block marking the exact spot in the form card. That keeps leads in your existing workflow, at the cost of the Zoom handoff still being manual.
 
-## A note on positioning
+## The one fixed element
 
-This page deliberately uses **no `position: fixed` or `position: sticky`** anywhere — no sticky header, no sticky form column, no floating mobile CTA bar. Those break scrolling inside content-sized preview iframes, and your Theme Builder header is already sticky on its own.
+The mobile save bar (`.dos-mobilebar`) is `position: fixed` and appears below 820px, exactly as the reference page has it. It works correctly on the live site. If a preview panel won't scroll, that bar is the cause — delete its CSS rule and its `<div>` at the bottom of the module and everything else is unaffected.
