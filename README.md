@@ -19,15 +19,14 @@ Opening `index.html` in a browser also previews it standalone — the `<head>` o
 
 ## Layout
 
-This follows the VisaPro webinar page section for section:
+Follows the VisaPro webinar page, at a **1280px content width** throughout:
 
-1. **Hero** — three blurred orbs, "Free Webinar" badge with pulsing dot, typewriter headline, subhead, "Register Now - It's Free"
-2. **Two-column body** — left: About The Webinar eyebrow, date/time/online pills, intro copy, "You'll Learn" checklist card with the orange PLUS row, attorney block, testimonials; right: registration form card + privacy note
-3. **CTA strip** — "Reserve Your Free Seat Today"
-4. **Legal note**, then the endcap rule
-5. **Mobile save bar** — fixed, appears under 820px
-
-The form carries the same field shape as the reference (Full Name, Phone, City, Email, free-text question, SMS + marketing consent), with Job Title and Company Name swapped for **Current Status** and **School / University** since the audience is students.
+1. **Hero** — three blurred orbs, "Free Webinar" badge with pulsing dot, typewriter headline, subhead, "Register Now - It's Free". Spans the full 1280.
+2. **Two-column block** — left: About The Webinar eyebrow, date/time/online pills, intro copy, "You'll Learn" checklist card with the orange PLUS row. Right: the registration form + privacy note.
+3. **Full-width block** — once the form ends, the speaker block and testimonials span the whole 1280 rather than staying in the narrow column.
+4. **CTA strip** — "Reserve Your Free Seat Today"
+5. **Fine print**, one slim line, then the endcap rule
+6. **Mobile save bar** — fixed, appears under 820px
 
 ## Brand
 
@@ -51,27 +50,18 @@ Also matched: Arial stack, `line-height: 2` body, 12px card radius / 6px button 
 5. **Canonical URL** is set to `/webinar-duration-of-status/` — update if you use a different slug.
 6. **Agenda wording.** The "You'll Learn" bullets are written as *topics*, not as claims about what the rule does — the page shouldn't state legal conclusions about a rule that just took effect. Have Ravneet confirm they match what she plans to cover.
 
-## Registration: two options
+## Registration
 
-**As shipped** — the branded form collects the student's details, then opens Zoom in a new tab to confirm. Zoom's registration page can't be embedded in an iframe and can't be reliably prefilled, so students type their name and email a second time. Zero setup, works immediately.
+The form collects **First Name, Last Name, Email, Phone, Highest Completed Degree, Current Status and Program of Interest**, plus the two consent checkboxes.
 
-**One-step (recommended)** — deploy `api/register.js` and change one line in the page's `<script>`:
+On submit it always hands off to the Zoom registration page in a new tab, and the card swaps to a "One last step — Confirm On Zoom" panel. Zoom can't be embedded in an iframe and can't be reliably prefilled, so students confirm their name and email once more on Zoom's side.
 
-```js
-var REGISTER_ENDPOINT = "/api/register";
-```
+`api/register.js` is left in the repo but is **no longer wired up** — it was the one-step Zoom API path. Delete it, or re-point the form at it, if you ever want registration to complete without the Zoom hop.
 
-The form then posts straight to Zoom's API: the student never leaves the page, Zoom emails their personal join link, and you capture the extra fields Zoom's own form doesn't ask for (current status, school, question for the attorney).
+To route leads through HubSpot instead (portal `48135637`, like the MBA page), replace the `<form id="dosForm">` block with your `hbspt.forms.create({...})` embed.
 
-Setup:
+## Testimonials
 
-1. In the [Zoom App Marketplace](https://marketplace.zoom.us/), create a **Server-to-Server OAuth** app.
-2. Add the scope `webinar:write:registrant:admin` (older accounts: `webinar:write:admin`) and activate it.
-3. Set environment variables: `ZOOM_ACCOUNT_ID`, `ZOOM_CLIENT_ID`, `ZOOM_CLIENT_SECRET`, and `ZOOM_WEBINAR_ID` — the **numeric** ID (e.g. `81234567890`), not the `WN_h4G7A5NB…` token from the URL.
-4. Set the webinar's approval type to **Automatically approve**, or registrants sit pending.
+The three cards use real Google reviews: **phat valdez** (CPT process), **Antsa Randrianirina** (J-1 to staying longer in the U.S.) and **Hanitra Aïcha** (understanding the process step by step). I only used reviews that weren't truncated with "… More" in what you sent, so nothing is paraphrased or completed.
 
-**HubSpot option.** Since the rest of the site runs HubSpot forms (portal `48135637`), you can drop a HubSpot embed in instead — there's a commented-out `hbspt.forms.create({...})` block marking the exact spot in the form card. That keeps leads in your existing workflow, at the cost of the Zoom handoff still being manual.
-
-## The one fixed element
-
-The mobile save bar (`.dos-mobilebar`) is `position: fixed` and appears below 820px, exactly as the reference page has it. It works correctly on the live site. If a preview panel won't scroll, that bar is the cause — delete its CSS rule and its `<div>` at the bottom of the module and everything else is unaffected.
+The avatars are initials tiles — swap in real photos if you have them, and the role line currently reads "EduConnect USA student" for all three since the reviews don't state programs.
