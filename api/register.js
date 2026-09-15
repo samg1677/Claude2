@@ -50,14 +50,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Please check your name and email address.' });
   }
 
-  // Custom questions must already exist on the webinar, with these exact titles,
-  // under Zoom > Webinar > Registration > Questions > Custom Questions.
-  const customQuestions = [
-    { title: 'Your Current Status', value: String(body.status || '').slice(0, 200) },
-    { title: 'School / University', value: String(body.school || '').slice(0, 200) },
-    { title: 'Your Question For The Attorney', value: String(body.question || '').slice(0, 1000) }
-  ].filter((q) => q.value);
-
   try {
     const token = await getAccessToken();
 
@@ -72,8 +64,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({
           first_name: firstName,
           last_name: lastName,
-          email,
-          custom_questions: customQuestions
+          email
         })
       }
     );
