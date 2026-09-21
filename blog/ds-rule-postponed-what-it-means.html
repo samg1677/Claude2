@@ -26,7 +26,7 @@
 
      COLOR SYSTEM — three brand colors, each with one job:
        PURPLE #332959 .. structure & authority. Dark panels, resource
-                        cards, court/legal cards, headings, body text.
+                        cards, court/legal cards, section furniture.
        TEAL   #4ED3CC .. information & guidance. Every section rule,
                         every accordion, explainer panels, "what to do".
        ORANGE #FF7400 .. attention, used sparingly. The correction
@@ -37,6 +37,10 @@
      large areas use the deep and tint variants so nothing glares.
      Within any one grid, every card shares a single accent - accents
      signal role, never decoration.
+
+     TEXT is neutral ink (#12222F body, #0B2239 headings), not brand
+     color. Long-form copy stays easy on the eye; the brand shows up
+     in panels, rules, borders and buttons.
      ============================================================ -->
 <div class="ec-post">
   <style>
@@ -58,12 +62,15 @@
       --ec-orange-deep:#B34F00;
       --ec-orange-tint:#FFF4EA;
       --ec-orange-line:#FFD6B5;
-      /* neutrals, warmed toward purple */
-      --ec-text:#1F1B2E;
-      --ec-text-soft:#5C5570;
-      --ec-line:#E3E0EA;
+      /* neutral text - deliberately NOT brand colored.
+         Copy reads as ink; brand color lives in the furniture. */
+      --ec-text:#12222F;
+      --ec-heading:#0B2239;
+      --ec-text-dek:#3C5468;
+      --ec-text-soft:#5A7185;
+      --ec-line:#DCE3E9;
 
-      color:#1F1B2E;
+      color:#12222F;
       font-family:"Open Sans",Inter,"Segoe UI",Arial,sans-serif;
       line-height:1.65;
       overflow-wrap:break-word;
@@ -71,7 +78,7 @@
     .ec-post *, .ec-post *::before, .ec-post *::after { box-sizing:border-box; }
     .ec-post h1, .ec-post h2, .ec-post h3 {
       font-family:Poppins,Montserrat,"Segoe UI",Arial,sans-serif;
-      color:#332959;
+      color:#0B2239;
       line-height:1.18;
       text-align:left;
       text-wrap:balance;
@@ -86,7 +93,7 @@
     .ec-post a[style*="background-color"] { min-height:48px; border-radius:6px; font-family:Poppins,Montserrat,"Segoe UI",Arial,sans-serif; line-height:1.4; max-width:100%; }
     .ec-post a[style*="background-color"]:hover { opacity:.9; }
     .ec-post details { border-radius:6px; }
-    .ec-post summary { font-family:Poppins,Montserrat,"Segoe UI",Arial,sans-serif; color:#332959; list-style:none; }
+    .ec-post summary { font-family:Poppins,Montserrat,"Segoe UI",Arial,sans-serif; color:#0B2239; list-style:none; }
     .ec-post summary::-webkit-details-marker { display:none; }
     .ec-post summary::after { content:"+"; float:right; font-weight:700; font-size:1.3rem; line-height:1; color:#0F6F6A; }
     .ec-post details[open] > summary::after { content:"\2013"; }
@@ -100,11 +107,11 @@
   </style>
 
   <!-- ===================== HEADER / DEK ===================== -->
-  <div style="border-bottom:1px solid #E3E0EA;margin:0 0 30px;padding:0 0 24px;">
+  <div style="border-bottom:1px solid #DCE3E9;margin:0 0 30px;padding:0 0 24px;">
     <div style="color:#0F6F6A;font-size:0.8rem;font-weight:700;letter-spacing:1.4px;margin-bottom:12px;text-transform:uppercase;">Immigration Update &nbsp;|&nbsp; F-1 &amp; J-1</div>
-    <h1 style="color:#332959;">The D/S Rule Is On Hold. Here&rsquo;s What October 2 Actually Means.</h1>
-    <p style="color:#5C5570;font-size:1.12rem;margin-bottom:18px;">A federal court stopped the fixed-term admission rule one day before it was due to take effect. Duration of Status is still the law. But the date circulating in student group chats is being badly misread &mdash; and the difference matters if you are planning travel, OPT, or a program extension.</p>
-    <p style="color:#5C5570;font-size:0.92rem;margin-bottom:0;"><strong style="color:#332959;">EduConnect USA</strong> &nbsp;&middot;&nbsp; Published September 18, 2026 &nbsp;&middot;&nbsp; 9 min read</p>
+    <h1 style="color:#0B2239;">The D/S Rule Is On Hold. Here&rsquo;s What October 2 Actually Means.</h1>
+    <p style="color:#3C5468;font-size:1.12rem;margin-bottom:18px;">A federal court stopped the fixed-term admission rule one day before it was due to take effect. Duration of Status is still the law. But the date circulating in student group chats is being badly misread &mdash; and the difference matters if you are planning travel, OPT, or a program extension.</p>
+    <p style="color:#5A7185;font-size:0.92rem;margin-bottom:0;"><strong style="color:#0B2239;">EduConnect USA</strong> &nbsp;&middot;&nbsp; Published September 18, 2026 &nbsp;&middot;&nbsp; 9 min read</p>
   </div>
 
   <!-- ===================== CURRENT STATUS (dark panel) ===================== -->
@@ -120,25 +127,25 @@
   <!-- ===================== THE CORRECTION (orange = attention) ===================== -->
   <div style="background-color:#FFF4EA;border-left:6px solid #FF7400;margin:0 0 44px;padding:26px 30px;">
     <div style="color:#B34F00;font-size:0.78rem;font-weight:700;letter-spacing:1.3px;margin-bottom:8px;text-transform:uppercase;">Correction</div>
-    <h3 style="color:#332959;margin-top:0;">October 2 is not a deadline, and it is not an expiration date</h3>
+    <h3 style="color:#0B2239;margin-top:0;">October 2 is not a deadline, and it is not an expiration date</h3>
     <p>The most common thing we are hearing this week is some version of &ldquo;the rule is only paused until October 2.&rdquo; That is not what the court ordered.</p>
     <p><strong>October 2, 2026 is a status conference</strong> &mdash; a scheduling hearing set for noon Eastern in the district court. It is not a hearing on whether the rule is lawful, and the postponement does not lapse on that date. The order pausing the rule stays in force until the court says otherwise.</p>
     <p style="margin-bottom:0;">What the conference may do is give everyone a clearer sense of the schedule ahead: briefing, a possible merits ruling, and how the case interacts with any appeal. Treat October 2 as a date to watch, not a date to act on.</p>
   </div>
 
   <!-- ===================== WHAT THE COURT DID ===================== -->
-  <h2 style="border-bottom:4px solid #4ED3CC;color:#332959;margin-top:48px;padding-bottom:10px;">What the Court Actually Did</h2>
+  <h2 style="border-bottom:4px solid #4ED3CC;color:#0B2239;margin-top:48px;padding-bottom:10px;">What the Court Actually Did</h2>
   <p>The case is <em>Presidents&rsquo; Alliance on Higher Education and Immigration v. U.S. Department of Homeland Security</em>, No. 1:26-cv-13799-FDS, in the U.S. District Court for the District of Massachusetts, before Judge F. Dennis Saylor IV.</p>
   <p>On September 14, the court issued a memorandum and order doing two things at once:</p>
 
   <!-- legal/authority cards: uniform purple -->
   <div style="align-items:stretch;display:flex;flex-wrap:wrap;gap:22px;margin:28px 0 40px;">
-    <div style="background-color:#FFFFFF;border:1px solid #E3E0EA;border-top:6px solid #332959;box-sizing:border-box;flex:1 1 300px;padding:25px;">
-      <h3 style="color:#332959;margin-top:0;">Postponed the effective date</h3>
+    <div style="background-color:#FFFFFF;border:1px solid #DCE3E9;border-top:6px solid #332959;box-sizing:border-box;flex:1 1 300px;padding:25px;">
+      <h3 style="color:#0B2239;margin-top:0;">Postponed the effective date</h3>
       <p style="margin-bottom:0;">Using its authority under <strong>Section 705 of the Administrative Procedure Act</strong>, the court pushed back the rule&rsquo;s September 15 effective date. In practical terms, the rule never switched on.</p>
     </div>
-    <div style="background-color:#FFFFFF;border:1px solid #E3E0EA;border-top:6px solid #332959;box-sizing:border-box;flex:1 1 300px;padding:25px;">
-      <h3 style="color:#332959;margin-top:0;">Blocked implementation</h3>
+    <div style="background-color:#FFFFFF;border:1px solid #DCE3E9;border-top:6px solid #332959;box-sizing:border-box;flex:1 1 300px;padding:25px;">
+      <h3 style="color:#0B2239;margin-top:0;">Blocked implementation</h3>
       <p style="margin-bottom:0;">The order also <strong>enjoins DHS from taking further steps to implement</strong> the rule while the litigation continues &mdash; so agencies are not supposed to be building toward it in the meantime either.</p>
     </div>
   </div>
@@ -150,36 +157,36 @@
   </div>
 
   <!-- ===================== WHO THIS COVERS ===================== -->
-  <h2 style="border-bottom:4px solid #4ED3CC;color:#332959;margin-top:48px;padding-bottom:10px;">Who This Covers</h2>
+  <h2 style="border-bottom:4px solid #4ED3CC;color:#0B2239;margin-top:48px;padding-bottom:10px;">Who This Covers</h2>
   <p>The paused rule would have reached:</p>
   <div style="display:flex;flex-wrap:wrap;gap:18px;margin:24px 0 44px;">
-    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#332959;flex:1 1 200px;padding:20px 22px;"><strong>F-1 students</strong></div>
-    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#332959;flex:1 1 200px;padding:20px 22px;"><strong>F-2 dependents</strong></div>
-    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#332959;flex:1 1 200px;padding:20px 22px;"><strong>J-1 students &amp; scholars</strong></div>
-    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#332959;flex:1 1 200px;padding:20px 22px;"><strong>J-2 dependents</strong></div>
-    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#332959;flex:1 1 200px;padding:20px 22px;"><strong>I foreign media representatives</strong></div>
+    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#0B2239;flex:1 1 200px;padding:20px 22px;"><strong>F-1 students</strong></div>
+    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#0B2239;flex:1 1 200px;padding:20px 22px;"><strong>F-2 dependents</strong></div>
+    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#0B2239;flex:1 1 200px;padding:20px 22px;"><strong>J-1 students &amp; scholars</strong></div>
+    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#0B2239;flex:1 1 200px;padding:20px 22px;"><strong>J-2 dependents</strong></div>
+    <div style="background-color:#F3F1F8;border-left:6px solid #4ED3CC;box-sizing:border-box;color:#0B2239;flex:1 1 200px;padding:20px 22px;"><strong>I foreign media representatives</strong></div>
   </div>
 
   <!-- ===================== WHAT IS ON HOLD ===================== -->
-  <h2 style="border-bottom:4px solid #4ED3CC;color:#332959;margin-top:48px;padding-bottom:10px;">What Is Sitting on the Shelf</h2>
+  <h2 style="border-bottom:4px solid #4ED3CC;color:#0B2239;margin-top:48px;padding-bottom:10px;">What Is Sitting on the Shelf</h2>
   <p>It is worth knowing what the rule would have done, because these provisions are paused &mdash; not repealed &mdash; and they are the reason the next few months are worth watching.</p>
 
   <!-- informational cards: uniform teal -->
   <div style="align-items:stretch;display:flex;flex-wrap:wrap;gap:22px;margin:28px 0 40px;">
-    <div style="background-color:#FFFFFF;border:1px solid #E3E0EA;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
-      <h3 style="color:#332959;margin-top:0;">A fixed Admit Until Date</h3>
+    <div style="background-color:#FFFFFF;border:1px solid #DCE3E9;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
+      <h3 style="color:#0B2239;margin-top:0;">A fixed Admit Until Date</h3>
       <p style="margin-bottom:0;">F and J travelers would have received a specific <strong>Admit Until Date</strong> on the Form I-94 instead of &ldquo;D/S,&rdquo; generally tied to the program end date on the I-20 or DS-2019.</p>
     </div>
-    <div style="background-color:#FFFFFF;border:1px solid #E3E0EA;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
-      <h3 style="color:#332959;margin-top:0;">A four-year ceiling per admission</h3>
+    <div style="background-color:#FFFFFF;border:1px solid #DCE3E9;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
+      <h3 style="color:#0B2239;margin-top:0;">A four-year ceiling per admission</h3>
       <p style="margin-bottom:0;">Each period of admission would have been capped at <strong>four years at a time</strong>, plus the applicable departure period &mdash; 60 days for F-1, 30 days for J-1.</p>
     </div>
-    <div style="background-color:#FFFFFF;border:1px solid #E3E0EA;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
-      <h3 style="color:#332959;margin-top:0;">A new Extension of Stay step</h3>
+    <div style="background-color:#FFFFFF;border:1px solid #DCE3E9;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
+      <h3 style="color:#0B2239;margin-top:0;">A new Extension of Stay step</h3>
       <p style="margin-bottom:0;">Needing more time would have meant filing an <strong>Extension of Stay</strong> with USCIS &mdash; a federal application, a fee, and a processing queue that does not exist under D/S.</p>
     </div>
-    <div style="background-color:#FFFFFF;border:1px solid #E3E0EA;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
-      <h3 style="color:#332959;margin-top:0;">Tighter academic mobility</h3>
+    <div style="background-color:#FFFFFF;border:1px solid #DCE3E9;border-top:6px solid #4ED3CC;box-sizing:border-box;flex:1 1 290px;padding:25px;">
+      <h3 style="color:#0B2239;margin-top:0;">Tighter academic mobility</h3>
       <p style="margin-bottom:0;">New limits on <strong>school transfers, changes of educational objective, and repeating a degree level</strong> &mdash; with graduate-level students facing the strictest restrictions.</p>
     </div>
   </div>
@@ -191,11 +198,11 @@
   </div>
 
   <!-- ===================== WHAT TO DO NOW ===================== -->
-  <h2 style="border-bottom:4px solid #4ED3CC;color:#332959;margin-top:48px;padding-bottom:10px;">What You Should Do This Week</h2>
+  <h2 style="border-bottom:4px solid #4ED3CC;color:#0B2239;margin-top:48px;padding-bottom:10px;">What You Should Do This Week</h2>
   <p><strong>Nothing urgent, and nothing new to file.</strong> But &ldquo;no action required&rdquo; is not the same as &ldquo;stop paying attention.&rdquo; The habits below cost you twenty minutes and protect you whichever way this case goes.</p>
 
   <div style="background-color:#EDFAF9;border-left:6px solid #4ED3CC;margin:28px 0 30px;padding:27px 30px;">
-    <h3 style="color:#332959;margin-top:0;">Everyone in F or J status</h3>
+    <h3 style="color:#0B2239;margin-top:0;">Everyone in F or J status</h3>
     <ul>
       <li><strong>Keep maintaining status normally.</strong> Full course load, valid documents, authorized employment only. The pause changes none of your existing obligations.</li>
       <li><strong>Pull your current Form I-94</strong> and confirm it reads D/S. Save a PDF copy with today&rsquo;s date &mdash; a dated record of your admission terms is genuinely useful if the framework shifts later.</li>
@@ -214,47 +221,47 @@
   </div>
 
   <!-- ===================== SITUATIONS (accordions: uniform teal) ===================== -->
-  <h2 style="border-bottom:4px solid #4ED3CC;color:#332959;margin-top:50px;padding-bottom:10px;">Find Your Situation</h2>
+  <h2 style="border-bottom:4px solid #4ED3CC;color:#0B2239;margin-top:50px;padding-bottom:10px;">Find Your Situation</h2>
   <p>What the pause means for you depends on where you are in your program and what you had planned for the next few months.</p>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:16px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:16px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;font-size:1.06rem;padding:20px 22px;"><strong>I was about to change my travel plans because of September 15</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:24px 28px;">
+    <div style="border-top:1px solid #DCE3E9;padding:24px 28px;">
       <p>You can stand down on the specific fear that re-entering would drop you into a fixed-date I-94. With the rule postponed, admissions are being processed under the existing D/S framework.</p>
       <p>Ordinary travel readiness still applies: a valid passport, a valid visa stamp, a properly endorsed I-20 or DS-2019, and proof of enrollment or employment as applicable.</p>
       <p style="margin-bottom:0;"><strong>Build in one habit anyway:</strong> retrieve your I-94 after every single entry and read it. That is good practice under any framework, and it becomes critical immediately if the rule is ever reinstated on appeal.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:16px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:16px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;font-size:1.06rem;padding:20px 22px;"><strong>I was counting on the OPT transition deadline</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:24px 28px;">
+    <div style="border-top:1px solid #DCE3E9;padding:24px 28px;">
       <p>The rule contained a transition provision for certain F-1 students who stayed under D/S and filed a qualifying post-completion OPT or STEM OPT application by <strong>March 18, 2027</strong>. With the rule postponed, that clock is not currently running against you &mdash; because the framework it belonged to is not in effect.</p>
       <p>That is a reason to relax, not a reason to stop planning. OPT timing rules of their own &mdash; the 90-day-before-completion filing window, the 60-day-after window, the unemployment limits &mdash; are unaffected by this case and still govern your application.</p>
       <p style="margin-bottom:0;">If you are graduating in Fall 2026 or Spring 2027, map your OPT filing window now on the assumption that current rules apply, and revisit it if the case status changes.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:16px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:16px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;font-size:1.06rem;padding:20px 22px;"><strong>My I-20 or DS-2019 expires during this academic year</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:24px 28px;">
+    <div style="border-top:1px solid #DCE3E9;padding:24px 28px;">
       <p>Your program extension process is the familiar one: document a legitimate academic or program reason, and work with your DSO or RO before the current end date. No USCIS Extension of Stay filing is required under D/S.</p>
       <p style="margin-bottom:0;">Do not let the extension slide. Requesting it early is the single best hedge against a changing framework &mdash; a program end date that is already accurate is far easier to work with than one you are fixing under time pressure.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:16px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:16px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;font-size:1.06rem;padding:20px 22px;"><strong>I was planning to transfer schools or start another degree</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:24px 28px;">
+    <div style="border-top:1px solid #DCE3E9;padding:24px 28px;">
       <p>The rule&rsquo;s academic mobility restrictions &mdash; limits on first-year transfers, on changing educational objectives at the graduate level, and on starting a program at the same or a lower level &mdash; are among the provisions currently blocked.</p>
       <p>Existing transfer and change-of-level procedures continue to apply, including SEVIS transfer timing and the requirement to enroll in the next available term.</p>
       <p style="margin-bottom:0;"><strong>Sequencing advice:</strong> if a transfer or second degree is genuinely part of your plan, moving on it while the current framework holds is worth considering. Not as panic &mdash; as ordinary planning around a known risk.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:16px 0 44px;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:16px 0 44px;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;font-size:1.06rem;padding:20px 22px;"><strong>I am a J-1 scholar, or an employer with F/J talent</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:24px 28px;">
+    <div style="border-top:1px solid #DCE3E9;padding:24px 28px;">
       <p>J-1 program extensions continue through your sponsor, with no USCIS Extension of Stay layered on top. The 30-day departure period is unchanged.</p>
       <p>For employers: the hiring disruption the rule threatened &mdash; work authorization gaps while an extension sat in a USCIS queue &mdash; is not currently a live risk. Offers and start dates built around OPT and STEM OPT can proceed on normal assumptions.</p>
       <p style="margin-bottom:0;">We would still advise building a little slack into onboarding timelines for the 2027 cycle. If the rule returns, it returns with processing queues attached.</p>
@@ -276,91 +283,91 @@
   </div>
 
   <!-- ===================== FAQ (accordions: uniform teal) ===================== -->
-  <h2 style="border-bottom:4px solid #4ED3CC;color:#332959;margin-top:50px;padding-bottom:10px;">Frequently Asked Questions</h2>
+  <h2 style="border-bottom:4px solid #4ED3CC;color:#0B2239;margin-top:50px;padding-bottom:10px;">Frequently Asked Questions</h2>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:14px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:14px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;padding:19px 22px;"><strong>Is the rule in effect right now?</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:22px 26px;">
+    <div style="border-top:1px solid #DCE3E9;padding:22px 26px;">
       <p style="margin-bottom:0;">No. As of September 18, 2026, the rule is postponed nationwide and DHS is enjoined from implementing it. Duration of Status continues to apply.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:14px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:14px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;padding:19px 22px;"><strong>Does the pause end on October 2?</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:22px 26px;">
+    <div style="border-top:1px solid #DCE3E9;padding:22px 26px;">
       <p>No. This is the most important correction in this post. October 2, 2026 is a scheduled status conference &mdash; a procedural hearing about how the case will proceed. The postponement has no built-in expiration date and remains in force until the court orders otherwise or a higher court intervenes.</p>
       <p style="margin-bottom:0;">If you have seen &ldquo;paused until October 2&rdquo; shared in a student group or on social media, it is wrong.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:14px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:14px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;padding:19px 22px;"><strong>Do I need to file anything or notify anyone?</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:22px 26px;">
+    <div style="border-top:1px solid #DCE3E9;padding:22px 26px;">
       <p style="margin-bottom:0;">No filing is triggered by this ruling. Your normal obligations continue: maintain status, keep documents valid, report address and program changes to your school, and get advice before a significant academic or travel decision.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:14px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:14px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;padding:19px 22px;"><strong>I already have a date-specific I-94 &mdash; what does that mean?</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:22px 26px;">
+    <div style="border-top:1px solid #DCE3E9;padding:22px 26px;">
       <p style="margin-bottom:0;">Most F and J admissions are recorded as D/S, but date-specific entries do occur for other reasons, including data errors at the port of entry. If your most recent I-94 shows a specific date rather than D/S, treat that date as real until it is corrected and raise it with your DSO or RO right away &mdash; and with us if you would like a second read.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:14px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:14px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;padding:19px 22px;"><strong>Does this affect OPT, STEM OPT, or CPT?</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:22px 26px;">
+    <div style="border-top:1px solid #DCE3E9;padding:22px 26px;">
       <p>The D/S rule never eliminated any of these &mdash; it added an extension-of-stay layer around them. With the rule paused, that layer is not in play, and OPT, STEM OPT, and CPT operate under their existing rules.</p>
       <p style="margin-bottom:0;">Separately, CPT practice has been tightening at the guidance and institutional level, which is an independent development from this case. If you are relying on CPT, review it on its own terms.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:14px 0;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:14px 0;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;padding:19px 22px;"><strong>Should I apply to a longer program now, while D/S holds?</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:22px 26px;">
+    <div style="border-top:1px solid #DCE3E9;padding:22px 26px;">
       <p style="margin-bottom:0;">Choose the program that fits your academic and career goals, not the litigation calendar. That said, if you were already weighing a longer program or a second degree, the current framework is the more forgiving one, and timing a decision you had already made is reasonable. Timing a decision you had not made is not.</p>
     </div>
   </details>
 
-  <details style="background-color:#FFFFFF;border:1px solid #E3E0EA;margin:14px 0 44px;">
+  <details style="background-color:#FFFFFF;border:1px solid #DCE3E9;margin:14px 0 44px;">
     <summary style="border-left:6px solid #4ED3CC;cursor:pointer;padding:19px 22px;"><strong>How will I know if something changes?</strong></summary>
-    <div style="border-top:1px solid #E3E0EA;padding:22px 26px;">
+    <div style="border-top:1px solid #DCE3E9;padding:22px 26px;">
       <p style="margin-bottom:0;">We update this post whenever the docket moves, and we date every revision. Your school&rsquo;s international office remains your primary source for how your specific institution is responding. For anything that turns on your individual record, talk to an advisor rather than relying on a general post &mdash; including this one.</p>
     </div>
   </details>
 
   <!-- ===================== RESOURCES (uniform purple) ===================== -->
-  <h2 style="border-bottom:4px solid #4ED3CC;color:#332959;margin-top:50px;padding-bottom:10px;">Verify It Yourself</h2>
+  <h2 style="border-bottom:4px solid #4ED3CC;color:#0B2239;margin-top:50px;padding-bottom:10px;">Verify It Yourself</h2>
   <p>Immigration guidance ages quickly, and secondhand summaries age fastest. These are the primary sources we check.</p>
 
   <div style="display:flex;flex-wrap:wrap;gap:22px;margin:28px 0 46px;">
     <div style="background-color:#F3F1F8;border-left:6px solid #332959;box-sizing:border-box;flex:1 1 290px;padding:25px 27px;">
-      <h3 style="color:#332959;margin-top:0;">The final rule itself</h3>
+      <h3 style="color:#0B2239;margin-top:0;">The final rule itself</h3>
       <p>The full text as published in the Federal Register on July 17, 2026.</p>
       <p style="margin-bottom:0;"><a href="https://www.federalregister.gov/documents/2026/07/17/2026-14439/establishing-a-fixed-time-period-of-admission-and-an-extension-of-stay-procedure-for-nonimmigrant"><strong>Federal Register &rarr;</strong></a></p>
     </div>
     <div style="background-color:#F3F1F8;border-left:6px solid #332959;box-sizing:border-box;flex:1 1 290px;padding:25px 27px;">
-      <h3 style="color:#332959;margin-top:0;">SEVP guidance</h3>
+      <h3 style="color:#0B2239;margin-top:0;">SEVP guidance</h3>
       <p>DHS Study in the States FAQ and quick facts on the fixed-period rule.</p>
       <p style="margin-bottom:0;"><a href="https://studyinthestates.dhs.gov/final-rule-establishing-a-fixed-time-period-of-admission-and-an-extension-of-stay-procedure-faq"><strong>Study in the States &rarr;</strong></a></p>
     </div>
     <div style="background-color:#F3F1F8;border-left:6px solid #332959;box-sizing:border-box;flex:1 1 290px;padding:25px 27px;">
-      <h3 style="color:#332959;margin-top:0;">Litigation tracker</h3>
+      <h3 style="color:#0B2239;margin-top:0;">Litigation tracker</h3>
       <p>The Presidents&rsquo; Alliance maintains a public page on the case, including filings.</p>
       <p style="margin-bottom:0;"><a href="https://www.presidentsalliance.org/duration-of-status-litigation/"><strong>Presidents&rsquo; Alliance &rarr;</strong></a></p>
     </div>
     <div style="background-color:#F3F1F8;border-left:6px solid #332959;box-sizing:border-box;flex:1 1 290px;padding:25px 27px;">
-      <h3 style="color:#332959;margin-top:0;">NAFSA legal defense page</h3>
+      <h3 style="color:#0B2239;margin-top:0;">NAFSA legal defense page</h3>
       <p>Higher education&rsquo;s running summary of the challenge and implementation status.</p>
       <p style="margin-bottom:0;"><a href="https://www.nafsa.org/legal-defense-DS"><strong>NAFSA &rarr;</strong></a></p>
     </div>
     <div style="background-color:#F3F1F8;border-left:6px solid #332959;box-sizing:border-box;flex:1 1 290px;padding:25px 27px;">
-      <h3 style="color:#332959;margin-top:0;">Your Form I-94</h3>
+      <h3 style="color:#0B2239;margin-top:0;">Your Form I-94</h3>
       <p>Retrieve your admission record and confirm your class of admission and admit-until terms.</p>
       <p style="margin-bottom:0;"><a href="https://i94.cbp.dhs.gov/home"><strong>CBP I-94 &rarr;</strong></a></p>
     </div>
     <div style="background-color:#F3F1F8;border-left:6px solid #332959;box-sizing:border-box;flex:1 1 290px;padding:25px 27px;">
-      <h3 style="color:#332959;margin-top:0;">Form I-539</h3>
+      <h3 style="color:#0B2239;margin-top:0;">Form I-539</h3>
       <p>The extension-of-stay form the rule would have required. Not needed under D/S.</p>
       <p style="margin-bottom:0;"><a href="https://www.uscis.gov/i-539"><strong>USCIS &rarr;</strong></a></p>
     </div>
@@ -378,7 +385,7 @@
   </div>
 
   <!-- ===================== DISCLAIMER ===================== -->
-  <div style="border-top:1px solid #E3E0EA;color:#5C5570;font-size:0.88rem;margin:0;padding:22px 0 0;">
+  <div style="border-top:1px solid #DCE3E9;color:#5A7185;font-size:0.88rem;margin:0;padding:22px 0 0;">
     <p style="margin-bottom:0;"><strong>About this post.</strong> Published by EduConnect USA on September 18, 2026 and current as of that date. This is general information about a developing federal case, not legal advice, and it does not create an advisor-client or attorney-client relationship. Immigration outcomes depend on individual facts. For advice about your own record, consult your Designated School Official, Responsible Officer, or a licensed immigration attorney.</p>
   </div>
 
