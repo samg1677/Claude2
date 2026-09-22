@@ -7,25 +7,32 @@
 <meta name="description" content="Most F-1 and J-1 students never file Form I-539. A practical guide to the four situations that do call for it, the fees and timelines most articles get wrong, and the mistakes that cause denials.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
+  /* Preview scaffolding only - NOT part of what you paste. It mimics a
+     CMS code module: no fixed width, the post simply fills it. Resize
+     the browser to watch the container queries fire. */
   body { margin:0; background:#FFFFFF; }
-  .ec-page-shell { max-width:1280px; margin:0 auto; padding:48px 24px 80px; }
-  @media(max-width:640px){ .ec-page-shell { padding:28px 16px 56px; } }
+  .ec-page-shell { width:100%; max-width:none; margin:0; padding:40px 24px 72px; }
+  @media(max-width:560px){ .ec-page-shell { padding:24px 16px 48px; } }
 </style>
 </head>
 <body>
 <!-- ===============================================================
-     TO PUBLISH IN A CMS: copy only the <div class="ec-post"> ... </div>
-     block below and paste it into the post body. Everything outside it
-     is preview scaffolding (doctype, fonts, page width) that your site
-     template already provides.
+     TO PUBLISH IN A CMS: paste everything between the two PASTE markers
+     below into your code module. Everything outside them is preview
+     scaffolding (doctype, fonts, page padding) that your site template
+     already provides. The pasted block has no fixed width - it fills
+     whatever the module gives it, at any screen size.
      =============================================================== -->
 <div class="ec-page-shell">
+
+<!-- ================== PASTE FROM HERE ================== -->
 <!-- ============================================================
      EduConnect USA - Blog Post
      "Form I-539 in Practice: Who Actually Files It, and What Gets It Denied"
 
-     Styling is identical to the D/S post - same tokens, same accent
-     roles - so the two read as one series:
+     Fills whatever container it is given, at any width. Styling is
+     identical to the D/S post - same tokens, same accent roles - so the
+     two read as one series:
        PURPLE #332959 .. the dark (panels, resource cards, stat cards)
        TEAL   #4ED3CC .. the ONLY accent (section rules, accordions,
                         card borders, accent bars, the CTA)
@@ -42,7 +49,25 @@
      ============================================================ -->
 <div class="ec-post">
   <style>
+    /* -----------------------------------------------------------------
+       RESPONSIVE MODEL - read this before editing.
+
+       This block sizes itself from the width of ITS OWN CONTAINER, not
+       the width of the browser window, using @container queries and cqi
+       units. That is deliberate: the post sits in a content column with
+       a CTA floating beside it, so the viewport can be 1400px wide while
+       this column is only 600px. Viewport media queries would not fire
+       and the card grids would stay three-across inside a narrow column.
+
+       @media rules are kept as a fallback for browsers without container
+       query support, and come first so the @container rules win where
+       both apply. Nothing here sets a fixed width - the post fills
+       whatever the module gives it, at any aspect ratio.
+       ----------------------------------------------------------------- */
     .ec-post {
+      container-type:inline-size;
+      container-name:ecpost;
+
       /* brand purple */
       --ec-purple:#332959;
       --ec-purple-deep:#241D42;
@@ -50,17 +75,15 @@
       /* panel grey is near-neutral on purpose - a purple-tinted grey
          reads as a fourth color across a long page */
       --ec-panel:#F4F4F6;
-      /* brand teal */
+      /* brand teal - the only accent */
       --ec-teal:#4ED3CC;
       --ec-teal-deep:#0F6F6A;
       --ec-teal-tint:#EFF8F7;
       --ec-teal-line:#C2EDEA;
-      /* brand orange */
+      /* brand orange - reserve. One element per post, plus focus rings */
       --ec-orange:#FF7400;
-      --ec-orange-light:#FF8C29;
       --ec-orange-deep:#B34F00;
       --ec-orange-tint:#FFF4EA;
-      --ec-orange-line:#FFD6B5;
       /* neutral text - deliberately NOT brand colored.
          Copy reads as ink; brand color lives in the furniture. */
       --ec-text:#12222F;
@@ -69,51 +92,124 @@
       --ec-text-soft:#5A7185;
       --ec-line:#DDDBE3;
 
+      width:100%;
+      max-width:none;
       color:#12222F;
       font-family:"Open Sans",Inter,"Segoe UI",Arial,sans-serif;
+      font-size:1rem;
       line-height:1.65;
       overflow-wrap:break-word;
     }
     .ec-post *, .ec-post *::before, .ec-post *::after { box-sizing:border-box; }
+    /* stops a long word or a case number forcing sideways scroll */
+    .ec-post > *, .ec-post div, .ec-post p, .ec-post li { min-width:0; }
+
     .ec-post h1, .ec-post h2, .ec-post h3 {
       font-family:Poppins,Montserrat,"Segoe UI",Arial,sans-serif;
       color:#0B2239;
       line-height:1.18;
       text-align:left;
+      max-width:none;
+    }
+    /* each size is declared twice: the vw pass is the fallback, the cqi
+       pass overrides it wherever container queries are supported */
+    .ec-post h1 {
+      font-size:clamp(1.75rem,5.2vw,2.75rem);
+      font-size:clamp(1.75rem,5.2cqi,2.75rem);
+      letter-spacing:-.02em; margin:0 0 14px;
+      text-wrap:pretty; width:100%;
+    }
+    .ec-post h2 {
+      font-size:clamp(1.38rem,3.4vw,2rem);
+      font-size:clamp(1.38rem,3.4cqi,2rem);
+      letter-spacing:-.015em; text-wrap:balance;
+    }
+    .ec-post h3 {
+      font-size:clamp(1.02rem,1.9vw,1.14rem);
+      font-size:clamp(1.02rem,1.9cqi,1.14rem);
       text-wrap:balance;
     }
-    .ec-post h1 { font-size:clamp(1.9rem,3.6vw,3rem); letter-spacing:-.02em; margin:0 0 14px; text-wrap:pretty; max-width:none; width:100%; }
-    .ec-post h2 { font-size:clamp(1.5rem,2.2vw,2.1rem); letter-spacing:-.015em; max-width:none; }
-    .ec-post { max-width:none; }
-    /* lead panel headline scales up, the way a hero should */
-    .ec-post > div[style*="linear-gradient"]:first-of-type h2 { font-size:clamp(1.8rem,3vw,2.6rem); }
-    .ec-post h3 { font-size:1.1rem; }
+    .ec-post > div[style*="linear-gradient"]:first-of-type h2 {
+      font-size:clamp(1.6rem,4.4vw,2.5rem);
+      font-size:clamp(1.6rem,4.4cqi,2.5rem);
+    }
     .ec-post p { margin-top:0; }
+    .ec-post ul { padding-left:24px; }
+    .ec-post li { margin-bottom:10px; }
+
     .ec-post a { color:#0F6F6A; font-weight:700; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px; }
     .ec-post a:hover { color:#332959; text-decoration:underline !important; }
     .ec-post a:focus-visible, .ec-post summary:focus-visible { outline:3px solid #FF7400; outline-offset:4px; }
     .ec-post a[style*="background-color"] { min-height:48px; border-radius:6px; font-family:Poppins,Montserrat,"Segoe UI",Arial,sans-serif; line-height:1.4; max-width:100%; }
     .ec-post a[style*="background-color"]:hover { opacity:.9; }
+
     .ec-post details { border-radius:6px; }
     .ec-post summary { font-family:Poppins,Montserrat,"Segoe UI",Arial,sans-serif; color:#0B2239; list-style:none; }
     .ec-post summary::-webkit-details-marker { display:none; }
-    .ec-post summary::after { content:"+"; float:right; font-weight:700; font-size:1.3rem; line-height:1; color:#0F6F6A; }
+    .ec-post summary::after { content:"+"; float:right; margin-left:12px; font-weight:700; font-size:1.3rem; line-height:1; color:#0F6F6A; }
     .ec-post details[open] > summary::after { content:"\2013"; }
     .ec-post summary:hover, .ec-post details[open] > summary { background:#EFF8F7; }
-    .ec-post li { margin-bottom:10px; }
-    @media(max-width:640px) {
-      .ec-post > div[style*="padding"], .ec-post details > div { padding:22px 18px !important; }
-      .ec-post summary { padding:18px 16px !important; }
-      .ec-post div[style*="flex:1"] { flex-basis:100% !important; min-width:0; padding:22px 18px !important; }
+
+    /* ---------- FALLBACK: viewport-based, for older browsers ---------- */
+    @media(max-width:700px) {
+      .ec-post > div[style*="background-color"] { padding:24px 22px !important; }
+      .ec-post details > div { padding:22px 20px !important; }
+      .ec-post summary { padding:18px 18px !important; }
+      .ec-post div[style*="flex:1"] { padding:22px 20px !important; }
+    }
+    @media(max-width:560px) {
+      .ec-post div[style*="flex:1"] { flex-basis:100% !important; }
+      .ec-post > div[style*="background-color"] { padding:20px 16px !important; }
+      .ec-post details > div { padding:18px 16px !important; }
+      .ec-post summary { padding:16px 14px !important; }
+      .ec-post a[style*="background-color"] { display:block !important; text-align:center; width:100%; }
+    }
+
+    /* ---------- PRIMARY: container-based, sizes to the module ---------- */
+    @container ecpost (max-width:760px) {
+      .ec-post > div[style*="background-color"] { padding:24px 22px !important; }
+      .ec-post details > div { padding:22px 20px !important; }
+      .ec-post summary { padding:18px 18px !important; }
+      .ec-post div[style*="flex:1"] { padding:22px 20px !important; }
+      .ec-post div[style*="display:flex"] { gap:16px !important; }
+    }
+    @container ecpost (max-width:560px) {
+      /* one column, every grid */
+      .ec-post div[style*="flex:1"] { flex-basis:100% !important; }
+      .ec-post div[style*="display:flex"] { gap:14px !important; }
+      .ec-post > div[style*="background-color"] { padding:20px 17px !important; }
+      .ec-post details > div { padding:18px 17px !important; }
+      .ec-post summary { padding:16px 15px !important; font-size:1rem !important; }
+      .ec-post div[style*="font-size:1.9rem"] { font-size:1.65rem !important; }
+      .ec-post p[style*="font-size:1.12rem"] { font-size:1.04rem !important; }
+      /* full-width tap targets on a phone */
+      .ec-post a[style*="background-color"] { display:block !important; text-align:center; width:100%; padding-left:16px !important; padding-right:16px !important; }
+      .ec-post ul { padding-left:21px; }
+      .ec-post h2 { padding-bottom:8px !important; }
+    }
+    @container ecpost (max-width:400px) {
+      .ec-post > div[style*="background-color"] { padding:18px 14px !important; }
+      .ec-post details > div { padding:16px 14px !important; }
+      .ec-post summary { padding:15px 13px !important; }
+      .ec-post div[style*="font-size:1.9rem"] { font-size:1.5rem !important; }
+      .ec-post ul { padding-left:19px; }
+      .ec-post li { margin-bottom:8px; }
     }
   </style>
-  <!-- ===================== HEADER / DEK ===================== -->
+  <!-- ===== POST HEADER - DELETE IF YOUR CMS ALREADY RENDERS THE TITLE =====
+       If the module sits below a header section that already outputs the
+       post title, date and byline, delete this whole block down to the
+       matching END POST HEADER comment. Leaving both duplicates the
+       headline. If your header only outputs site nav, keep it.
+       ===================================================================== -->
   <div style="border-bottom:1px solid #DDDBE3;margin:0 0 30px;padding:0 0 24px;">
     <div style="color:#0F6F6A;font-size:0.8rem;font-weight:700;letter-spacing:1.4px;margin-bottom:12px;text-transform:uppercase;">Filing Guide &nbsp;|&nbsp; Form I-539</div>
     <h1 style="color:#0B2239;">Form I-539 in Practice: Who Actually Files It, and What Gets It Denied</h1>
     <p style="color:#3C5468;font-size:1.12rem;margin-bottom:18px;">Most F-1 and J-1 students will never file this form &mdash; and a lot of people file it when they should not, or file it correctly and then abandon it by booking a flight. This is the operational guide: the four situations that genuinely call for an I-539, the three numbers most websites still get wrong, and the specific mistakes that turn an approvable case into a denial.</p>
     <p style="color:#5A7185;font-size:0.92rem;margin-bottom:0;"><strong style="color:#0B2239;">EduConnect USA</strong> &nbsp;&middot;&nbsp; Published September 21, 2026 &nbsp;&middot;&nbsp; 11 min read</p>
   </div>
+
+  <!-- ===== END POST HEADER ================================================ -->
 
   <!-- ===================== SCOPE / WHAT THIS IS NOT ===================== -->
   <div style="background-color:#EFF8F7;border-left:6px solid #4ED3CC;margin:0 0 34px;padding:24px 28px;">
@@ -398,6 +494,8 @@
   </div>
 
 </div>
+<!-- ================== PASTE TO HERE ==================== -->
+
 </div>
 </body>
 </html>
