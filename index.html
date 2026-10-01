@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduConnect | Your Path to U.S. Study &amp; Career</title>
+  <meta name="description" content="EduConnect helps international students find the right U.S. program, apply with confidence, and stay on track. Free 1-on-1 consultation and application support.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EduConnect | Your Path to U.S. Study &amp; Career">
+  <meta property="og:description" content="Free 1-on-1 consultation and end-to-end application support for international students.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Lato:wght@400;700&display=swap">
+
+  <style>
+    :root {
+      --navy: #13294b;
+      --navy-deep: #0b1a33;
+      --teal: #0fa3a3;
+      --teal-dark: #0b8282;
+      --teal-tint: #e3f5f5;
+      --gold: #f2b84b;
+      --ink: #14213d;
+      --ink-muted: #4b5873;
+      --ink-soft: #8a94a8;
+      --surface-tint: #f5f8fb;
+      --border: #e3e8ef;
+      --radius: 10px;
+      --radius-lg: 16px;
+      --shadow-card: 0 10px 30px -12px rgba(19, 41, 75, .18);
+      --shadow-cta: 0 8px 20px -8px rgba(15, 163, 163, .55);
+      --max: 1320px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Lato", system-ui, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: "Archivo", system-ui, sans-serif; margin: 0; letter-spacing: -0.02em; }
+    p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 640px) { .container { padding: 0 24px; } }
+    @media (min-width: 1024px) { .container { padding: 0 32px; } }
+
+    .section { padding: 72px 0; position: relative; overflow: hidden; }
+    @media (min-width: 1024px) { .section { padding: 104px 0; } }
+
+    .eyebrow {
+      font-size: 12px; text-transform: uppercase; letter-spacing: .18em;
+      color: var(--teal); font-weight: 700; margin-bottom: 12px;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .eyebrow.light { color: #9fe0e0; }
+    .h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.12; font-weight: 700; }
+    .accent { color: var(--teal); }
+    .muted { color: var(--ink-muted); }
+
+    .dots::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(currentColor 1px, transparent 1px);
+      background-size: 26px 26px; opacity: .05;
+    }
+    .glow { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: "Lato", sans-serif; font-weight: 700; font-size: 14px;
+      border-radius: 8px; padding: 12px 22px; border: 0; cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+    .btn-teal { background: var(--teal); color: #fff; box-shadow: var(--shadow-cta); }
+    .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-navy:hover { background: #1c3a68; }
+    .btn svg { transition: transform .2s; }
+    .btn:hover svg { transform: translateX(3px); }
+    :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+    /* ---------- Header ---------- */
+    .topbar { background: var(--navy); color: #fff; font-size: 12px; display: none; }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; height: 36px; }
+    .topbar span { color: rgba(255,255,255,.65); }
+    @media (min-width: 1024px) { .topbar { display: block; } }
+
+    header.site { position: sticky; top: 0; z-index: 40; background: #fff; border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: "Archivo"; font-weight: 700; font-size: 22px; color: var(--navy); }
+    .logo-mark {
+      width: 36px; height: 36px; border-radius: 9px; background: var(--teal);
+      display: grid; place-items: center; color: #fff;
+    }
+    .logo b { color: var(--teal); font-weight: 700; }
+    .nav-links { display: none; gap: 4px; }
+    .nav-links a { padding: 8px 12px; font-size: 14px; font-weight: 500; font-family: "Archivo"; }
+    .nav-links a:hover { color: var(--teal); }
+    @media (min-width: 1024px) { .nav-links { display: flex; } .nav { height: 80px; } }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; overflow: hidden; padding: 56px 0 72px; border-bottom: 1px solid var(--border); color: var(--navy); }
+    @media (min-width: 1024px) { .hero { padding: 88px 0 104px; } }
+    .hero-grid { display: grid; gap: 40px; position: relative; align-items: center; }
+    @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 64px; } }
+    .hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1; font-weight: 700; color: var(--ink); letter-spacing: -0.035em; }
+    .hero .lead { margin-top: 24px; font-family: "Archivo"; font-size: clamp(1.25rem, 2.2vw, 1.75rem); line-height: 1.4; color: var(--ink-muted); max-width: 36rem; }
+    .hero-points { margin: 28px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .hero-points li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink-muted); }
+    .hero-points svg { color: var(--teal); flex-shrink: 0; margin-top: 3px; }
+    .hero-stats { display: flex; gap: 36px; margin-top: 36px; flex-wrap: wrap; }
+    .hero-stats strong { display: block; font-family: "Archivo"; font-size: 28px; color: var(--ink); line-height: 1; }
+    .hero-stats span { font-size: 13px; color: var(--ink-soft); }
+
+    /* ---------- Form card ---------- */
+    .form-card {
+      position: relative; background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-card); overflow: hidden;
+    }
+    .form-card-head { background: linear-gradient(135deg, var(--navy), var(--navy-deep)); color: #fff; padding: 22px 26px; }
+    .form-card-head h2 { font-size: 22px; }
+    .form-card-head p { color: rgba(255,255,255,.72); font-size: 14px; margin-top: 4px; }
+    .form-card-body { padding: 24px 26px 28px; min-height: 280px; }
+    .form-fallback { color: var(--ink-soft); font-size: 14px; }
+
+    /* HubSpot form styling to match the page */
+    #hubspot-form .hs-form fieldset { max-width: 100% !important; }
+    #hubspot-form .hs-form-field { margin-bottom: 16px; }
+    #hubspot-form .hs-form-field > label {
+      display: block; font-family: "Archivo"; font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 6px;
+    }
+    #hubspot-form .hs-form-required { color: var(--gold); margin-left: 2px; }
+    #hubspot-form .input { margin-right: 0 !important; }
+    #hubspot-form input[type=text], #hubspot-form input[type=email], #hubspot-form input[type=tel],
+    #hubspot-form input[type=number], #hubspot-form select, #hubspot-form textarea {
+      width: 100% !important; height: 48px; padding: 8px 14px; font: inherit; font-size: 14px;
+      border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--ink);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    #hubspot-form textarea { height: 110px; resize: vertical; }
+    #hubspot-form input:focus, #hubspot-form select:focus, #hubspot-form textarea:focus {
+      outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(15,163,163,.2);
+    }
+    #hubspot-form .form-columns-2 { display: grid; grid-template-columns: 1fr; gap: 0 12px; }
+    @media (min-width: 560px) { #hubspot-form .form-columns-2 { grid-template-columns: 1fr 1fr; } }
+    #hubspot-form .form-columns-2 .hs-form-field { width: 100% !important; float: none !important; }
+    #hubspot-form .inputs-list { list-style: none; padding: 0; margin: 0; }
+    #hubspot-form .inputs-list label { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--ink-muted); }
+    #hubspot-form .hs-error-msgs { list-style: none; padding: 0; margin: 6px 0 0; }
+    #hubspot-form .hs-error-msg, #hubspot-form .hs-main-font-element { color: #c2410c; font-size: 13px; }
+    #hubspot-form .legal-consent-container, #hubspot-form .hs-richtext { font-size: 12px; color: var(--ink-soft); }
+    #hubspot-form .hs-submit .actions { margin-top: 8px; }
+    #hubspot-form input[type=submit], #hubspot-form .hs-button {
+      width: 100%; height: 50px; border: 0; border-radius: 8px; cursor: pointer;
+      background: var(--teal); color: #fff; font-family: "Lato"; font-weight: 700; font-size: 15px;
+      box-shadow: var(--shadow-cta); transition: background .2s, transform .2s;
+    }
+    #hubspot-form input[type=submit]:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    #hubspot-form .submitted-message { font-family: "Archivo"; font-size: 18px; color: var(--ink); text-align: center; padding: 40px 0; }
+
+    /* ---------- Marquee band ---------- */
+    .band { background: var(--navy-deep); color: #fff; padding: 56px 0; position: relative; overflow: hidden; }
+    .band h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.15; margin-bottom: 32px; position: relative; }
+    .band h2 .dim { color: rgba(255,255,255,.6); }
+    .marquee { position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee + .marquee { margin-top: 12px; }
+    .marquee-track { display: flex; gap: 12px; width: max-content; animation: scroll 40s linear infinite; }
+    .marquee.reverse .marquee-track { animation-direction: reverse; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .chip {
+      white-space: nowrap; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 700;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.85);
+    }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+    /* ---------- Cards ---------- */
+    .bento { display: grid; gap: 16px; }
+    @media (min-width: 1024px) { .bento { grid-template-columns: 5fr 7fr; } }
+    .feature-dark {
+      position: relative; overflow: hidden; border-radius: var(--radius-lg); color: #fff; padding: 36px;
+      background: linear-gradient(135deg, var(--navy), var(--navy) 50%, var(--navy-deep));
+      display: flex; flex-direction: column;
+    }
+    .feature-dark h3 { font-size: clamp(1.8rem, 2.6vw, 2.25rem); line-height: 1.15; }
+    .feature-dark p.body { margin-top: 18px; color: rgba(255,255,255,.75); }
+    .feature-dark .cta { margin-top: auto; padding-top: 32px; position: relative; }
+    .icon-box {
+      width: 46px; height: 46px; border-radius: 9px; display: inline-grid; place-items: center;
+      background: var(--teal-tint); border: 1px solid rgba(15,163,163,.2); color: var(--teal); margin-bottom: 20px;
+    }
+    .feature-dark .icon-box { background: rgba(15,163,163,.2); border-color: rgba(15,163,163,.35); }
+    .card-grid { display: grid; gap: 16px; }
+    @media (min-width: 640px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+    .card {
+      position: relative; display: block; background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 26px; overflow: hidden;
+      transition: transform .3s, box-shadow .3s, border-color .3s, background .3s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: rgba(15,163,163,.4); }
+    .card h3 { font-size: 18px; line-height: 1.35; }
+    .card p { margin-top: 10px; font-size: 14px; color: var(--ink-muted); }
+    .card .num {
+      position: absolute; top: 24px; right: 26px; font-family: "Archivo"; font-weight: 700;
+      font-size: 46px; line-height: 1; color: rgba(15,163,163,.12);
+    }
+    .card .bar {
+      position: absolute; top: 0; left: 26px; right: 26px; height: 2px; background: var(--teal);
+      transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .card:hover .bar { transform: scaleX(1); }
+    .grid-4 { display: grid; gap: 16px; }
+    @media (min-width: 768px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1100px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+
+    /* ---------- Who it's for (tabs) ---------- */
+    .tabs-grid { display: grid; gap: 28px; align-items: start; }
+    @media (min-width: 1024px) { .tabs-grid { grid-template-columns: 5fr 7fr; gap: 48px; } }
+    .tab-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+    .tab-btn {
+      width: 100%; display: flex; gap: 18px; align-items: center; text-align: left;
+      padding: 22px 0; background: none; border: 0; border-bottom: 1px solid var(--border);
+      font: inherit; cursor: pointer; color: var(--ink); transition: border-color .2s, color .2s;
+    }
+    .tab-btn .n { font-family: "Archivo"; font-weight: 700; font-size: 14px; color: var(--ink-soft); width: 22px; }
+    .tab-btn .ic { width: 40px; height: 40px; border-radius: 8px; display: grid; place-items: center; background: var(--surface-tint); color: var(--teal); flex-shrink: 0; }
+    .tab-btn .t { flex: 1; font-family: "Archivo"; font-weight: 700; font-size: 17px; }
+    .tab-btn:hover .t { color: var(--teal); }
+    .tab-btn[aria-selected=true] { border-bottom-color: var(--teal); color: var(--teal); }
+    .tab-btn[aria-selected=true] .n { color: var(--teal); }
+    .tab-btn[aria-selected=true] .ic { background: var(--teal); color: #fff; }
+    .panel { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--surface-tint); border: 1px solid var(--border); padding: 30px; }
+    .panel .meta { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: var(--ink-soft); float: right; }
+    .panel h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); margin-top: 8px; }
+    .panel p { margin-top: 12px; color: var(--ink-muted); }
+    .panel .foot { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    /* ---------- Process ---------- */
+    .process { background: var(--navy-deep); color: #fff; }
+    .steps { display: grid; gap: 16px; position: relative; }
+    @media (min-width: 640px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1100px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+    .step {
+      border-radius: 14px; padding: 24px; background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1); transition: background .2s, border-color .2s;
+    }
+    .step:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.2); }
+    .step-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .step-ic { width: 46px; height: 46px; border-radius: 9px; display: grid; place-items: center; color: #fff; }
+    .step-n { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-family: "Archivo"; font-weight: 700; font-size: 14px; }
+    .step h3 { font-size: 17px; line-height: 1.35; }
+    .step p { margin-top: 10px; font-size: 14px; color: rgba(255,255,255,.65); }
+    .g1 { background: linear-gradient(135deg, #34d399, #14b8a6); }
+    .g2 { background: linear-gradient(135deg, #14b8a6, #06b6d4); }
+    .g3 { background: linear-gradient(135deg, #06b6d4, #3b82f6); }
+    .g4 { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+    .g5 { background: linear-gradient(135deg, #6366f1, #a855f7); }
+    .g6 { background: linear-gradient(135deg, #a855f7, #d946ef); }
+    .g7 { background: linear-gradient(135deg, #d946ef, #ec4899); }
+    .g8 { background: linear-gradient(135deg, #ec4899, #f43f5e); }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--navy); color: #fff; }
+    .foot-grid { display: grid; gap: 40px; padding: 56px 0; }
+    @media (min-width: 768px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .foot-grid { grid-template-columns: repeat(4, 1fr); } }
+    footer h4 { font-size: 16px; margin-bottom: 16px; }
+    footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 14px; color: rgba(255,255,255,.8); }
+    footer a:hover { color: var(--gold); }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 20px 0; font-size: 12px; color: rgba(255,255,255,.6); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <div class="topbar">
+    <div class="container">
+      <span>Free 1-on-1 Consultation · Free Application Support</span>
+      <span>Mon – Fri 9:00am – 6:00pm (EST)</span>
+    </div>
+  </div>
+  <header class="site">
+    <div class="container nav">
+      <a href="#" class="logo" aria-label="EduConnect home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+        </span>
+        <span>Edu<b>Connect</b></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#why">Why EduConnect</a>
+        <a href="#who">Who It's For</a>
+        <a href="#process">Our Process</a>
+      </nav>
+      <a href="#consult" class="btn btn-teal">Free Consultation</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero (with HubSpot form) ===== -->
+    <section class="hero dots" id="consult">
+      <div class="glow" style="top:-160px;right:-120px;width:520px;height:520px;background:rgba(15,163,163,.08)"></div>
+      <div class="glow" style="bottom:-130px;left:-160px;width:400px;height:400px;background:rgba(15,163,163,.06)"></div>
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+            Your future starts here
+          </p>
+          <h1>Edu<span class="accent">Connect</span></h1>
+          <p class="lead">Connecting international students with the right U.S. programs — and the support to get there.</p>
+          <ul class="hero-points">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Free 1-on-1 consultation with an advisor</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Personalized school and program matching</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>End-to-end application support at no cost to you</li>
+          </ul>
+          <div class="hero-stats">
+            <div><strong>1-on-1</strong><span>Dedicated advisor</span></div>
+            <div><strong>$0</strong><span>Consultation fee</span></div>
+            <div><strong>24h</strong><span>Typical response time</span></div>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <div class="form-card-head">
+            <h2>Request a Free Consultation</h2>
+            <p>Tell us a bit about you — an advisor will reach out shortly.</p>
+          </div>
+          <div class="form-card-body">
+            <div id="hubspot-form">
+              <p class="form-fallback">Loading form…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Band ===== -->
+    <section class="band dots" aria-label="Areas of study">
+      <div class="container">
+        <h2>Explore programs <span class="accent">across the U.S.</span><span class="dim"> in the fields that matter to you.</span></h2>
+      </div>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="chip">Computer Science</span><span class="chip">Business Administration</span><span class="chip">Data Analytics</span><span class="chip">Information Technology</span><span class="chip">Healthcare Management</span><span class="chip">Engineering</span><span class="chip">Cybersecurity</span><span class="chip">Project Management</span>
+          <span class="chip" aria-hidden="true">Computer Science</span><span class="chip" aria-hidden="true">Business Administration</span><span class="chip" aria-hidden="true">Data Analytics</span><span class="chip" aria-hidden="true">Information Technology</span><span class="chip" aria-hidden="true">Healthcare Management</span><span class="chip" aria-hidden="true">Engineering</span><span class="chip" aria-hidden="true">Cybersecurity</span><span class="chip" aria-hidden="true">Project Management</span>
+        </div>
+      </div>
+      <div class="marquee reverse">
+        <div class="marquee-track">
+          <span class="chip">MBA</span><span class="chip">Master's Degrees</span><span class="chip">Bachelor's Degrees</span><span class="chip">Doctoral Programs</span><span class="chip">Hybrid Options</span><span class="chip">Fall / Spring / Summer Starts</span><span class="chip">Scholarships</span>
+          <span class="chip" aria-hidden="true">MBA</span><span class="chip" aria-hidden="true">Master's Degrees</span><span class="chip" aria-hidden="true">Bachelor's Degrees</span><span class="chip" aria-hidden="true">Doctoral Programs</span><span class="chip" aria-hidden="true">Hybrid Options</span><span class="chip" aria-hidden="true">Fall / Spring / Summer Starts</span><span class="chip" aria-hidden="true">Scholarships</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Quick facts ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:56px">
+          <p class="eyebrow">Quick Facts</p>
+          <h2 class="h2">Everything You Need to Know about <span class="accent">EduConnect</span></h2>
+        </div>
+        <div class="bento">
+          <div class="feature-dark dots reveal">
+            <div class="glow" style="bottom:-40px;right:-40px;width:240px;height:240px;background:rgba(15,163,163,.18)"></div>
+            <div style="position:relative">
+              <span class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span>
+              <p class="eyebrow light">The basics</p>
+              <h3>What is EduConnect?</h3>
+              <p class="body">EduConnect is an education advising service that helps international students find, apply to, and enroll in the U.S. programs that fit their goals, background, and budget — with a real advisor guiding every step.</p>
+            </div>
+            <div class="cta"><a href="#consult" class="btn btn-teal">Talk to an Advisor
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+          </div>
+          <div class="card-grid">
+            <a href="#consult" class="card reveal">
+              <span class="icon-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></svg></span>
+              <h3>How do I choose the right program?</h3>
+              <p>We compare programs by career path, major, tuition, start date, and format so you can decide with confidence.</p>
+            </a>
+            <a href="#process" class="card reveal">
+              <span class="icon-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+              <h3>What does the application involve?</h3>
+              <p>A step-by-step walkthrough of documents, deadlines, and requirements — we keep track so nothing slips.</p>
+            </a>
+            <a href="#consult" class="card reveal">
+              <span class="icon-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+              <h3>Does it cost anything?</h3>
+              <p>Consultation and application support are free for students. We'll also point you to available scholarships.</p>
+            </a>
+            <a href="#who" class="card reveal">
+              <span class="icon-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+              <h3>How fast can I get started?</h3>
+              <p>Most students hear back from an advisor within one business day and can begin applying right away.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why ===== -->
+    <section class="section" id="why" style="background:var(--surface-tint)">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:56px">
+          <p class="eyebrow">Why EduConnect?</p>
+          <h2 class="h2">The Support You Need <span class="accent">From Start to Finish</span></h2>
+        </div>
+        <div class="grid-4">
+          <div class="card reveal"><span class="bar"></span><span class="num">01</span>
+            <span class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+            <h3>Free Consultation</h3>
+            <p>Talk through your goals with an advisor at zero cost — no pressure, no obligation.</p>
+          </div>
+          <div class="card reveal"><span class="bar"></span><span class="num">02</span>
+            <span class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></svg></span>
+            <h3>Personalized Matching</h3>
+            <p>Recommendations built around your profile, career plans, budget, and preferred start date.</p>
+          </div>
+          <div class="card reveal"><span class="bar"></span><span class="num">03</span>
+            <span class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span>
+            <h3>Simple Applications</h3>
+            <p>We help prepare documents and personal statements, and track your application to a decision.</p>
+          </div>
+          <div class="card reveal"><span class="bar"></span><span class="num">04</span>
+            <span class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></span>
+            <h3>Ongoing Support</h3>
+            <p>After you're admitted, we stay in touch to help with enrollment and questions along the way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Who it's for ===== -->
+    <section class="section" id="who">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:56px">
+          <p class="eyebrow">Who is EduConnect for?</p>
+          <h2 class="h2">See if EduConnect is <span class="accent">Right for You</span></h2>
+        </div>
+        <div class="tabs-grid">
+          <ul class="tab-list" role="tablist" aria-label="Student scenarios">
+            <li><button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel" data-i="0"><span class="n">01</span><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="t">Applying to a U.S. Program</span></button></li>
+            <li><button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel" data-i="1"><span class="n">02</span><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span><span class="t">Advancing Your Career</span></button></li>
+            <li><button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel" data-i="2"><span class="n">03</span><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><span class="t">Transferring Schools</span></button></li>
+            <li><button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel" data-i="3"><span class="n">04</span><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg></span><span class="t">Facing a Tight Deadline</span></button></li>
+          </ul>
+          <div class="panel reveal" id="panel" role="tabpanel" aria-live="polite">
+            <span class="meta" id="panel-meta">Scenario 01 / 04</span>
+            <span class="icon-box" style="background:#fff"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3 id="panel-title"></h3>
+            <p id="panel-body"></p>
+            <div class="foot"><a href="#consult" class="btn btn-navy">Get a Free Personalized Assessment
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section class="section process dots" id="process">
+      <div class="glow" style="top:0;right:0;width:500px;height:500px;background:rgba(15,163,163,.1)"></div>
+      <div class="container" style="position:relative">
+        <div class="reveal" style="margin-bottom:48px">
+          <p class="eyebrow light">Our process</p>
+          <h2 class="h2">How EduConnect <span class="accent">Works</span></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="step-top"><span class="step-ic g1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span><span class="step-n g1">1</span></div><h3>Free Consultation</h3><p>Share your background and goals with an advisor in a 1-on-1 call.</p></div>
+          <div class="step reveal"><div class="step-top"><span class="step-ic g2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg></span><span class="step-n g2">2</span></div><h3>School Selection</h3><p>Receive a shortlist of schools that fit your profile and preferences.</p></div>
+          <div class="step reveal"><div class="step-top"><span class="step-ic g3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span><span class="step-n g3">3</span></div><h3>Program Matching</h3><p>Pick the program that best aligns with your career path and budget.</p></div>
+          <div class="step reveal"><div class="step-top"><span class="step-ic g4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span><span class="step-n g4">4</span></div><h3>Application Support</h3><p>We help you prepare and submit a strong application, and track its progress.</p></div>
+          <div class="step reveal"><div class="step-top"><span class="step-ic g5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></span><span class="step-n g5">5</span></div><h3>Admission Decision</h3><p>Get your decision and review next steps together with your advisor.</p></div>
+          <div class="step reveal"><div class="step-top"><span class="step-ic g6"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/></svg></span><span class="step-n g6">6</span></div><h3>Enrollment Paperwork</h3><p>Guidance on the documents your school requires to complete enrollment.</p></div>
+          <div class="step reveal"><div class="step-top"><span class="step-ic g7"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="step-n g7">7</span></div><h3>Start Your Program</h3><p>Register for classes and begin your studies on your chosen start date.</p></div>
+          <div class="step reveal"><div class="step-top"><span class="step-ic g8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></span><span class="step-n g8">8</span></div><h3>Ongoing Support</h3><p>We're here for questions that come up throughout your program.</p></div>
+        </div>
+        <div class="reveal" style="text-align:center;margin-top:48px">
+          <a href="#consult" class="btn btn-teal" style="padding:16px 34px;font-size:15px">Start My Free Consultation
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container foot-grid">
+      <div>
+        <a href="#" class="logo" style="color:#fff;margin-bottom:16px">
+          <span class="logo-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>
+          <span>Edu<b>Connect</b></span>
+        </a>
+        <p style="font-size:14px;color:rgba(255,255,255,.7)">Your partner for U.S. program selection and free, one-stop application support.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <!-- TODO: replace with EduConnect's real contact details -->
+        <ul>
+          <li><a href="mailto:hello@educonnect.example">hello@educonnect.example</a></li>
+          <li>Mon – Fri 9:00am – 6:00pm (EST)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About EduConnect</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#process">How It Works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="#consult">Free Consultation</a></li>
+          <li><a href="#who">Is EduConnect Right for Me?</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="container">© <span id="year"></span> EduConnect. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- HubSpot form embed -->
+  <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    (function () {
+      var target = document.getElementById('hubspot-form');
+      if (window.hbspt && hbspt.forms) {
+        target.innerHTML = '';
+        hbspt.forms.create({
+          portalId: "48135637",
+          formId: "f92e4d23-60c2-4276-996e-7422b196e546",
+          region: "na1",
+          target: "#hubspot-form"
+        });
+      } else {
+        target.innerHTML = '<p class="form-fallback">The form couldn\'t load. Please disable any ad blocker and refresh the page.</p>';
+      }
+    })();
+  </script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scenario tabs
+    var scenarios = [
+      ["Applying to a U.S. Program", "Planning to study in the U.S. but not sure where to start? We'll help you narrow down schools, understand admission requirements, and build a strong application — from the first conversation to your admission decision."],
+      ["Advancing Your Career", "Looking to level up with a graduate degree or switch fields? We match you with programs aligned to your career goals, schedule, and budget, including hybrid and flexible formats."],
+      ["Transferring Schools", "If your current program isn't the right fit, we'll walk you through your transfer options and help make the move as smooth as possible."],
+      ["Facing a Tight Deadline", "Need to act quickly? We prioritize urgent cases, help you identify programs with upcoming start dates, and keep your application moving."]
+    ];
+    var tabs = document.querySelectorAll('.tab-btn');
+    function show(i) {
+      tabs.forEach(function (t, j) { t.setAttribute('aria-selected', String(i === j)); });
+      document.getElementById('panel-title').textContent = scenarios[i][0];
+      document.getElementById('panel-body').textContent = scenarios[i][1];
+      document.getElementById('panel-meta').textContent = 'Scenario 0' + (i + 1) + ' / 04';
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { show(+t.dataset.i); }); });
+    show(0);
+
+    // Scroll reveal
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('in'); });
+    }
+  </script>
+</body>
+</html>
