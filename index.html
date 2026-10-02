@@ -93,22 +93,20 @@
 .ecl .hero{position:relative;background:#fff;border-bottom:1px solid var(--line);padding:64px 0 72px;overflow:hidden}
 .ecl .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(51,41,89,.07) 1.2px,transparent 1.2px);background-size:28px 28px;pointer-events:none}
 @media(min-width:1000px){.ecl .hero{padding:88px 0 96px}}
-.ecl .hero-grid{position:relative;display:grid;gap:44px;align-items:stretch}
+.ecl .hero-grid{position:relative;display:grid;gap:40px;align-items:center}
 @media(min-width:1000px){.ecl .hero-grid{grid-template-columns:7fr 5fr;gap:64px}}
 .ecl .hero .eyebrow{margin-bottom:22px}
 .ecl .hero h1{font-size:clamp(3rem,8vw,6.2rem);line-height:.98;letter-spacing:-.04em;color:var(--heading)}
 .ecl .hero h1 .mark{background:linear-gradient(transparent 64%,rgba(78,211,204,.55) 64%)}
 .ecl .hero .tag{margin-top:26px;font-family:var(--display);font-weight:500;font-size:clamp(1.25rem,2.4vw,1.8rem);line-height:1.4;color:var(--dek);max-width:40rem}
 .ecl .hero .sub{margin-top:14px;color:var(--soft);max-width:38rem}
-.ecl .form-box{margin-top:34px;max-width:640px;background:#fff;border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:10px;padding:26px 26px 22px;box-shadow:0 18px 40px -28px rgba(36,29,66,.45)}
-.ecl .form-box h2{font-size:1.2rem;margin-bottom:4px}
+.ecl .form-box{background:#fff;border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:10px;padding:26px 26px 22px;box-shadow:0 18px 40px -28px rgba(36,29,66,.45)}
+.ecl .form-box h2{font-size:1.35rem;margin-bottom:4px}
 .ecl .form-box > p{color:var(--soft);font-size:.92rem;margin-bottom:16px}
 .ecl .hero .alt{margin-top:16px;font-size:.95rem;color:var(--dek)}
-.ecl .hero-media{position:relative;border-radius:14px;overflow:hidden;background:var(--purple);min-height:420px}
-.ecl .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ecl .hero-badge{position:absolute;left:20px;right:20px;bottom:20px;background:#fff;border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:center;border-left:5px solid var(--teal);box-shadow:0 14px 30px -18px rgba(36,29,66,.6)}
-.ecl .hero-badge strong{display:block;font-family:var(--display);color:var(--heading);font-size:1rem;line-height:1.3}
-.ecl .hero-badge span{font-size:.86rem;color:var(--soft)}
+.ecl .hero .partner{display:flex;gap:14px;align-items:center;margin-top:30px;padding:16px 18px;max-width:38rem;background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:8px}
+.ecl .hero .partner strong{display:block;font-family:var(--display);color:var(--heading);font-size:.98rem;line-height:1.3}
+.ecl .hero .partner span{font-size:.86rem;color:var(--soft)}
 
 /* HubSpot form, styled to the brand */
 .ecl #hubspot-form fieldset{max-width:100%!important}
@@ -141,20 +139,21 @@
 .ecl .band-item span{display:block;margin-top:6px;font-size:.92rem;color:rgba(255,255,255,.75)}
 
 /* ================= PROGRAMS (blog-post style list) ================= */
-.ecl .prog-grid{display:grid;gap:28px;align-items:stretch}
-@media(min-width:1000px){.ecl .prog-grid{grid-template-columns:5fr 7fr;gap:40px}}
+.ecl .prog-top{display:grid;gap:20px;margin-bottom:28px}
+@media(min-width:900px){.ecl .prog-top{grid-template-columns:1fr 1fr;align-items:stretch}}
+.ecl .prog-photo{position:relative;margin:0;border-radius:10px;overflow:hidden;background:var(--purple);aspect-ratio:16/10}
+@media(min-width:900px){.ecl .prog-photo{aspect-ratio:auto;min-height:340px}}
+.ecl .prog-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ecl .includes{display:flex;flex-direction:column;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
-.ecl .includes figure{position:relative;margin:0;flex:1 1 auto;min-height:220px;background:var(--purple)}
-.ecl .includes figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ecl .includes-body{background:var(--teal-tint);border-left:6px solid var(--teal);padding:26px 28px}
+.ecl .includes-body{flex:1;background:var(--teal-tint);border-left:6px solid var(--teal);padding:26px 28px}
 .ecl .includes-body h3{font-size:1.15rem;margin-bottom:14px}
 .ecl .includes-body ul{padding-left:20px}
-.ecl .includes-body li{margin-bottom:10px}
+.ecl .includes-body li{margin-bottom:8px}
 .ecl .includes-body li:last-child{margin-bottom:0}
-.ecl .includes-cta{padding:22px 28px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;border-top:1px solid var(--line)}
+.ecl .includes-cta{padding:18px 28px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;border-top:1px solid var(--line)}
 .ecl .includes-cta p{font-family:var(--display);font-weight:600;color:var(--heading)}
-.ecl .prog{background:#fff;border:1px solid var(--line);border-radius:6px;margin:0 0 14px}
-.ecl .prog:last-child{margin-bottom:0}
+.ecl .prog-list{display:grid;gap:14px}
+.ecl .prog{background:#fff;border:1px solid var(--line);border-radius:6px;margin:0}
 .ecl .prog summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:20px 54px 20px 22px;border-left:6px solid var(--teal);border-radius:6px 0 0 6px;position:relative}
 .ecl .prog summary::-webkit-details-marker{display:none}
 .ecl .prog summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:700;font-size:1.4rem;line-height:1;color:var(--purple)}
@@ -258,26 +257,27 @@
 .ecl .step p{margin-top:8px;color:rgba(255,255,255,.74);font-size:.94rem}
 .ecl .center{text-align:center;margin-top:44px}
 
-/* ================= FAQ + REVIEWS ================= */
-.ecl .faq-grid{display:grid;gap:32px;align-items:start}
-.ecl .faq details:last-child{margin-bottom:0}
-@media(min-width:1000px){.ecl .faq-grid{grid-template-columns:7fr 5fr;gap:48px}}
-.ecl .faq details{background:#fff;border:1px solid var(--line);border-radius:6px;margin:0 0 14px}
-.ecl .faq summary{list-style:none;cursor:pointer;position:relative;padding:19px 54px 19px 22px;border-left:6px solid var(--teal);border-radius:6px 0 0 6px;font-family:var(--display);font-weight:600;color:var(--heading)}
+/* ================= REVIEWS ================= */
+.ecl .reviews{display:grid;gap:18px;align-items:stretch}
+@media(min-width:800px){.ecl .reviews{grid-template-columns:repeat(3,1fr)}}
+.ecl .review{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:5px solid var(--purple);border-radius:8px;padding:26px}
+.ecl .stars{color:var(--orange);letter-spacing:2px;font-size:1.05rem;line-height:1}
+.ecl .review p{margin-top:14px;color:var(--text)}
+.ecl .review cite{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:20px;font-style:normal;font-family:var(--display);font-weight:600;color:var(--heading)}
+.ecl .review cite .av{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--purple);color:var(--teal);font-size:.95rem}
+.ecl .review cite small{display:block;font-family:var(--body);font-weight:400;color:var(--soft);font-size:.82rem}
+
+/* ================= FAQ (full width) ================= */
+.ecl .faq{display:grid;gap:14px}
+.ecl .faq details{background:#fff;border:1px solid var(--line);border-radius:6px;margin:0}
+.ecl .faq summary{list-style:none;cursor:pointer;position:relative;padding:20px 58px 20px 24px;border-left:6px solid var(--teal);border-radius:6px 0 0 6px;font-family:var(--display);font-weight:600;font-size:1.04rem;color:var(--heading)}
 .ecl .faq summary::-webkit-details-marker{display:none}
-.ecl .faq summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);font-weight:700;font-size:1.35rem;line-height:1;color:var(--purple)}
-.ecl .faq details[open] > summary::after{content:"\2013"}
+.ecl .faq summary::after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-weight:700;font-size:1.35rem;line-height:1;color:var(--purple)}
+.ecl .faq details[open] > summary::after{content:"3"}
 .ecl .faq summary:hover,.ecl .faq details[open] > summary{background:var(--teal-tint)}
-.ecl .faq details > div{border-top:1px solid var(--line);padding:20px 24px}
-.ecl .reviews{background:var(--purple);border-radius:12px;padding:28px;color:#fff;align-self:stretch;display:flex;flex-direction:column}
-.ecl .reviews .link{margin-top:auto!important;padding-top:18px}
-.ecl .reviews h3{color:#fff;font-size:1.3rem}
-.ecl .reviews .sub{color:rgba(255,255,255,.75);font-size:.92rem;margin-top:4px}
-.ecl .review{background:#fff;color:var(--text);border-radius:8px;padding:18px 20px;margin-top:14px}
-.ecl .stars{color:var(--orange);letter-spacing:2px;font-size:1rem;line-height:1}
-.ecl .review p{margin-top:10px;font-size:.95rem}
-.ecl .review cite{display:block;margin-top:10px;font-style:normal;font-family:var(--display);font-weight:600;color:var(--purple);font-size:.9rem}
-.ecl .reviews .link{color:#fff;text-decoration-color:var(--teal);display:inline-block;margin-top:20px}
+.ecl .faq details > div{border-top:1px solid var(--line);padding:20px 30px;max-width:none}
+.ecl .faq-foot{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;margin-top:28px;padding:22px 28px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.ecl .faq-foot p{font-family:var(--display);font-weight:600;color:var(--heading)}
 
 /* ================= FINAL CTA ================= */
 .ecl .cta{display:grid;border-radius:14px;overflow:hidden;background:linear-gradient(130deg,var(--purple-deep) 0%,var(--purple) 55%,var(--purple-mid) 100%);color:#fff}
@@ -293,7 +293,7 @@
 
 @media(max-width:560px){
   .ecl .sec{padding:64px 0}
-  .ecl .feature,.ecl .panel,.ecl .reviews{padding:26px 22px}
+  .ecl .feature,.ecl .panel{padding:26px 22px}
   .ecl .cta-body{padding:34px 22px}
   .ecl .btn{width:100%}
   .ecl .prog summary{padding:18px 48px 18px 16px}
@@ -310,19 +310,16 @@
       <h1>Day 1 CPT <span class="mark">Programs</span></h1>
       <p class="tag">Legally work, legally thrive with EduConnect USA.</p>
       <p class="sub">Earn an accredited U.S. graduate degree and work in your field from your first term. Free 1-on-1 consultation and free application support.</p>
-      <div class="form-box">
-        <h2>Request a free consultation</h2>
-        <p>An EduConnect advisor will reach out within one business day.</p>
-        <div id="hubspot-form"><p class="form-note">Loading form…</p></div>
-      </div>
-      <p class="alt">Prefer to talk now? <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">Book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">WhatsApp +1 (626) 344-3218</a></p>
-    </div>
-    <div class="hero-media">
-      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="EduConnect USA students on graduation day" width="760" height="900" fetchpriority="high">
-      <div class="hero-badge">
+      <div class="partner">
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>
         <div><strong>Official enrollment partner</strong><span>Alliant University, California School of Management and Leadership</span></div>
       </div>
+      <p class="alt">Prefer to talk now? <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">Book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">WhatsApp +1 (626) 344-3218</a></p>
+    </div>
+    <div class="form-box">
+      <h2>Request a free consultation</h2>
+      <p>An EduConnect advisor will reach out within one business day.</p>
+      <div id="hubspot-form"><p class="form-note">Loading form…</p></div>
     </div>
   </div>
 </section>
@@ -349,9 +346,9 @@
       </div>
       <p class="lead">Every program is CPT-eligible from your first term. The right one depends on the job you have now and whether you want OPT after you finish.</p>
     </div>
-    <div class="prog-grid">
+    <div class="prog-top">
+      <figure class="prog-photo"><img src="https://educonnectusa.com/wp-content/uploads/2026/03/59.jpg" alt="Alliant University campus in Los Angeles" width="640" height="400" loading="lazy"></figure>
       <div class="includes">
-        <figure><img src="https://educonnectusa.com/wp-content/uploads/2026/03/59.jpg" alt="Alliant University campus in Los Angeles" width="640" height="400" loading="lazy"></figure>
         <div class="includes-body">
           <h3>What every Alliant program includes</h3>
           <ul>
@@ -367,8 +364,8 @@
           <a class="btn btn-purple" href="#consult">Get matched free</a>
         </div>
       </div>
-
-      <div>
+    </div>
+    <div class="prog-list">
         <details class="prog" open>
           <summary><span class="ttl">MBA<small>Best overall for working professionals</small></span><span class="chips"><span class="chip">2 years</span><span class="chip">ACBSP</span><span class="chip">$6,000 grant</span></span></summary>
           <div class="prog-body">
@@ -420,7 +417,6 @@
             <div class="row"><a class="more" href="https://educonnectusa.com/phd/">View the PhD <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
           </div>
         </details>
-      </div>
     </div>
   </div>
 </section>
@@ -609,7 +605,25 @@
   </div>
 </section>
 
-<!-- ======================= FAQ + REVIEWS ======================= -->
+<!-- ======================= REVIEWS ======================= -->
+<section class="sec sec--panel">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Student reviews</p>
+        <h2 class="h2">What Our <span class="mark">Students Say</span></h2>
+      </div>
+      <a class="link" href="https://educonnectusa.com/success-stories/">Read more success stories</a>
+    </div>
+    <div class="reviews">
+      <figure class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“The staff were professional, supportive, and guided me clearly through every step of the process. Their assistance gave me confidence and peace of mind, and I truly appreciate their dedication to helping students.”</p><cite><span class="av" aria-hidden="true">J</span><span>Jay-Ar<small>EduConnect USA student</small></span></cite></figure>
+      <figure class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“I had a very good experience with EduConnect USA. They helped me a lot and they're very responsive. I would highly recommend EduConnect USA to anyone looking for reliable educational support and guidance.”</p><cite><span class="av" aria-hidden="true">S</span><span>Shaira Anne Mae Libo-on<small>EduConnect USA student</small></span></cite></figure>
+      <figure class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“The team supported me step by step through the entire admission process with professionalism and care. They were always helpful, resourceful, and quick to respond. I would strongly recommend them.”</p><cite><span class="av" aria-hidden="true">N</span><span>Nicole Arlini<small>EduConnect USA student</small></span></cite></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
 <section class="sec">
   <div class="wrap">
     <div class="head">
@@ -617,30 +631,26 @@
         <p class="eyebrow">FAQ</p>
         <h2 class="h2">Day 1 CPT <span class="mark">Questions, Answered</span></h2>
       </div>
+      <p class="lead">Quick answers to what students ask us most. For your specific situation, talk to an advisor.</p>
     </div>
-    <div class="faq-grid">
-      <div class="faq">
-        <details open><summary>Is Day 1 CPT still allowed after SEVP's August 2026 guidance?</summary><div>Yes. SEVP's August 2026 broadcast messages did not change the CPT regulations. They tightened how SEVP reads the requirement that CPT be integral to the curriculum, so schools must show that practical training is required for everyone in the program.</div></details>
+    <div class="faq">
+        <details><summary>Is Day 1 CPT still allowed after SEVP's August 2026 guidance?</summary><div>Yes. SEVP's August 2026 broadcast messages did not change the CPT regulations. They tightened how SEVP reads the requirement that CPT be integral to the curriculum, so schools must show that practical training is required for everyone in the program.</div></details>
         <details><summary>Is Day 1 CPT legal?</summary><div>Yes. Your school's Designated School Official authorizes CPT when practical training is a required part of your program and directly related to your major. Choose an accredited, SEVP-certified school that documents why CPT is integral to the curriculum.</div></details>
         <details><summary>Can I keep OPT if I use Day 1 CPT?</summary><div>Yes, if you keep full-time CPT under 12 months in total for that degree level. Twelve months or more of full-time CPT ends OPT eligibility for that degree, while part-time CPT of 20 hours a week or less does not count toward the limit.</div></details>
         <details><summary>Which programs offer Day 1 CPT through EduConnect?</summary><div>Alliant University's MBA, MS Data Analytics, MS Information Systems Technology, MS Healthcare Analytics, DBA and PhD in Organizational Leadership.</div></details>
         <details><summary>When can I start?</summary><div>There are six start dates a year: January, March, May, July, August and October, so the next term is never more than about three months away.</div></details>
         <details><summary>Do I need a job offer before I enroll?</summary><div>No. Many students enroll before they have a CPT job lined up. Your job must relate directly to your major, and CareerConnect helps you find a qualifying placement and prepare for the employer conversation.</div></details>
         <details><summary>Does EduConnect charge for its services?</summary><div>No. Consultation and application support are free for students, and application fees are waived.</div></details>
-      </div>
-      <aside class="reviews" aria-label="Student reviews">
-        <h3>What our students say</h3>
-        <div class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“The staff were professional, supportive, and guided me clearly through every step of the process. Their assistance gave me confidence and peace of mind.”</p><cite>Jay-Ar</cite></div>
-        <div class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“I had a very good experience with EduConnect USA. They helped me a lot and they're very responsive. I would highly recommend them.”</p><cite>Shaira Anne Mae Libo-on</cite></div>
-        <div class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“The team supported me step by step through the entire admission process. They were always helpful, resourceful, and quick to respond.”</p><cite>Nicole Arlini</cite></div>
-        <a class="link" href="https://educonnectusa.com/success-stories/">Read more success stories</a>
-      </aside>
+    </div>
+    <div class="faq-foot">
+      <p>Still have questions about your situation?</p>
+      <a class="btn btn-purple" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">Talk to an advisor</a>
     </div>
   </div>
 </section>
 
 <!-- ======================= FINAL CTA ======================= -->
-<section class="sec sec--panel">
+<section class="sec" style="padding-top:0">
   <div class="wrap">
     <div class="cta">
       <div class="cta-body">
