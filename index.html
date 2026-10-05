@@ -199,6 +199,16 @@
 .ecl .update .lbl{color:var(--orange-deep);font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
 
 /* ================= BACK-UP PLAN (4 equal columns) ================= */
+.ecl .backup-intro{display:grid;gap:32px;align-items:center;margin-bottom:48px}
+@media(min-width:1000px){.ecl .backup-intro{grid-template-columns:5fr 7fr;gap:56px}}
+.ecl .backup-intro .h2{margin-bottom:18px}
+.ecl .backup-intro > div > p{color:var(--dek)}
+.ecl .checks{list-style:none;margin-top:22px;display:grid;gap:12px}
+.ecl .checks li{display:flex;gap:12px;align-items:flex-start;font-weight:600;color:var(--heading)}
+.ecl .checks svg{flex-shrink:0;margin-top:1px;color:var(--purple);background:var(--teal-tint);border:1px solid var(--teal-line);border-radius:50%;padding:4px;width:24px;height:24px}
+.ecl .flag-photo{position:relative;margin:0;border-radius:12px;overflow:hidden;background:var(--purple);aspect-ratio:3/2}
+.ecl .flag-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ecl .flag-photo figcaption{position:absolute;left:16px;bottom:16px;background:#fff;color:var(--heading);font-family:var(--display);font-weight:600;font-size:.88rem;padding:8px 14px;border-radius:999px;border-left:4px solid var(--teal)}
 .ecl .four{display:grid;gap:18px;align-items:stretch}
 @media(min-width:700px){.ecl .four{grid-template-columns:1fr 1fr}}
 @media(min-width:1100px){.ecl .four{grid-template-columns:repeat(4,1fr)}}
@@ -273,7 +283,7 @@
 .ecl .faq summary{list-style:none;cursor:pointer;position:relative;padding:20px 58px 20px 24px;border-left:6px solid var(--teal);border-radius:6px 0 0 6px;font-family:var(--display);font-weight:600;font-size:1.04rem;color:var(--heading)}
 .ecl .faq summary::-webkit-details-marker{display:none}
 .ecl .faq summary::after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-weight:700;font-size:1.35rem;line-height:1;color:var(--purple)}
-.ecl .faq details[open] > summary::after{content:"3"}
+.ecl .faq details[open] > summary::after{content:"\2013"}
 .ecl .faq summary:hover,.ecl .faq details[open] > summary{background:var(--teal-tint)}
 .ecl .faq details > div{border-top:1px solid var(--line);padding:20px 30px;max-width:none}
 .ecl .faq-foot{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;margin-top:28px;padding:22px 28px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
@@ -308,7 +318,7 @@
     <div>
       <p class="eyebrow">Work and study in the USA</p>
       <h1>Day 1 CPT <span class="mark">Programs</span></h1>
-      <p class="tag">Legally work, legally thrive with EduConnect USA.</p>
+      <p class="tag">Work While Studying With Day 1 CPT Graduate Programs</p>
       <p class="sub">Earn an accredited U.S. graduate degree and work in your field from your first term. Free 1-on-1 consultation and free application support.</p>
       <div class="partner">
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>
@@ -330,8 +340,8 @@
     <div class="band-grid">
       <div class="band-item"><strong>6 <em>programs</em></strong><span>MBA, STEM master's, DBA and PhD</span></div>
       <div class="band-item"><strong>6 <em>start dates</em></strong><span>Jan, Mar, May, Jul, Aug and Oct</span></div>
-      <div class="band-item"><strong>$1M<em>+</em></strong><span>Scholarships awarded to students</span></div>
-      <div class="band-item"><strong>700<em>+</em></strong><span>Work-study program participants</span></div>
+      <div class="band-item"><strong>$3M<em>+</em></strong><span>Scholarships awarded to students</span></div>
+      <div class="band-item"><strong>800<em>+</em></strong><span>Work-study program participants</span></div>
     </div>
   </div>
 </section>
@@ -488,11 +498,21 @@
 <!-- ======================= BACK-UP PLAN ======================= -->
 <section class="sec">
   <div class="wrap">
-    <div class="head">
+    <div class="backup-intro">
       <div>
         <p class="eyebrow">Why choose Day 1 CPT?</p>
         <h2 class="h2">Your Back-up Plan for <span class="mark">Maintaining Legal Status</span></h2>
+        <p>Whether your H-1B didn't come through, your OPT is ending or you need to change status, Day 1 CPT gives you a legal way to stay in the U.S. and keep working while you earn your degree.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Stay in legal F-1 status</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Keep working in your field from your first term</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Study in Los Angeles or San Diego, California</li>
+        </ul>
       </div>
+      <figure class="flag-photo">
+        <img src="https://educonnectusa.com/wp-content/uploads/2026/06/3.jpg" alt="U.S. and California flags on the beach in Los Angeles" width="900" height="600" loading="lazy">
+        <figcaption>Los Angeles, California</figcaption>
+      </figure>
     </div>
     <div class="four">
       <div class="why">
@@ -506,7 +526,7 @@
         <span class="num">02</span>
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
         <h3>Affordable cost</h3>
-        <p>Grants from $5,500 on master's programs to $15,000 on the DBA, and over $1M in scholarships awarded so far.</p>
+        <p>Grants from $5,500 on master's programs to $15,000 on the DBA, and over $3M in scholarships awarded so far.</p>
         <a class="more" href="https://educonnectusa.com/financial-solutions/">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="why">
@@ -566,8 +586,8 @@
       <h2>We Provide the <span class="mark">Best Services</span></h2>
       <p>Expert program selection and a one-stop, <strong style="color:#fff">free</strong> service, from your first call to your first CPT paycheck.</p>
       <div class="stats">
-        <div><strong>$1M+</strong><span>Scholarships awarded</span></div>
-        <div><strong>700+</strong><span>Work-study participants</span></div>
+        <div><strong>$3M+</strong><span>Scholarships awarded</span></div>
+        <div><strong>800+</strong><span>Work-study participants</span></div>
         <div><strong>414</strong><span>Internships secured</span></div>
       </div>
       <a class="btn btn-teal" href="#consult">Contact us</a>
@@ -677,7 +697,7 @@
     box.innerHTML = '';
     hbspt.forms.create({
       portalId: "48135637",
-      formId: "f92e4d23-60c2-4276-996e-7422b196e546",
+      formId: "7c52db43-c828-435b-8ce7-15a5233b9d17",
       region: "na1",
       target: "#hubspot-form"
     });
