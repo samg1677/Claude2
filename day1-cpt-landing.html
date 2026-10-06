@@ -37,7 +37,8 @@
 <header class="eclh" id="eclHeader">
   <div class="eclh-inner">
     <a class="eclh-logo" href="#consult" aria-label="EduConnect USA - request a free consultation">
-      <img src="https://educonnectusa.com/wp-content/uploads/2026/04/EduConnect_logos_Finals-Shared_White-Logo-scaled.png" alt="EduConnect USA" width="180" height="48">
+      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/EduConnectUSA-Logo.png" alt="" width="44" height="44">
+      <span class="eclh-logo-text"><strong>EduConnect</strong><em>USA</em></span>
     </a>
     <nav class="eclh-actions" aria-label="Contact options">
       <a class="eclh-call" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">
@@ -52,30 +53,34 @@
 </header>
 
 <style>
-/* Landing header: brand-purple bar, full white logo, one big call
-   button, WhatsApp as its recognisable icon. Sticky on every size.
-   Lives outside .ecl so sticky works. */
-.eclh{position:sticky;top:0;z-index:9000;background:#332959;box-shadow:0 1px 0 rgba(255,255,255,.06);transition:box-shadow .18s}
-.eclh[data-scrolled="true"]{box-shadow:0 6px 24px -8px rgba(20,14,40,.55)}
+/* Landing header: white bar, the regular EduConnect logo, one call
+   button (slightly rounded corners, no glow) and a round WhatsApp icon.
+   Sticky on every size. Lives outside .ecl so sticky works. */
+.eclh{position:sticky;top:0;z-index:9000;background:#fff;border-bottom:1px solid #E5E3EC;transition:box-shadow .18s}
+.eclh[data-scrolled="true"]{box-shadow:0 2px 12px rgba(36,29,66,.08)}
 .eclh *,.eclh *::before,.eclh *::after{box-sizing:border-box;margin:0;padding:0}
 .eclh-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1328px;height:64px;margin:0 auto;padding:0 16px}
 @media(min-width:768px){.eclh-inner{height:76px;padding:0 24px}}
 .eclh a{text-decoration:none}
 .eclh a:focus-visible{outline:3px solid #FF7400;outline-offset:3px}
-.eclh-logo{display:flex;align-items:center;flex-shrink:1;min-width:0}
-.eclh-logo img{display:block;height:34px;width:auto;max-width:150px;object-fit:contain;object-position:left center}
-@media(min-width:768px){.eclh-logo img{height:44px;max-width:200px}}
+.eclh-logo{display:flex;align-items:center;gap:10px;flex-shrink:1;min-width:0;color:#1A2030}
+.eclh-logo img{display:block;width:40px;height:40px;object-fit:contain;flex-shrink:0}
+@media(min-width:768px){.eclh-logo img{width:46px;height:46px}}
+.eclh-logo-text{display:flex;flex-direction:column;line-height:1.15;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.eclh-logo-text strong{font-size:17px;font-weight:700;color:#1A2030;letter-spacing:-.2px}
+.eclh-logo-text em{font-size:13px;font-style:normal;font-weight:500;color:#4ED3CC;letter-spacing:.4px}
+@media(min-width:768px){.eclh-logo-text strong{font-size:19px}}
 .eclh-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-@media(min-width:768px){.eclh-actions{gap:14px}}
-.eclh-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;background:#4ED3CC;color:#241D42;font-family:Poppins,"Segoe UI",Arial,sans-serif;font-weight:700;font-size:15px;line-height:1;white-space:nowrap;box-shadow:0 6px 16px -6px rgba(78,211,204,.6);transition:background .18s,transform .15s}
-.eclh-call:hover{background:#6BDDD7;transform:translateY(-1px)}
-@media(min-width:768px){.eclh-call{height:52px;padding:0 26px;font-size:16.5px;gap:10px}}
+@media(min-width:768px){.eclh-actions{gap:12px}}
+.eclh-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 16px;border-radius:4px;background:#4ED3CC;color:#241D42;font-family:Poppins,"Segoe UI",Arial,sans-serif;font-weight:700;font-size:15px;line-height:1;white-space:nowrap;transition:background .15s}
+.eclh-call:hover{background:#41C6BF}
+@media(min-width:768px){.eclh-call{height:50px;padding:0 24px;font-size:16px;gap:10px}}
 .eclh-free{display:none}
 @media(min-width:400px){.eclh-free{display:inline}}
-.eclh-wa{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 6px 16px -6px rgba(37,211,102,.7);transition:background .18s,transform .15s}
-.eclh-wa:hover{background:#1DBA58;transform:translateY(-1px)}
-@media(min-width:768px){.eclh-wa{width:52px;height:52px}}
-@media(max-width:359px){.eclh-call{padding:0 12px;font-size:14px}.eclh-call svg{display:none}}
+.eclh-wa{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#25D366;color:#fff;transition:background .15s}
+.eclh-wa:hover{background:#1DBA58}
+@media(min-width:768px){.eclh-wa{width:50px;height:50px}}
+@media(max-width:374px){.eclh-logo-text{display:none}}
 </style>
 
 <div class="ecl">
