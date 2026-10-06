@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EduConnect USA - Simple Header</title>
+</head>
+<body style="margin:0">
+
+<!-- ============================================================================
+     EduConnect USA - simplified header (logo left, phone + Book a Meeting right)
+
+     BEGIN DIVI CODE MODULE CONTENT
+     Paste from this line down to the END marker into a Divi Code Module,
+     or into Theme Builder if you want it as a page-specific header.
+     Scoped to .ech-header, all classes prefixed ech- so it can't collide
+     with the main site header (.ec-header) or the webinar page (#dos-page).
+
+     >>> Replace BOOKING_URL_HERE below with your booking link
+         (Calendly, HubSpot Meetings, etc.).
+============================================================================ -->
+
+<style>
+.ech-header{
+  --ech-teal:#4ed3cc;
+  --ech-teal-deep:#2fb3ac;
+  --ech-orange:#ff7400;
+  --ech-orange-deep:#e56800;
+  --ech-ink:#2a2f31;
+  --ech-line:#e4eaee;
+  --ech-font:Arial,Helvetica,sans-serif;
+  --ech-max:1280px;
+  --ech-h:82px;
+
+  position:relative;z-index:50;
+  background:#fff;border-bottom:1px solid var(--ech-line);
+  font-family:var(--ech-font);
+}
+.ech-header *,.ech-header *::before,.ech-header *::after{box-sizing:border-box}
+.ech-header img{display:block;max-width:100%;height:auto}
+.ech-header a{text-decoration:none;box-shadow:none}
+.ech-header :focus-visible{outline:3px solid var(--ech-teal);outline-offset:3px;border-radius:6px}
+
+.ech-inner{
+  width:100%;max-width:calc(var(--ech-max) + 48px);margin:0 auto;padding:0 24px;
+  min-height:var(--ech-h);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+
+/* ---------- logo (upper left) ---------- */
+.ech-logo{display:inline-flex;align-items:center;gap:12px;flex:0 0 auto}
+.ech-logo img{width:52px;height:52px;border-radius:10px;object-fit:contain}
+.ech-logo-text{display:flex;flex-direction:column;line-height:1}
+.ech-logo-text strong{
+  font:700 19px/1 var(--ech-font);letter-spacing:.2px;color:var(--ech-ink);
+}
+.ech-logo-text em{
+  font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:3px;
+  color:var(--ech-teal-deep);margin-top:4px;
+}
+
+/* ---------- right side (phone + button) ---------- */
+.ech-actions{display:flex;align-items:center;gap:22px;flex:0 0 auto}
+
+.ech-phone{
+  display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;
+  font:700 16px/1 var(--ech-font);color:var(--ech-ink) !important;
+  transition:color .2s ease;
+}
+.ech-phone:hover{color:var(--ech-orange) !important}
+.ech-phone svg{width:18px;height:18px;fill:var(--ech-orange);flex:none}
+.ech-phone-label{font-weight:400;color:#8a9096}
+
+.ech-btn{
+  display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:13px 22px;border-radius:999px;
+  background:var(--ech-orange);color:#fff !important;
+  font:700 15px/1 var(--ech-font);letter-spacing:.2px;white-space:nowrap;
+  box-shadow:0 4px 14px rgba(255,116,0,.28) !important;
+  transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.ech-btn:hover{
+  background:var(--ech-orange-deep);color:#fff !important;
+  transform:translateY(-1px);
+  box-shadow:0 6px 18px rgba(255,116,0,.36) !important;
+}
+.ech-btn svg{width:16px;height:16px;fill:currentColor;flex:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .ech-phone-label{display:none}
+}
+@media (max-width:640px){
+  .ech-header{--ech-h:68px}
+  .ech-inner{padding:0 16px;gap:12px}
+  .ech-logo img{width:42px;height:42px;border-radius:9px}
+  .ech-logo-text strong{font-size:16px}
+  .ech-logo-text em{font-size:10px;letter-spacing:2.2px;margin-top:3px}
+  .ech-actions{gap:12px}
+  .ech-phone{font-size:15px;gap:7px}
+  .ech-btn{padding:11px 16px;font-size:14px}
+  .ech-btn svg{display:none}
+}
+@media (max-width:520px){
+  /* phone collapses to an icon so the button still fits */
+  .ech-phone-number{display:none}
+  .ech-phone svg{width:22px;height:22px}
+}
+@media (max-width:400px){
+  .ech-logo-text{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .ech-header *{transition:none !important}
+}
+</style>
+
+<header class="ech-header">
+  <div class="ech-inner">
+
+    <a class="ech-logo" href="https://educonnectusa.com/" aria-label="EduConnect USA home">
+      <img src="https://educonnectusa.com/wp-content/uploads/2026/03/EduConnectUSA-Logo.png"
+           alt="EduConnect USA" width="52" height="52" />
+      <span class="ech-logo-text">
+        <strong>EduConnect</strong>
+        <em>USA</em>
+      </span>
+    </a>
+
+    <div class="ech-actions">
+      <a class="ech-phone" href="https://wa.me/16263443218" aria-label="Message us on WhatsApp at +1 (626) 344-3218">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        <span class="ech-phone-label">Message Us Today:</span>&nbsp;<span class="ech-phone-number">+1 (626) 344-3218</span>
+      </a>
+
+      <a class="ech-btn" href="BOOKING_URL_HERE" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zm13 8H4v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9z"/></svg>
+        Book a Meeting
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================================
+     END DIVI CODE MODULE CONTENT
+============================================================================ -->
+
+</body>
+</html>
