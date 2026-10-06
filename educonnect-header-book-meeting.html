@@ -72,19 +72,13 @@
 .ech-phone-label{font-weight:400;color:#8a9096}
 
 .ech-btn{
-  display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
-  padding:13px 22px;border-radius:999px;
+  display:inline-block;flex:0 0 auto;
+  padding:12px 20px;border-radius:6px;
   background:var(--ech-orange);color:#fff !important;
-  font:700 15px/1 var(--ech-font);letter-spacing:.2px;white-space:nowrap;
-  box-shadow:0 4px 14px rgba(255,116,0,.28) !important;
-  transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+  font:700 15px/1 var(--ech-font);white-space:nowrap;
+  transition:background .2s ease;
 }
-.ech-btn:hover{
-  background:var(--ech-orange-deep);color:#fff !important;
-  transform:translateY(-1px);
-  box-shadow:0 6px 18px rgba(255,116,0,.36) !important;
-}
-.ech-btn svg{width:16px;height:16px;fill:currentColor;flex:none}
+.ech-btn:hover{background:var(--ech-orange-deep);color:#fff !important}
 
 /* ---------- responsive ---------- */
 @media (max-width:860px){
@@ -98,8 +92,7 @@
   .ech-logo-text em{font-size:10px;letter-spacing:2.2px;margin-top:3px}
   .ech-actions{gap:12px}
   .ech-phone{font-size:15px;gap:7px}
-  .ech-btn{padding:11px 16px;font-size:14px}
-  .ech-btn svg{display:none}
+  .ech-btn{padding:10px 14px;font-size:14px}
 }
 @media (max-width:520px){
   /* phone collapses to an icon so the button still fits */
@@ -133,7 +126,6 @@
       </a>
 
       <a class="ech-btn" href="BOOKING_URL_HERE" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zm13 8H4v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9z"/></svg>
         Book a Meeting
       </a>
     </div>
