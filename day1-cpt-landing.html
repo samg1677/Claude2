@@ -165,18 +165,8 @@
 .ecl .form-box{background:#fff;border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:10px;padding:26px 26px 22px;box-shadow:0 18px 40px -28px rgba(36,29,66,.45)}
 .ecl .form-box h2{font-size:1.35rem;margin-bottom:4px}
 .ecl .form-box > p{color:var(--soft);font-size:.92rem;margin-bottom:16px}
-.ecl .form-alt{margin-top:18px}
-.ecl .form-or{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
-.ecl .form-or::before,.ecl .form-or::after{content:"";flex:1;height:1px;background:var(--line)}
-.ecl .form-alt-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-@media(max-width:380px){.ecl .form-alt-btns{grid-template-columns:1fr}}
-.ecl .alt-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 12px;border-radius:6px;font-family:var(--display);font-weight:600;font-size:.92rem;line-height:1.2;text-align:center;border:2px solid transparent;transition:background .15s,color .15s,border-color .15s}
-.ecl .alt-btn svg{flex-shrink:0}
-.ecl .alt-btn--call{border-color:var(--purple);color:var(--purple);background:#fff}
-.ecl .alt-btn--call:hover{background:var(--purple);color:#fff}
-.ecl .alt-btn--wa{background:#25D366;color:#fff}
-.ecl .alt-btn--wa:hover{background:#1DBA58}
-.ecl .form-foot{margin:14px 0 0;font-size:.8rem;text-align:center;color:var(--soft)}
+.ecl .form-box .alt{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.95rem;line-height:1.9;color:var(--dek)}
+.ecl .form-box .alt a{white-space:nowrap}
 
 /* aspirational photo mosaic: where this road leads */
 .ecl .mosaic{display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:clamp(260px,46vw,360px)}
@@ -188,7 +178,6 @@
 .ecl .mosaic figcaption{position:absolute;left:14px;right:14px;bottom:12px;z-index:1;color:#fff;font-family:var(--display);font-weight:600;font-size:.86rem;line-height:1.3}
 .ecl .mosaic figcaption span{display:block;font-family:var(--body);font-weight:400;font-size:.78rem;color:rgba(255,255,255,.8)}
 .ecl .mosaic .m-big figcaption{font-size:1.05rem}
-.ecl .goal{position:absolute;top:14px;left:14px;z-index:1;display:inline-flex;align-items:center;gap:6px;background:var(--teal);color:var(--purple-deep);font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
 .ecl .partner{display:flex;gap:14px;align-items:center;margin-top:14px;padding:14px 18px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:8px}
 .ecl .partner strong{display:block;font-family:var(--display);color:var(--heading);font-size:.98rem;line-height:1.3}
 .ecl .partner span{font-size:.86rem;color:var(--soft)}
@@ -397,8 +386,7 @@
   .ecl .mosaic figcaption span{display:none}
   .ecl .mosaic .m-big figcaption{font-size:.92rem}
   .ecl .mosaic .m-big figcaption span{display:block}
-  .ecl .goal{top:10px;left:10px;font-size:.66rem;padding:5px 10px}
-}
+  }
 </style>
 
 <!-- ======================= HERO ======================= -->
@@ -415,14 +403,7 @@
       <h2>Request a free consultation</h2>
       <p>An EduConnect advisor will reach out within one business day.</p>
       <div id="hubspot-form"><p class="form-note">Loading form…</p></div>
-      <div class="form-alt">
-        <span class="form-or">or talk to us now</span>
-        <div class="form-alt-btns">
-          <a class="alt-btn alt-btn--call" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Schedule a call</a>
-          <a class="alt-btn alt-btn--wa" href="https://wa.me/16263443218" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 13.6c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-1-.4-1.7-.7-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.1.2-.3.4-.4.5-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.7.8 2 1 .3.1.5.2.6.3.1.1.1.7-.2 1.4z"/></svg>Chat on WhatsApp</a>
-        </div>
-        <p class="form-foot">Free · No commitment · Your information stays confidential</p>
-      </div>
+      <p class="alt">Prefer to talk now? <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">Book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">WhatsApp +1 (626) 344-3218</a></p>
     </div>
 
     <!-- Where this leads: the graduation, the city, the life -->
@@ -430,7 +411,6 @@
       <div class="mosaic">
         <figure class="m-big">
           <img src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="International students on stage at graduation for Voices of Diversity" width="1024" height="684" fetchpriority="high">
-          <span class="goal">The finish line</span>
           <figcaption>Graduation day<span>Day 1 CPT graduates, Voices of Diversity</span></figcaption>
         </figure>
         <figure>
