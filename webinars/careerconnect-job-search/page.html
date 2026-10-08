@@ -249,9 +249,10 @@
   text-transform:uppercase;color:var(--ccw-orange);margin-bottom:18px;line-height:1.5;
 }
 
-.ccw-pills{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 26px;padding:0;list-style:none}
+/* #ccw-page prefix beats Divi's ".entry-content ul" padding + bullets */
+#ccw-page .ccw-pills{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 26px;padding:0;list-style:none}
 #ccw-page .ccw-pill{
-  display:inline-flex;align-items:center;gap:9px;margin:0;
+  display:inline-flex;align-items:center;gap:9px;margin:0;list-style:none;
   background:#fff;border:1px solid var(--ccw-line);border-radius:var(--ccw-radius-sm);
   padding:11px 18px;font-size:14.5px;font-weight:700;color:var(--ccw-ink);line-height:1.4;
   box-shadow:0 2px 6px rgba(42,47,49,.05);
@@ -329,12 +330,13 @@
   padding:clamp(28px,3vw,44px);margin-bottom:clamp(20px,2.2vw,28px);
 }
 #ccw-page .ccw-guide h2{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.4px;margin-bottom:12px}
-#ccw-page .ccw-guide-intro{max-width:900px;margin-bottom:26px}
-.ccw-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:ccwstep}
-@media (max-width:1000px){.ccw-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.ccw-steps{grid-template-columns:1fr}}
+#ccw-page .ccw-guide-intro{max-width:none;margin-bottom:26px}
+/* #ccw-page prefix beats Divi's ".entry-content ol" decimal numbers */
+#ccw-page .ccw-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:ccwstep}
+@media (max-width:1000px){#ccw-page .ccw-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){#ccw-page .ccw-steps{grid-template-columns:1fr}}
 #ccw-page .ccw-step{
-  margin:0;background:var(--ccw-bg-soft);border-radius:var(--ccw-radius-sm);padding:22px 20px;
+  margin:0;list-style:none;background:var(--ccw-bg-soft);border-radius:var(--ccw-radius-sm);padding:22px 20px;
   counter-increment:ccwstep;position:relative;
 }
 .ccw-step::before{
