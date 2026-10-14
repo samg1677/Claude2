@@ -581,7 +581,12 @@
   .ect-pin--num.ect-pin--hq i{width:22px;height:22px}
   .ect-offlist{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ect-offlist li{border-left:0!important}
-  .ect-offlist li:nth-child(even){border-left:1px solid var(--ect-line)!important}
+  /* phones: Los Angeles (HQ) full width, other 4 offices 2 x 2 */
+  .ect-offlist li:first-child{grid-column:1 / -1;background:var(--ect-soft)}
+  .ect-offlist li:first-child strong{font-size:20px}
+  .ect-offlist li:first-child .ect-offlist__num{width:34px;height:34px;font-size:15px}
+  .ect-offlist li:nth-child(odd):not(:first-child){border-left:1px solid var(--ect-line)!important}
+  .ect-offlist li:nth-child(n+4){border-bottom:0}
   .ect-offlist a,.ect-offlist div{padding:16px 14px}
   .ect-cta__inner{flex-direction:column;text-align:center}
   .ect .ect-cta__title{font-size:24px}
