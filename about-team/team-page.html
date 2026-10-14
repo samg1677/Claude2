@@ -550,22 +550,22 @@
   .ect-section{padding:56px 0}
   .ect .ect-head__title{font-size:28px}
   .ect-head{margin-bottom:28px;padding-bottom:18px}
-  .ect-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+  .ect-grid{grid-template-columns:1fr;gap:16px}
   .ect-card__body{padding:14px 14px 16px}
   .ect .ect-card__name{font-size:16px}
   .ect-card__role{font-size:13px}
   .ect-badge{top:10px;left:10px;font-size:9px;padding:5px 8px}
-  /* phones: management cards go full width, photo beside name,
-     bio opens as a full-width readable panel below */
-  .ect-card--lead{
-    grid-column:1 / -1;display:grid;
+  /* phones: every card is one per row, photo beside name;
+     management bios open as a full-width readable panel below */
+  .ect-card{
+    display:grid;
     grid-template-columns:38% minmax(0,1fr);
     grid-template-areas:"photo body" "bio bio";
   }
-  .ect-card--lead .ect-card__photo{grid-area:photo;align-self:start}
-  .ect-card--lead .ect-card__body{grid-area:body;align-self:center;padding:16px;border-top:0}
-  .ect-card--lead .ect-card__name{font-size:18px}
-  .ect-card--lead .ect-card__role{font-size:13.5px}
+  .ect-card__photo{grid-area:photo;align-self:start}
+  .ect .ect-card__body{grid-area:body;align-self:center;padding:16px;border-top:0}
+  .ect .ect-card__name{font-size:18px}
+  .ect .ect-card__role{font-size:13.5px}
   .ect-card > .ect-bio{grid-area:bio;padding:0;border-top:3px solid var(--ect-orange)}
   .ect-bio summary{display:flex;justify-content:space-between;width:100%;padding:14px 16px;font-size:15px;color:#ff7400}
   .ect-bio__panel{position:static;padding:0 16px 18px;background:#fff;color:var(--ect-body);font-size:15px;line-height:1.7;animation:none}
