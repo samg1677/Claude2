@@ -1,18 +1,17 @@
 <!-- ============================================================
      EduConnect USA — About Us + Team & Offices (combined page)
      PASTE THIS INTO: one Divi section → one row → one Code Module
-     on the /educonnect-team/ page. Replaces everything on that page.
+     on the page you keep. Replaces everything on that page.
      Self-contained: HTML + scoped CSS (.ect). No JavaScript.
 
-     Merges the old About page (/about-educonnect/) into this page.
-     After publishing, add a 301 redirect in
-     Rank Math → Redirections:  /about-educonnect/  →  /educonnect-team/
+     Merges About Us + Team & Offices into one page. After publishing,
+     301-redirect the page you are NOT keeping to this one
+     (Rank Math → Redirections).
 
      SECTIONS
-       1. Hero (world map)            5. Who We Work With
-       2. Meet the Team               6. Offices
-       3. Who We Are (student photo)  7. Call to action
-       4. Mission & Vision
+       1. Hero (world map)            4. Mission & Vision
+       2. Meet the Team               5. Who We Work With
+       3. Who We Are (student photo)  6. Offices
 
      TO EDIT
        • Add a person: copy one <li class="ect-card"> block.
@@ -209,7 +208,7 @@
           </div>
         </li>
         <li class="ect-card">
-          <div class="ect-card__photo"><img loading="lazy" decoding="async" width="600" height="750" src="https://educonnectusa.com/wp-content/uploads/2026/10/Shai.jpg" alt="Shai Battad" /></div>
+          <div class="ect-card__photo"><img loading="lazy" decoding="async" width="600" height="750" src="https://educonnectusa.com/wp-content/uploads/2026/10/Shai-1.jpg" alt="Shai Battad" /></div>
           <div class="ect-card__body">
             <h3 class="ect-card__name">Shai Battad</h3>
             <p class="ect-card__role">Recruitment Specialist</p>
@@ -391,19 +390,6 @@
     </div>
   </section>
 
-  <!-- ===================== 7. CTA ===================== -->
-  <section class="ect-cta">
-    <div class="ect-wrap ect-cta__inner">
-      <div>
-        <h2 class="ect-cta__title">Ready to start your U.S. journey?</h2>
-        <p class="ect-cta__text">Talk to an advisor and we&rsquo;ll be in touch within 48 hours.</p>
-      </div>
-      <div class="ect-cta__actions">
-        <a class="ect-btn ect-btn--primary" href="https://educonnectusa.com/apply-now/">Get Started Now</a>
-        <a class="ect-btn ect-btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Chat on WhatsApp</a>
-      </div>
-    </div>
-  </section>
 </div>
 
 <style>
@@ -680,21 +666,6 @@
 .ect-offlist em{display:block;font-style:normal;font-size:13.5px;color:var(--ect-body)}
 .ect-offlist small{display:block;margin-top:6px;font-size:12.5px;font-weight:700;color:var(--ect-orange)}
 
-/* ---------- CTA ---------- */
-.ect-cta{
-  position:relative;
-  padding:64px 0;
-  background:linear-gradient(300deg,#4ed3cc 0%,#332959 62%);
-}
-.ect-cta::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
-  background:linear-gradient(90deg,var(--ect-teal) 0%,var(--ect-orange) 100%);
-}
-.ect-cta__inner{display:flex;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
-.ect .ect-cta__title{color:#fff;font-size:30px;font-weight:700}
-.ect-cta__text{margin-top:8px!important;color:rgba(255,255,255,.8)}
-.ect-cta__actions{display:flex;flex-wrap:wrap;gap:12px}
-
 /* ============================================================
    RESPONSIVE
 ============================================================ */
@@ -724,10 +695,62 @@
   .ect .ect-head__title{font-size:28px}
   .ect-head{margin-bottom:28px;padding-bottom:18px}
 
+  /* team: one person per row, photo beside name;
+     management bios open as a full-width readable panel below */
+  .ect-grid{grid-template-columns:1fr;gap:16px}
+  .ect-badge{top:10px;left:10px;font-size:9px;padding:5px 8px}
+  .ect-card{
+    display:grid;
+    grid-template-columns:38% minmax(0,1fr);
+    grid-template-areas:"photo body" "bio bio";
+  }
+  .ect-card__photo{grid-area:photo;align-self:start}
+  .ect .ect-card__body{grid-area:body;align-self:center;padding:16px;border-top:0}
+  .ect .ect-card__name{font-size:18px}
+  .ect .ect-card__role{font-size:13.5px}
+  .ect-card > .ect-bio{grid-area:bio;padding:0;border-top:3px solid var(--ect-orange)}
+  .ect-bio summary{display:flex;justify-content:space-between;width:100%;padding:14px 16px;font-size:15px;color:#ff7400}
+  .ect-bio__panel{position:static;padding:0 16px 18px;background:#fff;color:var(--ect-body);font-size:15px;line-height:1.7;animation:none}
+  .ect-bio[open] summary{color:#ff7400}
+  .ect-bio[open] summary::after{background:var(--ect-soft);color:#ff7400}
+  .ect-card:hover{transform:none}
+
   /* who we are */
+  .ect-about{gap:32px}
   .ect-about__lead{font-size:16.5px}
   .ect-facts strong{font-size:24px}
-  @media (prefers-reduced-motion:reduce){
+
+  /* mission: steps stacked one per row */
+  .ect-mission__body{padding:28px 20px}
+  .ect .ect-steps{grid-template-columns:1fr;gap:10px}
+  .ect-steps li{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:14px;align-items:start}
+  .ect-steps span{grid-row:1 / span 2;margin-bottom:0}
+  .ect-mission__body .ect-btn{width:100%}
+
+  /* who we work with: cards stacked one per row */
+  .ect .ect-aud{grid-template-columns:1fr;gap:16px}
+  .ect .ect-aud__card{padding:24px 20px}
+  .ect-aud__card:hover{transform:none}
+
+  /* maps: smaller pins, labels hidden (the list below names each office) */
+  .ect-pin i{width:10px;height:10px;border-width:1.5px}
+  .ect-pin--hq i{width:12px;height:12px}
+  .ect-pin b{display:none}
+  .ect-map--offices{padding:28px 12px 16px}
+  .ect-pin--num i{width:20px;height:20px;font-size:11px}
+  .ect-pin--num.ect-pin--hq i{width:22px;height:22px}
+
+  /* offices: Los Angeles (HQ) full width, then 2+3 and 4+5 side by side */
+  .ect .ect-offlist{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ect-offlist li{border-left:0!important;border-bottom:1px solid var(--ect-line)}
+  .ect-offlist li:first-child{grid-column:1 / -1;background:var(--ect-soft)}
+  .ect-offlist li:first-child strong{font-size:20px}
+  .ect-offlist li:first-child .ect-offlist__num{width:34px;height:34px;font-size:15px}
+  .ect-offlist li:nth-child(odd):not(:first-child){border-left:1px solid var(--ect-line)!important}
+  .ect-offlist li:nth-child(n+4){border-bottom:0}
+  .ect-offlist a,.ect-offlist div{padding:16px 14px}
+}
+@media (prefers-reduced-motion:reduce){
   .ect *,.ect *::before,.ect *::after{transition:none!important;animation:none!important}
 }
 </style>
