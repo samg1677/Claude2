@@ -1,28 +1,20 @@
 <!-- ============================================================
      EduConnect USA — Mega Menu HTML
      PASTE THIS INTO: Divi Code Module (single HTML box)
-     The matching CSS goes in: Divi → Theme Options → Custom CSS
+     The matching CSS stays in: Divi → Theme Options → Custom CSS
 
      Top-level: Programs · Services · Resources · Partners · About Us
 ============================================================ -->
 
-<!-- Pre-paint guard: loads with the HTML so icons never render huge and
-     dropdowns/drawer never flash open before the main CSS arrives.
-     :where() = zero specificity, so Theme Options CSS always wins. -->
+<!-- Load guard: hides the header ONLY until your Theme Options CSS has
+     loaded, then removes itself completely. It never changes your styling.
+     Nothing needs to be added to Theme Options. -->
 <style>
-:where(.ec-header) svg { width: 1em; height: 1em; flex-shrink: 0; fill: currentColor; }
-:where(.ec-header .ec-topbar__item) svg,
-:where(.ec-header .ec-btn) svg { width: 18px; height: 18px; }
-:where(.ec-header) img { max-width: 100%; height: auto; }
-:where(.ec-mega, .ec-mobile, .ec-scrim) { visibility: hidden; }
-:where(.ec-nav__item--open .ec-mega,
-       .ec-header[data-state="open"] .ec-mobile,
-       .ec-header[data-state="open"] .ec-scrim) { visibility: visible; }
-
-/* Hide the header (and cap its height so the page doesn't jump) until the
-   Theme Options CSS loads and reveals it. Fail-safe reveal in the script. */
-.ec-header { opacity: 0; max-height: 120px; overflow: hidden; }
-.ec-header.ec-ready { opacity: 1; max-height: none; overflow: visible; }
+.ec-header:not(.ec-ready) { opacity: 0; animation: ecShow 0s 3s forwards; }
+.ec-header:not(.ec-ready) .ec-mega,
+.ec-header:not(.ec-ready) .ec-mobile,
+.ec-header:not(.ec-ready) .ec-scrim { display: none; }
+@keyframes ecShow { to { opacity: 1; } }
 </style>
 
 <header class="ec-header" id="ecHeader" data-state="closed">
@@ -399,12 +391,21 @@
 </header>
 
 <!-- Behavior: hover/click/keyboard, drawer, accordions. Self-contained. -->
-<script>
+<script nowprocket data-no-optimize="1" data-no-defer="1" data-cfasync="false">
 (function () {
   var header = document.getElementById('ecHeader');
   if (!header) return;
-  // Fail-safe: show the header even if the Theme Options CSS never loads.
-  setTimeout(function () { header.classList.add('ec-ready'); }, 2500);
+  // Show the header as soon as the Theme Options CSS is applied
+  // (the main bar becomes flex), or after 3s no matter what.
+  (function waitForCSS(start) {
+    var bar = header.querySelector('.ec-bar__inner');
+    var d = bar ? getComputedStyle(bar).display : '';
+    if (d === 'flex' || d === 'grid' || Date.now() - start > 3000) {
+      header.classList.add('ec-ready');
+    } else {
+      requestAnimationFrame(function () { waitForCSS(start); });
+    }
+  })(Date.now());
   var items = header.querySelectorAll('.ec-nav__item--has-mega');
   var closeTimer = null;
   var mqMobile = window.matchMedia('(max-width: 1023px)');
