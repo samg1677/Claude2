@@ -18,6 +18,11 @@
 :where(.ec-nav__item--open .ec-mega,
        .ec-header[data-state="open"] .ec-mobile,
        .ec-header[data-state="open"] .ec-scrim) { visibility: visible; }
+
+/* Hide the header (and cap its height so the page doesn't jump) until the
+   Theme Options CSS loads and reveals it. Fail-safe reveal in the script. */
+.ec-header { opacity: 0; max-height: 120px; overflow: hidden; }
+.ec-header.ec-ready { opacity: 1; max-height: none; overflow: visible; }
 </style>
 
 <header class="ec-header" id="ecHeader" data-state="closed">
@@ -398,6 +403,8 @@
 (function () {
   var header = document.getElementById('ecHeader');
   if (!header) return;
+  // Fail-safe: show the header even if the Theme Options CSS never loads.
+  setTimeout(function () { header.classList.add('ec-ready'); }, 2500);
   var items = header.querySelectorAll('.ec-nav__item--has-mega');
   var closeTimer = null;
   var mqMobile = window.matchMedia('(max-width: 1023px)');
