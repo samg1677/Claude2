@@ -25,10 +25,12 @@
        Programs > Why Day 1 CPT > 4-step process > Reviews > FAQ >
        Final CTA > Footer
 
-     Every link goes to one of three places only:
-       1. The lead form  (#consult, HubSpot form 7f154e55...)
-       2. WhatsApp       (wa.me/16263443218)
-       3. Book a call    (HubSpot meetings link)
+     Every link goes to one of four places only:
+       1. The lead form   (#consult, HubSpot form 7c52db43...)
+       2. The apply form  (#apply, multi-step HubSpot form 7f154e55...,
+                          opens in a pop-up on this page)
+       3. WhatsApp        (wa.me/16263443218)
+       4. Book a call     (HubSpot meetings link)
      =============================================================== -->
 
 <!-- ================== PASTE FROM HERE ================== -->
@@ -180,10 +182,37 @@
 .ecl .partner strong{display:block;font-family:var(--display);color:var(--heading);font-size:.98rem;line-height:1.3}
 .ecl .partner span{font-size:.86rem;color:var(--soft)}
 
-/* HubSpot form (new embed). Fields, colors and the submit button are
-   styled in HubSpot's form editor; this only reserves space while it loads. */
-.ecl .hs-form-frame{min-height:420px}
+.ecl #hubspot-form fieldset{max-width:100%!important}
+.ecl #hubspot-form .hs-form-field{margin-bottom:14px}
+.ecl #hubspot-form label{font-family:var(--display);font-weight:600;font-size:.88rem;color:var(--heading)}
+.ecl #hubspot-form .hs-form-required{color:var(--orange-deep)}
+.ecl #hubspot-form .input{margin:4px 0 0!important}
+.ecl #hubspot-form input[type=text],.ecl #hubspot-form input[type=email],.ecl #hubspot-form input[type=tel],.ecl #hubspot-form input[type=number],.ecl #hubspot-form select,.ecl #hubspot-form textarea{width:100%!important;min-height:48px;padding:10px 14px;font:inherit;font-size:1rem;color:var(--text);background:#fff;border:1px solid #C9C6D4;border-radius:6px}
+.ecl #hubspot-form textarea{min-height:100px}
+.ecl #hubspot-form input:focus,.ecl #hubspot-form select:focus,.ecl #hubspot-form textarea:focus{outline:2px solid var(--teal);outline-offset:0;border-color:var(--purple)}
+.ecl #hubspot-form .form-columns-2 .hs-form-field{width:100%!important;float:none!important}
+@media(min-width:560px){.ecl #hubspot-form .form-columns-2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}}
+.ecl #hubspot-form .inputs-list{list-style:none;margin:0;padding:0}
+.ecl #hubspot-form .inputs-list label{font-family:var(--body);font-weight:400;display:flex;gap:8px;align-items:flex-start}
+.ecl #hubspot-form .hs-error-msgs{list-style:none;margin:4px 0 0;padding:0}
+.ecl #hubspot-form .hs-error-msg{color:var(--orange-deep);font-weight:600;font-size:.85rem}
+.ecl #hubspot-form .legal-consent-container,.ecl #hubspot-form .hs-richtext{font-size:.8rem;color:var(--soft)}
+.ecl #hubspot-form input[type=submit]{width:100%;min-height:52px;margin-top:6px;border:0;border-radius:6px;background:var(--teal);color:var(--purple-deep);font-family:var(--display);font-weight:700;font-size:1.02rem;cursor:pointer;-webkit-appearance:none;appearance:none}
+.ecl #hubspot-form input[type=submit]:hover{background:#41c6bf}
+.ecl #hubspot-form .submitted-message{font-family:var(--display);font-size:1.1rem;color:var(--heading);padding:20px 0}
 .ecl .form-note{color:var(--soft);font-size:.95rem}
+
+/* Apply pop-up: the multi-step application form opens over the page */
+html:has(.apply-modal[open]){overflow:hidden}
+.ecl .apply-modal{width:min(680px,calc(100% - 24px));max-height:calc(100dvh - 24px);margin:auto;padding:0;border:0;border-top:5px solid var(--teal);border-radius:10px;background:#fff;color:var(--text);box-shadow:0 30px 60px -20px rgba(36,29,66,.55);overflow:auto}
+.ecl .apply-modal::backdrop{background:rgba(36,29,66,.62)}
+.ecl .apply-inner{position:relative;padding:28px 26px 24px}
+.ecl .apply-inner h2{font-size:1.35rem;margin:0 44px 4px 0}
+.ecl .apply-inner > p{color:var(--soft);font-size:.92rem;margin-bottom:16px}
+.ecl .apply-close{position:absolute;top:14px;right:14px;display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--purple);cursor:pointer}
+.ecl .apply-close:hover{background:var(--purple);border-color:var(--purple);color:var(--teal)}
+.ecl .apply-modal .hs-form-frame{min-height:360px}
+@media(max-width:560px){.ecl .apply-inner{padding:22px 18px 18px}}
 
 /* ================= TRUST BAND (4 equal columns) ================= */
 .ecl .band{background:var(--purple);color:#fff;padding:52px 0}
@@ -384,8 +413,7 @@
     <div class="form-box">
       <h2>Request a free consultation</h2>
       <p>An EduConnect advisor will reach out within one business day.</p>
-      <div class="hs-form-frame" id="ecl-form" data-region="na1" data-form-id="7f154e55-f78f-4fe0-8c85-cd862a35c275" data-portal-id="48135637"></div>
-      <p class="form-note" id="ecl-form-fallback" hidden>The form could not load (often an ad blocker). You can still <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">message us on WhatsApp</a>.</p>
+      <div id="hubspot-form"><p class="form-note">Loading form…</p></div>
       <p class="alt">Prefer to talk now? <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">Book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">WhatsApp +1 (626) 344-3218</a></p>
     </div>
 
@@ -448,7 +476,7 @@
         <ul id="ecl-list"></ul>
         <div class="foot-space"></div>
         <div class="foot">
-          <a class="btn btn-purple" href="#consult">Get a free personalized assessment</a>
+          <a class="btn btn-purple" href="#apply" data-apply>Get a free personalized assessment</a>
         </div>
       </div>
     </div>
@@ -480,7 +508,7 @@
         </div>
         <div class="includes-cta">
           <p>Not sure which program fits?</p>
-          <a class="btn btn-purple" href="#consult">Get matched free</a>
+          <a class="btn btn-purple" href="#apply" data-apply>Get matched free</a>
         </div>
       </div>
     </div>
@@ -598,7 +626,7 @@
       <div class="step"><div class="step-top"><span class="step-n">3</span><span class="lbl">Step three</span></div><h3>Secure F-1 status</h3><p>Receive your new I-20 and complete your SEVIS transfer or change of status.</p></div>
       <div class="step"><div class="step-top"><span class="step-n">4</span><span class="lbl">Step four</span></div><h3>Start class and start working</h3><p>Begin at one of six start dates, and CareerConnect helps you land a qualifying CPT job.</p></div>
     </div>
-    <div class="center"><a class="btn btn-teal" href="#consult">Start my FREE consultation</a></div>
+    <div class="center"><a class="btn btn-teal" href="#apply" data-apply>Start my FREE consultation</a></div>
   </div>
 </section>
 
@@ -723,11 +751,23 @@
   </div>
 </section>
 
+<!-- ======================= APPLY POP-UP (multi-step form) ======================= -->
+<dialog class="apply-modal" id="apply" aria-labelledby="ecl-apply-title">
+  <div class="apply-inner">
+    <button type="button" class="apply-close" data-apply-close aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <h2 id="ecl-apply-title">Apply to Day 1 CPT programs in California</h2>
+    <p>Free application with waived fees. Takes a few minutes.</p>
+    <div class="hs-form-frame" id="ecl-apply-form" data-region="na1" data-form-id="7f154e55-f78f-4fe0-8c85-cd862a35c275" data-portal-id="48135637"></div>
+    <p class="form-note" id="ecl-apply-fallback" hidden>The form could not load (often an ad blocker). You can still <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">message us on WhatsApp</a>.</p>
+  </div>
+</dialog>
+
 <!-- ======================= FOOTER ======================= -->
 <footer class="site-foot">
   © 2026 EduConnect USA · For informational purposes only. This is not legal or immigration advice. CPT and OPT eligibility depends on your individual history and your school's policies. Immigration decisions should be made in consultation with a licensed immigration attorney.
 </footer>
 
+<script charset="utf-8" src="https://js.hsforms.net/forms/embed/v2.js"></script>
 <script src="https://js.hsforms.net/forms/embed/48135637.js" defer></script>
 <script>
 (function () {
@@ -739,13 +779,38 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* HubSpot form: the embed script fills #ecl-form on its own.
-     If nothing has rendered after 8s (often an ad blocker), show the fallback. */
+  /* HubSpot form */
+  var box = document.getElementById('hubspot-form');
+  if (window.hbspt && hbspt.forms) {
+    box.innerHTML = '';
+    hbspt.forms.create({
+      portalId: "48135637",
+      formId: "7c52db43-c828-435b-8ce7-15a5233b9d17",
+      region: "na1",
+      target: "#hubspot-form"
+    });
+  } else {
+    box.innerHTML = '<p class="form-note">The form could not load (often an ad blocker). You can still <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">message us on WhatsApp</a>.</p>';
+  }
+
+  /* Apply pop-up: [data-apply] buttons open the multi-step form.
+     The embed script fills #ecl-apply-form; if it is still empty after 8s
+     (often an ad blocker), show the fallback links instead. */
+  var modal = document.getElementById('apply');
+  if (modal && modal.showModal) {
+    var openApply = function (e) { if (e) e.preventDefault(); if (!modal.open) modal.showModal(); };
+    document.querySelectorAll('.ecl [data-apply]').forEach(function (a) { a.addEventListener('click', openApply); });
+    modal.querySelector('[data-apply-close]').addEventListener('click', function () { modal.close(); });
+    modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
+    if (location.hash === '#apply') openApply();
+  } else {
+    document.querySelectorAll('.ecl [data-apply]').forEach(function (a) { a.setAttribute('href', '#consult'); });
+  }
   setTimeout(function () {
-    var frame = document.getElementById('ecl-form');
+    var frame = document.getElementById('ecl-apply-form');
     if (frame && !frame.children.length) {
       frame.style.minHeight = '0';
-      document.getElementById('ecl-form-fallback').hidden = false;
+      document.getElementById('ecl-apply-fallback').hidden = false;
     }
   }, 8000);
 
