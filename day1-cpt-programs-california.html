@@ -25,12 +25,10 @@
        Programs > Why Day 1 CPT > 4-step process > Reviews > FAQ >
        Final CTA > Footer
 
-     Every link goes to one of four places only:
-       1. The lead form   (#consult, HubSpot form 7c52db43...)
-       2. The apply form  (#apply, multi-step HubSpot form 7f154e55...,
-                          opens in a pop-up on this page)
-       3. WhatsApp        (wa.me/16263443218)
-       4. Book a call     (HubSpot meetings link)
+     Every link goes to one of three places only:
+       1. The lead form  (#consult)
+       2. WhatsApp       (wa.me/16263443218)
+       3. Book a call    (HubSpot meetings link)
      =============================================================== -->
 
 <!-- ================== PASTE FROM HERE ================== -->
@@ -68,20 +66,6 @@
 @media(min-width:768px){.eclh-wa{width:50px;height:50px}}
 @media(max-width:374px){.eclh-logo-text{display:none}}
 </style>
-
-<header class="eclh" id="eclHeader">
-  <div class="eclh-inner">
-    <a class="eclh-logo" href="#consult" aria-label="EduConnect USA, Day 1 CPT programs in California">
-      <!-- Logo: replace the src with your EduConnect logo file from the media library -->
-      <!-- <img src="YOUR-LOGO-URL" alt="" width="46" height="46"> -->
-      <span class="eclh-logo-text"><strong>EduConnect USA</strong><em>Day 1 CPT in California</em></span>
-    </a>
-    <div class="eclh-actions">
-      <a class="eclh-call" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Book a <span class="eclh-free">free </span>call</span></a>
-      <a class="eclh-wa" href="https://wa.me/16263443218" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.42-9.84 9.85-9.84 2.63 0 5.1 1.03 6.96 2.89a9.78 9.78 0 0 1 2.88 6.96c0 5.43-4.42 9.84-9.84 9.84zm8.38-18.22A11.77 11.77 0 0 0 12.04.1C5.5.1.19 5.42.19 11.95c0 2.09.55 4.13 1.59 5.93L.1 24l6.27-1.64a11.82 11.82 0 0 0 5.67 1.44h.01c6.53 0 11.85-5.32 11.85-11.85 0-3.17-1.23-6.14-3.47-8.38z"/></svg></a>
-    </div>
-  </div>
-</header>
 
 <div class="ecl">
 <style>
@@ -182,6 +166,7 @@
 .ecl .partner strong{display:block;font-family:var(--display);color:var(--heading);font-size:.98rem;line-height:1.3}
 .ecl .partner span{font-size:.86rem;color:var(--soft)}
 
+/* HubSpot form, styled to the brand */
 .ecl #hubspot-form fieldset{max-width:100%!important}
 .ecl #hubspot-form .hs-form-field{margin-bottom:14px}
 .ecl #hubspot-form label{font-family:var(--display);font-weight:600;font-size:.88rem;color:var(--heading)}
@@ -201,18 +186,6 @@
 .ecl #hubspot-form input[type=submit]:hover{background:#41c6bf}
 .ecl #hubspot-form .submitted-message{font-family:var(--display);font-size:1.1rem;color:var(--heading);padding:20px 0}
 .ecl .form-note{color:var(--soft);font-size:.95rem}
-
-/* Apply pop-up: the multi-step application form opens over the page */
-html:has(.apply-modal[open]){overflow:hidden}
-.ecl .apply-modal{width:min(680px,calc(100% - 24px));max-height:calc(100dvh - 24px);margin:auto;padding:0;border:0;border-top:5px solid var(--teal);border-radius:10px;background:#fff;color:var(--text);box-shadow:0 30px 60px -20px rgba(36,29,66,.55);overflow:auto}
-.ecl .apply-modal::backdrop{background:rgba(36,29,66,.62)}
-.ecl .apply-inner{position:relative;padding:28px 26px 24px}
-.ecl .apply-inner h2{font-size:1.35rem;margin:0 44px 4px 0}
-.ecl .apply-inner > p{color:var(--soft);font-size:.92rem;margin-bottom:16px}
-.ecl .apply-close{position:absolute;top:14px;right:14px;display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--purple);cursor:pointer}
-.ecl .apply-close:hover{background:var(--purple);border-color:var(--purple);color:var(--teal)}
-.ecl .apply-modal .hs-form-frame{min-height:360px}
-@media(max-width:560px){.ecl .apply-inner{padding:22px 18px 18px}}
 
 /* ================= TRUST BAND (4 equal columns) ================= */
 .ecl .band{background:var(--purple);color:#fff;padding:52px 0}
@@ -405,7 +378,7 @@ html:has(.apply-modal[open]){overflow:hidden}
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Work and study in the USA</p>
-      <h1>Day 1 CPT Programs <span class="mark">in California</span></h1>
+      <h1>Day 1 CPT <span class="mark">Programs</span> in California</h1>
       <p class="tag">Work and Study Graduate Programs</p>
       <p class="sub">Earn an accredited U.S. graduate degree through Day 1 CPT programs in California and work in your field from your first term. Free 1-on-1 consultation and free application support.</p>
     </div>
@@ -421,7 +394,7 @@ html:has(.apply-modal[open]){overflow:hidden}
     <div class="hero-media">
       <div class="mosaic">
         <figure class="m-big">
-          <img src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="International students graduating from Day 1 CPT programs in California at Voices of Diversity" width="1024" height="684" fetchpriority="high">
+          <img src="https://educonnectusa.com/wp-content/uploads/2026/03/52.jpg" alt="International students on stage at graduation for Voices of Diversity" width="1024" height="684" fetchpriority="high">
           <figcaption>Graduation day<span>Day 1 CPT graduates, Voices of Diversity</span></figcaption>
         </figure>
         <figure>
@@ -476,7 +449,7 @@ html:has(.apply-modal[open]){overflow:hidden}
         <ul id="ecl-list"></ul>
         <div class="foot-space"></div>
         <div class="foot">
-          <a class="btn btn-purple" href="#apply" data-apply>Get a free personalized assessment</a>
+          <a class="btn btn-purple" href="APPLY-PAGE-URL">Get a free personalized assessment</a>
         </div>
       </div>
     </div>
@@ -508,7 +481,7 @@ html:has(.apply-modal[open]){overflow:hidden}
         </div>
         <div class="includes-cta">
           <p>Not sure which program fits?</p>
-          <a class="btn btn-purple" href="#apply" data-apply>Get matched free</a>
+          <a class="btn btn-purple" href="APPLY-PAGE-URL">Get matched free</a>
         </div>
       </div>
     </div>
@@ -626,7 +599,7 @@ html:has(.apply-modal[open]){overflow:hidden}
       <div class="step"><div class="step-top"><span class="step-n">3</span><span class="lbl">Step three</span></div><h3>Secure F-1 status</h3><p>Receive your new I-20 and complete your SEVIS transfer or change of status.</p></div>
       <div class="step"><div class="step-top"><span class="step-n">4</span><span class="lbl">Step four</span></div><h3>Start class and start working</h3><p>Begin at one of six start dates, and CareerConnect helps you land a qualifying CPT job.</p></div>
     </div>
-    <div class="center"><a class="btn btn-teal" href="#apply" data-apply>Start my FREE consultation</a></div>
+    <div class="center"><a class="btn btn-teal" href="APPLY-PAGE-URL">Start my FREE consultation</a></div>
   </div>
 </section>
 
@@ -751,24 +724,12 @@ html:has(.apply-modal[open]){overflow:hidden}
   </div>
 </section>
 
-<!-- ======================= APPLY POP-UP (multi-step form) ======================= -->
-<dialog class="apply-modal" id="apply" aria-labelledby="ecl-apply-title">
-  <div class="apply-inner">
-    <button type="button" class="apply-close" data-apply-close aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
-    <h2 id="ecl-apply-title">Apply to Day 1 CPT programs in California</h2>
-    <p>Free application with waived fees. Takes a few minutes.</p>
-    <div class="hs-form-frame" id="ecl-apply-form" data-region="na1" data-form-id="7f154e55-f78f-4fe0-8c85-cd862a35c275" data-portal-id="48135637"></div>
-    <p class="form-note" id="ecl-apply-fallback" hidden>The form could not load (often an ad blocker). You can still <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">message us on WhatsApp</a>.</p>
-  </div>
-</dialog>
-
 <!-- ======================= FOOTER ======================= -->
 <footer class="site-foot">
   © 2026 EduConnect USA · For informational purposes only. This is not legal or immigration advice. CPT and OPT eligibility depends on your individual history and your school's policies. Immigration decisions should be made in consultation with a licensed immigration attorney.
 </footer>
 
 <script charset="utf-8" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-<script src="https://js.hsforms.net/forms/embed/48135637.js" defer></script>
 <script>
 (function () {
   /* Sticky header shadow */
@@ -792,27 +753,6 @@ html:has(.apply-modal[open]){overflow:hidden}
   } else {
     box.innerHTML = '<p class="form-note">The form could not load (often an ad blocker). You can still <a class="link" href="https://meetings.hubspot.com/cdignos/recruitment-team-calendar" target="_blank" rel="noopener">book a call</a> or <a class="link" href="https://wa.me/16263443218" target="_blank" rel="noopener">message us on WhatsApp</a>.</p>';
   }
-
-  /* Apply pop-up: [data-apply] buttons open the multi-step form.
-     The embed script fills #ecl-apply-form; if it is still empty after 8s
-     (often an ad blocker), show the fallback links instead. */
-  var modal = document.getElementById('apply');
-  if (modal && modal.showModal) {
-    var openApply = function (e) { if (e) e.preventDefault(); if (!modal.open) modal.showModal(); };
-    document.querySelectorAll('.ecl [data-apply]').forEach(function (a) { a.addEventListener('click', openApply); });
-    modal.querySelector('[data-apply-close]').addEventListener('click', function () { modal.close(); });
-    modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
-    if (location.hash === '#apply') openApply();
-  } else {
-    document.querySelectorAll('.ecl [data-apply]').forEach(function (a) { a.setAttribute('href', '#consult'); });
-  }
-  setTimeout(function () {
-    var frame = document.getElementById('ecl-apply-form');
-    if (frame && !frame.children.length) {
-      frame.style.minHeight = '0';
-      document.getElementById('ecl-apply-fallback').hidden = false;
-    }
-  }, 8000);
 
   /* Google review slider: arrows, dots, swipe, gentle autoplay
      (pauses on hover, focus or touch; off for reduced motion) */
