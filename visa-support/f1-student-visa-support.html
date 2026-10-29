@@ -1,0 +1,745 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://educonnectusa.com/visa-support/#service",
+      "name": "F1 Student Visa Support",
+      "serviceType": "F-1 student visa and change of status guidance",
+      "url": "https://educonnectusa.com/visa-support/",
+      "description": "Guidance for international students applying for an F-1 student visa from abroad or changing status to F-1 from J-1, B-1/B-2 and other U.S. visas, including SEVIS transfers and H-1B alternatives.",
+      "provider": { "@id": "https://educonnectusa.com/#organization" },
+      "areaServed": "Worldwide",
+      "audience": { "@type": "Audience", "audienceType": "International students" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://educonnectusa.com/visa-support/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an F-1 student visa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The F-1 visa is the U.S. academic student visa. It allows international students to enroll full-time in a degree program at a SEVP-certified U.S. college or university and, with authorization, gain work experience through Curricular Practical Training (CPT) and Optional Practical Training (OPT)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I change my status to F-1 without leaving the United States?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In many cases, yes. Eligible J-1, B-1/B-2 and other nonimmigrant visa holders can apply to USCIS for a change of status to F-1 using Form I-539 while they are still in valid status. Eligibility depends on your current visa, so your case should be reviewed before you apply." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I change from a J-1 visa to an F-1 visa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Many J-1 holders can change to F-1 status. However, if you are subject to the two-year home residency requirement under INA 212(e), you generally cannot change status inside the U.S. unless you first obtain a waiver. We help you review your DS-2019 and plan the right path." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I change from a B-1/B-2 visitor visa to an F-1 visa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, visitors can request a change of status to F-1 from inside the U.S., but you may not begin full-time study until USCIS approves the change. Timing matters, so planning your program start date is an important part of the process." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a SEVIS transfer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A SEVIS transfer moves your F-1 student record from your current school to a new SEVP-certified school so you can continue studying in the U.S. without leaving the country or applying for a new visa." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the F-1 visa a good alternative to the H-1B?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For many professionals who were not selected in the H-1B lottery, an F-1 graduate degree offers a lawful way to stay in the U.S., keep building experience through CPT, and become eligible for OPT and, in STEM-designated programs, the 24-month STEM OPT extension." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I work in the U.S. on an F-1 visa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, with authorization. Through our partner Alliant University, eligible students can access Day 1 CPT, which lets you work in your field from your first term. After graduation, you may qualify for 12 months of OPT plus a 24-month STEM OPT extension in STEM-designated programs." }
+        },
+        {
+          "@type": "Question",
+          "name": "What documents do I need for an F-1 visa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Typical documents include a valid passport, a Form I-20 from your school, proof of SEVIS I-901 fee payment, proof of financial support, academic transcripts and, for change of status, Form I-539 and your current I-94 record. Applicants abroad also complete the DS-160 and attend a consular interview." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+#vs-page{
+  --vs-teal:#4ed3cc;
+  --vs-teal-hov:#3cc3bc;
+  --vs-orange:#ff7400;
+  --vs-orange-hov:#cc5c00;
+  --vs-plum:#332959;
+  --vs-ink:#2a2f31;
+  --vs-body:#686868;
+  --vs-bg-soft:#f2f2f2;
+  --vs-line:#e4eaee;
+  --vs-radius:12px;
+  --vs-radius-sm:8px;
+  --vs-shadow:0 16px 40px rgba(42,47,49,.10),0 2px 6px rgba(42,47,49,.06);
+  --vs-shadow-hov:0 24px 50px rgba(42,47,49,.16),0 3px 8px rgba(42,47,49,.08);
+  --vs-font:Arial,Helvetica,sans-serif;
+  --vs-max:1280px;
+  font-family:var(--vs-font);
+  color:var(--vs-body);
+  font-size:16px;
+  line-height:2;
+  background:#fff;
+  overflow-x:hidden;
+}
+#vs-page *,#vs-page *::before,#vs-page *::after{box-sizing:border-box}
+#vs-page img{max-width:100%;height:auto;display:block}
+#vs-page ul,#vs-page ol{list-style:none;margin:0;padding:0}
+#vs-page li::before{content:none}
+#vs-page a{text-decoration:none;color:var(--vs-orange)}
+#vs-page a:hover{color:var(--vs-orange-hov)}
+#vs-page h1,#vs-page h2,#vs-page h3,#vs-page h4{color:var(--vs-ink);margin:0;padding:0;line-height:1.25;font-weight:700;text-wrap:balance}
+#vs-page p{margin:0;padding:0;font-size:16px;line-height:2}
+#vs-page :focus-visible{outline:3px solid var(--vs-teal);outline-offset:2px;border-radius:4px}
+
+.vs-wrap{max-width:calc(var(--vs-max) + 48px);margin:0 auto;padding:0 24px}
+.vs-eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;line-height:1.5;text-transform:uppercase;color:var(--vs-orange);margin-bottom:16px}
+#vs-page .vs-h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.5px;margin-bottom:24px}
+.vs-lede strong{color:var(--vs-ink)}
+.vs-lede a{font-weight:700}
+.vs-lede+.vs-lede{margin-top:16px}
+.vs-head{max-width:860px}
+.vs-center{text-align:center}
+.vs-center .vs-head{margin-left:auto;margin-right:auto}
+.vs-section{padding:clamp(60px,7vw,92px) 0}
+.vs-section--soft{background:var(--vs-bg-soft)}
+.vs-section--plum{background:var(--vs-plum)}
+#vs-page .vs-section--plum .vs-h2,#vs-page .vs-section--plum h3{color:#fff}
+#vs-page .vs-section--plum .vs-lede{color:rgba(255,255,255,.85)}
+#vs-page .vs-section--plum .vs-lede strong{color:#fff}
+.vs-section--plum .vs-eyebrow{color:#ffb878}
+
+.vs-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 30px;border-radius:6px;border:2px solid transparent;font:700 16px/1.3 var(--vs-font);letter-spacing:.5px;cursor:pointer;text-align:center;transition:background .2s,border-color .2s,transform .15s}
+.vs-btn:hover{transform:translateY(-1px)}
+#vs-page .vs-btn--primary{background:var(--vs-orange);color:#fff;box-shadow:0 12px 18px -6px rgba(0,0,0,.3)}
+#vs-page .vs-btn--primary:hover{background:var(--vs-orange-hov);color:#fff}
+#vs-page .vs-btn--teal{background:var(--vs-teal);color:var(--vs-plum);box-shadow:0 12px 18px -6px rgba(0,0,0,.18)}
+#vs-page .vs-btn--teal:hover{background:var(--vs-teal-hov);color:var(--vs-plum)}
+#vs-page .vs-btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+#vs-page .vs-btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff}
+#vs-page .vs-btn--outline{background:transparent;color:var(--vs-orange);border-color:var(--vs-orange)}
+#vs-page .vs-btn--outline:hover{background:var(--vs-orange);color:#fff}
+
+.vs-check{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.9}
+.vs-check svg{flex:0 0 22px;width:22px;height:22px;margin-top:6px;fill:var(--vs-teal)}
+.vs-check strong{color:var(--vs-ink)}
+#vs-page .vs-section--plum .vs-check{color:rgba(255,255,255,.9)}
+#vs-page .vs-section--plum .vs-check strong{color:#fff}
+#vs-page .vs-featlist{margin-top:28px;display:grid;gap:14px}
+
+.vs-hero{background:linear-gradient(300deg,#4ed3cc 0%,#332959 69%) #332959;color:#fff}
+.vs-hero__inner{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,4vw,56px);align-items:center;padding:clamp(64px,7vw,110px) 0 clamp(56px,6vw,96px)}
+.vs-hero .vs-eyebrow{color:#ffd7b0;margin-bottom:20px}
+#vs-page .vs-hero h1{color:#fff;font-size:clamp(32px,4.4vw,54px);letter-spacing:-.5px;margin-bottom:22px}
+#vs-page .vs-hero__sub{font-size:17px;line-height:1.9;color:rgba(255,255,255,.92);max-width:36rem;margin-bottom:20px}
+#vs-page .vs-hero__sub strong{color:#fff}
+#vs-page .vs-hero__tag{border-left:4px solid var(--vs-orange);padding-left:20px;font-style:italic;color:rgba(255,255,255,.82);font-size:16px;line-height:1.9;max-width:36rem}
+.vs-hero__cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+#vs-page .vs-hero__note{margin-top:14px;font-size:13px;line-height:1.6;color:rgba(255,255,255,.72)}
+.vs-hero__media{position:relative}
+.vs-hero__media img{border-radius:var(--vs-radius);box-shadow:var(--vs-shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+.vs-hero__badge{position:absolute;left:-14px;bottom:-18px;background:#fff;color:var(--vs-ink);border-radius:10px;box-shadow:var(--vs-shadow);padding:14px 20px;font-size:14px;line-height:1.6;max-width:280px}
+.vs-hero__badge b{display:block;color:var(--vs-plum);font-size:16px}
+.vs-hero__badge b span{color:var(--vs-orange)}
+
+.vs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.18)}
+.vs-stat{background:rgba(51,41,89,.35);padding:20px;text-align:center;line-height:1.5}
+.vs-stat b{display:block;color:#fff;font-size:16px;letter-spacing:.2px}
+.vs-stat span{color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.5px;text-transform:uppercase}
+
+.vs-quick{background:#fff;border-bottom:1px solid var(--vs-line)}
+.vs-quick__inner{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:18px 0}
+.vs-quick__label{font:700 12px/1 var(--vs-font);letter-spacing:2px;text-transform:uppercase;color:var(--vs-ink);margin-right:6px}
+#vs-page .vs-quick a{display:inline-flex;align-items:center;font:700 13.5px/1 var(--vs-font);padding:10px 14px;border-radius:999px;background:var(--vs-bg-soft);color:var(--vs-plum);border:1px solid var(--vs-line);transition:background .2s,color .2s,border-color .2s}
+#vs-page .vs-quick a:hover{background:var(--vs-teal);border-color:var(--vs-teal);color:var(--vs-plum)}
+
+.vs-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,4.5vw,64px);align-items:center}
+.vs-split--rev .vs-split__media{order:2}
+.vs-split__media img{border-radius:var(--vs-radius);box-shadow:var(--vs-shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+.vs-split__body .vs-btn{margin-top:30px}
+
+.vs-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.vs-path{display:flex;flex-direction:column;background:#fff;border:1px solid var(--vs-line);border-top:4px solid var(--vs-teal);border-radius:var(--vs-radius);box-shadow:var(--vs-shadow);padding:30px 26px;transition:transform .2s,box-shadow .2s}
+.vs-path:hover{transform:translateY(-4px);box-shadow:var(--vs-shadow-hov)}
+.vs-path--featured{border-top-color:var(--vs-orange)}
+.vs-path__top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.vs-path__ic{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(160deg,#e8f7f5,#fff);flex:0 0 auto}
+.vs-path__ic svg{width:28px;height:28px;fill:var(--vs-plum)}
+.vs-path:hover .vs-path__ic{background:var(--vs-teal)}
+.vs-path:hover .vs-path__ic svg{fill:#fff}
+.vs-route{display:inline-flex;align-items:center;gap:6px;font:700 12px/1 var(--vs-font);letter-spacing:1px;text-transform:uppercase;color:var(--vs-plum);background:#e8f7f5;padding:8px 11px;border-radius:999px;white-space:nowrap}
+.vs-route svg{width:13px;height:13px;fill:var(--vs-orange)}
+#vs-page .vs-path h3{font-size:20px;line-height:1.35;margin-bottom:10px}
+#vs-page .vs-path p{font-size:15px;line-height:1.75;margin-bottom:18px}
+#vs-page .vs-path ul{display:grid;gap:8px;margin-bottom:22px}
+.vs-path li{display:flex;gap:10px;font-size:14.5px;line-height:1.6}
+.vs-path li svg{flex:0 0 18px;width:18px;height:18px;margin-top:2px;fill:var(--vs-teal)}
+.vs-path__link{margin-top:auto;font:700 15px/1.3 var(--vs-font);color:var(--vs-orange)}
+
+.vs-h1b{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,4.5vw,64px);align-items:center}
+.vs-compare{background:#fff;border-radius:var(--vs-radius);box-shadow:var(--vs-shadow);overflow:hidden}
+.vs-compare__head{display:grid;grid-template-columns:1.2fr 1fr 1fr;background:var(--vs-ink);color:#fff;font:700 13px/1.4 var(--vs-font);letter-spacing:1px;text-transform:uppercase}
+.vs-compare__head span{padding:16px 18px}
+.vs-compare__head span:last-child{background:var(--vs-orange)}
+.vs-compare__row{display:grid;grid-template-columns:1.2fr 1fr 1fr;border-top:1px solid var(--vs-line);font-size:14.5px;line-height:1.55}
+.vs-compare__row span{padding:15px 18px;color:var(--vs-body)}
+.vs-compare__row span:first-child{font-weight:700;color:var(--vs-ink)}
+.vs-compare__row span:last-child{background:#fff8f1;color:var(--vs-ink);font-weight:700}
+#vs-page .vs-compare__note{padding:14px 18px;font-size:12.5px;line-height:1.6;color:var(--vs-body);background:var(--vs-bg-soft);border-top:1px solid var(--vs-line)}
+
+#vs-page .vs-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:44px;counter-reset:vs-step}
+.vs-step{position:relative;background:#fff;border:1px solid var(--vs-line);border-radius:var(--vs-radius);box-shadow:var(--vs-shadow);padding:30px 22px 26px}
+.vs-step__num{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--vs-plum);color:#fff;font:700 18px/1 var(--vs-font);margin-bottom:18px;box-shadow:0 0 0 6px #e8f7f5}
+#vs-page .vs-step h3{font-size:17px;line-height:1.35;margin-bottom:8px}
+#vs-page .vs-step p{font-size:14.5px;line-height:1.7}
+.vs-step:not(:last-child)::after{content:"";position:absolute;top:52px;right:-17px;width:14px;height:14px;border-top:3px solid var(--vs-teal);border-right:3px solid var(--vs-teal);transform:rotate(45deg);z-index:2}
+
+.vs-docs{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.vs-doccard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--vs-radius);padding:30px}
+#vs-page .vs-doccard h3{font-size:20px;margin-bottom:6px}
+#vs-page .vs-doccard__sub{font-size:14px;line-height:1.6;color:rgba(255,255,255,.7);margin-bottom:18px}
+.vs-doccard ul{display:grid;gap:10px}
+
+.vs-work{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.vs-workcard{background:#fff;border:1px solid var(--vs-line);border-radius:var(--vs-radius);box-shadow:var(--vs-shadow);padding:30px 26px}
+.vs-workcard__tag{display:inline-block;font:700 12px/1 var(--vs-font);letter-spacing:1px;text-transform:uppercase;color:var(--vs-orange);background:#fff4e8;border:1px solid #ffe0c2;padding:8px 12px;border-radius:999px;margin-bottom:16px}
+#vs-page .vs-workcard h3{font-size:22px;margin-bottom:10px}
+#vs-page .vs-workcard p{font-size:15px;line-height:1.75}
+
+.vs-res{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+.vs-rescard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--vs-line);border-radius:var(--vs-radius);padding:24px 22px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.vs-rescard:hover{transform:translateY(-3px);box-shadow:var(--vs-shadow);border-color:var(--vs-teal)}
+.vs-rescard__type{font:700 11.5px/1 var(--vs-font);letter-spacing:1.5px;text-transform:uppercase;color:var(--vs-teal);margin-bottom:10px}
+#vs-page .vs-rescard h3{font-size:17px;line-height:1.4;margin-bottom:8px}
+#vs-page .vs-rescard p{font-size:14px;line-height:1.65;margin-bottom:14px}
+.vs-rescard span.vs-rescard__go{margin-top:auto;font:700 14px/1 var(--vs-font);color:var(--vs-orange)}
+
+.vs-acc{margin-top:32px;display:grid;gap:14px;max-width:960px}
+.vs-acc details{background:#fff;border:1px solid var(--vs-line);border-radius:var(--vs-radius-sm);overflow:hidden}
+.vs-acc details[open]{box-shadow:var(--vs-shadow)}
+.vs-acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;font:700 18px/1.4 var(--vs-font);color:var(--vs-ink)}
+.vs-acc summary::-webkit-details-marker{display:none}
+.vs-acc summary svg{flex:0 0 20px;width:20px;height:20px;fill:var(--vs-orange);transition:transform .2s}
+.vs-acc details[open] summary{color:var(--vs-plum)}
+.vs-acc details[open] summary svg{transform:rotate(180deg)}
+.vs-acc__body{padding:0 24px 26px;font-size:16px;line-height:2}
+.vs-acc__body strong{color:var(--vs-ink)}
+.vs-acc__body a{font-weight:700}
+
+.vs-ctaband{background:var(--vs-plum);color:#fff}
+.vs-ctaband__inner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,4vw,56px);align-items:center}
+#vs-page .vs-ctaband h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin-bottom:14px}
+#vs-page .vs-ctaband p{color:rgba(255,255,255,.9);font-size:16px;line-height:1.9}
+.vs-ctaband__actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:flex-end}
+#vs-page .vs-disclaimer{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.6)}
+.vs-endcap{height:6px;background:linear-gradient(90deg,var(--vs-teal) 0%,var(--vs-orange) 100%)}
+
+@media (max-width:1180px){
+  #vs-page .vs-steps{grid-template-columns:repeat(3,1fr)}
+  .vs-step:nth-child(3)::after{display:none}
+  .vs-res{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:1023px){
+  .vs-hero__inner{grid-template-columns:1fr;gap:44px}
+  .vs-hero__media{max-width:600px}
+  .vs-stats{grid-template-columns:repeat(2,1fr)}
+  .vs-split,.vs-h1b{grid-template-columns:1fr;gap:40px}
+  .vs-split__media{max-width:640px}
+  .vs-split--rev .vs-split__media{order:0}
+  .vs-paths,.vs-work{grid-template-columns:1fr 1fr}
+  .vs-path--featured{grid-column:1 / -1}
+  .vs-docs{grid-template-columns:1fr}
+  #vs-page .vs-steps{grid-template-columns:1fr 1fr}
+  .vs-step::after{display:none}
+  .vs-ctaband__inner{grid-template-columns:1fr}
+  .vs-ctaband__actions{justify-content:flex-start}
+}
+@media (max-width:640px){
+  .vs-wrap{padding:0 18px}
+  #vs-page .vs-hero__sub{font-size:16px}
+  .vs-stat{padding:16px 10px}
+  .vs-btn{width:100%}
+  .vs-hero__badge{position:static;margin-top:16px;display:inline-block;max-width:none}
+  .vs-quick__inner{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:14px 0}
+  .vs-quick__inner::-webkit-scrollbar{display:none}
+  #vs-page .vs-quick a{white-space:nowrap}
+  .vs-quick__label{white-space:nowrap}
+  .vs-paths,.vs-work,.vs-res,#vs-page .vs-steps{grid-template-columns:1fr}
+  .vs-path,.vs-workcard,.vs-doccard{padding:26px 22px}
+  .vs-compare__head,.vs-compare__row{grid-template-columns:1fr 1fr 1fr;font-size:13px}
+  .vs-compare__head{font-size:11px;letter-spacing:.5px}
+  .vs-compare__head span,.vs-compare__row span{padding:12px 10px}
+  .vs-acc summary{font-size:16px;padding:18px 18px}
+  .vs-acc__body{padding:0 18px 22px;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  #vs-page *{transition:none!important}
+}
+</style>
+
+<div id="vs-page">
+
+  <section class="vs-hero">
+    <div class="vs-wrap">
+      <div class="vs-hero__inner">
+        <div>
+          <span class="vs-eyebrow">Student Visa Support</span>
+          <h1>F1 Student Visa Support &amp; Change of Status</h1>
+          <p class="vs-hero__sub">
+            Whether you are already in the U.S. on a <strong>J-1, B-1/B-2, H-1B or other visa</strong>, or applying
+            from abroad, our team guides you through every step of getting your <strong>F1 student visa</strong>
+            &mdash; and into a graduate degree with <strong>Day 1 CPT and STEM OPT</strong>.
+          </p>
+          <p class="vs-hero__tag">Change your status, keep building your career, and stay in the United States legally while you study.</p>
+          <div class="vs-hero__cta">
+            <a class="vs-btn vs-btn--primary" href="https://educonnectusa.com/apply-now/" target="_blank" rel="noopener">Get Started Now</a>
+            <a class="vs-btn vs-btn--ghost" href="https://wa.me/16263443218" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+          <p class="vs-hero__note">Free case review &middot; Official enrollment partner of Alliant University</p>
+        </div>
+        <div class="vs-hero__media">
+          <img fetchpriority="high" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2026/03/5.jpg"
+               srcset="https://educonnectusa.com/wp-content/uploads/2026/03/5.jpg 2560w, https://educonnectusa.com/wp-content/uploads/2026/03/5-1280x855.jpg 1280w, https://educonnectusa.com/wp-content/uploads/2026/03/5-980x654.jpg 980w, https://educonnectusa.com/wp-content/uploads/2026/03/5-480x320.jpg 480w"
+               sizes="(max-width:640px) 100vw, (max-width:1023px) 600px, 620px"
+               width="2560" height="1709"
+               alt="International student preparing an F1 student visa application on a laptop" />
+          <div class="vs-hero__badge">
+            <b><span>99.5%</span> Success Rate</b>
+            F-1 change of status through EduConnect USA*
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vs-stats" role="list">
+      <div class="vs-stat" role="listitem"><b>Change of Status</b><span>Without leaving the U.S.</span></div>
+      <div class="vs-stat" role="listitem"><b>Day 1 CPT</b><span>Work from your first term</span></div>
+      <div class="vs-stat" role="listitem"><b>STEM OPT</b><span>Up to 3 years of OPT</span></div>
+      <div class="vs-stat" role="listitem"><b>Step-by-Step</b><span>I-20 to approval</span></div>
+    </div>
+  </section>
+
+  <nav class="vs-quick" aria-label="Visa pathways on this page">
+    <div class="vs-wrap">
+      <div class="vs-quick__inner">
+        <span class="vs-quick__label">Jump to</span>
+        <a href="#vs-pathways">Change of Status</a>
+        <a href="#vs-h1b">H-1B Alternative</a>
+        <a href="#vs-abroad">Apply From Abroad</a>
+        <a href="#vs-process">Process</a>
+        <a href="#vs-documents">Documents</a>
+        <a href="#vs-faq">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="vs-section">
+    <div class="vs-wrap">
+      <div class="vs-split">
+        <div class="vs-split__body">
+          <span class="vs-eyebrow">How We Help</span>
+          <h2 class="vs-h2">Expert guidance for your F-1 student visa journey</h2>
+          <p class="vs-lede">
+            The F-1 visa lets international students enroll full-time in an accredited U.S. degree program &mdash;
+            and, with the right program, keep working in their field through <strong>Curricular Practical Training (CPT)</strong>
+            and <strong>Optional Practical Training (OPT)</strong>.
+          </p>
+          <p class="vs-lede">
+            As the official international enrollment partner of Alliant University's School of Management &amp; Leadership,
+            EduConnect USA pairs your <a href="https://educonnectusa.com/international-students/">graduate admission</a> with
+            hands-on visa support: reviewing your eligibility, preparing your I-20 and application forms, and planning
+            timelines so you stay in status from start to finish.
+          </p>
+          <ul class="vs-featlist">
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Personal case review</strong> of your current visa and eligibility</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Document preparation</strong> for I-20, I-539, DS-160 and SEVIS</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Interview preparation</strong> for applicants applying from abroad</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Work placement support</strong> through <a href="https://educonnectusa.com/career-connect/">CareerConnect</a></span></li>
+          </ul>
+        </div>
+        <div class="vs-split__media">
+          <img loading="lazy" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2025/12/4-1024x684.png"
+               width="1024" height="684"
+               alt="Advisor helping an international student with an F-1 change of status application" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section vs-section--soft" id="vs-pathways">
+    <div class="vs-wrap">
+      <div class="vs-head">
+        <span class="vs-eyebrow">Change of Status to F-1</span>
+        <h2 class="vs-h2">Already in the U.S.? Choose your pathway to F-1</h2>
+        <p class="vs-lede">
+          Many nonimmigrant visa holders can change status to F-1 without leaving the country. Every visa has its own
+          rules, so we start by reviewing your situation and recommending the safest route.
+        </p>
+      </div>
+
+      <div class="vs-paths">
+        <a class="vs-path" href="https://educonnectusa.com/j1-change-of-status/">
+          <div class="vs-path__top">
+            <span class="vs-path__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 8l11 5 9-4.09V17h2V8L12 3zM5 13.18V17c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82l-7 3.18-7-3.18z"/></svg></span>
+            <span class="vs-route">J-1 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> F-1</span>
+          </div>
+          <h3>J1 to F1 Change of Status</h3>
+          <p>Turn your exchange program, internship or trainee experience into a U.S. graduate degree.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Review of your DS-2019 and 212(e) status</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Timeline planned around your program end date</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Day 1 CPT so you can keep working</li>
+          </ul>
+          <span class="vs-path__link">J-1 to F-1 guide &rarr;</span>
+        </a>
+
+        <a class="vs-path vs-path--featured" href="https://educonnectusa.com/b1-b2-visa/">
+          <div class="vs-path__top">
+            <span class="vs-path__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></span>
+            <span class="vs-route">B-1/B-2 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> F-1</span>
+          </div>
+          <h3>B1/B2 Visitor to F-1 Student</h3>
+          <p>Visiting the U.S. and ready to study? Request a change of status to F-1 before your I-94 expires.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>File Form I-539 while you are in valid status</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Start dates planned around USCIS approval</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Help proving funds and student intent</li>
+          </ul>
+          <span class="vs-path__link">B-1/B-2 to F-1 guide &rarr;</span>
+        </a>
+
+        <a class="vs-path" href="https://educonnectusa.com/sevis-transfer/">
+          <div class="vs-path__top">
+            <span class="vs-path__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.99 11 3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg></span>
+            <span class="vs-route">F-1 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> New School</span>
+          </div>
+          <h3>SEVIS Transfer</h3>
+          <p>Already on F-1? Move your SEVIS record to a program with stronger work options and better value.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>No new visa or departure required</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Coordination with your current DSO</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Transfer from ESL or another university</li>
+          </ul>
+          <span class="vs-path__link">SEVIS transfer guide &rarr;</span>
+        </a>
+      </div>
+
+      <p class="vs-lede" style="margin-top:32px">
+        Holding a different status, such as H-4, L-2, E-2 or O-1 dependent? Many of these can also change to F-1.
+        <a href="https://educonnectusa.com/change-of-status-f1-student-visa/">Read our complete F-1 change of status guide</a>
+        or <a href="https://educonnectusa.com/contact-international-student-support/">ask an advisor to review your case</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="vs-section" id="vs-h1b">
+    <div class="vs-wrap">
+      <div class="vs-h1b">
+        <div>
+          <span class="vs-eyebrow">H-1B Alternatives</span>
+          <h2 class="vs-h2">Not selected in the H-1B lottery? F-1 keeps your U.S. career moving</h2>
+          <p class="vs-lede">
+            The H-1B lottery is unpredictable, and every year many qualified professionals are left without a plan.
+            Enrolling in an F-1 graduate program is one of the most practical <strong>H-1B alternatives</strong>:
+            you earn an advanced degree, keep working in your field through <strong>Day 1 CPT</strong>, and may qualify
+            for <strong>OPT and the STEM OPT extension</strong> after graduation &mdash; giving you more chances at the lottery in future years.
+          </p>
+          <ul class="vs-featlist">
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Current H-1B, H-4 or OPT holders</strong> can plan a timely move to F-1</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>STEM-designated master's degrees</strong> in Data Analytics, Healthcare Analytics and Information Systems</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Hybrid schedules</strong> so you can keep working while you study</span></li>
+          </ul>
+          <a class="vs-btn vs-btn--primary" style="margin-top:30px" href="https://educonnectusa.com/work-study-programs/">Explore Work &amp; Study Programs</a>
+        </div>
+        <div class="vs-compare" role="table" aria-label="H-1B compared with F-1 with Day 1 CPT">
+          <div class="vs-compare__head" role="row">
+            <span role="columnheader">Factor</span>
+            <span role="columnheader">H-1B</span>
+            <span role="columnheader">F-1 + Day 1 CPT</span>
+          </div>
+          <div class="vs-compare__row" role="row">
+            <span role="cell">Selection</span>
+            <span role="cell">Annual lottery</span>
+            <span role="cell">Admission-based</span>
+          </div>
+          <div class="vs-compare__row" role="row">
+            <span role="cell">Work authorization</span>
+            <span role="cell">Sponsoring employer only</span>
+            <span role="cell">CPT in your field from term one</span>
+          </div>
+          <div class="vs-compare__row" role="row">
+            <span role="cell">After graduation</span>
+            <span role="cell">&mdash;</span>
+            <span role="cell">12-month OPT + 24-month STEM OPT</span>
+          </div>
+          <div class="vs-compare__row" role="row">
+            <span role="cell">Career growth</span>
+            <span role="cell">Tied to one role</span>
+            <span role="cell">Graduate degree + U.S. experience</span>
+          </div>
+          <p class="vs-compare__note">CPT and OPT eligibility depend on your program, school authorization and USCIS rules. STEM OPT applies to STEM-designated degrees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section vs-section--soft" id="vs-abroad">
+    <div class="vs-wrap">
+      <div class="vs-split vs-split--rev">
+        <div class="vs-split__media">
+          <img loading="lazy" decoding="async"
+               src="https://educonnectusa.com/wp-content/uploads/2026/03/26.jpg"
+               width="2560" height="1709"
+               alt="International students studying together after receiving their F1 student visa" />
+        </div>
+        <div class="vs-split__body">
+          <span class="vs-eyebrow">Applying From Abroad</span>
+          <h2 class="vs-h2">F1 visa assistance for students outside the U.S.</h2>
+          <p class="vs-lede">
+            If you are applying from your home country, you will receive your I-20, pay the SEVIS fee, complete the
+            DS-160 and attend an interview at a U.S. embassy or consulate. We help you prepare a strong, consistent
+            application so you can arrive ready to study and work.
+          </p>
+          <ul class="vs-featlist">
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Admission and I-20</strong> from Alliant University</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>DS-160 and SEVIS I-901</strong> step-by-step guidance</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Mock visa interviews</strong> and financial document review</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Arrival planning</strong> around your program start date</span></li>
+          </ul>
+          <a class="vs-btn vs-btn--outline" href="https://educonnectusa.com/find-the-right-program/">Find Your Program</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section" id="vs-process">
+    <div class="vs-wrap">
+      <div class="vs-head vs-center">
+        <span class="vs-eyebrow">The Process</span>
+        <h2 class="vs-h2">Your path to F-1 status in five steps</h2>
+        <p class="vs-lede">A clear plan from your first conversation to your first day of class.</p>
+      </div>
+      <ol class="vs-steps">
+        <li class="vs-step">
+          <span class="vs-step__num">1</span>
+          <h3>Free Case Review</h3>
+          <p>We review your current visa, I-94, goals and timeline to confirm the right pathway.</p>
+        </li>
+        <li class="vs-step">
+          <span class="vs-step__num">2</span>
+          <h3>Choose Your Program</h3>
+          <p>Pick an MBA, MS, DBA or PhD with Day 1 CPT and the work options you need.</p>
+        </li>
+        <li class="vs-step">
+          <span class="vs-step__num">3</span>
+          <h3>Admission &amp; I-20</h3>
+          <p>Apply, get admitted and receive your Form I-20 from the university.</p>
+        </li>
+        <li class="vs-step">
+          <span class="vs-step__num">4</span>
+          <h3>File Your Application</h3>
+          <p>Pay the SEVIS fee and file Form I-539, a SEVIS transfer or your DS-160.</p>
+        </li>
+        <li class="vs-step">
+          <span class="vs-step__num">5</span>
+          <h3>Study &amp; Work</h3>
+          <p>Begin classes, activate CPT and start building your U.S. career.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="vs-section vs-section--plum" id="vs-documents">
+    <div class="vs-wrap">
+      <div class="vs-head">
+        <span class="vs-eyebrow">Document Checklist</span>
+        <h2 class="vs-h2">What you'll need for your F-1 application</h2>
+        <p class="vs-lede">Exact requirements vary by case. Our advisors give you a personalized checklist and review each document before you file.</p>
+      </div>
+      <div class="vs-docs">
+        <div class="vs-doccard">
+          <h3>Change of status (inside the U.S.)</h3>
+          <p class="vs-doccard__sub">J-1, B-1/B-2, H-1B, H-4 and other visa holders</p>
+          <ul>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Form I-539</strong> with filing fee</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Form I-20</strong> from your new school</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>SEVIS I-901</strong> fee receipt</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Passport, visa and I-94</strong> showing valid status</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Proof of financial support</strong></span></li>
+          </ul>
+        </div>
+        <div class="vs-doccard">
+          <h3>Consular application (from abroad)</h3>
+          <p class="vs-doccard__sub">Students applying at a U.S. embassy or consulate</p>
+          <ul>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Valid passport</strong></span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Form I-20</strong> and SEVIS I-901 receipt</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>DS-160</strong> confirmation and visa fee receipt</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Academic transcripts</strong> and degree certificates</span></li>
+            <li class="vs-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Financial documents</strong> and ties to your home country</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section vs-section--soft">
+    <div class="vs-wrap">
+      <div class="vs-head">
+        <span class="vs-eyebrow">Work on an F-1 Visa</span>
+        <h2 class="vs-h2">Study and work in the U.S. with CPT and OPT</h2>
+        <p class="vs-lede">
+          Through our partner Alliant University, F-1 students can gain paid experience in their field during and after their degree.
+          Learn more about our <a href="https://educonnectusa.com/work-study-programs/">work and study programs</a>.
+        </p>
+      </div>
+      <div class="vs-work">
+        <div class="vs-workcard">
+          <span class="vs-workcard__tag">During your degree</span>
+          <h3>Day 1 CPT</h3>
+          <p>Curricular Practical Training lets eligible students work in a role related to their program from the first term, instead of waiting a full academic year.</p>
+        </div>
+        <div class="vs-workcard">
+          <span class="vs-workcard__tag">After graduation</span>
+          <h3>OPT</h3>
+          <p>Optional Practical Training provides up to 12 months of work authorization in your field after you complete your degree.</p>
+        </div>
+        <div class="vs-workcard">
+          <span class="vs-workcard__tag">STEM degrees</span>
+          <h3>STEM OPT Extension</h3>
+          <p>Graduates of STEM-designated programs may extend OPT by 24 months &mdash; up to three years of U.S. work experience in total.</p>
+        </div>
+      </div>
+      <div style="margin-top:36px;display:flex;flex-wrap:wrap;gap:16px">
+        <a class="vs-btn vs-btn--primary" href="https://educonnectusa.com/international-students/">View Graduate Programs</a>
+        <a class="vs-btn vs-btn--outline" href="https://educonnectusa.com/financial-solutions/">Scholarships &amp; Payment Plans</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section">
+    <div class="vs-wrap">
+      <div class="vs-head">
+        <span class="vs-eyebrow">Keep Learning</span>
+        <h2 class="vs-h2">Visa guides and student resources</h2>
+      </div>
+      <div class="vs-res">
+        <a class="vs-rescard" href="https://educonnectusa.com/change-of-status-f1-student-visa/">
+          <span class="vs-rescard__type">Guide</span>
+          <h3>Change of Status to F-1</h3>
+          <p>Eligibility, timelines and what to expect from USCIS.</p>
+          <span class="vs-rescard__go">Read guide &rarr;</span>
+        </a>
+        <a class="vs-rescard" href="https://educonnectusa.com/blog-videos/">
+          <span class="vs-rescard__type">Blog &amp; Videos</span>
+          <h3>Visa Tips &amp; Student Stories</h3>
+          <p>News, tips and real experiences from F-1 students.</p>
+          <span class="vs-rescard__go">Explore &rarr;</span>
+        </a>
+        <a class="vs-rescard" href="https://educonnectusa.com/student-resources/">
+          <span class="vs-rescard__type">Resource Library</span>
+          <h3>Guides &amp; Downloads</h3>
+          <p>Checklists and resources for international students.</p>
+          <span class="vs-rescard__go">Browse &rarr;</span>
+        </a>
+        <a class="vs-rescard" href="https://educonnectusa.com/student-testimonials/">
+          <span class="vs-rescard__type">Testimonials</span>
+          <h3>Hear From Our Students</h3>
+          <p>How students changed status and built U.S. careers.</p>
+          <span class="vs-rescard__go">Watch &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section vs-section--soft" id="vs-faq">
+    <div class="vs-wrap">
+      <span class="vs-eyebrow">Student Visa Questions</span>
+      <h2 class="vs-h2">F1 Student Visa FAQ</h2>
+      <div class="vs-acc">
+
+        <details open>
+          <summary>What is an F-1 student visa? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>The F-1 visa is the U.S. academic student visa. It allows international students to enroll full-time in a degree program at a SEVP-certified U.S. college or university and, with authorization, gain work experience through <strong>CPT</strong> and <strong>OPT</strong>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I change my status to F-1 without leaving the United States? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>In many cases, yes. Eligible J-1, B-1/B-2 and other nonimmigrant visa holders can apply to USCIS for a change of status to F-1 using <strong>Form I-539</strong> while they are still in valid status. Eligibility depends on your current visa, so your case should be reviewed before you apply.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I change from a J-1 visa to an F-1 visa? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>Many J-1 holders can change to F-1 status. However, if you are subject to the <strong>two-year home residency requirement (212(e))</strong>, you generally cannot change status inside the U.S. unless you first obtain a waiver. See our <a href="https://educonnectusa.com/j1-change-of-status/">J-1 to F-1 change of status guide</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I change from a B-1/B-2 visitor visa to an F-1 visa? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>Yes, visitors can request a change of status to F-1 from inside the U.S., but you may not begin full-time study until USCIS approves the change. Learn more on our <a href="https://educonnectusa.com/b1-b2-visa/">B-1/B-2 to F-1 page</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What is a SEVIS transfer? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>A SEVIS transfer moves your F-1 student record from your current school to a new SEVP-certified school, so you can continue studying without leaving the U.S. or applying for a new visa. Read our <a href="https://educonnectusa.com/sevis-transfer/">SEVIS transfer guide</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is the F-1 visa a good alternative to the H-1B? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>For many professionals who were not selected in the H-1B lottery, an F-1 graduate degree offers a lawful way to stay in the U.S., keep building experience through CPT, and become eligible for OPT and, in STEM-designated programs, the 24-month <strong>STEM OPT extension</strong>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I work in the U.S. on an F-1 visa? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>Yes, with authorization. Through our partner Alliant University, eligible students can access <strong>Day 1 CPT</strong>, which lets you work in your field from your first term. After graduation, you may qualify for 12 months of OPT plus a 24-month STEM OPT extension in STEM-designated programs.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What documents do I need for an F-1 visa? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="vs-acc__body">
+            <p>Typical documents include a valid passport, a <strong>Form I-20</strong>, proof of <strong>SEVIS I-901</strong> fee payment, proof of financial support, academic transcripts and, for change of status, Form I-539 and your current I-94 record. Applicants abroad also complete the <strong>DS-160</strong> and attend a consular interview.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section vs-ctaband">
+    <div class="vs-wrap">
+      <div class="vs-ctaband__inner">
+        <div>
+          <h2>Ready to secure your F-1 student visa?</h2>
+          <p>Talk to an advisor about your visa, your program and your work options &mdash; we'll review your case and respond within 48 hours.</p>
+        </div>
+        <div class="vs-ctaband__actions">
+          <a class="vs-btn vs-btn--primary" href="https://educonnectusa.com/apply-now/" target="_blank" rel="noopener">Get Started Now</a>
+          <a class="vs-btn vs-btn--ghost" href="https://educonnectusa.com/contact-international-student-support/">Contact Us</a>
+        </div>
+      </div>
+      <p class="vs-disclaimer">* Data collected in the last 12 months from programs offered in partnership with Alliant University. EduConnect USA provides educational and visa process guidance, not legal advice. Immigration decisions should be made in consultation with a licensed immigration attorney.</p>
+    </div>
+  </section>
+
+  <div class="vs-endcap" aria-hidden="true"></div>
+
+</div>
