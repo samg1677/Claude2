@@ -40,6 +40,8 @@
   --teal:#4ed3cc;
   --plum:#332959;
   --font:Arial,Helvetica,sans-serif;
+  --pad:88px;
+  --gap:24px;
   font-family:var(--font);
   color:var(--body);
   font-size:17px;
@@ -57,57 +59,52 @@
 #rp-page :focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
 
 #rp-page .rp-wrap{width:100%;max-width:1328px;margin:0 auto;padding:0 24px}
+#rp-page .rp-section{padding:var(--pad) 0}
+#rp-page .rp-soft{background:var(--soft)}
+#rp-page .rp-head{max-width:720px;margin:0 auto 48px;text-align:center}
+#rp-page .rp-eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+#rp-page .rp-h2{font-size:clamp(28px,3vw,38px);margin-bottom:14px}
 
-#rp-page .rp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border-radius:6px;font:700 16px/1 var(--font);letter-spacing:.4px;background:var(--orange);color:#fff;box-shadow:0 12px 18px -6px rgba(0,0,0,.3);transition:background .2s}
+#rp-page .rp-grid{display:grid;gap:var(--gap)}
+#rp-page .rp-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+#rp-page .rp-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+#rp-page .rp-grid--5{grid-template-columns:repeat(5,minmax(0,1fr))}
+
+#rp-page .rp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 32px;border-radius:6px;font:700 16px/1 var(--font);letter-spacing:.4px;background:var(--orange);color:#fff;box-shadow:0 12px 18px -6px rgba(0,0,0,.3);transition:background .2s}
 #rp-page .rp-btn:hover{background:var(--orange-hov);color:#fff}
 
-#rp-page .rp-hero{background:linear-gradient(300deg,#4ed3cc 0%,#332959 69%) #332959;padding:88px 0}
-#rp-page .rp-hero__inner{max-width:820px}
-#rp-page .rp-eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#ffd7b0;margin-bottom:18px}
-#rp-page .rp-hero h1{color:#fff;font-size:clamp(34px,4.2vw,52px);letter-spacing:-.5px;margin-bottom:20px}
-#rp-page .rp-hero p{font-size:19px;line-height:1.7;color:rgba(255,255,255,.92)}
-#rp-page .rp-hero p strong{color:#fff}
-#rp-page .rp-hero .rp-btn{margin-top:32px}
+#rp-page .rp-hero{background:linear-gradient(300deg,#4ed3cc 0%,#332959 69%) #332959;padding:88px 0;text-align:center}
+#rp-page .rp-hero__text{max-width:760px;margin:0 auto}
+#rp-page .rp-hero .rp-eyebrow{color:#ffd7b0;margin-bottom:16px}
+#rp-page .rp-hero h1{color:#fff;font-size:clamp(32px,4vw,50px);letter-spacing:-.5px;margin-bottom:18px}
+#rp-page .rp-hero p{font-size:19px;color:rgba(255,255,255,.9)}
+#rp-page .rp-rewards{max-width:720px;margin:44px auto 0}
+#rp-page .rp-reward{background:#fff;border-radius:14px;padding:28px 24px;box-shadow:0 16px 40px rgba(0,0,0,.2)}
+#rp-page .rp-reward__label{display:block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--body)}
+#rp-page .rp-reward__amt{display:block;font-size:clamp(40px,4.4vw,52px);font-weight:700;line-height:1.1;color:var(--orange);margin:8px 0 4px}
+#rp-page .rp-reward__calc{display:block;font-size:15px;color:var(--body)}
+#rp-page .rp-hero .rp-btn{margin-top:36px}
+#rp-page .rp-hero__note{margin-top:14px;font-size:14px;color:rgba(255,255,255,.75)}
 
-#rp-page .rp-main{padding:80px 0 96px}
-#rp-page .rp-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:start}
-
-#rp-page .rp-box{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:40px}
-#rp-page .rp-box .rp-box__lead{font-size:18px;color:var(--ink);margin-bottom:24px}
-#rp-page .rp-rates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:28px}
-#rp-page .rp-rate{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 20px}
-#rp-page .rp-rate__label{display:block;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--body);margin-bottom:6px}
-#rp-page .rp-rate__amt{display:block;font-size:clamp(32px,3.2vw,40px);font-weight:700;line-height:1.1;color:var(--orange)}
-#rp-page .rp-rate__calc{display:block;font-size:14px;color:var(--body);margin-top:6px}
-#rp-page .rp-alert{border-left:4px solid var(--orange);background:var(--orange-soft);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:28px}
+#rp-page .rp-step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px 28px;height:100%}
+#rp-page .rp-step__num{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--plum);color:#fff;font:700 17px/1 var(--font);margin-bottom:20px}
+#rp-page .rp-step h3{font-size:20px;margin-bottom:8px}
+#rp-page .rp-step p{font-size:16px}
+#rp-page .rp-alert{max-width:880px;margin:32px auto 0;display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border:1px solid #ffd9b5;border-radius:12px;padding:18px 22px}
+#rp-page .rp-alert svg{flex:0 0 24px;width:24px;height:24px;fill:var(--orange);margin-top:2px}
 #rp-page .rp-alert p{font-size:16px;color:var(--ink)}
-#rp-page .rp-box .rp-btn{width:100%}
-#rp-page .rp-box .rp-box__sub{margin-top:14px;font-size:14px;text-align:center}
-#rp-page .rp-box__sub a{color:var(--orange);font-weight:700}
 
-#rp-page .rp-bonus{margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
-#rp-page .rp-bonus h3{font-size:20px;margin-bottom:6px}
-#rp-page .rp-bonus>p{font-size:15px;margin-bottom:18px}
-#rp-page .rp-table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:16px}
-#rp-page .rp-table th,#rp-page .rp-table td{padding:13px 20px;text-align:left;border:0;border-bottom:1px solid var(--line);color:var(--ink)}
-#rp-page .rp-table th{background:var(--plum);color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase}
-#rp-page .rp-table tr:last-child td{border-bottom:0}
-#rp-page .rp-table td:last-child{color:var(--orange);font-weight:700;white-space:nowrap}
+#rp-page .rp-tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 16px;text-align:center}
+#rp-page .rp-tier__count{display:block;font-size:44px;font-weight:700;line-height:1;color:var(--plum)}
+#rp-page .rp-tier__label{display:block;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--body);margin:8px 0 16px}
+#rp-page .rp-tier__bonus{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--orange-soft);color:var(--orange);font-size:15px;font-weight:700;line-height:1.2;white-space:nowrap}
+#rp-page .rp-note{text-align:center;margin-top:24px;font-size:15px}
 
-#rp-page .rp-side h2{font-size:clamp(26px,2.6vw,32px);margin-bottom:28px}
-#rp-page .rp-steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px;padding-bottom:28px}
-#rp-page .rp-steps li:last-child{padding-bottom:0}
-#rp-page .rp-steps__num{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--plum);color:#fff;font:700 17px/1 var(--font)}
-#rp-page .rp-steps h3{font-size:19px;margin:8px 0 6px}
-#rp-page .rp-steps p{font-size:16px}
+#rp-page .rp-faq{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;height:100%}
+#rp-page .rp-faq h3{font-size:18px;line-height:1.4;margin-bottom:10px}
+#rp-page .rp-faq p{font-size:16px}
 
-#rp-page .rp-faq{margin-top:44px;padding-top:40px;border-top:1px solid var(--line)}
-#rp-page .rp-faq h2{margin-bottom:24px}
-#rp-page .rp-faq__item+.rp-faq__item{margin-top:22px}
-#rp-page .rp-faq__item h3{font-size:17px;line-height:1.45;margin-bottom:6px}
-#rp-page .rp-faq__item p{font-size:16px}
-
-#rp-page .rp-terms{max-width:880px;margin:72px auto 0;background:#fff;border:1px solid var(--line);border-radius:12px}
+#rp-page .rp-terms{max-width:880px;margin:32px auto 0;background:#fff;border:1px solid var(--line);border-radius:12px}
 #rp-page .rp-terms summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 24px;font:700 18px/1.4 var(--font);color:var(--ink)}
 #rp-page .rp-terms summary::-webkit-details-marker{display:none}
 #rp-page .rp-terms summary svg{flex:0 0 22px;width:22px;height:22px;fill:var(--orange);transition:transform .2s}
@@ -121,29 +118,56 @@
 #rp-page .rp-terms__body ol li{list-style:decimal}
 #rp-page .rp-terms__body ul li{list-style:disc}
 #rp-page .rp-terms__body li+li{margin-top:6px}
-#rp-page .rp-terms__body .rp-table{margin-top:12px;font-size:15px}
+#rp-page .rp-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}
+#rp-page .rp-table th,#rp-page .rp-table td{border:1px solid var(--line);padding:10px 14px;text-align:left;color:var(--ink)}
+#rp-page .rp-table th{background:var(--soft)}
+
+#rp-page .rp-cta{text-align:center}
+#rp-page .rp-cta .rp-head{margin-bottom:28px}
+#rp-page .rp-cta__sub{margin-top:14px;font-size:15px}
+#rp-page .rp-cta__sub a{color:var(--orange);font-weight:700}
 
 @media (max-width:980px){
+  #rp-page{--pad:72px}
   #rp-page .rp-hero{padding:72px 0}
-  #rp-page .rp-main{padding:64px 0 80px}
-  #rp-page .rp-cols{grid-template-columns:minmax(0,1fr);gap:56px}
-  #rp-page .rp-terms{margin-top:56px}
+  #rp-page .rp-head{margin-bottom:40px}
+  #rp-page .rp-grid--3{grid-template-columns:minmax(0,1fr);max-width:640px;margin:0 auto}
+  #rp-page .rp-alert{max-width:640px}
+  #rp-page .rp-step{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:18px;padding:26px 24px}
+  #rp-page .rp-step__num{grid-row:span 2;margin-bottom:0}
+  #rp-page .rp-step h3{margin-top:9px}
+  #rp-page .rp-grid--5{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+  #rp-page .rp-tier{padding:22px 8px}
+  #rp-page .rp-tier__count{font-size:36px}
+  #rp-page .rp-tier__bonus{padding:6px 10px;font-size:13px}
+}
+@media (max-width:700px){
+  #rp-page .rp-grid--5{grid-template-columns:minmax(0,1fr);gap:10px;max-width:520px;margin:0 auto}
+  #rp-page .rp-tier{display:flex;align-items:center;gap:14px;text-align:left;padding:16px 20px}
+  #rp-page .rp-tier__count{font-size:28px;min-width:40px}
+  #rp-page .rp-tier__label{margin:0 auto 0 0}
+  #rp-page .rp-tier__bonus{font-size:14px;padding:7px 12px}
+  #rp-page .rp-grid--2{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:640px){
-  #rp-page{font-size:16px}
+  #rp-page{--pad:56px;--gap:16px;font-size:16px}
   #rp-page .rp-wrap{padding:0 20px}
   #rp-page .rp-hero{padding:56px 0}
   #rp-page .rp-hero p{font-size:17px}
-  #rp-page .rp-hero .rp-btn{width:100%}
-  #rp-page .rp-main{padding:48px 0 64px}
-  #rp-page .rp-box{padding:26px 20px}
-  #rp-page .rp-rates{grid-template-columns:minmax(0,1fr);gap:12px}
-  #rp-page .rp-table th,#rp-page .rp-table td{padding:12px 14px}
-  #rp-page .rp-table th{font-size:12px;letter-spacing:.5px}
-  #rp-page .rp-steps li{grid-template-columns:40px minmax(0,1fr);gap:14px}
-  #rp-page .rp-steps__num{width:40px;height:40px;font-size:16px}
-  #rp-page .rp-steps h3{margin-top:6px}
-  #rp-page .rp-terms{margin-top:48px}
+  #rp-page .rp-head{margin-bottom:32px}
+  #rp-page .rp-rewards{margin-top:32px}
+  #rp-page .rp-rewards.rp-grid--2{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  #rp-page .rp-reward{padding:20px 14px}
+  #rp-page .rp-reward__label{font-size:11px;letter-spacing:1px}
+  #rp-page .rp-reward__amt{font-size:32px}
+  #rp-page .rp-reward__calc{font-size:13px}
+  #rp-page .rp-btn{width:100%}
+  #rp-page .rp-step{grid-template-columns:40px minmax(0,1fr);column-gap:14px;padding:22px 20px}
+  #rp-page .rp-step__num{width:40px;height:40px;font-size:16px}
+  #rp-page .rp-step h3{font-size:18px;margin-top:8px}
+  #rp-page .rp-alert{padding:16px 18px}
+  #rp-page .rp-faq{padding:22px 20px}
+  #rp-page .rp-faq h3{font-size:17px}
   #rp-page .rp-terms summary{font-size:16px;padding:18px}
   #rp-page .rp-terms__body{padding:0 18px 22px}
 }
@@ -156,104 +180,101 @@
 
   <section class="rp-hero">
     <div class="rp-wrap">
-      <div class="rp-hero__inner">
+      <div class="rp-hero__text">
         <span class="rp-eyebrow">EduConnect USA Referral Program</span>
         <h1>Recommend EduConnect USA to Your Friends</h1>
-        <p>Refer a friend who wants to study and work in the U.S. Once they enroll and start their program with Alliant University, you'll earn <strong>$784</strong> for a Master's referral or <strong>$1,300</strong> for a DBA referral.</p>
-        <a class="rp-btn" href="https://snpp1.share.hsforms.com/2mTVVRreASvSYG0LB4aNXUw" target="_blank" rel="noopener">Submit a Referral</a>
+        <p>Refer a friend who wants to study and work in the U.S. When they start their program, you earn credit worth two biweekly payments.</p>
+      </div>
+      <div class="rp-rewards rp-grid rp-grid--2">
+        <div class="rp-reward">
+          <span class="rp-reward__label">Master's referral</span>
+          <span class="rp-reward__amt">$784</span>
+          <span class="rp-reward__calc">2 &times; $392 payments</span>
+        </div>
+        <div class="rp-reward">
+          <span class="rp-reward__label">DBA referral</span>
+          <span class="rp-reward__amt">$1,300</span>
+          <span class="rp-reward__calc">2 &times; $650 payments</span>
+        </div>
+      </div>
+      <a class="rp-btn" href="https://snpp1.share.hsforms.com/2mTVVRreASvSYG0LB4aNXUw" target="_blank" rel="noopener">Submit a Referral</a>
+      <p class="rp-hero__note">Plus milestone bonuses as you refer more friends.</p>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="rp-wrap">
+      <div class="rp-head">
+        <span class="rp-eyebrow">How It Works</span>
+        <h2 class="rp-h2">Three simple steps</h2>
+        <p>Refer a friend, help them get started, and earn your reward.</p>
+      </div>
+      <ol class="rp-grid rp-grid--3">
+        <li class="rp-step">
+          <span class="rp-step__num">1</span>
+          <h3>Submit the Referral Form</h3>
+          <p>Share your friend's details and accept the Terms and Conditions before they register with us.</p>
+        </li>
+        <li class="rp-step">
+          <span class="rp-step__num">2</span>
+          <h3>Your friend enrolls</h3>
+          <p>Our team guides them through the application. You can help them along the way.</p>
+        </li>
+        <li class="rp-step">
+          <span class="rp-step__num">3</span>
+          <h3>You get rewarded</h3>
+          <p>Once they start their program, your credit is paid by the end of their first term.</p>
+        </li>
+      </ol>
+      <div class="rp-alert">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+        <p><strong>Important:</strong> submit the Referral Form <strong>before</strong> your friend registers with EduConnect USA. Late referrals can't be accepted.</p>
       </div>
     </div>
   </section>
 
-  <section class="rp-main">
+  <section class="rp-section rp-soft">
     <div class="rp-wrap">
-      <div class="rp-cols">
-
-        <div class="rp-box">
-          <p class="rp-box__lead">Earn credit worth <strong>two biweekly payments</strong> for every friend who starts their program.</p>
-          <div class="rp-rates">
-            <div class="rp-rate">
-              <span class="rp-rate__label">Master's referral</span>
-              <span class="rp-rate__amt">$784</span>
-              <span class="rp-rate__calc">2 &times; $392 payments</span>
-            </div>
-            <div class="rp-rate">
-              <span class="rp-rate__label">DBA referral</span>
-              <span class="rp-rate__amt">$1,300</span>
-              <span class="rp-rate__calc">2 &times; $650 payments</span>
-            </div>
-          </div>
-          <div class="rp-alert">
-            <p><strong>Important:</strong> submit the Referral Form <strong>before</strong> your friend registers with EduConnect USA. Late referrals can't be accepted.</p>
-          </div>
-          <a class="rp-btn" href="https://snpp1.share.hsforms.com/2mTVVRreASvSYG0LB4aNXUw" target="_blank" rel="noopener">Submit a Referral</a>
-          <p class="rp-box__sub">Questions? <a href="https://educonnectusa.com/contact-international-student-support/">Contact our team</a></p>
-
-          <div class="rp-bonus">
-            <h3>Milestone bonuses</h3>
-            <p>Earn extra credits as you refer more friends. Milestones are counted separately for Master's and DBA referrals.</p>
-            <table class="rp-table">
-              <thead><tr><th>Successful referrals</th><th>Bonus</th></tr></thead>
-              <tbody>
-                <tr><td>3</td><td>+1 credit</td></tr>
-                <tr><td>7</td><td>+1 credit</td></tr>
-                <tr><td>10</td><td>+2 credits</td></tr>
-                <tr><td>15</td><td>+2 credits</td></tr>
-                <tr><td>20</td><td>+3 credits</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="rp-side">
-          <h2>How the referral program works</h2>
-          <ol class="rp-steps">
-            <li>
-              <span class="rp-steps__num">1</span>
-              <div>
-                <h3>Submit the Referral Form</h3>
-                <p>Fill out the form with your friend's details and accept the Terms and Conditions before they register with EduConnect USA.</p>
-              </div>
-            </li>
-            <li>
-              <span class="rp-steps__num">2</span>
-              <div>
-                <h3>Your friend applies and enrolls</h3>
-                <p>Our team guides your friend through the application. You can help them along the way, as long as you're their only referral source.</p>
-              </div>
-            </li>
-            <li>
-              <span class="rp-steps__num">3</span>
-              <div>
-                <h3>You earn your reward</h3>
-                <p>Once your friend starts their program, your credit is confirmed and paid out by the end of their first academic term.</p>
-              </div>
-            </li>
-          </ol>
-
-          <div class="rp-faq">
-            <h2>FAQs</h2>
-            <div class="rp-faq__item">
-              <h3>If my friend contacted EduConnect USA before I submitted the form, can I still earn a reward?</h3>
-              <p>No. The Referral Form must be submitted before your friend completes registration. Late submissions and proof of earlier conversations are not accepted.</p>
-            </div>
-            <div class="rp-faq__item">
-              <h3>Which programs qualify?</h3>
-              <p>Programs offered by EduConnect USA in partnership with Alliant University. A Master's referral earns $784 and a DBA referral earns $1,300.</p>
-            </div>
-            <div class="rp-faq__item">
-              <h3>How is my reward paid?</h3>
-              <p>Credits are paid out by the end of your friend's first term. If you still have a program balance, they're applied to your remaining biweekly payments instead.</p>
-            </div>
-            <div class="rp-faq__item">
-              <h3>Can I refer friends before I start my own program?</h3>
-              <p>Yes, you can earn credits while you're enrolling, but you must start your own program before you can cash out. Credits are forfeited if you don't start.</p>
-            </div>
-          </div>
-        </div>
-
+      <div class="rp-head">
+        <span class="rp-eyebrow">Milestone Bonuses</span>
+        <h2 class="rp-h2">Refer more, earn more</h2>
+        <p>On top of your standard reward, you earn bonus credits at each milestone.</p>
       </div>
+      <div class="rp-grid rp-grid--5">
+        <div class="rp-tier"><span class="rp-tier__count">3</span><span class="rp-tier__label">Referrals</span><span class="rp-tier__bonus">+1 credit</span></div>
+        <div class="rp-tier"><span class="rp-tier__count">7</span><span class="rp-tier__label">Referrals</span><span class="rp-tier__bonus">+1 credit</span></div>
+        <div class="rp-tier"><span class="rp-tier__count">10</span><span class="rp-tier__label">Referrals</span><span class="rp-tier__bonus">+2 credits</span></div>
+        <div class="rp-tier"><span class="rp-tier__count">15</span><span class="rp-tier__label">Referrals</span><span class="rp-tier__bonus">+2 credits</span></div>
+        <div class="rp-tier"><span class="rp-tier__count">20</span><span class="rp-tier__label">Referrals</span><span class="rp-tier__bonus">+3 credits</span></div>
+      </div>
+      <p class="rp-note">Milestones are counted separately for Master's and DBA referrals.</p>
+    </div>
+  </section>
 
+  <section class="rp-section">
+    <div class="rp-wrap">
+      <div class="rp-head">
+        <span class="rp-eyebrow">FAQ</span>
+        <h2 class="rp-h2">Common questions</h2>
+      </div>
+      <div class="rp-grid rp-grid--2">
+        <div class="rp-faq">
+          <h3>My friend contacted EduConnect USA before I submitted the form. Can I still earn a reward?</h3>
+          <p>No. The form must be submitted before your friend registers. Late submissions and proof of earlier conversations aren't accepted.</p>
+        </div>
+        <div class="rp-faq">
+          <h3>Which programs qualify?</h3>
+          <p>Programs offered by EduConnect USA in partnership with Alliant University. A Master's referral earns $784 and a DBA referral earns $1,300.</p>
+        </div>
+        <div class="rp-faq">
+          <h3>How is my reward paid?</h3>
+          <p>By the end of your friend's first term. If you still have a program balance, credits go toward your remaining biweekly payments instead.</p>
+        </div>
+        <div class="rp-faq">
+          <h3>Can I refer friends before I start my own program?</h3>
+          <p>Yes, but you must start your own program before you can cash out. Credits are forfeited if you don't start.</p>
+        </div>
+      </div>
       <details class="rp-terms" id="rp-terms">
         <summary>Referral Program Terms and Conditions<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></summary>
         <div class="rp-terms__body">
@@ -316,6 +337,17 @@
           <p>Participation in the Referral Program constitutes the referrer's acknowledgment and acceptance of these Terms and Conditions.</p>
         </div>
       </details>
+    </div>
+  </section>
+
+  <section class="rp-section rp-soft rp-cta">
+    <div class="rp-wrap">
+      <div class="rp-head">
+        <h2 class="rp-h2">Ready to refer a friend?</h2>
+        <p>Submit your referral before your friend registers, and we'll take it from there.</p>
+      </div>
+      <a class="rp-btn" href="https://snpp1.share.hsforms.com/2mTVVRreASvSYG0LB4aNXUw" target="_blank" rel="noopener">Submit a Referral</a>
+      <p class="rp-cta__sub">Questions? <a href="https://educonnectusa.com/contact-international-student-support/">Contact our team</a></p>
     </div>
   </section>
 
